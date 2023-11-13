@@ -1,0 +1,9 @@
+If you are new to Git and GitHub, please read:
+
+The easiest way to integrate with GitHub is downloading GitHub Desktop. 
+Then you clone this repository so you have a local copy, from where you can work on the project. Just choose <show in explorer> and open solution with /VisualStudio 2022/.
+
+When working on the project (or derived files) you need to first <COMMIT> (this will add the changes to your LOCAL repository - the clone) and then <PUSH> those changes to the remote repository (Placed on GitHub servers).
+I order to deconflict preemptively, use <SYNC> instead. This will first <PULL> all changes and then <PUSH> your changes to the remote repository.
+
+There are no stupid questions - just ask :)
