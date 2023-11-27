@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
-using ProjectWebsite.Models;
 
 /*
 TO BE IMPLEMENTED: 
@@ -20,11 +19,8 @@ namespace ProjectWebsite.Pages.Customer
 
 		public CustomerRepository CustomerRepository;
 
-		[BindProperty]
-		public Models.Customer Customer { get; set; }
-		[BindProperty]
-		public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
-
+		[BindProperty] public Models.Customer Customer { get; set; }
+		[BindProperty] public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
 		public DeleteCustomerModel(CustomerRepository service)
 		{
 			CustomerRepository = service;

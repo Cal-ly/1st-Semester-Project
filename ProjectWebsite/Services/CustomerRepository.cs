@@ -1,13 +1,12 @@
-﻿using ProjectWebsite.Services;
+﻿using ProjectWebsite.Models;
 
-namespace ProjectWebsite.Models
+namespace ProjectWebsite.Services
 {
     public class CustomerRepository
     {
-        List<Customer> CustomerList = new List<Customer>();
-
+        public List<Customer> CustomerList = new List<Customer>();
         public static int NextID = 1;
-        private JsonFileCustomerService JsonFileCustomerService { get;set;}
+        private JsonFileCustomerService JsonFileCustomerService { get; set; }
         public List<Customer> GetList { get { return CustomerList; } }
 
         public CustomerRepository(JsonFileCustomerService jsonFileCustomerService)
@@ -82,5 +81,5 @@ namespace ProjectWebsite.Models
             }
             return searchResult;
         }
-}
+    }
 }
