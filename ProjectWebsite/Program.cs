@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<JsonProductService>();
 builder.Services.AddTransient<JsonFileCustomerService>();
+builder.Services.AddSingleton<ProductService, ProductService>();
 
 var app = builder.Build();
 
