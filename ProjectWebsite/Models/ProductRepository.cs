@@ -47,7 +47,6 @@ namespace ProjectWebsite.Models
             {
                 //remove it, should run smoothly
                 ProductList.Remove(productToBeDeleted);
-                ProductList.Remove(temp);
                 JsonProductService.SaveJsonItems(ProductList);
                 return true;
             }
