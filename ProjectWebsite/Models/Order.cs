@@ -1,4 +1,6 @@
-﻿namespace ProjectWebsite.Models
+﻿using System.Xml.Linq;
+
+namespace ProjectWebsite.Models
 {
     public class Order
     {
@@ -13,5 +15,25 @@
         {
             ID = NextID++;
         }
+
+        //public double CalcTotalPrice()
+        //{
+        //    return;
+        //}
+
+        //public Customer GetCustomer(int customerID)
+        //{
+        //    foreach (Customer c in CusList)
+        //    {
+        //        if (c.Name == name)
+        //            return c;
+        //    }
+        //    return null;
+        //}
+
+        //public Product GetProduct(int productID)
+        //{
+        //    return;
+        //}
     }
 }
