@@ -15,17 +15,10 @@ namespace ProjectWebsite.Services
             CustomerList = JsonFileCustomerService.GetJsonItems().ToList();
         }
 
-        public Customer CreateCustomer(string name, string address, string email, string phoneNumber)
+        public void CreateCustomer(Customer customer)
         {
-            Customer newCustomer = new Customer(NextID++, name, address, email, phoneNumber);
-            CustomerList.Add(newCustomer);
+            CustomerList.Add(customer);
             JsonFileCustomerService.SaveJsonItems(CustomerList);
-            foreach (Customer c in CustomerList)
-            {
-                if (c == newCustomer)
-                    return newCustomer;
-            }
-            return null;
         }
 
         public Customer GetCustomer(int customerID)

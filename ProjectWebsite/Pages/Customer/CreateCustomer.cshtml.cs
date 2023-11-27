@@ -31,13 +31,13 @@ namespace ProjectWebsite.Pages.Customer
 			{
 				return Page();
 			}
-            //CustomerRepository.AddObject(Customer);
-			return RedirectToPage("./Index");
+            CustomerRepository.CreateCustomer(Customer);
+			return RedirectToPage("GetAllCustomers");
 		}
 
         public IActionResult OnPostCancel()
         {
-            return RedirectToPage("./Index");
+            return RedirectToPage("GetAllCustomers");
         }
     }
 }
