@@ -20,15 +20,15 @@ namespace ProjectWebsite.Models
         //    return;
         //}
 
-        public Customer GetCustomer(int customerID)
-        {
-            foreach (Customer c in CustomerList)
-            {
-                if (c.ID == customerID)
-                    return c;
-            }
-            return null;
-        }
+        //public Customer GetCustomer(int customerID)
+        //{
+        //    foreach (Customer c in CustomerList)
+        //    {
+        //        if (c.ID == customerID)
+        //            return c;
+        //    }
+        //    return null;
+        //}
 
         //public Product GetProduct(int productID)
         //{
