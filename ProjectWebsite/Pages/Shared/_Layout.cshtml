@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjectWebsite.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="~/lib/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/regular.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/solid.min.css" />
 </head>
 <body>
     <header>
@@ -34,12 +37,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="Customer/GetAllCustomers">Om</a>
                         </li>
                     </ul>
-                    <ul>
-                        <li class="nav-item" aria-label="Toggle navigation">
+                    <ul class="navbar-nav flex-grow-2"  >
+                        <li class="nav-item" >
                             <a class="nav-link text-dark" asp-area="" asp-page="/login"><i class="fa fa-user fa-lg"></i></a>
                         </li>
                         <li>
-                            <a class="nav-link text-dark" asp-area="" asp-page="/kurv"><i class="fa fa-star"></i></a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/kurv"><i class="fas fa-bag-shopping"></i></a>
                         </li>
 
                     </ul>
