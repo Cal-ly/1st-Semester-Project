@@ -6,6 +6,6 @@
         
         private static int NextID = 1;
 
-
+        //public bool CreateCustomer(string name, string address, string )
     }
 }
