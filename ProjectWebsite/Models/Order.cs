@@ -7,7 +7,6 @@ namespace ProjectWebsite.Models
         private int NextID = 1;
         private int ID { get; set; }
         private double TotalPrice { get; set; }
-        //Customer
 
         List<Product> OrderList = new List<Product>();
 
@@ -16,14 +15,14 @@ namespace ProjectWebsite.Models
             ID = NextID++;
         }
 
-        //public double CalcTotalPrice()
+        //public double CalculateTotalPrice()
         //{
         //    return;
         //}
 
         //public Customer GetCustomer(int customerID)
         //{
-        //    foreach (Customer c in CusList)
+        //    foreach (Customer c in CustomerList)
         //    {
         //        if (c.ID == customerID)
         //            return c;

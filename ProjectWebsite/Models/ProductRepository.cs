@@ -12,7 +12,7 @@ namespace ProjectWebsite.Models
         public ProductRepository(JsonProductService jsonProductService)
         {
             JsonProductService = jsonProductService;
-            ProductList = JsonProductService.GetJsonItems();
+            ProductList = jsonProductService.GetJsonItems().ToList();
         }
 
         public Product GetProduct(int productID)
