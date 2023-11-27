@@ -33,6 +33,7 @@ namespace ProjectWebsite.Models
             Product newProduct = new() { Name = name, Description = description, Content = content, Price = price };
             //add reference to that product object to ProductList
             ProductList.Add(newProduct);
+            JsonProductService.SaveJsonItems(ProductList);
             //return reference to newProduct
             return newProduct;
         }
@@ -46,6 +47,8 @@ namespace ProjectWebsite.Models
             {
                 //remove it, should run smoothly
                 ProductList.Remove(productToBeDeleted);
+                ProductList.Remove(temp);
+                JsonProductService.SaveJsonItems(ProductList);
                 return true;
             }
             return false;

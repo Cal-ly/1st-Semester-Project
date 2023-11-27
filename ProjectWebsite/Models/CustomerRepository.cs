@@ -1,15 +1,26 @@
-﻿namespace ProjectWebsite.Models
+﻿using ProjectWebsite.Services;
+
+namespace ProjectWebsite.Models
 {
     public class CustomerRepository
     {
         List<Customer> CustomerList = new List<Customer>();
 
         public static int NextID = 1;
+        private JsonFileCustomerService JsonFileCustomerService { get;set;}
+
+        public CustomerRepository(JsonFileCustomerService jsonFileCustomerService)
+        {
+            JsonFileCustomerService = jsonFileCustomerService;
+        }
 
         public Customer CreateCustomer(string name, string address, string email, string phoneNumber)
         {
             Customer newCustomer = new Customer(NextID++, name, address, email, phoneNumber);
             CustomerList.Add(newCustomer);
+            Customer customer = new Customer(NextID++, name, address, email, phoneNumber);
+            CustomerList.Add(customer);
+            JsonFileCustomerService.SaveJsonItems(CustomerList);
             foreach (Customer c in CustomerList)
             {
                 if (c == newCustomer)
@@ -38,6 +49,7 @@
                     c.Address = address;
                     c.Email = email;
                     c.PhoneNumber = phoneNumber;
+                    JsonFileCustomerService.SaveJsonItems(CustomerList);
                     return c;
                 }
             }
@@ -51,6 +63,7 @@
                 if (c.ID == customerID)
                 {
                     CustomerList.Remove(c);
+                    JsonFileCustomerService.SaveJsonItems(CustomerList);
                     return true;
                 }
             }
