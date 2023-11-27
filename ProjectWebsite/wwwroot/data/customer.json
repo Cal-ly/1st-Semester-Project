@@ -2,14 +2,14 @@
   {
     "ID": 1,
     "Name": "Earl Grey",
-    "Address": "København",
+    "Address": "K\u00F8benhavn",
     "Email": "TeaHater",
     "PhoneNumber": "92334556"
   },
   {
     "ID": 2,
     "Name": "Bard",
-    "Address": "Århus",
+    "Address": "\u00C5rhus",
     "Email": "TeaLover123",
     "PhoneNumber": "83745348"
   },
@@ -19,5 +19,12 @@
     "Address": "Roskilde",
     "Email": "Tea",
     "PhoneNumber": "93485787"
+  },
+  {
+    "ID": 0,
+    "Name": "Jarl Gr\u00E5",
+    "Address": "Gr\u00E5vej 2",
+    "Email": "Lalalla@gmail.com",
+    "PhoneNumber": "50607080"
   }
 ]

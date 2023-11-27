@@ -14,10 +14,7 @@ namespace ProjectWebsite.Pages.Customer
     public class CreateCustomerModel : PageModel
     {
 		public CustomerRepository CustomerRepository;
-
-		[BindProperty]
-		public Models.Customer Customer { get; set; }
-
+		[BindProperty] public Models.Customer Customer { get; set; }
 		public CreateCustomerModel(CustomerRepository service)
 		{
 			CustomerRepository = service;
@@ -34,13 +31,13 @@ namespace ProjectWebsite.Pages.Customer
 			{
 				return Page();
 			}
-            //CustomerRepository.AddObject(Customer);
-			return RedirectToPage("./Index");
+            CustomerRepository.CreateCustomer(Customer);
+			return RedirectToPage("GetAllCustomers");
 		}
 
         public IActionResult OnPostCancel()
         {
-            return RedirectToPage("./Index");
+            return RedirectToPage("GetAllCustomers");
         }
     }
 }

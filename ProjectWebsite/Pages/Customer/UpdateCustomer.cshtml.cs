@@ -15,17 +15,12 @@ namespace ProjectWebsite.Pages.Customer
     public class UpdateCustomerModel : PageModel
 	{
 		public CustomerRepository CustomerRepository;
-
-		[BindProperty]
-		public Models.Customer Customer { get; set; }
-		[BindProperty]
-		public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
-
+		[BindProperty] public Models.Customer Customer { get; set; }
+		[BindProperty] public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
 		public UpdateCustomerModel(CustomerRepository service)
 		{
 			CustomerRepository = service;
 		}
-
 		public IActionResult OnGet(int id)
 		{
 			Customer = CustomerRepository.GetCustomer(id);
@@ -33,7 +28,6 @@ namespace ProjectWebsite.Pages.Customer
 				return RedirectToPage("/Error"); //Define NotFound page
 			return Page();
 		}
-
 		public IActionResult OnPost()
 		{
 			if (!ModelState.IsValid)
@@ -41,14 +35,12 @@ namespace ProjectWebsite.Pages.Customer
 				return Page();
 			}
 			//doesn't actually update yet since the method isn't implemented
-            CustomerRepository.UpdateCustomer(Customer, Customer.ID); 
+            CustomerRepository.UpdateCustomer(Customer, Customer.ID);
 			return RedirectToPage("GetAllCustomers");
 		}
-
         public IActionResult OnPostCancel()
         {
             return RedirectToPage("GetAllCustomers");
         }
 	}
 }
-

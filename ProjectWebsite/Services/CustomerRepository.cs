@@ -4,8 +4,7 @@ namespace ProjectWebsite.Services
 {
     public class CustomerRepository
     {
-        List<Customer> CustomerList = new List<Customer>();
-
+        public List<Customer> CustomerList = new List<Customer>();
         public static int NextID = 1;
         private JsonFileCustomerService JsonFileCustomerService { get; set; }
         public List<Customer> GetList { get { return CustomerList; } }
@@ -16,17 +15,10 @@ namespace ProjectWebsite.Services
             CustomerList = JsonFileCustomerService.GetJsonItems().ToList();
         }
 
-        public Customer CreateCustomer(string name, string address, string email, string phoneNumber)
+        public void CreateCustomer(Customer customer)
         {
-            Customer newCustomer = new Customer(NextID++, name, address, email, phoneNumber);
-            CustomerList.Add(newCustomer);
+            CustomerList.Add(customer);
             JsonFileCustomerService.SaveJsonItems(CustomerList);
-            foreach (Customer c in CustomerList)
-            {
-                if (c == newCustomer)
-                    return newCustomer;
-            }
-            return null;
         }
 
         public Customer GetCustomer(int customerID)
