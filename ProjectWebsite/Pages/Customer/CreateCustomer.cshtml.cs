@@ -5,8 +5,14 @@ namespace ProjectWebsite.Pages.Customer
 {
     public class CreateCustomerModel : PageModel
     {
-		//to be implemented
-		private JsonFileCustomerService CustomerService;
+		/*
+		TO BE IMPLEMENTED: 
+		PROPERTIES: Change name of service to match implemented service
+		CONSTRUCTOR: Change name of service to match implemented service
+		METHOD: Change name of service to match implemented service
+		*/
+
+		public JsonFileCustomerService CustomerService;
 
 		[BindProperty]
 		public Models.Customer Customer { get; set; }
