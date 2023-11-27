@@ -37,7 +37,7 @@ namespace ProjectWebsite.Pages.Customer
 		public IActionResult OnPost()
 		{
 			//if DeleteCustomer return false (fail) then redirect to error page
-			if (!CustomerRepository.DeleteCustomer(Customer.ID)) 
+			if (!CustomerRepository.DeleteCustomer(Customer.ID))
 				return RedirectToPage("/Error"); //Define NotFound page
 
 			return RedirectToPage("GetAllCustomers");

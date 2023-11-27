@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
+using System;
 
 /*
 TO BE IMPLEMENTED: 
@@ -14,7 +15,7 @@ namespace ProjectWebsite.Pages.Customer
     public class CreateCustomerModel : PageModel
     {
 		public CustomerRepository CustomerRepository;
-		[BindProperty] public Models.Customer Customer { get; set; }
+		public Models.Customer Customer { get; set; }
 		public CreateCustomerModel(CustomerRepository service)
 		{
 			CustomerRepository = service;
