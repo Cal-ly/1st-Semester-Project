@@ -4,29 +4,39 @@
 }
 
 <form method="post">
-	<div class="form-group">
-		<label asp-for="@Model.Pizza.Number" class="control-label"></label>
-		<input asp-for="@Model.Pizza.Number" class="form-control" />
-		<span asp-validation-for="@Model.Pizza.Number" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<label asp-for="@Model.Pizza.Name" class="control-label"></label>
-		<input asp-for="@Model.Pizza.Name" class="form-control" />
-		<span asp-validation-for="@Model.Pizza.Name" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<label asp-for="@Model.Pizza.Price" class="control-label"></label>
-		<input asp-for="@Model.Pizza.Price" class="form-control" />
-		<span asp-validation-for="@Model.Pizza.Price" class="text-danger"></span>
-	</div>
+    <div class="form-group">
+        <label asp-for="@Model.Customer.ID" class="control-label"></label>
+        <input asp-for="@Model.Customer.ID" class="form-control" />
+        <span asp-validation-for="@Model.Customer.ID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Customer.Name" class="control-label"></label>
+        <input asp-for="@Model.Customer.Name" class="form-control" />
+        <span asp-validation-for="@Model.Customer.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Customer.Address" class="control-label"></label>
+        <input asp-for="@Model.Customer.Address" class="form-control" />
+        <span asp-validation-for="@Model.Customer.Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Customer.Email" class="control-label"></label>
+        <input asp-for="@Model.Customer.Email" class="form-control" />
+        <span asp-validation-for="@Model.Customer.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Customer.PhoneNumber" class="control-label"></label>
+        <input asp-for="@Model.Customer.PhoneNumber" class="form-control" />
+        <span asp-validation-for="@Model.Customer.PhoneNumber" class="text-danger"></span>
+    </div>
 
-		<p>
-			<div class="form-group">
-				<input type="submit" value="Update" class="btn btn-primary" />
-			</div>
-		</p>
+    <p>
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-primary" />
+        </div>
+    </p>
 </form>
 
 <p>
-	<a asp-page="/Pizza/GetAllPizzas">Back to List</a>
+    <a asp-page="/Customer/GetAllCustomers">Back to List</a>
 </p>

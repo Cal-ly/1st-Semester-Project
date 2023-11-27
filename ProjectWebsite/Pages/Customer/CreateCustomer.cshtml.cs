@@ -2,23 +2,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
 
+/*
+TO BE IMPLEMENTED: 
+PROPERTIES: Change name of service to match implemented service
+CONSTRUCTOR: Change name of service to match implemented service
+METHOD: Change name of service to match implemented service
+*/
+
 namespace ProjectWebsite.Pages.Customer
 {
     public class CreateCustomerModel : PageModel
     {
-		/*
-		TO BE IMPLEMENTED: 
-		PROPERTIES: Change name of service to match implemented service
-		CONSTRUCTOR: Change name of service to match implemented service
-		METHOD: Change name of service to match implemented service
-		*/
 
 		public JsonFileCustomerService CustomerService;
 
 		[BindProperty]
 		public Models.Customer Customer { get; set; }
 
-		public CreateCustomerModel(CustomerService service)
+		public CreateCustomerModel(JsonFileCustomerService service)
 		{
 			CustomerService = service;
 		}

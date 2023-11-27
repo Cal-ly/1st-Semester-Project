@@ -2,31 +2,28 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
 
+
+/*
+TO BE IMPLEMENTED: 
+PROPERTIES: Change name of service to match implemented service
+CONSTRUCTOR: Change name of service to match implemented service
+METHOD: Change name of service to match implemented service
+*/
+
 namespace ProjectWebsite.Pages.Customer
 {
-	public class CreateCustomerModel : PageModel
+	public class UpdateCustomerModel : PageModel
 	{
-		/*
-		TO BE IMPLEMENTED: 
-		PROPERTIES: Change name of service to match implemented service
-		CONSTRUCTOR: Change name of service to match implemented service
-		METHOD: Change name of service to match implemented service
-		*/
 
 		public JsonFileCustomerService CustomerService;
-
-		[BindProperty]
-		public Models.Customer Customer { get; set; }
-		public List<Models.Customer> Customers { get; set; } //Used for displaying all customers
-
-		public CreateCustomerModel(CustomerService service)
+		public UpdateCustomerModel(JsonFileCustomerService service)
 		{
 			CustomerService = service;
 		}
 
-		public CreateCustomerModel()
-		{
-		}
+		[BindProperty]
+		public Models.Customer Customer { get; set; }
+		public List<Models.Customer> Customers { get; set; } //Used for displaying all customers
 
 		public IActionResult OnGet(int id)
 		{
@@ -43,7 +40,7 @@ namespace ProjectWebsite.Pages.Customer
 				return Page();
 			}
 			CustomerService.UpdateObject(Customer);
-			return RedirectToPage("./Index");
+			return RedirectToPage("GetAllCustomers");
 		}
 	}
 }
