@@ -2,3 +2,15 @@
 @model ProjectWebsite.Pages.Product.GetAllProductsModel
 @{
 }
+
+@foreach (var product in Model.Products)
+{
+    <div class="card" style="width: 18rem;">
+        <img src="" class="card-img-top" alt="Image of tea">
+        <div class="card-body">
+            <h5 class="card-title">@product.Name</h5>
+            <p class="card-text">@product.Description</p>
+            <a href="#" class="btn btn-primary">See more</a>
+        </div>
+    </div>
+}    
