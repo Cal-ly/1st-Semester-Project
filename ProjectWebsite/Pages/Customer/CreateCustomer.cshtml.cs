@@ -15,7 +15,7 @@ namespace ProjectWebsite.Pages.Customer
     public class CreateCustomerModel : PageModel
     {
 		public CustomerRepository CustomerRepository;
-		public Models.Customer Customer { get; set; }
+		[BindProperty] public Models.Customer Customer { get; set; }
 		public CreateCustomerModel(CustomerRepository service)
 		{
 			CustomerRepository = service;
@@ -32,6 +32,7 @@ namespace ProjectWebsite.Pages.Customer
 			{
 				return Page();
 			}
+			Customer.ID = CustomerRepository.GetNextID();
             CustomerRepository.CreateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
 		}

@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
 
-
 /*
 TO BE IMPLEMENTED: 
 PROPERTIES: Change name of service to match implemented service

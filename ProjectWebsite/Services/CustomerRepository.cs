@@ -7,10 +7,10 @@ namespace ProjectWebsite.Services
     /// </summary>
     public class CustomerRepository
     {
-        public List<Customer> CustomerList = new List<Customer>();
         public static int NextID = 1;
         private JsonFileCustomerService JsonFileCustomerService { get; set; }
         public List<Customer> GetList { get { return CustomerList; } }
+        public List<Customer> CustomerList = new List<Customer>();
 
         public CustomerRepository(JsonFileCustomerService jsonFileCustomerService)
         {
@@ -18,22 +18,40 @@ namespace ProjectWebsite.Services
             CustomerList = JsonFileCustomerService.GetJsonItems().ToList();
         }
 
-        ///<summary>
-        ///This method calculates the next available ID for a new customer object.
-        ///It retrieves the Max (largest) ID from the CustomerList and adds 1 to it.
-        ///</summary>
-        ///<returns>The next available ID for a new customer.</returns>
-        public int GetNextID() => CustomerList.Max(c => c.ID) + 1;
+        /// <summary>
+		/// Calculates the next available ID for a new customer object.
+		/// It retrieves the Max (largest) ID from the CustomerList and adds 1 to it.
+		/// </summary>
+		/// <returns>The next available ID for a new customer.</returns>
+		public int GetNextID()
+		{
+			int nextID = CustomerList.Max(c => c.ID) + 1;
+			if (nextID <= NextID)
+			{
+				nextID = NextID + 1;
+			}
+			else
+			{
+				NextID = nextID;
+			}
+			NextID = nextID;
+			return nextID;
+		}
 
         /// <summary>
         /// Creates a new customer.
         /// </summary>
-        /// <param name="customer">The customer to create.</param>
-        public void CreateCustomer(Customer customer)
+        /// <param name="customerIn">The customer to create.</param>
+        public void CreateCustomer(Customer customerIn)
         {
-            customer.ID = GetNextID();
-            CustomerList.Add(customer);
-            JsonFileCustomerService.SaveJsonItems(CustomerList);
+            if (customerIn == null)
+	        {
+		        throw new ArgumentNullException(nameof(customerIn));
+	        }
+	        //Customer _customer = customerIn;
+	        //_customer.ID = GetNextID();
+	        CustomerList.Add(customerIn);
+	        JsonFileCustomerService.SaveJsonItems(CustomerList);
         }
 
         /// <summary>
