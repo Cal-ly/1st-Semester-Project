@@ -14,11 +14,11 @@
 
         public List<Order> GetCustomerOrders(int customerID)
         {
-            List<Order> temp = new();
+            List<Order> customersOrders = new();
             foreach (Order order in orderLog)
                 if (order.CustomerID == customerID)
-                    temp.Add(order);
-            return temp;
+                    customersOrders.Add(order);
+            return customersOrders;
         }
     }
 }
