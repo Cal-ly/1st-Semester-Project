@@ -13,6 +13,7 @@ namespace ProjectWebsite.Pages.Product
 
         [BindProperty] public int MinPrice { get; set; }
         [BindProperty] public int MaxPrice { get; set; }
+        [BindProperty] public string SearchString { get; set; }
 
         public GetAllProductsModel(JsonProductService jsonService, ProductService productService)
         {
@@ -28,6 +29,12 @@ namespace ProjectWebsite.Pages.Product
         public IActionResult OnPostPriceFilter()
         {
             Products = _productService.PriceFilter(MaxPrice, MinPrice).ToList();
+            return Page();
+        }
+
+        public IActionResult OnPostNameSearch()
+        {
+            Products = _productService.NameSearch(SearchString).ToList();
             return Page();
         }
     }
