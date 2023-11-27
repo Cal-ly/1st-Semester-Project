@@ -1,19 +1,29 @@
-﻿namespace ProjectWebsite.Models
+﻿using ProjectWebsite.Services;
+
+namespace ProjectWebsite.Models
 {
     public class CustomerRepository
     {
         List<Customer> CustomerList = new List<Customer>();
 
         public static int NextID = 1;
+        private JsonFileCustomerService JsonFileCustomerService { get; set; }
+
+        public CustomerRepository(JsonFileCustomerService jsonFileCustomerService)
+        {
+            JsonFileCustomerService = jsonFileCustomerService;
+            CustomerList = JsonFileCustomerService.GetJsonItems().ToList();
+        }
 
         public Customer CreateCustomer(string name, string address, string email, string phoneNumber)
         {
-            Customer customer = new Customer(NextID++, name, address, email, phoneNumber);
-            CustomerList.Add(customer);
+            Customer newCustomer = new Customer(NextID++, name, address, email, phoneNumber);
+            CustomerList.Add(newCustomer);
+            JsonFileCustomerService.SaveJsonItems(CustomerList);
             foreach (Customer c in CustomerList)
             {
-                if (c == customer)
-                    return customer;
+                if (c == newCustomer)
+                    return newCustomer;
             }
             return null;
         }
@@ -38,6 +48,7 @@
                     c.Address = address;
                     c.Email = email;
                     c.PhoneNumber = phoneNumber;
+                    JsonFileCustomerService.SaveJsonItems(CustomerList);
                     return c;
                 }
             }
@@ -46,15 +57,14 @@
 
         public bool DeleteCustomer(int customerID)
         {
-            foreach (Customer c in CustomerList)
+            Customer customerToBeDeleted = GetCustomer(customerID);
+            if (customerToBeDeleted != null)
             {
-                if (c.ID == customerID)
-                {
-                    CustomerList.Remove(c);
-                    return true;
-                }
+                CustomerList.Remove(customerToBeDeleted);
+                JsonFileCustomerService.SaveJsonItems(CustomerList);
+                return true;
             }
             return false;
         }
-    }
+}
 }

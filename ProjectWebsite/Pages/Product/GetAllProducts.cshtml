@@ -3,29 +3,33 @@
 @{
 }
 
-<h1 class="pb-5">Vores Produkter</h1>
+
+    <h1 class="pb-5 text-center">Vores Produkter</h1>
 
 
 
-       
 
-            <div class="container">
-                <div class="row">
-                    @foreach (var product in Model.Products)
-                    {
-                        <div class="col-sm-4 mb-3">
-                            <div class="card" display="inline-block" style="width: 18rem;">
-                                <img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te">
-                                <div class="card-body">
-                                    <h5 class="card-title">@product.Name</h5>
-                                    <p class="card-text">@product.Description</p>
-                                    <a class="btn btn-primary btn-sm" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
-                                </div>
-                            </div>
+
+    <div class="container">
+        <div class="row">
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-sm-1 col-lg-4 mb-3">
+                    <div class="card" display="inline-block" style="width: 18rem;">
+                        <img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">@product.Description</p>
+                            <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
                         </div>
-                    }
+                    </div>
                 </div>
-            </div>
+            }
+        </div>
+    </div>
+
+
+
 
 
 
