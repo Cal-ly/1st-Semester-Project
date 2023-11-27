@@ -72,5 +72,15 @@ namespace ProjectWebsite.Models
             }
             return false;
         }
+        public List<Customer> NameSearch(string searchString)
+        {
+            List<Customer> searchResult = new List<Customer>();
+            foreach (Customer c in CustomerList)
+            {
+                if (c.Name.ToLower().Contains(searchString.ToLower()))
+                    searchResult.Add(c);
+            }
+            return searchResult;
+        }
 }
 }

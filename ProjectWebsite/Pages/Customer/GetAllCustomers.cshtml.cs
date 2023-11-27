@@ -24,10 +24,10 @@ namespace ProjectWebsite.Pages.Customer
 			CustomerList = CustomerRepository.GetList;
 		}
 
-		//      public IActionResult OnPostNameSearch()
-		//      {
-		//          Customers = CustomerService.NameSearch(SearchString).ToList();
-		//	return Page();
-		//}
+		public IActionResult OnPostNameSearch()
+		{
+			CustomerList = CustomerRepository.NameSearch(SearchString).ToList();
+			return Page();
+		}
 	}
 }
