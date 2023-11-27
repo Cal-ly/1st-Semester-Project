@@ -25,7 +25,7 @@ namespace ProjectWebsite.Models
         //{
         //    foreach (Customer c in CusList)
         //    {
-        //        if (c.Name == name)
+        //        if (c.ID == customerID)
         //            return c;
         //    }
         //    return null;
