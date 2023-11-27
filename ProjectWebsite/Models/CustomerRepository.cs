@@ -20,8 +20,6 @@ namespace ProjectWebsite.Models
         {
             Customer newCustomer = new Customer(NextID++, name, address, email, phoneNumber);
             CustomerList.Add(newCustomer);
-            Customer customer = new Customer(NextID++, name, address, email, phoneNumber);
-            CustomerList.Add(customer);
             JsonFileCustomerService.SaveJsonItems(CustomerList);
             foreach (Customer c in CustomerList)
             {
@@ -65,16 +63,14 @@ namespace ProjectWebsite.Models
 
         public bool DeleteCustomer(int customerID)
         {
-            foreach (Customer c in CustomerList)
+            Customer customerToBeDeleted = GetCustomer(customerID);
+            if (customerToBeDeleted != null)
             {
-                if (c.ID == customerID)
-                {
-                    CustomerList.Remove(c);
-                    JsonFileCustomerService.SaveJsonItems(CustomerList);
-                    return true;
-                }
+                CustomerList.Remove(customerToBeDeleted);
+                JsonFileCustomerService.SaveJsonItems(CustomerList);
+                return true;
             }
             return false;
         }
-    }
+}
 }
