@@ -19,7 +19,7 @@ namespace ProjectWebsite.Pages.Customer
 		[BindProperty]
 		public Models.Customer Customer { get; set; }
 
-		public CreateCustomerModel(CustomerService service)
+		public CreateCustomerModel(JsonFileCustomerService service)
 		{
 			CustomerService = service;
 		}
