@@ -27,10 +27,10 @@ namespace ProjectWebsite.Models
             return null;
         }
 
-        public Product CreateProduct(string name, string description, string content, double price)
+        public Product CreateProduct(string name, string description, string content, string type, double price)
         {
             //create new product object
-            Product newProduct = new() { Name = name, Description = description, Content = content, Price = price };
+            Product newProduct = new() { Name = name, Description = description, Content = content, Type = type, Price = price };
             //add reference to that product object to ProductList
             ProductList.Add(newProduct);
             JsonProductService.SaveJsonItems(ProductList);
