@@ -1,0 +1,31 @@
+[
+  {
+    "ID": 1,
+    "Name": "Earl Grey",
+    "Description": "Delicious black tea",
+    "Content": "Black tea", 
+    "Price": 100
+
+  },
+  {
+    "ID": 2,
+    "Name": "White Tea",
+    "Description": "Delicious white tea",
+    "Content": "Black tea",
+    "Price": 100
+  },
+  {
+    "ID": 3,
+    "Name": "Rooibos Tea",
+    "Description": "Delicious Rooibos tea",
+    "Content": "Rooibos tea",
+    "Price": 100
+  },
+  {
+    "ID": 4,
+    "Name": "Green Tea",
+    "Description": "Delicious green tea",
+    "Content": "Green tea",
+    "Price": 100
+  }
+]
