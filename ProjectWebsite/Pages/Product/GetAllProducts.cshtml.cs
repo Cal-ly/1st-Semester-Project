@@ -7,9 +7,9 @@ namespace ProjectWebsite.Pages.Product
     public class GetAllProductsModel : PageModel
     {
         public List<Models.Product> Products { get; private set; } = new List<Models.Product>();
-        private JsonService _jsonService;
+        private JsonProductService _jsonService;
 
-        public GetAllProductsModel(JsonService jsonService)
+        public GetAllProductsModel(JsonProductService jsonService)
         {
             _jsonService = jsonService;
         }
