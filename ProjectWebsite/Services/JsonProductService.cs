@@ -3,10 +3,10 @@ using System.Text.Json;
 
 namespace ProjectWebsite.Services
 {
-    public class JsonService
+    public class JsonProductService
     {
         public IWebHostEnvironment WebHostEnvironment { get; }
-        public JsonService(IWebHostEnvironment webHostEnvironment)
+        public JsonProductService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
