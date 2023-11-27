@@ -1,7 +1,6 @@
 ﻿using ProjectWebsite.Models;
-using ProjectWebsite.Services;
 
-namespace ProjectWebsite.Models
+namespace ProjectWebsite.Services
 {
     public class ProductRepository
     {
@@ -43,7 +42,7 @@ namespace ProjectWebsite.Models
             //get reference to that object
             Product productToBeDeleted = GetProduct(productID);
             //temp is null if ID match doesn't exist in the ProductList
-            if(productToBeDeleted != null)
+            if (productToBeDeleted != null)
             {
                 //remove it, should run smoothly
                 ProductList.Remove(productToBeDeleted);

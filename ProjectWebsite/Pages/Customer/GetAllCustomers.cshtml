@@ -12,14 +12,14 @@
 </div>
 
 <div class="row">
-@* 	<div class="col-4">
+	<div class="col-4">
 		<form method="post" class="form-inline">
 			<div class="input-group mb-3">
-				<input asp-for="SearchString" class="form-control mr-1" placeholder="Kunde" />
+				<input asp-for="SearchCustomer" class="form-control mr-1" placeholder="Søg i kundelisten" />
 				<input type="submit" asp-page-handler="NameSearch" value="Search" class="btn btn-primary" />
 			</div>
 		</form>
-	</div> *@
+	</div>
 
 	<div class="col-5"></div>
 	<div class="col-2"></div>
@@ -82,5 +82,5 @@
 </table>
 
 <p>
-	<a class="btn btn-primary" asp-page="CreateItem"> Create a new Customer </a>
+	<a class="btn btn-primary" asp-page="CreateCustomer"> Create a new Customer </a>
 </p>
