@@ -39,7 +39,7 @@ namespace ProjectWebsite.Pages.Customer
 
 		public IActionResult OnPost()
 		{
-			Models.Customer deletedCustomer = CustomerService.DeleteObject(Customer.Id);
+			Models.Customer deletedCustomer = CustomerService.DeleteObject(Customer.ID);
 			if (deletedCustomer == null)
 				return RedirectToPage("/Error"); //Define NotFound page
 
