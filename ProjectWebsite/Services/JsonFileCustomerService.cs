@@ -4,9 +4,9 @@ namespace ProjectWebsite.Services
 {
     public class JsonFileCustomerService
     {
-        public void DeleteObject(int ID)
+        public Customer DeleteObject(int ID)
         {
-
+            return null;
         }
 
         public void AddObject(Customer customer)
