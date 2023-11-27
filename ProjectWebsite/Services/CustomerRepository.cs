@@ -4,8 +4,7 @@ namespace ProjectWebsite.Services
 {
     public class CustomerRepository
     {
-        List<Customer> CustomerList = new List<Customer>();
-
+        public List<Customer> CustomerList = new List<Customer>();
         public static int NextID = 1;
         private JsonFileCustomerService JsonFileCustomerService { get; set; }
         public List<Customer> GetList { get { return CustomerList; } }
