@@ -12,6 +12,15 @@
         {
         }
 
+        public Product(int ID, string name, string description, string content, double price)
+        {
+            ID = ID;
+            Name = name;
+            Description = description;
+            Content = content;
+            Price = price;
+        }
+
         public override string ToString()
         {
             return $"{{{nameof(ID)}={ID.ToString()}, {nameof(Name)}={Name}, {nameof(Description)}={Description}, {nameof(Content)}={Content}, {nameof(Price)}={Price.ToString()}}}";
