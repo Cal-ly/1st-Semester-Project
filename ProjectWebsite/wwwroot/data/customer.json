@@ -1,3 +1,23 @@
-{
-
-}
+[
+  {
+    "ID": 1,
+    "Name": "Earl Grey",
+    "Address": "København",
+    "Email": "TeaHater",
+    "PhoneNumber": "92334556"
+  },
+  {
+    "ID": 2,
+    "Name": "Bard",
+    "Address": "Århus",
+    "Email": "TeaLover123",
+    "PhoneNumber": "83745348"
+  },
+  {
+    "ID": 3,
+    "Name": "Customer3",
+    "Address": "Roskilde",
+    "Email": "Tea",
+    "PhoneNumber": "93485787"
+  }
+]
