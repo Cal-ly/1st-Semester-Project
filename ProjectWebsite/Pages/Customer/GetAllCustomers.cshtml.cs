@@ -15,7 +15,8 @@ namespace ProjectWebsite.Pages.Customer
 
         [BindProperty]
         public Models.Customer Customer { get; set; }
-        public List<Models.Customer> Customers { get; set; } //Used for displaying all customers
+		[BindProperty]
+		public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
   //      public void OnGet()
   //      {
   //          Customers = CustomerService.GetAllObjects();

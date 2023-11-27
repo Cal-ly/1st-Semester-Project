@@ -5,7 +5,8 @@ namespace ProjectWebsite.Models
     public class Order
     {
         private int NextID = 1;
-        private int ID { get; set; }
+        public int ID { get; set; }
+        public int CustomerID { get; set; }
         private double TotalPrice { get; set; }
 
         List<Product> OrderList = new List<Product>();

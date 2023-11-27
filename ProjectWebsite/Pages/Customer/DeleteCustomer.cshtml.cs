@@ -28,23 +28,24 @@ namespace ProjectWebsite.Pages.Customer
 
 		[BindProperty]
 		public Models.Customer Customer { get; set; }
-		public List<Models.Customer> Customers { get; set; } //Used for displaying all customers
+		[BindProperty]
+		public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
 
-		public IActionResult OnGet(int id)
-		{
-			Customer = CustomerService.GetObject(id);
-			if (Customer == null)
-				return RedirectToPage("/Error"); //Define NotFound page
-			return Page();
-		}
+		//public IActionResult OnGet(int id)
+		//{
+		//	Customer = CustomerService.GetObject(id);
+		//	if (Customer == null)
+		//		return RedirectToPage("/Error"); //Define NotFound page
+		//	return Page();
+		//}
 
-		public IActionResult OnPost()
-		{
-			Models.Customer deletedCustomer = CustomerService.DeleteObject(Customer.ID);
-			if (deletedCustomer == null)
-				return RedirectToPage("/Error"); //Define NotFound page
+		//public IActionResult OnPost()
+		//{
+		//	Models.Customer deletedCustomer = CustomerService.DeleteObject(Customer.ID);
+		//	if (deletedCustomer == null)
+		//		return RedirectToPage("/Error"); //Define NotFound page
 
-			return RedirectToPage("GetAllCustomers");
-		}
+		//	return RedirectToPage("GetAllCustomers");
+		//}
 	}
 }
