@@ -7,9 +7,9 @@ namespace ProjectWebsite.Models
     {
         public List<Product> ProductList { get; set; }
         private static int nextID;
-        private JsonService JsonProductService { get; set; }
+        private JsonProductService JsonProductService { get; set; }
 
-        public ProductRepository(JsonService jsonProductService)
+        public ProductRepository(JsonProductService jsonProductService)
         {
             JsonProductService = jsonProductService;
             ProductList = jsonProductService.GetJsonItems().ToList();
