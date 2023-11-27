@@ -12,6 +12,7 @@ namespace ProjectWebsite.Models
         public CustomerRepository(JsonFileCustomerService jsonFileCustomerService)
         {
             JsonFileCustomerService = jsonFileCustomerService;
+            CustomerList = JsonFileCustomerService.GetJsonItems().ToList();
         }
 
         public Customer CreateCustomer(string name, string address, string email, string phoneNumber)
