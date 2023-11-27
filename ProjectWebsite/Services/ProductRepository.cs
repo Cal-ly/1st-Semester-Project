@@ -21,19 +21,25 @@ namespace ProjectWebsite.Services
 
         public Product CreateProduct(string name, string description, string content, double price)
         {
+            //create new product object
             Product newProduct = new() { Name = name, Description = description, Content = content, Price = price };
+            //add reference to that product object to ProductList
             ProductList.Add(newProduct);
+            //return reference to newProduct
             return newProduct;
         }
 
         public bool DeleteProduct(int productID)
         {
-            foreach(Product product in ProductList) 
-                if(product.ID == productID)
-                {
-                    ProductList.Remove(product);
-                    return true;
-                }
+            //get reference to that object
+            Product temp = GetProduct(productID);
+            //temp is null if ID match doesn't exist in the ProductList
+            if(temp != null)
+            {
+                //remove it, should run smoothly
+                ProductList.Remove(temp);
+                return true;
+            }
             return false;
         }
     }
