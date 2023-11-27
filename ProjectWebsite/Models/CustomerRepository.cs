@@ -8,6 +8,7 @@ namespace ProjectWebsite.Models
 
         public static int NextID = 1;
         private JsonFileCustomerService JsonFileCustomerService { get;set;}
+        public List<Customer> GetList { get { return CustomerList; } }
 
         public CustomerRepository(JsonFileCustomerService jsonFileCustomerService)
         {
@@ -38,6 +39,11 @@ namespace ProjectWebsite.Models
                     return c;
             }
             return null;
+        }
+
+        public bool UpdateCustomer(Customer customer, int customerID)
+        {
+            return false;
         }
 
         public Customer UpdateCustomer(int customerID, string name, string address, string email, string phoneNumber)

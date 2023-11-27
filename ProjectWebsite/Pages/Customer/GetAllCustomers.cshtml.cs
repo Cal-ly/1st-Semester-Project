@@ -7,24 +7,27 @@ namespace ProjectWebsite.Pages.Customer
 {
     public class GetAllCustomersModel : PageModel
     {
-        public JsonFileCustomerService CustomerService;
-        public GetAllCustomersModel(JsonFileCustomerService service)
-        {
-			CustomerService = service;
-		}
+		public CustomerRepository CustomerRepository;
 
-        [BindProperty]
-        public Models.Customer Customer { get; set; }
+		[BindProperty]
+		public Models.Customer Customer { get; set; }
 		[BindProperty]
 		public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
-  //      public void OnGet()
-  //      {
-  //          Customers = CustomerService.GetAllObjects();
-  //      }
-  //      public IActionResult OnPostNameSearch()
-  //      {
-  //          Customers = CustomerService.NameSearch(SearchString).ToList();
+
+		public GetAllCustomersModel(CustomerRepository service)
+		{
+			CustomerRepository = service;
+		}
+
+		public void OnGet()
+		{
+			CustomerList = CustomerRepository.GetList;
+		}
+
+		//      public IActionResult OnPostNameSearch()
+		//      {
+		//          Customers = CustomerService.NameSearch(SearchString).ToList();
 		//	return Page();
 		//}
-    }
+	}
 }
