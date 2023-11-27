@@ -7,12 +7,12 @@ namespace ProjectWebsite.Models
     {
         public List<Product> ProductList { get; set; }
         private static int nextID;
-        private JsonProductService JsonProductService { get; set; }
+        private JsonService JsonProductService { get; set; }
 
-        public ProductRepository(JsonProductService jsonProductService)
+        public ProductRepository(JsonService jsonProductService)
         {
             JsonProductService = jsonProductService;
-            ProductList = JsonProductService.GetJsonItems();
+            ProductList = jsonProductService.GetJsonItems().ToList();
         }
 
         public Product GetProduct(int productID)
