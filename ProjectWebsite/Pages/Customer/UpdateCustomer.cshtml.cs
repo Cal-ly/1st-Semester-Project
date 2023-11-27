@@ -15,36 +15,41 @@ namespace ProjectWebsite.Pages.Customer
 {
 	public class UpdateCustomerModel : PageModel
 	{
-
-		public JsonFileCustomerService CustomerService;
 		public CustomerRepository CustomerRepository;
-		public UpdateCustomerModel(JsonFileCustomerService service)
-		{
-			CustomerService = service;
-		}
 
 		[BindProperty]
 		public Models.Customer Customer { get; set; }
 		[BindProperty]
 		public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
 
-		//public IActionResult OnGet(int id)
-		//{
-		//	Customer = CustomerService.GetCustomer(id);
-		//	if (Customer == null)
-		//		return RedirectToPage("/Error"); //Define NotFound page
-		//	return Page();
-		//}
+		public UpdateCustomerModel(CustomerRepository service)
+		{
+			CustomerRepository = service;
+		}
 
-		//public IActionResult OnPost()
-		//{
-		//	if (!ModelState.IsValid)
-		//	{
-		//		return Page();
-		//	}
-		//	CustomerService.UpdateObject(Customer);
-		//	return RedirectToPage("GetAllCustomers");
-		//}
+		public IActionResult OnGet(int id)
+		{
+			Customer = CustomerRepository.GetCustomer(id);
+			if (Customer == null)
+				return RedirectToPage("/Error"); //Define NotFound page
+			return Page();
+		}
+
+		public IActionResult OnPost()
+		{
+			if (!ModelState.IsValid)
+			{
+				return Page();
+			}
+			//doesn't actually update yet since the method isn't implemented
+            CustomerRepository.UpdateCustomer(Customer, Customer.ID); 
+			return RedirectToPage("GetAllCustomers");
+		}
+
+        public IActionResult OnPostCancel()
+        {
+            return RedirectToPage("GetAllCustomers");
+        }
 	}
 }
 
