@@ -26,5 +26,19 @@ namespace ProjectWebsite.Services
 
             return filterList;
         }
+
+        public IEnumerable<Product> NameSearch(string str)
+        {
+            List<Product> nameSearch = new List<Product>();
+            foreach (Product product in Products)
+            {
+                if (product.Type.ToLower().Contains(str.ToLower()))
+                {
+                    nameSearch.Add(product);
+                }
+            }
+
+            return nameSearch;
+        }
     }
 }
