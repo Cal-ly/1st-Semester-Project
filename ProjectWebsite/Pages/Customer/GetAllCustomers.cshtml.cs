@@ -29,5 +29,6 @@ namespace ProjectWebsite.Pages.Customer
 		//	CustomerList = CustomerRepository.NameSearch(SearchString).ToList();
 		//	return Page();
 		//}
+
 	}
 }
