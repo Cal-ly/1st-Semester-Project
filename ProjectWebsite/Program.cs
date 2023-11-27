@@ -1,3 +1,4 @@
+using ProjectWebsite.Models;
 using ProjectWebsite.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddTransient<JsonProductService>();
 builder.Services.AddTransient<JsonFileCustomerService>();
 builder.Services.AddSingleton<ProductService, ProductService>();
+builder.Services.AddSingleton<CustomerRepository, CustomerRepository>();
+builder.Services.AddSingleton<ProductRepository, ProductRepository>();
 
 var app = builder.Build();
 

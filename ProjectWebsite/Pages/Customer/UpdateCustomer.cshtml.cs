@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
-using ProjectWebsite.Models;
 
 
 /*
@@ -13,7 +12,7 @@ METHOD: Change name of service to match implemented service
 
 namespace ProjectWebsite.Pages.Customer
 {
-	public class UpdateCustomerModel : PageModel
+    public class UpdateCustomerModel : PageModel
 	{
 		public CustomerRepository CustomerRepository;
 
