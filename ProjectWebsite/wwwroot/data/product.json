@@ -14,7 +14,7 @@
     "Description": "Delicious white tea",
     "Content": "White Tea",
     "Type": "White tea",
-    "Price": 100
+    "Price": 50
   },
   {
     "ID": 3,
@@ -22,7 +22,7 @@
     "Description": "Delicious Rooibos tea",
     "Content": "Rooibos tea",
     "Type": "Rooibos tea",
-    "Price": 100
+    "Price": 60
   },
   {
     "ID": 4,
@@ -30,6 +30,6 @@
     "Description": "Delicious green tea",
     "Content": "Green tea",
     "Type": "Green tea",
-    "Price": 100
+    "Price": 70
   }
 ]
