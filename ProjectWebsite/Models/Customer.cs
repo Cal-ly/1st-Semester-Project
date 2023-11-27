@@ -8,7 +8,10 @@
 		public string Email { get; set; }
 		public string PhoneNumber { get; set; }
 
-		public Customer() { }
+		public Customer()
+		{
+		}
+
 		public Customer(int identifier, string name, string address, string email, string phoneNumber)
 		{
 			Id = identifier;
@@ -17,9 +20,10 @@
 			Email = email;
 			PhoneNumber = phoneNumber;
 		}
-		public override string ToString()
-		{
-			return $"{nameof(Id)}: {Id}, {nameof(Name)}: {Name}, {nameof(Address)}: {Address}, {nameof(PostalCode)}: {PostalCode}, {nameof(City)}: {City}, {nameof(PhoneNumber)}: {PhoneNumber}, Member: {MemberDisplay}";
-		}
-	}
+
+        public override string ToString()
+        {
+            return $"{{{nameof(Id)}={Id.ToString()}, {nameof(Name)}={Name}, {nameof(Address)}={Address}, {nameof(Email)}={Email}, {nameof(PhoneNumber)}={PhoneNumber}}}";
+        }
+    }
 }
