@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
+using ProjectWebsite.Models;
 
 /*
 TO BE IMPLEMENTED: 
@@ -18,6 +19,7 @@ namespace ProjectWebsite.Pages.Customer
 
 		[BindProperty]
 		public Models.Customer Customer { get; set; }
+		public List<Models.Customer> Customers { get; set; } //Used for displaying all customers
 
 		public CreateCustomerModel(JsonFileCustomerService service)
 		{
