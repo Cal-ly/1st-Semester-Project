@@ -28,13 +28,13 @@ namespace ProjectWebsite.Pages.Customer
 		[BindProperty]
 		public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
 
-		public IActionResult OnGet(int id)
-		{
-			Customer = CustomerService.GetCustomer(id);
-			if (Customer == null)
-				return RedirectToPage("/Error"); //Define NotFound page
-			return Page();
-		}
+		//public IActionResult OnGet(int id)
+		//{
+		//	Customer = CustomerService.GetCustomer(id);
+		//	if (Customer == null)
+		//		return RedirectToPage("/Error"); //Define NotFound page
+		//	return Page();
+		//}
 
 		//public IActionResult OnPost()
 		//{
