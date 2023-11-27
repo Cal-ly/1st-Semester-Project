@@ -6,6 +6,13 @@ namespace ProjectWebsite.Services
     {
         public List<Product> ProductList { get; set; }
         private static int nextID;
+        private JsonProductService JsonProductService { get; set; }
+
+        public ProductRepository(JsonProductService jsonProductService)
+        {
+            JsonProductService = jsonProductService;
+            ProductList = JsonProductService.GetJsonItems();
+        }
 
         public Product GetProduct(int productID)
         {
