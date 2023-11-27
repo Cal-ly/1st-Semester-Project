@@ -14,7 +14,6 @@ namespace ProjectWebsite.Pages.Customer
 {
     public class CreateCustomerModel : PageModel
     {
-
 		public JsonFileCustomerService CustomerService;
 
 		[BindProperty]
