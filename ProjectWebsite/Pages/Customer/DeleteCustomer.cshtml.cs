@@ -24,12 +24,16 @@ namespace ProjectWebsite.Pages.Customer
 		{
 			CustomerService = service;
 		}
+
 		[BindProperty]
 		public Models.Customer Customer { get; set; }
 		public List<Models.Customer> Customers { get; set; } //Used for displaying all customers
 
-		public IActionResult OnGet()
+		public IActionResult OnGet(int id)
 		{
+			Customer = CustomerService.GetObject(id);
+			if (Customer == null)
+				return RedirectToPage("/Error"); //Define NotFound page
 			return Page();
 		}
 
