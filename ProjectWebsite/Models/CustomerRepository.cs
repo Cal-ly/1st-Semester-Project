@@ -7,7 +7,8 @@ namespace ProjectWebsite.Models
         List<Customer> CustomerList = new List<Customer>();
 
         public static int NextID = 1;
-        private JsonFileCustomerService JsonFileCustomerService { get; set; }
+        private JsonFileCustomerService JsonFileCustomerService { get;set;}
+        public List<Customer> GetList { get { return CustomerList; } }
 
         public CustomerRepository(JsonFileCustomerService jsonFileCustomerService)
         {
@@ -38,6 +39,11 @@ namespace ProjectWebsite.Models
             return null;
         }
 
+        public bool UpdateCustomer(Customer customer, int customerID)
+        {
+            return false;
+        }
+
         public Customer UpdateCustomer(int customerID, string name, string address, string email, string phoneNumber)
         {
             foreach (Customer c in CustomerList)
@@ -65,6 +71,16 @@ namespace ProjectWebsite.Models
                 return true;
             }
             return false;
+        }
+        public List<Customer> NameSearch(string searchString)
+        {
+            List<Customer> searchResult = new List<Customer>();
+            foreach (Customer c in CustomerList)
+            {
+                if (c.Name.ToLower().Contains(searchString.ToLower()))
+                    searchResult.Add(c);
+            }
+            return searchResult;
         }
 }
 }
