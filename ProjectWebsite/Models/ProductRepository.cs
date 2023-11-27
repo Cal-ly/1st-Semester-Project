@@ -40,12 +40,12 @@ namespace ProjectWebsite.Models
         public bool DeleteProduct(int productID)
         {
             //get reference to that object
-            Product temp = GetProduct(productID);
+            Product productToBeDeleted = GetProduct(productID);
             //temp is null if ID match doesn't exist in the ProductList
-            if(temp != null)
+            if(productToBeDeleted != null)
             {
                 //remove it, should run smoothly
-                ProductList.Remove(temp);
+                ProductList.Remove(productToBeDeleted);
                 return true;
             }
             return false;

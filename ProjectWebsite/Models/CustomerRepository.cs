@@ -8,12 +8,12 @@
 
         public Customer CreateCustomer(string name, string address, string email, string phoneNumber)
         {
-            Customer customer = new Customer(NextID++, name, address, email, phoneNumber);
-            CustomerList.Add(customer);
+            Customer newCustomer = new Customer(NextID++, name, address, email, phoneNumber);
+            CustomerList.Add(newCustomer);
             foreach (Customer c in CustomerList)
             {
-                if (c == customer)
-                    return customer;
+                if (c == newCustomer)
+                    return newCustomer;
             }
             return null;
         }
