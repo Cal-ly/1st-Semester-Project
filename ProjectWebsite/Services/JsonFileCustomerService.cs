@@ -1,27 +1,39 @@
 ﻿using ProjectWebsite.Models;
+using System.Text.Json;
 
 namespace ProjectWebsite.Services
 {
     public class JsonFileCustomerService
     {
-        public Customer DeleteObject(int ID)
+        public IWebHostEnvironment WebHostEnvironment { get; }
+        public JsonFileCustomerService(IWebHostEnvironment webHostEnvironment)
         {
-            return null;
+            WebHostEnvironment = webHostEnvironment;
+        }
+        private string JsonFileName
+        {
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "customer.json"); }
         }
 
-        public void AddObject(Customer customer)
+        public void SaveJsonItems(List<Customer> products)
         {
-
+            using (FileStream jsonFileWriter = File.Create(JsonFileName))
+            {
+                Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
+                {
+                    SkipValidation = false,
+                    Indented = true
+                });
+                JsonSerializer.Serialize<Customer[]>(jsonWriter, products.ToArray());
+            }
         }
 
-        public Customer GetObject(int ID)
+        public IEnumerable<Customer> GetJsonItems()
         {
-            return null;
-        }
-
-        public void UpdateObject(Customer customer)
-        {
-
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
+            {
+                return JsonSerializer.Deserialize<Customer[]>(jsonFileReader.ReadToEnd());
+            }
         }
     }
 }
