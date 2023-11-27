@@ -20,7 +20,7 @@ namespace ProjectWebsite.Pages.Customer
 		public JsonFileCustomerService CustomerService;
 
 
-		public DeleteCustomerModel(CustomerService service)
+		public DeleteCustomerModel(JsonFileCustomerService service)
 		{
 			CustomerService = service;
 		}

@@ -16,7 +16,7 @@ namespace ProjectWebsite.Pages.Customer
 	{
 
 		public JsonFileCustomerService CustomerService;
-		public UpdateCustomerModel(CustomerService service)
+		public UpdateCustomerModel(JsonFileCustomerService service)
 		{
 			CustomerService = service;
 		}
