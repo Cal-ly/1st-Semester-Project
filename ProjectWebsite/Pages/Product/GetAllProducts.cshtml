@@ -26,6 +26,7 @@
 <form method="post" class="form-inline">
     <input asp-for="SearchString" class="form-control mr-1" placeholder="Søg på te-type" />
     <input type="submit" asp-page-handler="NameSearch" value="Søg" class="btn btn-primary" />
+    <span asp-validation-for="@Model.SearchString" class="text-danger"></span>
 </form>
 
 
