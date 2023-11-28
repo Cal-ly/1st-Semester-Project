@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
+using ProjectWebsite.Models;
 
 namespace ProjectWebsite.Pages.Product
 {
@@ -10,14 +11,6 @@ namespace ProjectWebsite.Pages.Product
         public Models.Product Product { get; set; }
         private ProductRepository _productRepository;
 
-        [BindProperty]
-        public string bool0 { get; set; }
-        [BindProperty]
-        public string bool1 { get; set; }
-        [BindProperty]
-        public string bool2 { get; set; }
-        [BindProperty]
-        public string bool3 { get; set; }
         [BindProperty]
         public int amountIN { get; set; }
 
@@ -38,13 +31,11 @@ namespace ProjectWebsite.Pages.Product
 
         public IActionResult OnPost()
         {
-            Console.WriteLine("Testing23");
-            Console.WriteLine(bool0);
-            Console.WriteLine(bool1);
-            Console.WriteLine(bool2);
-            Console.WriteLine(bool3);
             Console.WriteLine(amountIN);
-            
+            Models.Product product = _productRepository.GetProduct(Product.ID);
+            Console.WriteLine(product); 
+            OrderLine temp = new() { Amount = amountIN, Product = product };
+            Order.basket.Add(temp);
             return Page();
         }
     }
