@@ -4,9 +4,7 @@
 }
 
 
-    <h1 class="pb-5 text-center">Vores Produkter</h1>
-
-
+<h1 class="pb-5 text-center">Vores Produkter</h1>
 
 <form method="post" class="form-inline">
     <div class="input-group mb-3">
@@ -29,15 +27,13 @@
     <span asp-validation-for="@Model.SearchString" class="text-danger"></span>
 </form>
 
-
-
-    <div class="container">
-        <div class="row">
-            @foreach (var product in Model.Products)
+<div class="container">
+    <div class="row">
+        @foreach (var product in Model.Products)
             {
                 <div class="col-sm-1 col-lg-4 mb-3">
                     <div class="card" display="inline-block" style="width: 18rem;">
-                        <img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te">
+                    <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
                         <div class="card-body">
                             <h5 class="card-title">@product.Name</h5>
                             <p class="card-text">@product.Description</p>
@@ -46,8 +42,8 @@
                     </div>
                 </div>
             }
-        </div>
     </div>
+</div>
 
 
 
