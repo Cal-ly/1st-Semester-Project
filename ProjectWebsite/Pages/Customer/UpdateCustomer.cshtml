@@ -25,6 +25,19 @@
         <input asp-for="@Model.Customer.PhoneNumber" class="form-control" />
         <span asp-validation-for="@Model.Customer.PhoneNumber" class="text-danger"></span>
     </div>
+    <p>
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-success" />
+            <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-danger" />
+        </div>
+    </p>
+</form>
+
+<p>
+    <a asp-page="/Customer/GetAllCustomers">Back to list</a>
+</p>
+
+
     @* 
     This is commented out because we don't want the user to be able to change the ID of the customer.
     The ID is the primary key, and should not be changed. *@
@@ -34,16 +47,3 @@
         <input asp-for="@Model.Customer.ID" class="form-control" />
         <span asp-validation-for="@Model.Customer.ID" class="text-danger"></span>
     </div>  *@
-    <p>
-        <div class="form-group">
-            <input type="submit" value="Update" class="btn btn-success" />
-            <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-danger" />
-        </div>
-    </p>
-</form>
-
-
-
-<p>
-    <a asp-page="/Customer/GetAllCustomers">Back to list</a>
-</p>

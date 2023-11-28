@@ -8,7 +8,6 @@ namespace ProjectWebsite.Pages.Customer
     {
 		public CustomerRepository CustomerRepository;
 		[BindProperty] public string SearchCustomer { get; set; }
-		//[BindProperty] public Models.Customer Customer { get; set; }
 		[BindProperty] public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
 
 		public GetAllCustomersModel(CustomerRepository service)
@@ -16,16 +15,13 @@ namespace ProjectWebsite.Pages.Customer
 			CustomerRepository = service;
 		}
 
-		public void OnGet()
-		{
-			CustomerList = CustomerRepository.GetList;
-		}
+		public void OnGet()	{ CustomerList = CustomerRepository.GetList; }
 
 		public IActionResult OnPostNameSearch()
 		{
+			if (!ModelState.IsValid) { return Page(); }
 			CustomerList = CustomerRepository.NameSearch(SearchCustomer).ToList();
 			return Page();
 		}
-
 	}
 }
