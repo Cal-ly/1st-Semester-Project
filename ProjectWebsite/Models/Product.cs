@@ -8,7 +8,7 @@
         public string Content { get; set; }
         public string Type { get; set; }
         public double Price { get; set; }
-        public OrderLine.PackageSize packageSize { get; set; }
+        public int Size { get; set; } = 100; //gram
 
         public Product()
         {

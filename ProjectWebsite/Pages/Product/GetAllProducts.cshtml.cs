@@ -13,8 +13,12 @@ namespace ProjectWebsite.Pages.Product
         private ProductService _productService;
 
         [BindProperty]
+        [Required(ErrorMessage = "Du skal skrive noget i søgefeltet")]
+        [Range(typeof(int), minimum: "0", maximum: "100", ErrorMessage = "Prisen skal være mellem {1} og {2}")]
         public int MinPrice { get; set; }
         [BindProperty]
+        [Required(ErrorMessage = "Du skal skrive noget i søgefeltet")]
+        [Range(typeof(int), minimum: "0", maximum: "100", ErrorMessage = "Prisen skal være mellem {1} og {2}")]
         public int MaxPrice { get; set; }
         [BindProperty]
         [Required(ErrorMessage = "Du skal skrive noget i søgefeltet"), MaxLength(10, ErrorMessage ="Din søgning må max indeholde 10 karakterer")]
