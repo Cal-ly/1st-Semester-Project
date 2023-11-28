@@ -17,7 +17,7 @@ namespace ProjectWebsite.Pages.Product
         [BindProperty]
         public int MaxPrice { get; set; }
         [BindProperty]
-        [Required(ErrorMessage = "Du skal skrive noget i søgefeltet"), MaxLength(20)]
+        [Required(ErrorMessage = "Du skal skrive noget i søgefeltet"), MaxLength(10, ErrorMessage ="Din søgning må max indeholde 10 karakterer")]
         public string SearchString { get; set; }
 
 
