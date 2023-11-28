@@ -20,11 +20,8 @@ namespace ProjectWebsite.Services
 
         public void AddOrder(Order order)
         {
-            //Console.WriteLine(order.OrderList.ElementAt(1));
             OrderLog.AddToOrderLog(order);
-
-            JsonOrderService.SaveJsonItems(OrderLog.orderLog);
-
+            //JsonOrderService.SaveJsonItems(OrderLog.orderLog);
         }
 
         public void PlaceOrder(string email)
@@ -32,11 +29,13 @@ namespace ProjectWebsite.Services
             Customer temp2 = customerRepository.EmailSearch(email);
             if (temp2 == null) return;
             int maxID = OrderLog.orderLog.Max(c => c.ID) + 1;
-            Order temp = new() { ID = maxID, TotalPrice = CalculateTotal(Order.basket), CustomerID = temp2.ID };
-            temp.OrderList = new();
-            foreach (OrderLine linje in Order.basket)
-                temp.OrderList.Add(linje);
-            Console.WriteLine(temp.OrderList.Count);
+
+            List<OrderLine> testing = new();
+            //foreach (OrderLine linje in Order.basket)
+            //    testing.Add(linje);
+
+            Order temp = new(); //{ ID = maxID, TotalPrice = CalculateTotal(testing), OrderList = testing, CustomerID = temp2.ID };
+
             //Order.basket = new();
             AddOrder(temp);
         }
@@ -44,7 +43,7 @@ namespace ProjectWebsite.Services
         public double CalculateTotal(List<OrderLine> orderLines)
         {
             double total = 0;
-            foreach (OrderLine line in Order.basket)
+            foreach (OrderLine line in orderLines)
             {
                 total += line.Amount * line.Product.Price;
             }

@@ -25,9 +25,7 @@ namespace ProjectWebsite.Services
 
         public void AddToOrderLog(Order order)
         {
-            //Console.WriteLine(order.OrderList.ElementAt(1));
             orderLog.Add(order);
-            
         }
     }
 }

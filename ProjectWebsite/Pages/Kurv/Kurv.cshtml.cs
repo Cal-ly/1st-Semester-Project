@@ -10,18 +10,15 @@ namespace ProjectWebsite.Pages.Kurv
 
         [BindProperty]
         public string Email { get; set; }
-        private CustomerRepository customerRepository { get; set; }
         private OrderService OrderService { get; set; }
 
-		public KurvModel(CustomerRepository customerRepository , OrderService orderService)
+		public KurvModel( OrderService orderService)
 		{
-			this.customerRepository = customerRepository;
             OrderService = orderService;
         }
 
 		public IActionResult OnGet()
         {
-            Console.WriteLine("Testing");
             return Page();
         }
 
@@ -32,7 +29,7 @@ namespace ProjectWebsite.Pages.Kurv
                 return Page();
             }
             OrderService.PlaceOrder(Email);
-            return RedirectToPage("/Customer/GetAllCustomers");
+            return Page();
         }
 
         //public IActionResult OnPostCancel()
