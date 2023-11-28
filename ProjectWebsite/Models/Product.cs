@@ -10,19 +10,7 @@
         public double Price { get; set; }
         public int Size { get; set; } = 100; //gram
 
-        public Product()
-        {
-        }
-
-        public Product(int id, string name, string description, string content, string type, double price)
-        {
-            ID = id;
-            Name = name;
-            Description = description;
-            Content = content;
-            Type = type;
-            Price = price;
-        }
+        public Product() { }
 
         public override string ToString()
         {

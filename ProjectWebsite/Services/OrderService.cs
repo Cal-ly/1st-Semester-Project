@@ -21,7 +21,7 @@ namespace ProjectWebsite.Services
         public void AddOrder(Order order)
         {
             OrderLog.AddToOrderLog(order);
-            //JsonOrderService.SaveJsonItems(OrderLog.orderLog);
+            JsonOrderService.SaveJsonItems(OrderLog.orderLog);
         }
 
         public void PlaceOrder(string email)
@@ -31,12 +31,12 @@ namespace ProjectWebsite.Services
             int maxID = OrderLog.orderLog.Max(c => c.ID) + 1;
 
             List<OrderLine> testing = new();
-            //foreach (OrderLine linje in Order.basket)
-            //    testing.Add(linje);
+            foreach (OrderLine linje in Order.basket)
+                testing.Add(linje);
 
-            Order temp = new(); //{ ID = maxID, TotalPrice = CalculateTotal(testing), OrderList = testing, CustomerID = temp2.ID };
+            Order temp = new() { ID = maxID, TotalPrice = CalculateTotal(testing), OrderList = testing, CustomerID = temp2.ID };
 
-            //Order.basket = new();
+            Order.basket = new();
             AddOrder(temp);
         }
 

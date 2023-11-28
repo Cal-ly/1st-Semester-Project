@@ -29,7 +29,7 @@ namespace ProjectWebsite.Pages.Kurv
                 return Page();
             }
             OrderService.PlaceOrder(Email);
-            return Page();
+            return RedirectToPage("/Customer/GetAllCustomers");
         }
 
         //public IActionResult OnPostCancel()

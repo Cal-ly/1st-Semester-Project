@@ -9,34 +9,13 @@ namespace ProjectWebsite.Models
         public int ID { get; set; }
         public int CustomerID { get; set; }
         public double TotalPrice { get; set; }
+        public List<OrderLine> OrderList { get; set; }
 
-        public List<OrderLine> OrderList = new();
+        public Order() { }
 
-        public Order()
+        public override string ToString()
         {
-            
+            return $"{{{nameof(ID)}={ID.ToString()}, {nameof(CustomerID)}={CustomerID.ToString()}, {nameof(TotalPrice)}={TotalPrice.ToString()}, {nameof(OrderList)}={OrderList}}}";
         }
-
-
-
-        //public double CalculateTotalPrice()
-        //{
-        //    return;
-        //}
-
-        //public Customer GetCustomer(int customerID)
-        //{
-        //    foreach (Customer c in CustomerList)
-        //    {
-        //        if (c.ID == customerID)
-        //            return c;
-        //    }
-        //    return null;
-        //}
-
-        //public Product GetProduct(int productID)
-        //{
-        //    return;
-        //}
     }
 }

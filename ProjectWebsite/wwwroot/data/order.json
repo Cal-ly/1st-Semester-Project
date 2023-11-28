@@ -2,31 +2,62 @@
   {
     "ID": 1,
     "CustomerID": 2,
-    "TotalPrice": 0
+    "TotalPrice": 0,
+    "OrderList": null
   },
   {
     "ID": 1,
     "CustomerID": 2,
-    "TotalPrice": 0
+    "TotalPrice": 0,
+    "OrderList": null
   },
   {
     "ID": 2,
     "CustomerID": 2,
-    "TotalPrice": 0
+    "TotalPrice": 0,
+    "OrderList": null
   },
   {
     "ID": 3,
     "CustomerID": 2,
-    "TotalPrice": 680
+    "TotalPrice": 680,
+    "OrderList": null
   },
   {
     "ID": 4,
     "CustomerID": 1,
-    "TotalPrice": 6800
+    "TotalPrice": 6800,
+    "OrderList": null
   },
   {
     "ID": 5,
     "CustomerID": 2,
-    "TotalPrice": 50
+    "TotalPrice": 50,
+    "OrderList": null
+  },
+  {
+    "ID": 6,
+    "CustomerID": 1,
+    "TotalPrice": 100,
+    "OrderList": null
+  },
+  {
+    "ID": 7,
+    "CustomerID": 1,
+    "TotalPrice": 5000,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ]
   }
 ]
