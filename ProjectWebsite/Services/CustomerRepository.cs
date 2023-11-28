@@ -26,14 +26,7 @@ namespace ProjectWebsite.Services
 		public int GetNextID()
 		{
 			int nextID = CustomerList.Max(c => c.ID) + 1;
-			if (nextID <= NextID)
-			{
-				nextID = NextID + 1;
-			}
-			else
-			{
-				NextID = nextID;
-			}
+            if (nextID <= NextID) { nextID = NextID + 1; }
 			NextID = nextID;
 			return nextID;
 		}
@@ -48,8 +41,6 @@ namespace ProjectWebsite.Services
 	        {
 		        throw new ArgumentNullException(nameof(customerIn));
 	        }
-	        //Customer _customer = customerIn;
-	        //_customer.ID = GetNextID();
 	        CustomerList.Add(customerIn);
 	        JsonFileCustomerService.SaveJsonItems(CustomerList);
         }
@@ -121,6 +112,14 @@ namespace ProjectWebsite.Services
                     searchResult.Add(c);
             }
             return searchResult;
+        }
+
+        public Customer EmailSearch(string Email)
+        {
+            foreach (Customer c in CustomerList)
+                if (c.Email.ToLower().Contains(Email.ToLower()))
+                    return c;
+            return null;
         }
     }
 }
