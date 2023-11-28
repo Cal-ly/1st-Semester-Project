@@ -10,6 +10,8 @@ builder.Services.AddTransient<JsonFileCustomerService>();
 builder.Services.AddSingleton<ProductService, ProductService>();
 builder.Services.AddSingleton<CustomerRepository, CustomerRepository>();
 builder.Services.AddSingleton<ProductRepository, ProductRepository>();
+builder.Services.AddSingleton<JsonOrderService, JsonOrderService > ();
+builder.Services.AddSingleton<OrderService, OrderService>();
 
 var app = builder.Build();
 
