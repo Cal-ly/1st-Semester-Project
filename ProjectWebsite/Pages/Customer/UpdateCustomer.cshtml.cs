@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
 
-
 /*
 TO BE IMPLEMENTED: 
 PROPERTIES: Change name of service to match implemented service
@@ -34,8 +33,7 @@ namespace ProjectWebsite.Pages.Customer
 			{
 				return Page();
 			}
-			//doesn't actually update yet since the method isn't implemented
-            CustomerRepository.UpdateCustomer(Customer, Customer.ID);
+            CustomerRepository.UpdateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
 		}
         public IActionResult OnPostCancel()

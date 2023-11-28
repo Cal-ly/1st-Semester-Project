@@ -21,10 +21,24 @@
     "PhoneNumber": "93485787"
   },
   {
-    "ID": 0,
+    "ID": 4,
+    "Name": "Jarl Bl\u00E5",
+    "Address": "Jarlvej 33",
+    "Email": "Karlen@jarlen.dk",
+    "PhoneNumber": "40506070"
+  },
+  {
+    "ID": 5,
     "Name": "Jarl Gr\u00E5",
-    "Address": "Gr\u00E5vej 2",
+    "Address": "Jarlvej 35",
+    "Email": "Karlen@jarlen.dk",
+    "PhoneNumber": "40506070"
+  },
+  {
+    "ID": 6,
+    "Name": "Jarl gr\u00F8n",
+    "Address": "Jarlvej 34",
     "Email": "Lalalla@gmail.com",
-    "PhoneNumber": "50607080"
+    "PhoneNumber": "40506070"
   }
 ]
