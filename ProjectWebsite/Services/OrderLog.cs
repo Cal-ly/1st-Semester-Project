@@ -1,9 +1,11 @@
-﻿namespace ProjectWebsite.Models
+﻿using ProjectWebsite.Models;
+
+namespace ProjectWebsite.Services
 {
     public class OrderLog
     {
-        private List<Order> orderLog { get; set; }
-        
+        public List<Order> orderLog { get; set; }
+
         public Order SearchOrder(int orderID)
         {
             foreach (Order order in orderLog)
@@ -19,6 +21,12 @@
                 if (order.CustomerID == customerID)
                     customersOrders.Add(order);
             return customersOrders;
+        }
+
+        public void AddToOrderLog(Order order)
+        {
+            orderLog.Add(order);
+
         }
     }
 }

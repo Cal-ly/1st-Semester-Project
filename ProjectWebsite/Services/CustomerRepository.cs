@@ -113,5 +113,13 @@ namespace ProjectWebsite.Services
             }
             return searchResult;
         }
+
+        public Customer EmailSearch(string Email)
+        {
+            foreach (Customer c in CustomerList)
+                if (c.Email.ToLower().Contains(Email.ToLower()))
+                    return c;
+            return null;
+        }
     }
 }

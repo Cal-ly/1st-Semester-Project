@@ -18,7 +18,9 @@ namespace ProjectWebsite.Services
             List<Product> filterList = new List<Product>();
             foreach (Product product in Products)
             {
-                if ((minPrice == 0 && product.Price <= maxPrice) || (maxPrice == 0 && product.Price >= minPrice) || (product.Price >= minPrice && product.Price <= maxPrice))
+                if ((minPrice == 0 && product.Price <= maxPrice) || 
+                    (maxPrice == 0 && product.Price >= minPrice) || 
+                    (product.Price >= minPrice && product.Price <= maxPrice))
                 {
                     filterList.Add(product);
                 }

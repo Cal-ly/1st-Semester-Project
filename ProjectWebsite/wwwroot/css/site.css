@@ -20,3 +20,31 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.br {
+    display: block;
+    margin-bottom: 0em;
+}
+
+.brmedium {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.brlarge {
+    display: block;
+    margin-bottom: 3em;
+}
+.brxlarge {
+    display: block;
+    margin-bottom: 7em;
+}
+.brsmall {
+    display: block;
+    margin-bottom: -0.4em;
+}
+
+.brxsmall {
+    display: block;
+    margin-bottom: -2em;
+} 

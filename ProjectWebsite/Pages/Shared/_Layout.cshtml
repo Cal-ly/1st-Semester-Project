@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjectWebsite.styles.css" asp-append-version="true" />
-    
+
     <link rel="stylesheet" href="~/lib/fontawesome/css/fontawesome.min.css" />
     <link rel="stylesheet" href="~/lib/fontawesome/css/regular.min.css" />
     <link rel="stylesheet" href="~/lib/fontawesome/css/solid.min.css" />
@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <img src="/img/placeholder.jpg" height="20"/>
+                <img src="/img/placeholder.jpg" height="20" />
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Blues Brews</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -37,8 +37,8 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Customer/GetAllCustomers">Om</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav flex-grow-2"  >
-                        <li class="nav-item" >
+                    <ul class="navbar-nav flex-grow-2">
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/login"><i class="fa fa-user fa-lg"></i></a>
                         </li>
                         <li>
@@ -52,14 +52,40 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-                                            @RenderBody()
+            @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted" style="position:relative; margin-top:auto;">
-        <div class="container">
-            &copy; 2023 - Blues Brews - Åbningstider: Man-Tors 9-18 Fre 9-17:30 Lør 9-14 Søn Lukket <br />
-            Brug for hjælp? <a asp-area="" asp-page="/faq">FAQ</a> Addresse Addresse 14, 1234 by  
+        <div class="grid-container" style="display: grid;grid-template-columns: auto auto auto; margin-left:20px; text-align:left;">
+            <div class="grid-item" @* justify-content-left mx-5 mx-sm-0 *@>
+                @* <div class="col-sm-4 col-lg-3  " style="background-color:red;"> *@
+                <span class="brxlarge"></span>
+                Brug for hjælp? <a asp-area="" asp-page="/faq">FAQ</a>
+            </div>
+            <div class="grid-item">
+                Addresse Addresse 14
+                <span class="brxsmall"></span>
+                1234 by
+                <span class="brxsmall"></span>
+                +45 12 345 678
+                <span class="brsmall"></span>
+                &copy; 2023 - Blues Brews
+
+            </div>
+            <div class="grid-item">
+                Åbningstider:
+                <span class="brxsmall"></span>
+                Man-Tors 9-18
+                <span class="brxsmall"></span>
+                Fre 9-17:30
+                <span class="brxsmall"></span>
+                Lør 9-14
+                <span class="brxsmall"></span>
+                Søn Lukket
+                <span class="brsmall"></span>
+            </div>
+
         </div>
     </footer>
 
@@ -67,6 +93,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-                @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
