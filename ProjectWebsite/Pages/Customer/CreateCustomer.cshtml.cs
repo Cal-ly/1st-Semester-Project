@@ -1,14 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
-using System;
-
-/*
-TO BE IMPLEMENTED: 
-PROPERTIES: Change name of service to match implemented service
-CONSTRUCTOR: Change name of service to match implemented service
-METHOD: Change name of service to match implemented service
-*/
 
 namespace ProjectWebsite.Pages.Customer
 {
@@ -21,25 +13,15 @@ namespace ProjectWebsite.Pages.Customer
 			CustomerRepository = service;
 		}
 
-		public IActionResult OnGet()
-		{
-			return Page();
-		}
+		public IActionResult OnGet() { return Page(); }
 
 		public IActionResult OnPost()
 		{
-			if (!ModelState.IsValid)
-			{
-				return Page();
-			}
+			if (!ModelState.IsValid) { return Page(); }
 			Customer.ID = CustomerRepository.GetNextID();
             CustomerRepository.CreateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
 		}
-
-        public IActionResult OnPostCancel()
-        {
-            return RedirectToPage("GetAllCustomers");
-        }
-    }
+		public IActionResult OnPostCancel() { return RedirectToPage("GetAllCustomers"); }
+	}
 }

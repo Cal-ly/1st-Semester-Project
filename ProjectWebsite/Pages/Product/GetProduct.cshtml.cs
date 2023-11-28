@@ -35,7 +35,7 @@ namespace ProjectWebsite.Pages.Product
             Models.Product product = _productRepository.GetProduct(Product.ID);
             Console.WriteLine(product); 
             OrderLine temp = new() { Amount = amountIN, Product = product };
-            Order.kurven.Add(temp);
+            Order.basket.Add(temp);
             return Page();
         }
     }
