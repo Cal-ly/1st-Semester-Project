@@ -15,7 +15,7 @@ namespace ProjectWebsite.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "order.json"); }
         }
 
-        public void SaveJsonItems(List<Order> products)
+        public void SaveJsonItems(List<Order> orders)
         {
             using (FileStream jsonFileWriter = File.Create(JsonFileName))
             {
@@ -24,7 +24,7 @@ namespace ProjectWebsite.Services
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<Order[]>(jsonWriter, products.ToArray());
+                JsonSerializer.Serialize<Order[]>(jsonWriter, orders.ToArray());
             }
         }
 

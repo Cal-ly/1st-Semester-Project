@@ -20,7 +20,9 @@ namespace ProjectWebsite.Services
 
         public void AddOrder(Order order)
         {
+            Console.WriteLine(order.OrderList.ElementAt(1));
             OrderLog.AddToOrderLog(order);
+
             JsonOrderService.SaveJsonItems(OrderLog.orderLog);
 
         }
@@ -33,15 +35,22 @@ namespace ProjectWebsite.Services
             if (temp2 == null) return;
             int maxID = OrderLog.orderLog.Max(c => c.ID) + 1;
             Console.WriteLine(maxID);
-            Order temp = new() { ID = maxID, TotalPrice = CalculateTotal(Order.kurven), OrderList = Order.kurven, CustomerID = 2 };
-            Order.kurven = new();
+            Console.WriteLine(Order.basket);
+            foreach(OrderLine linje in Order.basket)
+                Console.WriteLine(linje);
+            Order temp = new() { ID = maxID, TotalPrice = CalculateTotal(Order.basket), CustomerID = temp2.ID };
+            Order.basket = new();
+            Console.WriteLine(temp.OrderList);
+            foreach (OrderLine linje in temp.OrderList)
+                Console.WriteLine(linje);
+            temp.OrderList = Order.basket;
             AddOrder(temp);
         }
 
         public double CalculateTotal(List<OrderLine> orderLines)
         {
             double total = 0;
-            foreach (OrderLine line in Order.kurven)
+            foreach (OrderLine line in Order.basket)
             {
                 total += line.Amount * line.Product.Price;
             }
