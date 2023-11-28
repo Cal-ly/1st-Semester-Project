@@ -6,8 +6,6 @@ namespace ProjectWebsite.Services
     {
         public Order Order { get; set; }
 
-
-
         
     }
 }
