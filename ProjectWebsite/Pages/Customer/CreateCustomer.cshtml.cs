@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
+using System;
 
 /*
 TO BE IMPLEMENTED: 
@@ -31,6 +32,7 @@ namespace ProjectWebsite.Pages.Customer
 			{
 				return Page();
 			}
+			Customer.ID = CustomerRepository.GetNextID();
             CustomerRepository.CreateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
 		}

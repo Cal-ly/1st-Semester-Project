@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectWebsite.Pages.Product
 {
@@ -11,9 +12,14 @@ namespace ProjectWebsite.Pages.Product
         private JsonProductService _jsonService;
         private ProductService _productService;
 
-        [BindProperty] public int MinPrice { get; set; }
-        [BindProperty] public int MaxPrice { get; set; }
-        [BindProperty] public string SearchString { get; set; }
+        [BindProperty]
+        public int MinPrice { get; set; }
+        [BindProperty]
+        public int MaxPrice { get; set; }
+        [BindProperty]
+        [Required(ErrorMessage = "Du skal skrive noget i søgefeltet"), MaxLength(10, ErrorMessage ="Din søgning må max indeholde 10 karakterer")]
+        public string SearchString { get; set; }
+
 
         public GetAllProductsModel(JsonProductService jsonService, ProductService productService)
         {
@@ -34,7 +40,12 @@ namespace ProjectWebsite.Pages.Product
 
         public IActionResult OnPostNameSearch()
         {
-            Products = _productService.NameSearch(SearchString).ToList();
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                Products = _productService.NameSearch(SearchString).ToList();
+                return Page();
+            }
+            Products = _jsonService.GetJsonItems().ToList();
             return Page();
         }
     }
