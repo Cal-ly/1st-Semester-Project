@@ -24,18 +24,24 @@
                     <form method="post">
                         <div class="form-group">
                             <label asp-for="MinPrice">Min pris</label>
-                            <input asp-for="MinPrice" class="form-control" placeholder="0 kr" />
+                            <input asp-for="MinPrice" type="text" class="form-control" placeholder="0 kr" />
+                            <span asp-validation-for="MinPrice" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="MaxPrice">Max pris</label>
-                            <input asp-for="MaxPrice" class="form-control" placeholder="100 kr" />
+                            <input asp-for="MaxPrice" type="text" class="form-control" placeholder="100 kr" />
+                            <span asp-validation-for="MaxPrice" class="text-danger"></span>
                         </div>
                         <div>
                             <input type="submit" asp-page-handler="PriceFilter" value="Filter" class="btn btn-primary mt-2" />
                         </div>
                     </form>
                 </div>
-            </div>           
+            </div>
+            
+            <div>
+                <a class="btn btn-primary mt-2" type="button" title="Nulstil filtre" asp-page="GetAllProducts">Nulstil filtre</a>
+            </div>
             
         </div>
         <div class="col-10">
