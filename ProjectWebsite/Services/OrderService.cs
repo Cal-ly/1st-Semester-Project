@@ -20,7 +20,7 @@ namespace ProjectWebsite.Services
 
         public void AddOrder(Order order)
         {
-            Console.WriteLine(order.OrderList.ElementAt(1));
+            //Console.WriteLine(order.OrderList.ElementAt(1));
             OrderLog.AddToOrderLog(order);
 
             JsonOrderService.SaveJsonItems(OrderLog.orderLog);
@@ -29,21 +29,15 @@ namespace ProjectWebsite.Services
 
         public void PlaceOrder(string email)
         {
-            Console.WriteLine("It works 1");
             Customer temp2 = customerRepository.EmailSearch(email);
-            Console.WriteLine(temp2);
             if (temp2 == null) return;
             int maxID = OrderLog.orderLog.Max(c => c.ID) + 1;
-            Console.WriteLine(maxID);
-            Console.WriteLine(Order.basket);
-            foreach(OrderLine linje in Order.basket)
-                Console.WriteLine(linje);
             Order temp = new() { ID = maxID, TotalPrice = CalculateTotal(Order.basket), CustomerID = temp2.ID };
-            Order.basket = new();
-            Console.WriteLine(temp.OrderList);
-            foreach (OrderLine linje in temp.OrderList)
-                Console.WriteLine(linje);
-            temp.OrderList = Order.basket;
+            temp.OrderList = new();
+            foreach (OrderLine linje in Order.basket)
+                temp.OrderList.Add(linje);
+            Console.WriteLine(temp.OrderList.Count);
+            //Order.basket = new();
             AddOrder(temp);
         }
 
