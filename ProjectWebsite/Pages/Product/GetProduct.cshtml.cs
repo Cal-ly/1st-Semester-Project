@@ -11,14 +11,6 @@ namespace ProjectWebsite.Pages.Product
         private ProductRepository _productRepository;
 
         [BindProperty]
-        public string bool0 { get; set; }
-        [BindProperty]
-        public string bool1 { get; set; }
-        [BindProperty]
-        public string bool2 { get; set; }
-        [BindProperty]
-        public string bool3 { get; set; }
-        [BindProperty]
         public int amountIN { get; set; }
 
 
@@ -38,11 +30,6 @@ namespace ProjectWebsite.Pages.Product
 
         public IActionResult OnPost()
         {
-            Console.WriteLine("Testing23");
-            Console.WriteLine(bool0);
-            Console.WriteLine(bool1);
-            Console.WriteLine(bool2);
-            Console.WriteLine(bool3);
             Console.WriteLine(amountIN);
             
             return Page();
