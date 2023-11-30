@@ -26,7 +26,7 @@ namespace ProjectWebsite.Services
         public void PlaceOrder(string email)
         {
             //Gets reference to customer (if customer with that email doesn't exist then abort the method
-            Customer customerWhoMadeOrder = CustomerRepository.EmailSearch(email);
+            Customer customerWhoMadeOrder = CustomerRepository.GetCustomerByEmail(email);
             if (customerWhoMadeOrder == null) return;
 
             //gets the ID for the new Order object
