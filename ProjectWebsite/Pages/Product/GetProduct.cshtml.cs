@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Services;
 using ProjectWebsite.Models;
 
 namespace ProjectWebsite.Pages.Product

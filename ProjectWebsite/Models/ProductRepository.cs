@@ -1,6 +1,6 @@
-﻿using ProjectWebsite.Models;
+﻿using ProjectWebsite.Services;
 
-namespace ProjectWebsite.Services
+namespace ProjectWebsite.Models
 {
     public class ProductRepository
     {

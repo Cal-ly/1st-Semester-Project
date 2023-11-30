@@ -1,8 +1,6 @@
-﻿using ProjectWebsite.Models;
-
-namespace ProjectWebsite.Services
+﻿namespace ProjectWebsite.Models
 {
-    public class OrderLog
+    public class OrderRepository
     {
         public List<Order> orderLog { get; set; }
 

@@ -6,7 +6,7 @@ namespace ProjectWebsite.Services
     {
 		
 		public Order Order { get; set; }
-        private OrderLog OrderLog { get; set; }
+        private OrderRepository OrderLog { get; set; }
         private JsonOrderService JsonOrderService { get; set; }
         private CustomerRepository customerRepository { get; set; }
 

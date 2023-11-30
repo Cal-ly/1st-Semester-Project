@@ -1,6 +1,6 @@
-﻿using ProjectWebsite.Models;
+﻿using ProjectWebsite.Services;
 
-namespace ProjectWebsite.Services
+namespace ProjectWebsite.Models
 {
     /// <summary>
     /// Represents a repository for managing customer data.
@@ -24,12 +24,12 @@ namespace ProjectWebsite.Services
 		/// </summary>
 		/// <returns>The next available ID for a new customer.</returns>
 		public int GetNextID()
-		{
-			int nextID = CustomerList.Max(c => c.ID) + 1;
+        {
+            int nextID = CustomerList.Max(c => c.ID) + 1;
             if (nextID <= NextID) { nextID = NextID + 1; }
-			NextID = nextID;
-			return nextID;
-		}
+            NextID = nextID;
+            return nextID;
+        }
 
         /// <summary>
         /// Creates a new customer.
@@ -38,11 +38,11 @@ namespace ProjectWebsite.Services
         public void CreateCustomer(Customer customerIn)
         {
             if (customerIn == null)
-	        {
-		        throw new ArgumentNullException(nameof(customerIn));
-	        }
-	        CustomerList.Add(customerIn);
-	        JsonFileCustomerService.SaveJsonItems(CustomerList);
+            {
+                throw new ArgumentNullException(nameof(customerIn));
+            }
+            CustomerList.Add(customerIn);
+            JsonFileCustomerService.SaveJsonItems(CustomerList);
         }
 
         /// <summary>
