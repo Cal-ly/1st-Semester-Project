@@ -1,7 +1,7 @@
 ﻿using ProjectWebsite.Models;
-using ProjectWebsite.Services;
-namespace ProjectWebsite.Services
+using ProjectWebsite.Repositories;
 
+namespace ProjectWebsite.Services
 {
     public class ProductService
     {

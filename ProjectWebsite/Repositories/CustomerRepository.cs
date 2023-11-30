@@ -23,7 +23,7 @@ namespace ProjectWebsite.Repositories
 		/// It retrieves the Max (largest) ID from the CustomerList and adds 1 to it.
 		/// </summary>
 		/// <returns>The next available ID for a new customer.</returns>
-		private int GetNextID()
+		public int GetNextID()
         {
             int nextID = CustomerList.Max(c => c.ID) + 1;
             if (nextID <= NextID) { nextID = NextID + 1; }
