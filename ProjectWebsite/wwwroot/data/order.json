@@ -154,5 +154,13 @@
     "OrderList": [],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
+  },
+  {
+    "ID": 13,
+    "CustomerID": 1,
+    "TotalPrice": 0,
+    "OrderList": [],
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   }
 ]

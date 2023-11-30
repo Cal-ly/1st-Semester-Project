@@ -14,7 +14,7 @@ namespace ProjectWebsite.Repositories
             OrderList = JsonOrderService.GetJsonItems().ToList();
         }
 
-        public Order SearchOrder(int orderID)
+        public Order GetOrder(int orderID)
         {
             foreach (Order order in OrderList)
                 if (order.ID == orderID)
@@ -31,7 +31,7 @@ namespace ProjectWebsite.Repositories
             return customersOrders;
         }
 
-        public void AddToOrderLog(Order order)
+        public void AddOrder(Order order)
         {
             OrderList.Add(order);
             JsonOrderService.SaveJsonItems(OrderList);
@@ -39,7 +39,7 @@ namespace ProjectWebsite.Repositories
 
         public bool FinishOrder(int orderID)
         {
-            Order finishMe = SearchOrder(orderID);
+            Order finishMe = GetOrder(orderID);
             if (finishMe != null)
             {
                 finishMe.Finished = true;
