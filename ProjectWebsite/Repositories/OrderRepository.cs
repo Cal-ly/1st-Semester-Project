@@ -36,5 +36,18 @@ namespace ProjectWebsite.Repositories
             OrderList.Add(order);
             JsonOrderService.SaveJsonItems(OrderList);
         }
+
+        public bool FinishOrder(int orderID)
+        {
+            Order finishMe = SearchOrder(orderID);
+            if (finishMe != null)
+            {
+                finishMe.Finished = true;
+                finishMe.DateFinished = DateTime.Now;
+                JsonOrderService.SaveJsonItems(OrderList);
+                return true;
+            }
+            return false;
+        }
     }
 }

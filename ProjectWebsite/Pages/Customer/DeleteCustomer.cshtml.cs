@@ -1,22 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Repositories;
+using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Customer
 {
     public class DeleteCustomerModel : PageModel
     {
 
-		public CustomerRepository CustomerRepository;
+		public CustomerService CustomerService;
 		[BindProperty] public Models.Customer Customer { get; set; }
-		public DeleteCustomerModel(CustomerRepository service)
+		public DeleteCustomerModel(CustomerService customerService)
 		{
-			CustomerRepository = service;
+			CustomerService = customerService;
 		}
 
 		public IActionResult OnGet(int id)
 		{
-			Customer = CustomerRepository.GetCustomer(id);
+			Customer = CustomerService.GetCustomerID(id);
 			if (Customer == null)
 				return RedirectToPage("/Error"); //Define NotFound page
 			return Page();
@@ -26,7 +26,7 @@ namespace ProjectWebsite.Pages.Customer
 		{
 			if (!ModelState.IsValid) { return Page(); }
 			//if DeleteCustomer return false (fail) then redirect to error page
-			if (!CustomerRepository.DeleteCustomer(Customer.ID))
+			if (!CustomerService.DeleteCustomer(Customer.ID))
 				return RedirectToPage("/Error"); //Define NotFound page
 
 			return RedirectToPage("GetAllCustomers");

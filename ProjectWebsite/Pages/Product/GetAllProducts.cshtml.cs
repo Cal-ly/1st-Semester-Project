@@ -7,9 +7,9 @@ namespace ProjectWebsite.Pages.Product
 {
     public class GetAllProductsModel : PageModel
     {
-        public List<Models.Product> Products { get; private set; } = new();
+        public List<Models.Product> Products { get; private set; }
 
-        private ProductService _productService;
+        private ProductService ProductService { get; set; }
 
         [BindProperty]
         [Required(ErrorMessage = "Du skal skrive noget i søgefeltet")]
@@ -26,17 +26,17 @@ namespace ProjectWebsite.Pages.Product
 
         public GetAllProductsModel(ProductService productService)
         {
-            _productService = productService;
+            ProductService = productService;
         }
 
         public void OnGet()
         {
-            Products = _productService.ProductList;
+            Products = ProductService.ProductList;
         }
 
         public IActionResult OnPostPriceFilter()
         {
-            Products = _productService.PriceFilter(MaxPrice, MinPrice).ToList();
+            Products = ProductService.PriceFilter(MaxPrice, MinPrice).ToList();
             return Page();
         }
 
@@ -44,10 +44,10 @@ namespace ProjectWebsite.Pages.Product
         {
             if (!String.IsNullOrEmpty(SearchString))
             {
-                Products = _productService.NameSearch(SearchString).ToList();
+                Products = ProductService.NameSearch(SearchString).ToList();
                 return Page();
             }
-            Products = _productService.ProductList;
+            Products = ProductService.ProductList;
             return Page();
         }
     }

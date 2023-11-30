@@ -1,16 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Repositories;
+using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Customer
 {
     public class CreateCustomerModel : PageModel
     {
-		public CustomerRepository CustomerRepository;
+		public CustomerService CustomerService;
 		[BindProperty] public Models.Customer Customer { get; set; }
-		public CreateCustomerModel(CustomerRepository service)
+		public CreateCustomerModel(CustomerService customerService)
 		{
-			CustomerRepository = service;
+			CustomerService = customerService;
 		}
 
 		public IActionResult OnGet() { return Page(); }
@@ -18,8 +18,8 @@ namespace ProjectWebsite.Pages.Customer
 		public IActionResult OnPost()
 		{
 			if (!ModelState.IsValid) { return Page(); }
-			Customer.ID = CustomerRepository.GetNextID();
-            CustomerRepository.CreateCustomer(Customer);
+			Customer.ID = CustomerService.GetNextID();
+            CustomerService.CreateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
 		}
 		public IActionResult OnPostCancel() { return RedirectToPage("GetAllCustomers"); }
