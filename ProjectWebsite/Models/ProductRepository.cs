@@ -5,7 +5,6 @@ namespace ProjectWebsite.Models
     public class ProductRepository
     {
         public List<Product> ProductList { get; set; }
-        private static int nextID;
         private JsonProductService JsonProductService { get; set; }
 
         public ProductRepository(JsonProductService jsonProductService)

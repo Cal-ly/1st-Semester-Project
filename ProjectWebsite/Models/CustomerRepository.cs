@@ -8,14 +8,13 @@ namespace ProjectWebsite.Models
     public class CustomerRepository
     {
         public static int NextID = 1;
-        private JsonFileCustomerService JsonFileCustomerService { get; set; }
-        public List<Customer> GetList { get { return CustomerList; } }
-        public List<Customer> CustomerList = new List<Customer>();
+        public List<Customer> CustomerList { get; set; }
+        private JsonCustomerService JsonCustomerService { get; set; }
 
-        public CustomerRepository(JsonFileCustomerService jsonFileCustomerService)
+        public CustomerRepository(JsonCustomerService jsonFileCustomerService)
         {
-            JsonFileCustomerService = jsonFileCustomerService;
-            CustomerList = JsonFileCustomerService.GetJsonItems().ToList();
+            JsonCustomerService = jsonFileCustomerService;
+            CustomerList = JsonCustomerService.GetJsonItems().ToList();
         }
 
         /// <summary>
@@ -23,7 +22,7 @@ namespace ProjectWebsite.Models
 		/// It retrieves the Max (largest) ID from the CustomerList and adds 1 to it.
 		/// </summary>
 		/// <returns>The next available ID for a new customer.</returns>
-		public int GetNextID()
+		private int GetNextID()
         {
             int nextID = CustomerList.Max(c => c.ID) + 1;
             if (nextID <= NextID) { nextID = NextID + 1; }
@@ -42,7 +41,7 @@ namespace ProjectWebsite.Models
                 throw new ArgumentNullException(nameof(customerIn));
             }
             CustomerList.Add(customerIn);
-            JsonFileCustomerService.SaveJsonItems(CustomerList);
+            JsonCustomerService.SaveJsonItems(CustomerList);
         }
 
         /// <summary>
@@ -52,11 +51,9 @@ namespace ProjectWebsite.Models
         /// <returns>The customer with the specified ID, or null if not found.</returns>
         public Customer GetCustomer(int customerID)
         {
-            foreach (Customer c in CustomerList)
-            {
-                if (c.ID == customerID)
-                    return c;
-            }
+            foreach (Customer customer in CustomerList)
+                if (customer.ID == customerID)
+                    return customer;
             return null;
         }
 
@@ -75,7 +72,7 @@ namespace ProjectWebsite.Models
                     outgoingC.Address = incomingC.Address;
                     outgoingC.Email = incomingC.Email;
                     outgoingC.PhoneNumber = incomingC.PhoneNumber;
-                    JsonFileCustomerService.SaveJsonItems(CustomerList);
+                    JsonCustomerService.SaveJsonItems(CustomerList);
                 }
             }
             return incomingC; //TODO: Display updated customer
@@ -92,7 +89,7 @@ namespace ProjectWebsite.Models
             if (customerToBeDeleted != null)
             {
                 CustomerList.Remove(customerToBeDeleted);
-                JsonFileCustomerService.SaveJsonItems(CustomerList);
+                JsonCustomerService.SaveJsonItems(CustomerList);
                 return true;
             }
             return false;
