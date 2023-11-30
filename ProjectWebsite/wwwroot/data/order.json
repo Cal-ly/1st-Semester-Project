@@ -117,5 +117,26 @@
     ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
+  },
+  {
+    "ID": 10,
+    "CustomerID": 2,
+    "TotalPrice": 33300,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 666
+      }
+    ],
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   }
 ]

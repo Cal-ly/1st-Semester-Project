@@ -26,27 +26,25 @@ namespace ProjectWebsite.Services
 
         public void PlaceOrder(string email)
         {
-            Customer temp2 = customerRepository.EmailSearch(email);
-            if (temp2 == null) return;
-            int maxID = OrderLog.orderLog.Max(c => c.ID) + 1;
+            //Gets reference to customer (if customer with that email doesn't exist then abort the method
+            Customer customerWhoMadeOrder = customerRepository.EmailSearch(email);
+            if (customerWhoMadeOrder == null) return;
 
-            List<OrderLine> testing = new();
-            foreach (OrderLine linje in Order.basket)
-                testing.Add(linje);
+            //gets the ID for the new Order objekt
+            int maxID = OrderLog.orderLog.Max(c => c.ID) + 1; 
 
-            Order temp = new() { ID = maxID, TotalPrice = CalculateTotal(testing), OrderList = testing, CustomerID = temp2.ID };
+            Order.basket = new(); //resets the basket
 
-            Order.basket = new();
-            AddOrder(temp);
+            //creates new Order object with ID, TotalPrice, OrderList and CustomerID
+            //and immediatly sends its to AddOrder
+            AddOrder(new() { ID = maxID, TotalPrice = CalculateTotal(Order.basket), OrderList = Order.basket, CustomerID = customerWhoMadeOrder.ID });
         }
 
         public double CalculateTotal(List<OrderLine> orderLines)
         {
             double total = 0;
             foreach (OrderLine line in orderLines)
-            {
                 total += line.Amount * line.Product.Price;
-            }
             return total;
         }
 
