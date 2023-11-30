@@ -7,8 +7,12 @@ namespace ProjectWebsite.Pages.Customer
     public class GetAllCustomersModel : PageModel
     {
 		public CustomerService CustomerService;
-		[BindProperty] public string SearchCustomer { get; set; }
-		[BindProperty] public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
+
+		[BindProperty] 
+		public string SearchCustomer { get; set; }
+		
+		[BindProperty] 
+		public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
 
 		public GetAllCustomersModel(CustomerService customerService)
 		{
@@ -20,7 +24,7 @@ namespace ProjectWebsite.Pages.Customer
 		public IActionResult OnPostNameSearch()
 		{
 			if (!ModelState.IsValid) { return Page(); }
-			CustomerList = CustomerService.GetCustomerName(SearchCustomer).ToList();
+			CustomerList = CustomerService.GetCustomersByName(SearchCustomer).ToList();
 			return Page();
 		}
 	}
