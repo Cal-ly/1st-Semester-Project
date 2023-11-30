@@ -8,6 +8,8 @@ namespace ProjectWebsite.Services
         private OrderRepository OrderRepository { get; set; }
         private CustomerRepository CustomerRepository { get; set; }
 
+        public List<Order> OrderList { get { return OrderRepository.OrderList; } }
+
         public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository)
         {
             OrderRepository = orderRepository;
@@ -15,11 +17,10 @@ namespace ProjectWebsite.Services
         }
 
         #region Repository methods calls
-        public void AddOrder(Order order) { OrderRepository.AddToOrderLog(order); }
+        public void AddOrder(Order order) { OrderRepository.AddOrder(order); }
         public List<Order> GetCustomerOrders(int customerID) { return OrderRepository.GetCustomerOrders(customerID); }
-        public Order GetOrder(int orderID) { return OrderRepository.SearchOrder(orderID); }
+        public Order GetOrder(int orderID) { return OrderRepository.GetOrder(orderID); }
         public bool FinishOrder(int orderID) { return OrderRepository.FinishOrder(orderID); }
-        public List<Order> OrderList { get { return OrderRepository.OrderList; } }
         #endregion
 
         public void PlaceOrder(string email)
@@ -28,13 +29,13 @@ namespace ProjectWebsite.Services
             Customer customerWhoMadeOrder = CustomerRepository.EmailSearch(email);
             if (customerWhoMadeOrder == null) return;
 
-            //gets the ID for the new Order objekt
+            //gets the ID for the new Order object
             int maxID = OrderList.Max(c => c.ID) + 1; 
 
             Order.basket = new(); //resets the basket
 
             //creates new Order object with ID, TotalPrice, OrderList and CustomerID
-            //and immediatly sends its to AddOrder
+            //and immediately sends its to AddOrder
             AddOrder(new() { ID = maxID, TotalPrice = CalculateTotal(Order.basket), OrderList = Order.basket, CustomerID = customerWhoMadeOrder.ID });
         }
 
