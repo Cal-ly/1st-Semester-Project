@@ -1,6 +1,7 @@
-﻿using ProjectWebsite.Services;
+﻿using ProjectWebsite.Models;
+using ProjectWebsite.Services;
 
-namespace ProjectWebsite.Models
+namespace ProjectWebsite.Repositories
 {
     /// <summary>
     /// Represents a repository for managing customer data.

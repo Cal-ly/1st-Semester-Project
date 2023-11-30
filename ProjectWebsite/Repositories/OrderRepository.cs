@@ -1,6 +1,7 @@
-﻿using ProjectWebsite.Services;
+﻿using ProjectWebsite.Models;
+using ProjectWebsite.Services;
 
-namespace ProjectWebsite.Models
+namespace ProjectWebsite.Repositories
 {
     public class OrderRepository
     {
