@@ -7,14 +7,17 @@ namespace ProjectWebsite.Pages.Customer
     public class UpdateCustomerModel : PageModel
 	{
 		public CustomerService CustomerService;
-		[BindProperty] public Models.Customer Customer { get; set; }
+		
+		[BindProperty] 
+		public Models.Customer Customer { get; set; }
+		
 		public UpdateCustomerModel(CustomerService customerService)
 		{
 			CustomerService = customerService;
 		}
 		public IActionResult OnGet(int id)
 		{
-			Customer = CustomerService.GetCustomerID(id);
+			Customer = CustomerService.GetCustomerByID(id);
 			if (Customer == null)
 				return RedirectToPage("/Error"); //Define NotFound page
 			return Page();

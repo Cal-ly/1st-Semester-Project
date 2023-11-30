@@ -4,7 +4,7 @@ namespace ProjectWebsite.Models
 {
     public class Order
     {
-        public static List<OrderLine> basket = new(); //kurven
+        public static List<OrderLine> basket = new(); //The basket
 
         public int ID { get; set; }
         public int CustomerID { get; set; }
@@ -17,7 +17,7 @@ namespace ProjectWebsite.Models
 
         public override string ToString()
         {
-            return $"{{{nameof(ID)}={ID.ToString()}, {nameof(CustomerID)}={CustomerID.ToString()}, {nameof(TotalPrice)}={TotalPrice.ToString()}, {nameof(OrderList)}={OrderList}}}";
+            return $"{{{nameof(ID)}={ID.ToString()}, {nameof(CustomerID)}={CustomerID.ToString()}, {nameof(TotalPrice)}={TotalPrice.ToString()}, {nameof(OrderList)}={OrderList}, {nameof(Finished)}={Finished.ToString()}, {nameof(DateFinished)}={DateFinished.ToString()}}}";
         }
     }
 }

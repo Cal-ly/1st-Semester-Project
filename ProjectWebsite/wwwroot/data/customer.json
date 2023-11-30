@@ -47,12 +47,5 @@
     "Address": "hejhejhejhej",
     "Email": "hej@gmail.com",
     "PhoneNumber": "22212221"
-  },
-  {
-    "ID": 8,
-    "Name": "Test",
-    "Address": "TestAddress",
-    "Email": "TestEmail",
-    "PhoneNumber": "12345678"
   }
 ]

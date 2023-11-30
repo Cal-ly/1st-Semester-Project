@@ -50,7 +50,7 @@ namespace ProjectWebsite.Repositories
         /// </summary>
         /// <param name="customerID">The ID of the customer to retrieve.</param>
         /// <returns>The customer with the specified ID, or null if not found.</returns>
-        public Customer GetCustomer(int customerID)
+        public Customer GetCustomerByID(int customerID)
         {
             foreach (Customer customer in CustomerList)
                 if (customer.ID == customerID)
@@ -86,7 +86,7 @@ namespace ProjectWebsite.Repositories
         /// <returns>True if the customer was successfully deleted, false otherwise.</returns>
         public bool DeleteCustomer(int customerID)
         {
-            Customer customerToBeDeleted = GetCustomer(customerID);
+            Customer customerToBeDeleted = GetCustomerByID(customerID);
             if (customerToBeDeleted != null)
             {
                 CustomerList.Remove(customerToBeDeleted);
@@ -101,7 +101,7 @@ namespace ProjectWebsite.Repositories
         /// </summary>
         /// <param name="searchString">The name to search for.</param>
         /// <returns>A list of customers matching the search criteria.</returns>
-        public List<Customer> NameSearch(string searchString)
+        public List<Customer> GetCustomersByName(string searchString)
         {
             List<Customer> searchResult = new List<Customer>();
             foreach (Customer c in CustomerList)
@@ -112,7 +112,7 @@ namespace ProjectWebsite.Repositories
             return searchResult;
         }
 
-        public Customer EmailSearch(string Email)
+        public Customer GetCustomerByEmail(string Email)
         {
             foreach (Customer c in CustomerList)
                 if (c.Email.ToLower().Contains(Email.ToLower()))

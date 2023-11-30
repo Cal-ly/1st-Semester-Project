@@ -7,7 +7,10 @@ namespace ProjectWebsite.Pages.Customer
     public class CreateCustomerModel : PageModel
     {
 		public CustomerService CustomerService;
-		[BindProperty] public Models.Customer Customer { get; set; }
+
+		[BindProperty]
+		public Models.Customer Customer { get; set; }
+		
 		public CreateCustomerModel(CustomerService customerService)
 		{
 			CustomerService = customerService;
@@ -22,6 +25,7 @@ namespace ProjectWebsite.Pages.Customer
             CustomerService.CreateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
 		}
+
 		public IActionResult OnPostCancel() { return RedirectToPage("GetAllCustomers"); }
 	}
 }
