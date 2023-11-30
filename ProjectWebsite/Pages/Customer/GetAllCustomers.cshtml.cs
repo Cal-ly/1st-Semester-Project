@@ -16,7 +16,7 @@ namespace ProjectWebsite.Pages.Customer
 			CustomerRepository = service;
 		}
 
-		public void OnGet()	{ CustomerList = CustomerRepository.GetList; }
+		public void OnGet()	{ CustomerList = CustomerRepository.CustomerList; }
 
 		public IActionResult OnPostNameSearch()
 		{
