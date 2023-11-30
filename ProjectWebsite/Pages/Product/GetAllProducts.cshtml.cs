@@ -7,9 +7,8 @@ namespace ProjectWebsite.Pages.Product
 {
     public class GetAllProductsModel : PageModel
     {
-        public List<Models.Product> Products { get; private set; } = new List<Models.Product>();
+        public List<Models.Product> Products { get; private set; } = new();
 
-        private JsonProductService _jsonService;
         private ProductService _productService;
 
         [BindProperty]
@@ -25,15 +24,14 @@ namespace ProjectWebsite.Pages.Product
         public string SearchString { get; set; }
 
 
-        public GetAllProductsModel(JsonProductService jsonService, ProductService productService)
+        public GetAllProductsModel(ProductService productService)
         {
-            _jsonService = jsonService;
             _productService = productService;
         }
 
         public void OnGet()
         {
-            Products = _jsonService.GetJsonItems().ToList();
+            Products = _productService.ProductList;
         }
 
         public IActionResult OnPostPriceFilter()
@@ -49,7 +47,7 @@ namespace ProjectWebsite.Pages.Product
                 Products = _productService.NameSearch(SearchString).ToList();
                 return Page();
             }
-            Products = _jsonService.GetJsonItems().ToList();
+            Products = _productService.ProductList;
             return Page();
         }
     }
