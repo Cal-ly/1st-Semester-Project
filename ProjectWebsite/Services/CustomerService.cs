@@ -15,8 +15,12 @@ namespace ProjectWebsite.Services
 
         #region Repository method calls
         public void CreateCustomer(Customer customerIn) { CustomerRepository.CreateCustomer(customerIn); }
-        public Customer GetCustomer(int customerID) { return CustomerRepository.GetCustomer(customerID); }
+        public Customer GetCustomerID(int customerID) { return CustomerRepository.GetCustomer(customerID); }
+        public Customer GetCustomerEmail(string customerEmail) { return CustomerRepository.EmailSearch(customerEmail); }
+        public List<Customer> GetCustomerName(string customerName) { return CustomerRepository.NameSearch(customerName); }
         public Customer UpdateCustomer(Customer customerIn) { return CustomerRepository.UpdateCustomer(customerIn); }
+        public bool DeleteCustomer(int customerID) { return CustomerRepository.DeleteCustomer(customerID); }
+        public List<Customer> CustomerList { get { return CustomerRepository.CustomerList; } }
         #endregion
     }
 }
