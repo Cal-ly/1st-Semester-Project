@@ -16,9 +16,11 @@ namespace ProjectWebsite.Services
 
         #region Repository methods calls
         public void AddOrder(Order order) { OrderRepository.AddToOrderLog(order); }
+        public List<Order> GetCustomerOrders(int customerID) { return OrderRepository.GetCustomerOrders(customerID); }
+        public Order GetOrder(int orderID) { return OrderRepository.SearchOrder(orderID); }
+        public bool FinishOrder(int orderID) { return OrderRepository.FinishOrder(orderID); }
+        public List<Order> OrderList { get { return OrderRepository.OrderList; } }
         #endregion
-
-
 
         public void PlaceOrder(string email)
         {
@@ -27,7 +29,7 @@ namespace ProjectWebsite.Services
             if (customerWhoMadeOrder == null) return;
 
             //gets the ID for the new Order objekt
-            int maxID = OrderRepository.OrderList.Max(c => c.ID) + 1; 
+            int maxID = OrderList.Max(c => c.ID) + 1; 
 
             Order.basket = new(); //resets the basket
 
@@ -42,18 +44,6 @@ namespace ProjectWebsite.Services
             foreach (OrderLine line in orderLines)
                 total += line.Amount * line.Product.Price;
             return total;
-        }
-
-        public bool FinishOrder(int orderID)
-        {
-            Order finishMe = OrderRepository.SearchOrder(orderID);
-            if(finishMe != null)
-            {
-                finishMe.Finished = true;
-                finishMe.DateFinished = DateTime.Now;
-                return true;
-            }
-            return false;
         }
     }
 }

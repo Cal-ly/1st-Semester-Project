@@ -20,6 +20,7 @@ namespace ProjectWebsite.Services
         public List<Customer> GetCustomerName(string customerName) { return CustomerRepository.NameSearch(customerName); }
         public Customer UpdateCustomer(Customer customerIn) { return CustomerRepository.UpdateCustomer(customerIn); }
         public bool DeleteCustomer(int customerID) { return CustomerRepository.DeleteCustomer(customerID); }
+        public List<Customer> CustomerList { get { return CustomerRepository.CustomerList; } }
         #endregion
     }
 }
