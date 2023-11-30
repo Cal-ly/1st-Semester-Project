@@ -7,11 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<JsonProductService>();
 builder.Services.AddTransient<JsonCustomerService>();
-builder.Services.AddSingleton<ProductService, ProductService>();
+builder.Services.AddTransient<JsonOrderService, JsonOrderService>();
+builder.Services.AddSingleton<OrderRepository, OrderRepository>();
 builder.Services.AddSingleton<CustomerRepository, CustomerRepository>();
 builder.Services.AddSingleton<ProductRepository, ProductRepository>();
-builder.Services.AddSingleton<JsonOrderService, JsonOrderService > ();
+builder.Services.AddSingleton<ProductService, ProductService>();
 builder.Services.AddSingleton<OrderService, OrderService>();
+builder.Services.AddSingleton<CustomerService, CustomerService>();
 
 var app = builder.Build();
 
