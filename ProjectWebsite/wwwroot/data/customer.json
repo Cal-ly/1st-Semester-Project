@@ -40,5 +40,12 @@
     "Address": "Jarlvej 34",
     "Email": "Lalalla@gmail.com",
     "PhoneNumber": "40506070"
+  },
+  {
+    "ID": 7,
+    "Name": "hej",
+    "Address": "hejhejhejhej",
+    "Email": "hej@gmail.com",
+    "PhoneNumber": "22212221"
   }
 ]

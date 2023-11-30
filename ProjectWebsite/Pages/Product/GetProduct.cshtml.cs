@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ProjectWebsite.Services;
 using ProjectWebsite.Models;
+using ProjectWebsite.Repositories;
 
 namespace ProjectWebsite.Pages.Product
 {
@@ -30,7 +32,9 @@ namespace ProjectWebsite.Pages.Product
 
         public IActionResult OnPost()
         {
+            Console.WriteLine(amountIN);
             Models.Product product = _productRepository.GetProduct(Product.ID);
+            Console.WriteLine(product); 
             OrderLine temp = new() { Amount = amountIN, Product = product };
             Order.basket.Add(temp);
             return Page();

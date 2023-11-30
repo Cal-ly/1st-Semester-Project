@@ -1,37 +1,32 @@
 ﻿using ProjectWebsite.Models;
+using ProjectWebsite.Repositories;
 
 namespace ProjectWebsite.Services
 {
     public class OrderService
     {
-		
-		public Order Order { get; set; }
-        private OrderRepository OrderLog { get; set; }
-        private JsonOrderService JsonOrderService { get; set; }
-        private CustomerRepository customerRepository { get; set; }
+        private OrderRepository OrderRepository { get; set; }
+        private CustomerRepository CustomerRepository { get; set; }
 
-        public OrderService(JsonOrderService jsonOrderService, CustomerRepository customerRepository)
+        public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository)
         {
-            OrderLog = new();
-            JsonOrderService = jsonOrderService;
-            OrderLog.orderLog = JsonOrderService.GetJsonItems().ToList();
-            this.customerRepository = customerRepository;
+            OrderRepository = orderRepository;
+            CustomerRepository = customerRepository;
         }
 
         public void AddOrder(Order order)
         {
-            OrderLog.AddToOrderLog(order);
-            JsonOrderService.SaveJsonItems(OrderLog.orderLog);
+            OrderRepository.AddToOrderLog(order);
         }
 
         public void PlaceOrder(string email)
         {
             //Gets reference to customer (if customer with that email doesn't exist then abort the method
-            Customer customerWhoMadeOrder = customerRepository.EmailSearch(email);
+            Customer customerWhoMadeOrder = CustomerRepository.EmailSearch(email);
             if (customerWhoMadeOrder == null) return;
 
             //gets the ID for the new Order objekt
-            int maxID = OrderLog.orderLog.Max(c => c.ID) + 1; 
+            int maxID = OrderRepository.OrderList.Max(c => c.ID) + 1; 
 
             Order.basket = new(); //resets the basket
 
@@ -50,7 +45,7 @@ namespace ProjectWebsite.Services
 
         public bool FinishOrder(int orderID)
         {
-            Order finishMe = OrderLog.SearchOrder(orderID);
+            Order finishMe = OrderRepository.SearchOrder(orderID);
             if(finishMe != null)
             {
                 finishMe.Finished = true;
