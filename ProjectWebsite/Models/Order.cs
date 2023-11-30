@@ -10,6 +10,8 @@ namespace ProjectWebsite.Models
         public int CustomerID { get; set; }
         public double TotalPrice { get; set; }
         public List<OrderLine> OrderList { get; set; }
+        public bool Finished { get; set; }
+        public DateTime DateFinished { get; set; }
 
         public Order() { }
 

@@ -3,43 +3,57 @@
     "ID": 1,
     "CustomerID": 2,
     "TotalPrice": 0,
-    "OrderList": null
+    "OrderList": null,
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   },
   {
     "ID": 1,
     "CustomerID": 2,
     "TotalPrice": 0,
-    "OrderList": null
+    "OrderList": null,
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   },
   {
     "ID": 2,
     "CustomerID": 2,
     "TotalPrice": 0,
-    "OrderList": null
+    "OrderList": null,
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   },
   {
     "ID": 3,
     "CustomerID": 2,
     "TotalPrice": 680,
-    "OrderList": null
+    "OrderList": null,
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   },
   {
     "ID": 4,
     "CustomerID": 1,
     "TotalPrice": 6800,
-    "OrderList": null
+    "OrderList": null,
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   },
   {
     "ID": 5,
     "CustomerID": 2,
     "TotalPrice": 50,
-    "OrderList": null
+    "OrderList": null,
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   },
   {
     "ID": 6,
     "CustomerID": 1,
     "TotalPrice": 100,
-    "OrderList": null
+    "OrderList": null,
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   },
   {
     "ID": 7,
@@ -58,6 +72,50 @@
         },
         "Amount": 100
       }
-    ]
+    ],
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
+  },
+  {
+    "ID": 8,
+    "CustomerID": 1,
+    "TotalPrice": 100,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 1,
+          "Name": "Earl Grey",
+          "Description": "Delicious black tea",
+          "Content": "Black tea",
+          "Type": "Black tea",
+          "Price": 100,
+          "Size": 100
+        },
+        "Amount": 1
+      }
+    ],
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
+  },
+  {
+    "ID": 9,
+    "CustomerID": 1,
+    "TotalPrice": 100100,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 1,
+          "Name": "Earl Grey",
+          "Description": "Delicious black tea",
+          "Content": "Black tea",
+          "Type": "Black tea",
+          "Price": 100,
+          "Size": 100
+        },
+        "Amount": 1001
+      }
+    ],
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   }
 ]

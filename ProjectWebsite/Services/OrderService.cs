@@ -49,5 +49,17 @@ namespace ProjectWebsite.Services
             }
             return total;
         }
+
+        public bool FinishOrder(int orderID)
+        {
+            Order finishMe = OrderLog.SearchOrder(orderID);
+            if(finishMe != null)
+            {
+                finishMe.Finished = true;
+                finishMe.DateFinished = DateTime.Now;
+                return true;
+            }
+            return false;
+        }
     }
 }
