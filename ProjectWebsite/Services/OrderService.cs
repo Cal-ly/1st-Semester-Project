@@ -14,10 +14,11 @@ namespace ProjectWebsite.Services
             CustomerRepository = customerRepository;
         }
 
-        public void AddOrder(Order order)
-        {
-            OrderRepository.AddToOrderLog(order);
-        }
+        #region Repository methods calls
+        public void AddOrder(Order order) { OrderRepository.AddToOrderLog(order); }
+        #endregion
+
+
 
         public void PlaceOrder(string email)
         {
