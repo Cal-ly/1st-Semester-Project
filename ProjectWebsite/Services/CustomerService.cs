@@ -1,6 +1,5 @@
 ﻿using ProjectWebsite.Models;
 using ProjectWebsite.Repositories;
-using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Services
 {
@@ -14,6 +13,7 @@ namespace ProjectWebsite.Services
         }
 
         #region Repository method calls
+        public int GetNextID() { return CustomerRepository.GetNextID(); }
         public void CreateCustomer(Customer customerIn) { CustomerRepository.CreateCustomer(customerIn); }
         public Customer GetCustomerID(int customerID) { return CustomerRepository.GetCustomer(customerID); }
         public Customer GetCustomerEmail(string customerEmail) { return CustomerRepository.EmailSearch(customerEmail); }

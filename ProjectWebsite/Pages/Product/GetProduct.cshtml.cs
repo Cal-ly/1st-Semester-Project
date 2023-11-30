@@ -10,20 +10,20 @@ namespace ProjectWebsite.Pages.Product
     {
         [BindProperty]
         public Models.Product Product { get; set; }
-        private ProductRepository _productRepository;
+        private ProductService ProductService { get; set; }
 
         [BindProperty]
         public int amountIN { get; set; }
 
 
-        public GetProductModel(ProductRepository productRepository)
+        public GetProductModel(ProductService productService)
         {
-            _productRepository = productRepository;
+            ProductService = productService;
         }
 
         public IActionResult OnGet(int id)
         {
-            Product = _productRepository.GetProduct(id);
+            Product = ProductService.GetProduct(id);
             if (Product == null)
                 return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
 
@@ -32,9 +32,7 @@ namespace ProjectWebsite.Pages.Product
 
         public IActionResult OnPost()
         {
-            Console.WriteLine(amountIN);
-            Models.Product product = _productRepository.GetProduct(Product.ID);
-            Console.WriteLine(product); 
+            Models.Product product = ProductService.GetProduct(Product.ID);
             OrderLine temp = new() { Amount = amountIN, Product = product };
             Order.basket.Add(temp);
             return Page();

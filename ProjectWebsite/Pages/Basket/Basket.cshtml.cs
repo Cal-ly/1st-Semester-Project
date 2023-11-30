@@ -1,18 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Models;
 using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Kurv
 {
     public class KurvModel : PageModel
     {
-
         [BindProperty]
         public string Email { get; set; }
         private OrderService OrderService { get; set; }
 
-		public KurvModel( OrderService orderService)
+		public KurvModel(OrderService orderService)
 		{
             OrderService = orderService;
         }

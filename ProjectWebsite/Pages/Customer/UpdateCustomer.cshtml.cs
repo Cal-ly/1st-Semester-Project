@@ -1,21 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Models;
-using ProjectWebsite.Repositories;
+using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Customer
 {
     public class UpdateCustomerModel : PageModel
 	{
-		public CustomerRepository CustomerRepository;
+		public CustomerService CustomerService;
 		[BindProperty] public Models.Customer Customer { get; set; }
-		public UpdateCustomerModel(CustomerRepository service)
+		public UpdateCustomerModel(CustomerService customerService)
 		{
-			CustomerRepository = service;
+			CustomerService = customerService;
 		}
 		public IActionResult OnGet(int id)
 		{
-			Customer = CustomerRepository.GetCustomer(id);
+			Customer = CustomerService.GetCustomerID(id);
 			if (Customer == null)
 				return RedirectToPage("/Error"); //Define NotFound page
 			return Page();
@@ -23,7 +22,7 @@ namespace ProjectWebsite.Pages.Customer
 		public IActionResult OnPost()
 		{
 			if (!ModelState.IsValid) { return Page(); }
-            CustomerRepository.UpdateCustomer(Customer);
+            CustomerService.UpdateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
 		}
         public IActionResult OnPostCancel() { return RedirectToPage("GetAllCustomers"); }
