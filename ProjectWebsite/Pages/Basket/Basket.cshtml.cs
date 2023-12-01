@@ -14,6 +14,7 @@ namespace ProjectWebsite.Pages.Kurv
         public string Email { get; set; }
 
         public List<OrderLine> kurv { get; set; }
+        public double total { get; set; }
         private OrderService OrderService { get; set; }
 
         public KurvModel(OrderService orderService)
@@ -24,6 +25,7 @@ namespace ProjectWebsite.Pages.Kurv
 		public IActionResult OnGet()
         {
             kurv = Models.Order.basket;
+            tempTotal();
             return Page();
         }
 
@@ -41,6 +43,15 @@ namespace ProjectWebsite.Pages.Kurv
         {
             return RedirectToPage("EditAmount");
         }
+
+        public void tempTotal()
+        {
+            total = 0;
+            foreach(var line in kurv)
+            {
+                total += line.Amount * line.Product.Price;
+            }
+		}
 
         //public IActionResult OnPostCancel()
         //{
