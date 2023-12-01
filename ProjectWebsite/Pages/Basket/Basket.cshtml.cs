@@ -13,8 +13,8 @@ namespace ProjectWebsite.Pages.Kurv
         //[BindProperty]
         public string Email { get; set; }
 
-        public List<OrderLine> kurv { get; set; }
-        public double total { get; set; }
+        public List<OrderLine> Kurv { get; set; }
+        public double Total { get; set; }
         private OrderService OrderService { get; set; }
 
         public KurvModel(OrderService orderService)
@@ -24,8 +24,8 @@ namespace ProjectWebsite.Pages.Kurv
 
 		public IActionResult OnGet()
         {
-            kurv = Models.Order.basket;
-            tempTotal();
+            Kurv = Order.basket;
+            TempTotal();
             return Page();
         }
 
@@ -44,12 +44,12 @@ namespace ProjectWebsite.Pages.Kurv
             return RedirectToPage("EditAmount");
         }
 
-        public void tempTotal()
+        public void TempTotal()
         {
-            total = 0;
-            foreach(var line in kurv)
+            Total = 0;
+            foreach(var line in Kurv)
             {
-                total += line.Amount * line.Product.Price;
+                Total += line.Amount * line.Product.Price;
             }
 		}
 

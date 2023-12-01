@@ -19,7 +19,7 @@
         </th>
     </tr>
 
-    @foreach (var element in Model.kurv) 
+    @foreach (var element in Model.Kurv) 
     {
         <tr>
             <td>
@@ -48,7 +48,7 @@
         </tr>
     }
 </table>
-@Model.total
+@Model.Total
 <form method="post">
     <div class="form-group">
         <label asp-for="@Model.Email" class="control-label"></label>
