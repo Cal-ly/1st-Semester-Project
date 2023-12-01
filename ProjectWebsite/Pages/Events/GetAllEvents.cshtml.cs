@@ -7,8 +7,11 @@ namespace ProjectWebsite.Pages.Events
     public class GetAllEventsModel : PageModel
     {
         public EventService service;
-        [BindProperty] public string SearchEvent { get; set; }
-        [BindProperty] public List<Models.Event> EventList { get; set; }
+
+        [BindProperty]
+        public string SearchEvent { get; set; }
+        [BindProperty]
+        public List<Models.Event> EventList { get; set; }
 
         public GetAllEventsModel(EventService eventService)
         {
@@ -22,6 +25,6 @@ namespace ProjectWebsite.Pages.Events
             EventList = service.GetEventsByName(SearchEvent).ToList();
             return Page();
         }
-		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
+		//public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
 	}
 }
