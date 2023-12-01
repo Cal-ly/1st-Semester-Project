@@ -1,0 +1,82 @@
+﻿@page
+@model ProjectWebsite.Pages.Admin.GetAllOrdersModel
+@{
+	ViewData["Title"] = "Ordreliste";
+}
+<table class="table table-hover table-striped table-opacity">
+	<thead>
+		<tr class="btn-secondary active">
+			<th>
+				ID
+			</th>
+			<th>
+				KundeID
+			</th>
+			<th>
+				Varer
+			</th>
+			<th>
+				Totalpris
+			</th>
+			<th>
+				Status
+			</th>
+			<th>
+				Færdiggørelsesdato
+			</th>
+			<th>
+				 
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model.OrderList != null)
+		{
+			foreach (var o in Model.OrderList)
+			{
+				<tr class="btn-secondary">
+					<td>
+						@o.ID
+					</td>
+					<td>
+						@o.CustomerID
+					</td>
+					<td>
+						@foreach( var line in o.OrderList)
+						{ if(line!=null){
+							<p>@line.Product.Name
+								<span class="brsmall"></span>
+								@line.Product.Size g
+								<span class="brsmall"></span>
+								@line.Amount stk
+								<span class="brsmall"></span>
+								@line.Product.Price kr per stk
+							</p>
+						}}
+					</td>
+					<td>
+						@o.TotalPrice kr
+					</td>
+					<td>
+						@if (o.Finished)
+						{
+							<p>Færdiggjort</p>
+						}
+						else
+						{
+							<p>I gang</p>
+						}
+
+					</td>
+					<td>
+						@o.DateFinished
+					</td>
+					<td>
+						<a class="btn btn-primary" type="button" title="Check" asp-page="CheckOrder" asp-route-id="@o.ID"><i class="fa-solid fa-check"></i></a>
+						<a class="btn btn-primary" type="button" title="Delete" asp-page="DeleteOrder" asp-route-id="@o.ID"><i class="fa fa-trash"></i></a>
+					</td>
+				</tr>
+			}
+		}
+	</tbody>
+</table>

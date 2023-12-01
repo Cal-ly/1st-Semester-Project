@@ -3,36 +3,36 @@ using System.Text.Json;
 
 namespace ProjectWebsite.Services
 {
-	public class JsonOrderService
-	{
+    public class JsonEventService
+    {
         public IWebHostEnvironment WebHostEnvironment { get; }
-        public JsonOrderService(IWebHostEnvironment webHostEnvironment)
+        public JsonEventService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
         private string JsonFileName
         {
-            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "order.json"); }
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "event.json"); }
         }
 
-        public void SaveJsonItems(List<Order> orders)
+        public void SaveJsonItems(List<Event> events)
         {
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.OpenOrCreate))
-			{
+            {
                 Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
                 {
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<Order[]>(jsonWriter, orders.ToArray());
+                JsonSerializer.Serialize<Event[]>(jsonWriter, events.ToArray());
             }
         }
 
-        public IEnumerable<Order> GetJsonItems()
+        public IEnumerable<Event> GetJsonItems()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<Order[]>(jsonFileReader.ReadToEnd());
+                return JsonSerializer.Deserialize<Event[]>(jsonFileReader.ReadToEnd());
             }
         }
     }

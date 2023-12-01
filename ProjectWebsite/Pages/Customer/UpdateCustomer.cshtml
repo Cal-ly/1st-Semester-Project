@@ -2,40 +2,43 @@
 @model ProjectWebsite.Pages.Customer.UpdateCustomerModel
 @{
 }
-
-<form method="post">    
-    <input type="hidden" asp-for="@Model.Customer.ID" />
-    <div class="form-group">
-        <label asp-for="@Model.Customer.Name" class="control-label"></label>
-        <input asp-for="@Model.Customer.Name" class="form-control" />
-        <span asp-validation-for="@Model.Customer.Name" class="text-danger"></span>
+<span class="brlarge"></span>
+<div class="row justify-content-center">
+    <div class="col-9 col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 p-4 alert alert-secondary">
+        <form method="post">    
+            <div class="form-group">
+                <label asp-for="@Model.Customer.ID" class="control-label"></label>
+                <input asp-for="@Model.Customer.ID" class="form-control" readonly />
+                <span asp-validation-for="@Model.Customer.ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Customer.Name" class="control-label"></label>
+                <input asp-for="@Model.Customer.Name" class="form-control" placeholder="Enter name" />
+                <span asp-validation-for="@Model.Customer.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Customer.Address" class="control-label"></label>
+                <input asp-for="@Model.Customer.Address" class="form-control" placeholder="Enter address" />
+                <span asp-validation-for="@Model.Customer.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Customer.Email" class="control-label"></label>
+                <input asp-for="@Model.Customer.Email" class="form-control" placeholder="Enter email" />
+                <span asp-validation-for="@Model.Customer.Email" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="@Model.Customer.PhoneNumber" class="control-label"></label>
+                <input asp-for="@Model.Customer.PhoneNumber" class="form-control" placeholder="Enter phone number" />
+                <span asp-validation-for="@Model.Customer.PhoneNumber" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group d-flex justify-content-between">
+                <input type="submit" value="Update" class="btn btn-success" />
+                <input type="submit" asp-page-handler="Cancel" value="Cancel" class="btn btn-danger" />
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label asp-for="@Model.Customer.Address" class="control-label"></label>
-        <input asp-for="@Model.Customer.Address" class="form-control" />
-        <span asp-validation-for="@Model.Customer.Address" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="@Model.Customer.Email" class="control-label"></label>
-        <input asp-for="@Model.Customer.Email" class="form-control" />
-        <span asp-validation-for="@Model.Customer.Email" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="@Model.Customer.PhoneNumber" class="control-label"></label>
-        <input asp-for="@Model.Customer.PhoneNumber" class="form-control" />
-        <span asp-validation-for="@Model.Customer.PhoneNumber" class="text-danger"></span>
-    </div>
-    <p>
-        <div class="form-group">
-            <input type="submit" value="Update" class="btn btn-success" />
-            <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-danger" />
-        </div>
-    </p>
-</form>
-
-<p>
-    <a asp-page="/Customer/GetAllCustomers">Back to list</a>
-</p>
+</div>
 
 
     @* 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ProjectWebsite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjectWebsite.styles.css" asp-append-version="true" />
 
@@ -31,7 +32,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Product/GetAllProducts">Produkter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/events">Events</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Events/GetAllEvents">Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/About/About">Om</a>
@@ -43,6 +44,9 @@
                         </li>
                         <li>
                             <a class="nav-link text-dark" asp-area="" asp-page="/Basket/Basket"><i class="fas fa-bag-shopping fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Admin/GetAllOrders">Admin</a>
                         </li>
 
                     </ul>
