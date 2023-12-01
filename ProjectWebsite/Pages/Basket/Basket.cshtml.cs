@@ -10,7 +10,7 @@ namespace ProjectWebsite.Pages.Kurv
         [BindProperty]
         public int Amount { get; set; }
 
-        //[BindProperty]
+        [BindProperty]
         public string Email { get; set; }
 
         public List<OrderLine> Kurv { get; set; }
