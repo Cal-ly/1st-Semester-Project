@@ -6,7 +6,7 @@ namespace ProjectWebsite.Pages.Events
 {
     public class GetAllEventsModel : PageModel
     {
-        public EventService service;
+        public EventService eventService;
 
         [BindProperty]
         public string SearchEvent { get; set; }
@@ -15,14 +15,14 @@ namespace ProjectWebsite.Pages.Events
 
         public GetAllEventsModel(EventService eventService)
         {
-            service = eventService;
+            this.eventService = eventService;
         }
-        public void OnGet() { EventList = service.EventList; }
+        public void OnGet() { EventList = eventService.EventList; }
 
         public IActionResult OnPostEventSearch()
         {
             if (!ModelState.IsValid) { return Page(); }
-            EventList = service.GetEventsByName(SearchEvent).ToList();
+            EventList = eventService.GetEventsByName(SearchEvent).ToList();
             return Page();
         }
 		//public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }

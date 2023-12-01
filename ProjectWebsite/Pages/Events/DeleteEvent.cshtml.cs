@@ -6,16 +6,16 @@ namespace ProjectWebsite.Pages.Events
 {
     public class DeleteEventModel : PageModel
     {
-        public EventService service;
+        public EventService eventService;
         [BindProperty] public Models.Event Event { get; set; }
 
         public DeleteEventModel(EventService eventService)
         {
-            service = eventService;
+            this.eventService = eventService;
         }
 		public IActionResult OnGet(int id)
 		{
-			Event = service.GetEventByID(id);
+			Event = eventService.GetEventByID(id);
 			if (Event == null)
 				return RedirectToPage("/Error"); //Define NotFound page
 			return Page();
@@ -23,7 +23,7 @@ namespace ProjectWebsite.Pages.Events
 
 		public IActionResult OnPost()
 		{
-			if (!service.DeleteEvent(Event.ID))
+			if (!eventService.DeleteEvent(Event.ID))
 				return RedirectToPage("/Error"); //Define NotFound page
 
 			return RedirectToPage("GetAllEvents");

@@ -10,6 +10,7 @@ namespace ProjectWebsite.Repositories
         public static int NextID = 1;
         public List<Event> EventList { get; set; }
         private JsonEventService JsonEventService { get; set; }
+        
         public EventRepository(JsonEventService jsonFileEventService)
         {
             JsonEventService = jsonFileEventService;
@@ -24,6 +25,7 @@ namespace ProjectWebsite.Repositories
             NextID = nextID;
             return nextID;
         }
+       
         public void CreateEvent(Event eventIn)
         {
             if (eventIn == null)
@@ -33,6 +35,7 @@ namespace ProjectWebsite.Repositories
             EventList.Add(eventIn);
             JsonEventService.SaveJsonItems(EventList);
         }
+        
         public Event UpdateEvent(Event incomingE)
         {
             foreach (Event outgoingE in EventList)
@@ -55,6 +58,7 @@ namespace ProjectWebsite.Repositories
             }
             return incomingE; //TODO: Display updated event -splash screen?
         }
+        
         public bool DeleteEvent(int eventID)
         {
             Event eventToBeDeleted = GetEventByID(eventID);
@@ -66,6 +70,7 @@ namespace ProjectWebsite.Repositories
             }
             return false;
         }
+        
         public Event GetEventByID(int eventID)
         {
             foreach (Event e in EventList)
@@ -73,6 +78,7 @@ namespace ProjectWebsite.Repositories
                     return e;
             return null;
         }
+        
         public List<Event> GetEventsByName(string searchString)
         {
             List<Event> searchResult = new();
@@ -83,6 +89,7 @@ namespace ProjectWebsite.Repositories
             }
             return searchResult;
         }
+        
         public Event GetEventByLocation(string location)
         {
             foreach (Event e in EventList)
