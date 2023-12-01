@@ -28,10 +28,9 @@
 <table class="table table-bordered table-hover table-striped table-opacity" width="60%">
     <colgroup>
         <col style="width : 5%">
-        <col style="width : 15%">
-        <col style="width : 60%">
-        <col style="width : 10%">
-        <col style="width : 10%">
+        <col style="width : 77%">
+        <col style="width : 9%">
+        <col style="width : 9%">
     </colgroup>
     <thead>
         <tr class="btn-secondary active">
@@ -72,6 +71,10 @@
                     </td>
                     <td>
                         @e.EventDate
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@c.ID"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="DeleteEvent" asp-route-id="@c.ID"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
             }
