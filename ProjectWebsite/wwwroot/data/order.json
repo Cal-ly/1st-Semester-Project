@@ -30,7 +30,7 @@
       }
     ],
     "Finished": true,
-    "DateFinished": "2023-12-01T11:31:14.3814957+01:00"
+    "DateFinished": "2023-12-01T12:38:02.4575418+01:00"
   },
   {
     "ID": 3,
@@ -92,8 +92,8 @@
         "Amount": 100
       }
     ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
+    "Finished": true,
+    "DateFinished": "2023-12-01T12:38:07.1828476+01:00"
   },
   {
     "ID": 6,

@@ -50,7 +50,7 @@ namespace ProjectWebsite.Repositories
             }
             return false;
         }
-        public bool DeleteCustomer(int orderID)
+        public bool DeleteOrder(int orderID)
         {
             Order orderToBeDeleted = GetOrder(orderID);
             if (orderToBeDeleted != null)
