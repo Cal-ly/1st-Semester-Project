@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Models;
 using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Events
@@ -8,7 +7,7 @@ namespace ProjectWebsite.Pages.Events
     public class DeleteEventModel : PageModel
     {
         public EventService service;
-        [BindProperty] public Event Event { get; set; }
+        [BindProperty] public Models.Event Event { get; set; }
 
         public DeleteEventModel(EventService eventService)
         {
