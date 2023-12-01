@@ -22,6 +22,18 @@ namespace ProjectWebsite.Repositories
             return null;
         }
 
+        public OrderLine GetOrderLine(int orderLineID)
+        {
+            foreach (OrderLine orderLine in Order.basket)
+            {
+                if (orderLine.ID == orderLineID)
+                {
+                    return orderLine;
+                }
+            }
+            return null;
+        }
+
         public List<Order> GetCustomerOrders(int customerID)
         {
             List<Order> customersOrders = new();
@@ -49,5 +61,18 @@ namespace ProjectWebsite.Repositories
             }
             return false;
         }
+
+        public bool UpdateOrderAmount(int newAmount, int orderLineID)
+        {
+            OrderLine orderLine = GetOrderLine(orderLineID);
+            if (orderLine != null)
+            {
+                orderLine.Amount = newAmount;
+                return true;
+            }
+            return false;
+        }
+
+
     }
 }

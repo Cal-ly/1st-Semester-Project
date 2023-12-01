@@ -21,6 +21,7 @@ namespace ProjectWebsite.Services
         public List<Order> GetCustomerOrders(int customerID) { return OrderRepository.GetCustomerOrders(customerID); }
         public Order GetOrder(int orderID) { return OrderRepository.GetOrder(orderID); }
         public bool FinishOrder(int orderID) { return OrderRepository.FinishOrder(orderID); }
+        public bool UpdateOrderAmount (int newAmount, int orderLineID) { return OrderRepository.UpdateOrderAmount(newAmount, orderLineID); }
         #endregion
 
         public void PlaceOrder(string email)
