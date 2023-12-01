@@ -5,35 +5,33 @@
 
 <h1>Kundeoversigt</h1>
 
-<div class="row">
+@* <div class="row">
 	<div class="col-4"></div>
-	<div class="col-4"><h5>Søg på navn</h5></div>
 	<div class="col-4"></div>
-</div>
+	<div class="col-4"></div>
+</div> *@
 
 <div class="row">
-	<div class="col-4">
+	<div class="col-4 mb-4">
 		<form method="post" class="form-inline">
-			<div class="input-group mb-3">
-				<input asp-for="SearchCustomer" class="form-control mr-1" placeholder="Søg i kundelisten" />
+			@* <h5>Søg på navn</h5> *@
+			<div class="input-group">
+				<input asp-for="SearchCustomer" class="form-control mr-1" placeholder="Søg på et navn" />
 				<input type="submit" asp-page-handler="NameSearch" value="Search" class="btn btn-primary" />
 			</div>
 		</form>
 	</div>
-
-	<div class="col-5"></div>
-	<div class="col-2"></div>
 </div>
 
-<table class="table table-bordered table-hover table-striped table-opacity" width="60%">
+<table class="table table-hover" width="60%">
 	<colgroup>
 		<col style="width : 5%">
 		<col style="width : 77%">
 		<col style="width : 9%">
 		<col style="width : 9%">
 	</colgroup>
-	<thead>
-		<tr class="btn-secondary active">
+	<thead class="secondary">
+		<tr class="secondary ">
 			<th>
 				Id
 			</th>
@@ -49,6 +47,12 @@
 			<th>
 				Telefonnummer
 			</th>
+			<th>
+				
+			</th>
+			<th>
+				
+			</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -56,10 +60,10 @@
 		{
 			foreach (var c in Model.CustomerList)
 			{
-				<tr class="btn-secondary">
-					<td>
+			<tr @* class="btn-secondary" *@>
+					<th scope="row">
 						@c.ID
-					</td>
+					</th>
 					<td>
 						@c.Name
 					</td>
@@ -73,6 +77,8 @@
                         @c.PhoneNumber
 					<td>
 						<a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="UpdateCustomer" asp-route-id="@c.ID"><i class="fa fa-edit"></i></a>
+					</td>
+					<td>
 						<a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="DeleteCustomer" asp-route-id="@c.ID"><i class="fa fa-trash"></i></a>
 					</td>
 				</tr>
