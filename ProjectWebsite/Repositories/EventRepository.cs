@@ -18,6 +18,7 @@ namespace ProjectWebsite.Repositories
 
 		public int GetNextID()
         {
+            if(EventList.Count == 0) { return 1; }
             int nextID = EventList.Max(c => c.ID) + 1;
             if (nextID <= NextID) { nextID = NextID + 1; }
             NextID = nextID;

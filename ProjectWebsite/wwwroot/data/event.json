@@ -1,3 +1,15 @@
 [
-
+  {
+    "ID": 1,
+    "EventName": "Nytest",
+    "EventDescription": "Testtest",
+    "EventLocation": "Testest",
+    "EventDate": "2023-12-01T13:28:00",
+    "EventTime": "2023-12-01T13:28:00",
+    "EventDuration": 60,
+    "EventOrganizer": "TestTest",
+    "EventOrganizerEmail": "TestTest",
+    "EventOrganizerPhone": "TestTest",
+    "EventOrganizerWebsite": "TestTest"
+  }
 ]
