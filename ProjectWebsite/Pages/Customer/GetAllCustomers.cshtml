@@ -23,7 +23,7 @@
 </div>
 
 <table class="table table-hover">
-	<colgroup>
+	<colgroup> @* Not mobile friendly *@
 		<col style="width : 5%">
 		<col style="width : 77%">
 		<col style="width : 9%">
@@ -31,7 +31,7 @@
 	</colgroup>
 	<thead>
 		<tr>
-			<th scope="col">
+			<th scope="col" class="d-none d-sm-table-cell">
 				ID
 			</th>
 			<th scope="col">
@@ -40,16 +40,16 @@
 			<th scope="col">
 				Address
 			</th>
-			<th scope="col">
+			<th scope="col" class="d-none d-sm-table-cell">
 				E-mail
 			</th>
 			<th scope="col">
 				Telefonnummer
 			</th>
-			<th scope="col">
+			<th scope="col" class="d-none d-sm-table-cell">
 				
 			</th>
-			<th scope="col">
+			<th scope="col" class="d-none d-sm-table-cell">
 				
 			</th>
 		</tr>
@@ -60,7 +60,7 @@
 			foreach (var c in Model.CustomerList)
 			{
 				<tr class="table-light">
-				<th scope="row">
+					<th scope="row" class="d-none d-sm-table-cell">
 					@c.ID
 				</th>
 				<td>
@@ -69,15 +69,15 @@
 				<td>
 					@c.Address
 				</td>
-				<td>
+					<td class="d-none d-sm-table-cell">
 					@c.Email
 				</td>
 				<td>
                     @c.PhoneNumber
-				<td>
+					<td class="d-none d-sm-table-cell">
 					<a class="btn btn-primary" type="button" asp-page="UpdateCustomer" asp-route-id="@c.ID"><i class="fa fa-edit"></i></a>
 				</td>
-				<td>
+					<td class="d-none d-sm-table-cell">
 					<a class="btn btn-danger" type="button" asp-page="DeleteCustomer" asp-route-id="@c.ID"><i class="fa fa-trash"></i></a>
 				</td>
 			</tr>
