@@ -51,7 +51,7 @@
       }
     ],
     "Finished": true,
-    "DateFinished": "2023-12-01T11:31:16.9591346+01:00"
+    "DateFinished": "2023-12-01T13:04:25.138993+01:00"
   },
   {
     "ID": 4,
@@ -72,7 +72,7 @@
       }
     ],
     "Finished": true,
-    "DateFinished": "2023-12-01T12:14:05.2129797+01:00"
+    "DateFinished": "2023-12-01T13:04:30.0963913+01:00"
   },
   {
     "ID": 5,
@@ -113,8 +113,8 @@
         "Amount": 100
       }
     ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
+    "Finished": true,
+    "DateFinished": "2023-12-01T13:03:06.3912614+01:00"
   },
   {
     "ID": 7,
@@ -134,8 +134,8 @@
         "Amount": 100
       }
     ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
+    "Finished": true,
+    "DateFinished": "2023-12-01T13:03:13.7060182+01:00"
   },
   {
     "ID": 8,
@@ -156,7 +156,7 @@
       }
     ],
     "Finished": true,
-    "DateFinished": "0001-01-01T00:00:00"
+    "DateFinished": "2023-12-01T13:03:01.663108+01:00"
   },
   {
     "ID": 9,
@@ -239,11 +239,10 @@
         "Amount": 100
       }
     ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
-  },
-  {
-    "ID": 13,
+    "Finished": true,
+    "DateFinished": "2023-12-01T13:03:49.2338976+01:00"
+  }
+]]: 13,
     "CustomerID": 1,
     "TotalPrice": 0,
     "OrderList": [
