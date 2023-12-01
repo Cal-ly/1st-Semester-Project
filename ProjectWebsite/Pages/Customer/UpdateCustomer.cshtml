@@ -4,7 +4,7 @@
 }
 <span class="brlarge"></span>
 <div class="row justify-content-center">
-    <div class="col-lg-4 p-4 alert alert-secondary">
+    <div class="col-9 col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 p-4 alert alert-secondary">
         <form method="post">    
             <div class="form-group">
                 <label asp-for="@Model.Customer.ID" class="control-label"></label>
@@ -31,17 +31,12 @@
                 <input asp-for="@Model.Customer.PhoneNumber" class="form-control" placeholder="Enter phone number" />
                 <span asp-validation-for="@Model.Customer.PhoneNumber" class="text-danger"></span>
             </div>
-    <p>
-        <div class="form-group d-flex justify-content-between">
-            <input type="submit" value="Update" class="btn btn-success" />
-            <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-danger" />
-        </div>
-    </p>
-</form>
-
-@* <p>
-    <a asp-page="/Customer/GetAllCustomers">Back to list</a>
-</p> *@
+            <p></p>
+            <div class="form-group d-flex justify-content-between">
+                <input type="submit" value="Update" class="btn btn-success" />
+                <input type="submit" asp-page-handler="Cancel" value="Cancel" class="btn btn-danger" />
+            </div>
+        </form>
     </div>
 </div>
 
