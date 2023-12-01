@@ -1,0 +1,72 @@
+﻿@page
+@model ProjectWebsite.Pages.Admin.GetAllOrdersModel
+@{
+	ViewData["Title"] = "Ordreliste";
+}
+<table class="table table-bordered table-hover table-striped table-opacity">
+	<thead>
+		<tr class="btn-secondary active">
+			<th>
+				ID
+			</th>
+			<th>
+				KundeID
+			</th>
+			<th>
+				Varer
+			</th>
+			<th>
+				Totalpris
+			</th>
+			<th>
+				Status
+			</th>
+			<th>
+				Færdiggørelsesdato
+			</th>
+			<th>
+				 
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model.OrderList != null)
+		{
+			foreach (var o in Model.OrderList)
+			{
+				<tr class="btn-secondary">
+					<td>
+						@o.ID
+					</td>
+					<td>
+						@o.CustomerID
+					</td>
+					<td>
+						@o.OrderList
+					</td>
+					<td>
+						@o.TotalPrice kr
+					</td>
+					<td>
+						@if (o.Finished)
+						{
+							<p>Færdigjort</p>
+						}
+						else
+						{
+							<p>I gang</p>
+						}
+
+					</td>
+					<td>
+						@o.DateFinished
+					</td>
+					<td>
+						<a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="UpdateOrder" asp-route-id="@o.ID"><i class="fa fa-edit"></i></a>
+						<a class="btn btn-primary btn-sm " type="button" title="Check" asp-page="CheckOrder" asp-route-id="@o.ID"><i class="fa-solid fa-check"></i></a>
+					</td>
+				</tr>
+			}
+		}
+	</tbody>
+</table>
