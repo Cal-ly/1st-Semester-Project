@@ -1,53 +1,63 @@
-﻿@page
+﻿@page 
 @model ProjectWebsite.Pages.Kurv.KurvModel
 @{
 }
 
 <table class="table table-bordered table-hover table-striped table-opacity">
-	<tr>
-		<th>
-			Produkt navn
-		</th>
-		<th>
-			Produkt størrelse
-		</th>
-		@* <th>
-			Mængde
-		</th> *@
-		<th>
-			Pris per styk
-		</th>
-	</tr>
-    @foreach(Models.OrderLine element in Models.Order.basket)
+    <tr>
+        <th>
+            Produkt navn
+        </th>
+        <th>
+            Produkt størrelse
+        </th>
+        @* <th>
+        Mængde
+        </th> *@
+        <th>
+            Pris per styk
+        </th>
+    </tr>
+
+    @foreach (var element in Model.kurv) 
     {
         <tr>
-			<td>
-				@element.Product.Name
-			</td>
-			@* <td>
-				@element.SelectedPackage
-			</td> *@
-			<td>
-				@element.Amount
-			</td>
-			<td>
-				@element.Product.Price
-			</td>
-		</tr>
+            <td>
+                @element.Product.Name
+            </td>
+            @* <td>
+        @element.SelectedPackage
+        </td> *@
+            <td>
+                <input type="hidden" asp-for="@element.ID" />
+                <div class="form-group" style="max-width: 3rem">
+                    <label asp-for="@element.Amount" class="control-label"></label>
+                    <input asp-for="@element.Amount" id="newAmount" class="form-control" />
+                    <span asp-validation-for="@element.Amount" class="text-danger"></span>
 
-		
+                    <form method="post">
+                       @*  these links dont redirect to editAmount *@
+                        <a class="btn btn-primary btn-sm" type="button" title="Opdatere mængde" asp-page="EditAmount" asp-route-id="#newAmount, @element.ID"><i class="fa-solid fa-arrows-rotate"></i></a>
+                        <a class="btn btn-primary btn-sm" type="button" title="Opdatere mængde" asp-area="" asp-page="/Basket/EditAmount"><i class="fa-solid fa-arrows-rotate"></i></a>
+                    </form>
+                </div>
+            </td>
+            <td>
+                @element.Product.Price
+            </td>
+        </tr>
     }
 </table>
 
 <form method="post">
-	<div class="form-group">
-		<label asp-for="@Model.Email" class="control-label"></label>
-		<input asp-for="@Model.Email" class="form-control" />
-		<span asp-validation-for="@Model.Email" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		@* asp-page-handler="Confirm" *@
-		<input type="submit" value="Godkend" class="btn btn-success" />
-		@* <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-primary" /> *@
-	</div>
+    <div class="form-group">
+        <label asp-for="@Model.Email" class="control-label"></label>
+        <input asp-for="@Model.Email" class="form-control" />
+        <span asp-validation-for="@Model.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        @* asp-page-handler="Confirm" *@
+        <input type="submit" value="Godkend" class="btn btn-success" />
+        @* <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-primary" /> *@
+    </div>
 </form>

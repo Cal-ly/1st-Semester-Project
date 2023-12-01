@@ -1,0 +1,72 @@
+﻿@page
+@model ProjectWebsite.Pages.Events.CreateEventModel
+@{
+}
+
+<form method="post">
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventName" class="control-label"></label>
+        <input asp-for="@Model.Event.EventName" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventDescription" class="control-label"></label>
+        <input asp-for="@Model.Event.EventDescription" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventLocation" class="control-label"></label>
+        <input asp-for="@Model.Event.EventLocation" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventLocation" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventDate" class="control-label"></label>
+        <input asp-for="@Model.Event.EventDate" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventTime" class="control-label"></label>
+        <input asp-for="@Model.Event.EventTime" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventTime" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventDuration" class="control-label"></label>
+        <input asp-for="@Model.Event.EventDuration" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventDuration" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventOrganizer" class="control-label"></label>
+        <input asp-for="@Model.Event.EventOrganizer" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventOrganizer" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventOrganizerEmail" class="control-label"></label>
+        <input asp-for="@Model.Event.EventOrganizerEmail" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventOrganizerEmail" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventOrganizerPhone" class="control-label"></label>
+        <input asp-for="@Model.Event.EventOrganizerPhone" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventOrganizerPhone" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventOrganizerWebsite" class="control-label"></label>
+        <input asp-for="@Model.Event.EventOrganizerWebsite" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventOrganizerWebsite" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-primary" />
+    </div>
+</form>

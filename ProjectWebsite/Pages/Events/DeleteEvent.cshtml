@@ -1,0 +1,13 @@
+﻿@page
+@model ProjectWebsite.Pages.Events.DeleteEventModel
+@{
+}
+
+<h1>Delete Confirmation</h1>
+<div class="alert alert-danger">
+	<h5>Are you sure you want to delete: @Model.Event.ID, @Model.Event.EventName, @Model.Event.EventDate</h5>
+	<form method="post">
+		<button type="submit" class="btn btn-danger">Confirm</button>
+		<button type="submit" asp-page-handler="Cancel" class="btn btn-primary">Cancel</button>
+	</form>
+</div>

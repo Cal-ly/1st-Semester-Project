@@ -4,6 +4,7 @@
     {
         public Product Product { get; set; } //change this to an int?
         public int Amount { get; set; }
+        public int ID { get; set; }
 
         public OrderLine() { }
 

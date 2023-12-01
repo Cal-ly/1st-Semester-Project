@@ -8,17 +8,15 @@ namespace ProjectWebsite.Pages.Admin
     public class CheckOrderModel : PageModel
     {
 		private OrderService OrderService { get; set; }
-		public CheckOrderModel(OrderService OrderService)
+		public CheckOrderModel(OrderService orderService)
 		{
-			this.OrderService = OrderService;
+			OrderService = orderService;
 		}
 
 		public IActionResult OnGet(int id)
 		{
-
 			OrderService.FinishOrder(id);			
-				return RedirectToPage("GetAllOrders"); 
-
+			return RedirectToPage("GetAllOrders"); 
 		}
 	}
 }

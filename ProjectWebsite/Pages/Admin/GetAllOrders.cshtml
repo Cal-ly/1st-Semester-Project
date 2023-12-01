@@ -3,9 +3,9 @@
 @{
 	ViewData["Title"] = "Ordreliste";
 }
-<table class="table table-hover table-striped table-opacity">
+<table class="table table-hover table-light">
 	<thead>
-		<tr class="btn-secondary active">
+		<tr">
 			<th>
 				ID
 			</th>
@@ -34,7 +34,7 @@
 		{
 			foreach (var o in Model.OrderList)
 			{
-				<tr class="btn-secondary">
+				<tr>
 					<td>
 						@o.ID
 					</td>
@@ -42,17 +42,21 @@
 						@o.CustomerID
 					</td>
 					<td>
-						@foreach( var line in o.OrderList)
-						{ if(line!=null){
-							<p>@line.Product.Name
-								<span class="brsmall"></span>
-								@line.Product.Size g
-								<span class="brsmall"></span>
-								@line.Amount stk
-								<span class="brsmall"></span>
-								@line.Product.Price kr per stk
-							</p>
-						}}
+						@foreach (var line in o.OrderList)
+						{
+							if (line != null)
+							{
+								<p>
+									@line.Product.Name
+									<span class="brsmall"></span>
+									@line.Product.Size g
+									<span class="brsmall"></span>
+									@line.Amount stk
+									<span class="brsmall"></span>
+									@line.Product.Price kr per stk
+								</p>
+							}
+						}
 					</td>
 					<td>
 						@o.TotalPrice kr
@@ -72,8 +76,8 @@
 						@o.DateFinished
 					</td>
 					<td>
-						<a class="btn btn-primary btn-sm " type="button" title="Check" asp-page="CheckOrder" asp-route-id="@o.ID"><i class="fa-solid fa-check"></i></a>
-						<a class="btn btn-primary btn-sm" type="button" title="Delete" asp-page="DeleteOrder" asp-route-id="@o.ID"><i class="fa fa-trash"></i></a>
+						<a class="btn btn-success" type="button" asp-page="CheckOrder" asp-route-id="@o.ID"><i class="fa-solid fa-check"></i></a>
+						<a class="btn btn-danger" type="button" asp-page="DeleteOrder" asp-route-id="@o.ID"><i class="fa fa-trash"></i></a>
 					</td>
 				</tr>
 			}
