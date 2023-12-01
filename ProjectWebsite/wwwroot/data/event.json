@@ -1,28 +1,28 @@
 [
-  {
-    "ID": 1,
-    "EventName": "Nytest3",
-    "EventDescription": "Testtest",
-    "EventLocation": "Testest",
-    "EventDate": "2023-12-01T13:28:00",
-    "EventTime": "2023-12-01T13:28:00",
-    "EventDuration": 60,
-    "EventOrganizer": "TestTest",
-    "EventOrganizerEmail": "TestTest",
-    "EventOrganizerPhone": "TestTest",
-    "EventOrganizerWebsite": "TestTest"
-  }
-]  {
-    "ID": 2,
-    "EventName": "Nytest",
-    "EventDescription": "Testtest",
-    "EventLocation": "Testest",
-    "EventDate": "2023-12-01T13:48:00",
-    "EventTime": "2023-12-01T13:48:00",
-    "EventDuration": 30,
-    "EventOrganizer": "TestTest",
-    "EventOrganizerEmail": "TestTest",
-    "EventOrganizerPhone": "TestTest",
-    "EventOrganizerWebsite": "TestTest"
-  }
+    {
+        "ID": 1,
+        "EventName": "Nytest3",
+        "EventDescription": "Testtest",
+        "EventLocation": "Testest",
+        "EventDate": "2023-12-01T13:28:00",
+        "EventTime": "2023-12-01T13:28:00",
+        "EventDuration": 60,
+        "EventOrganizer": "TestTest",
+        "EventOrganizerEmail": "TestTest",
+        "EventOrganizerPhone": "TestTest",
+        "EventOrganizerWebsite": "TestTest"
+    },
+    {
+        "ID": 2,
+        "EventName": "Nytest3",
+        "EventDescription": "Testtest",
+        "EventLocation": "Testest",
+        "EventDate": "2023-12-01T13:28:00",
+        "EventTime": "2023-12-01T13:28:00",
+        "EventDuration": 60,
+        "EventOrganizer": "TestTest",
+        "EventOrganizerEmail": "TestTest",
+        "EventOrganizerPhone": "TestTest",
+        "EventOrganizerWebsite": "TestTest"
+    }
 ]
