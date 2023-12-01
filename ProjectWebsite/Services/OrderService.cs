@@ -21,9 +21,10 @@ namespace ProjectWebsite.Services
         public List<Order> GetCustomerOrders(int customerID) { return OrderRepository.GetCustomerOrders(customerID); }
         public Order GetOrder(int orderID) { return OrderRepository.GetOrder(orderID); }
         public bool FinishOrder(int orderID) { return OrderRepository.FinishOrder(orderID); }
-        #endregion
+		public bool DeleteOrder(int orderID) { return OrderRepository.DeleteCustomer(orderID); }
+		#endregion
 
-        public void PlaceOrder(string email)
+		public void PlaceOrder(string email)
         {
             //Gets reference to customer (if customer with that email doesn't exist then abort the method
             Customer customerWhoMadeOrder = CustomerRepository.GetCustomerByEmail(email);

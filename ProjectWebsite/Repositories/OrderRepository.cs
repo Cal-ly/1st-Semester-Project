@@ -50,5 +50,17 @@ namespace ProjectWebsite.Repositories
             }
             return false;
         }
+        public bool DeleteCustomer(int orderID)
+        {
+            Order orderToBeDeleted = GetOrder(orderID);
+            if (orderToBeDeleted != null)
+            {
+                OrderList.Remove(orderToBeDeleted);
+                JsonOrderService.SaveJsonItems(OrderList);
+                return true;
+            }
+            return false;
+
+        }
     }
 }

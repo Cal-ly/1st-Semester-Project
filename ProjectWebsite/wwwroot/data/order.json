@@ -33,27 +33,6 @@
     "DateFinished": "2023-12-01T11:31:14.3814957+01:00"
   },
   {
-    "ID": 2,
-    "CustomerID": 2,
-    "TotalPrice": 0,
-    "OrderList": [
-      {
-        "Product": {
-          "ID": 2,
-          "Name": "White Tea",
-          "Description": "Delicious white tea",
-          "Content": "White Tea",
-          "Type": "White tea",
-          "Price": 50,
-          "Size": 100
-        },
-        "Amount": 100
-      }
-    ],
-    "Finished": true,
-    "DateFinished": "2023-12-01T11:29:34.2601596+01:00"
-  },
-  {
     "ID": 3,
     "CustomerID": 2,
     "TotalPrice": 680,
@@ -92,8 +71,8 @@
         "Amount": 100
       }
     ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
+    "Finished": true,
+    "DateFinished": "2023-12-01T12:14:05.2129797+01:00"
   },
   {
     "ID": 5,
