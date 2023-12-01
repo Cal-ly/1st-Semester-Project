@@ -17,8 +17,8 @@ namespace ProjectWebsite.Services
 
         public void SaveJsonItems(List<Product> products)
         {
-            using (FileStream jsonFileWriter = File.Create(JsonFileName))
-            {
+            using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.OpenOrCreate))
+			{
                 Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
                 {
                     SkipValidation = false,
