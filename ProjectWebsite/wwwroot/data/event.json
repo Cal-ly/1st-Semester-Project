@@ -1,0 +1,15 @@
+[
+    {
+        "ID": 1,
+        "EventName": "Earl Grey Tasting",
+        "EventDescription": "Earl Grey testing",
+        "EventLocation": "The Tea House",
+        "EventDate": "2019-01-01T00:00:00",
+        "EventTime": "12:00:00",
+        "EventDuration": "60",
+        "EventOrganizer": "Blues Brews",
+        "EventOrganizerEmail": "bb@bb.dk",
+        "EventOrganizerPhone": "1234567890",
+        "EventOrganizerWebsite": "10"
+    }
+]

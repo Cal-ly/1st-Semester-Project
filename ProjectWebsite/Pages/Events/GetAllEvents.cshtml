@@ -1,0 +1,84 @@
+﻿@page
+@model ProjectWebsite.Pages.Events.GetAllEventsModel
+@{
+}
+
+<h1>Eventoversigt</h1>
+
+<div class="row">
+	<div class="col-4"></div>
+	<div class="col-4"><h5>Søg på eventnavn</h5></div>
+	<div class="col-4"></div>
+</div>
+
+<div class="row">
+	<div class="col-4">
+		<form method="post" class="form-inline">
+			<div class="input-group mb-3">
+				<input asp-for="SearchEvent" class="form-control mr-1" placeholder="sorter i events" />
+				<input type="submit" asp-page-handler="EventSearch" value="Search" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+
+	<div class="col-5"></div>
+	<div class="col-2"></div>
+</div>
+
+<table class="table table-bordered table-hover table-striped table-opacity" width="60%">
+    <colgroup>
+        <col style="width : 5%">
+        <col style="width : 15%">
+        <col style="width : 60%">
+        <col style="width : 10%">
+        <col style="width : 10%">
+    </colgroup>
+    <thead>
+        <tr class="btn-secondary active">
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Date
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.EventList != null)
+        {
+            foreach (var e in Model.EventList)
+            {
+                <tr class="btn-secondary">
+                    <td>
+                        @e.ID
+                    </td>
+                    <td>
+                        @e.EventName
+                    </td>
+                    <td>
+                        @e.EventDescription
+                    </td>
+                    <td>
+                        @e.EventLocation
+                    </td>
+                    <td>
+                        @e.EventDate
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<p>
+    <a class="btn btn-primary" asp-page="CreateEvent"> Lav et ny event </a>
+</p>
