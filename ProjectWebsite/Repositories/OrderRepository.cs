@@ -16,6 +16,7 @@ namespace ProjectWebsite.Repositories
 
         public Order GetOrder(int orderID)
         {
+            Console.WriteLine(orderID);
             foreach (Order order in OrderList)
                 if (order.ID == orderID)
                     return order;
