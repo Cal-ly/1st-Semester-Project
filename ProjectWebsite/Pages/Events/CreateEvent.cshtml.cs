@@ -24,5 +24,6 @@ namespace ProjectWebsite.Pages.Events
             service.CreateEvent(Event);
             return RedirectToPage("GetAllEvents");
         }
-    }
+		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
+	}
 }
