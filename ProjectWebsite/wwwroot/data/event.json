@@ -1,28 +1,3 @@
 [
-  {
-    "ID": 1,
-    "EventName": "Earl Grey Tasting",
-    "EventDescription": "Earl Grey testing",
-    "EventLocation": "The Tea House",
-    "EventDate": "2019-01-01T00:00:00",
-    "EventTime": "12:00:00",
-    "EventDuration": 60,
-    "EventOrganizer": "Blues Brews",
-    "EventOrganizerEmail": "bb@bb.dk",
-    "EventOrganizerPhone": "1234567890",
-    "EventOrganizerWebsite": "10"
-  },
-  {
-    "ID": 2,
-    "EventName": "TestTest",
-    "EventDescription": "Testtest",
-    "EventLocation": "Testest",
-    "EventDate": "2019-01-01T00:00:00",
-    "EventTime": "12:00:00",
-    "EventDuration": 60,
-    "EventOrganizer": "TestTest",
-    "EventOrganizerEmail": "TestTest",
-    "EventOrganizerPhone": "TestTest",
-    "EventOrganizerWebsite": "TestTest"
-  }
+
 ]
