@@ -22,7 +22,6 @@ namespace ProjectWebsite.Services
         public Order GetOrder(int orderID) { return OrderRepository.GetOrder(orderID); }
         public bool FinishOrder(int orderID) { return OrderRepository.FinishOrder(orderID); }
 		public bool DeleteOrder(int orderID) { return OrderRepository.DeleteOrder(orderID); }
-		#endregion
         public bool UpdateOrderAmount (int newAmount, int orderLineID) { return OrderRepository.UpdateOrderAmount(newAmount, orderLineID); }
         #endregion
 
