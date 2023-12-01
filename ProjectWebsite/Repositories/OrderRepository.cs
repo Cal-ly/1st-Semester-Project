@@ -16,6 +16,7 @@ namespace ProjectWebsite.Repositories
 
         public Order GetOrder(int orderID)
         {
+            Console.WriteLine(orderID);
             foreach (Order order in OrderList)
                 if (order.ID == orderID)
                     return order;
@@ -48,6 +49,18 @@ namespace ProjectWebsite.Repositories
                 return true;
             }
             return false;
+        }
+        public bool DeleteCustomer(int orderID)
+        {
+            Order orderToBeDeleted = GetOrder(orderID);
+            if (orderToBeDeleted != null)
+            {
+                OrderList.Remove(orderToBeDeleted);
+                JsonOrderService.SaveJsonItems(OrderList);
+                return true;
+            }
+            return false;
+
         }
     }
 }
