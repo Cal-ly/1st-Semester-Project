@@ -17,10 +17,11 @@
         public string EventOrganizerWebsite { get; set; }
         
         public Event() {}
+        
+        public override string ToString()
+        {
+			return $"ID: {ID}\nName: {EventName}\nDescription: {EventDescription}\nLocation: {EventLocation}\nDate: {EventDate}\nTime: {EventTime}\nDuration: {EventDuration}\nOrganizer: {EventOrganizer}\nEmail: {EventOrganizerEmail}\nPhone: {EventOrganizerPhone}\nWebsite: {EventOrganizerWebsite}";
+		}
 
-		//public override string ToString()
-		//{
-		//	return $"{{{nameof(ID)}={ID.ToString()}, {nameof(EventName)}={EventName}, {nameof(EventDescription)}={EventDescription}, {nameof(EventLocation)}={EventLocation}, {nameof(EventDate)}={EventDate.ToString()}, {nameof(EventTime)}={EventTime.ToString()}, {nameof(EventCost)}={EventCost.ToString()}, {nameof(EventAttendees)}={EventAttendees}, {nameof(EventDuration)}={EventDuration.ToString()}, {nameof(EventOrganizer)}={EventOrganizer}, {nameof(EventOrganizerEmail)}={EventOrganizerEmail}, {nameof(EventOrganizerPhone)}={EventOrganizerPhone}, {nameof(EventOrganizerWebsite)}={EventOrganizerWebsite}}}";
-		//}
 	}
 }

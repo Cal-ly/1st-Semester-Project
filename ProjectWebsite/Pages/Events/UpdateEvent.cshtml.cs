@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Reflection.Metadata;
 
 namespace ProjectWebsite.Pages.Events
 {
@@ -23,9 +25,17 @@ namespace ProjectWebsite.Pages.Events
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid) { return Page(); }
-            service.UpdateEvent(Event);
+			service.UpdateEvent(Event);
             return RedirectToPage("GetAllEvents");
         }
-        public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
+
+		public string DisplayEventProperties()
+		{
+            string EventString = Event.ToString();
+            return EventString;
+		}
+
+
+		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
     }
 }
