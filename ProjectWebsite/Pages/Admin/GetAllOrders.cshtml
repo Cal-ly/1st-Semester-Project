@@ -3,7 +3,7 @@
 @{
 	ViewData["Title"] = "Ordreliste";
 }
-<table class="table table-bordered table-hover table-striped table-opacity">
+<table class="table table-hover table-striped table-opacity">
 	<thead>
 		<tr class="btn-secondary active">
 			<th>
@@ -42,7 +42,15 @@
 						@o.CustomerID
 					</td>
 					<td>
-						@o.OrderList
+						@foreach( var line in o.OrderList)
+						{ if(line!=null){
+							<p>@line.Product.Name
+								<span class="brsmall"></span>
+								@line.Product.Size g
+								<span class="brsmall"></span>
+								@line.Product.Price kr per stk
+							</p>
+						}}
 					</td>
 					<td>
 						@o.TotalPrice kr
@@ -50,7 +58,7 @@
 					<td>
 						@if (o.Finished)
 						{
-							<p>Færdigjort</p>
+							<p>Færdiggjort</p>
 						}
 						else
 						{

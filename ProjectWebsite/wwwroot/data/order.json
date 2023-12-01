@@ -3,7 +3,20 @@
     "ID": 1,
     "CustomerID": 2,
     "TotalPrice": 0,
-    "OrderList": null,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   },
@@ -11,7 +24,20 @@
     "ID": 1,
     "CustomerID": 2,
     "TotalPrice": 0,
-    "OrderList": null,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   },
@@ -19,7 +45,20 @@
     "ID": 2,
     "CustomerID": 2,
     "TotalPrice": 0,
-    "OrderList": null,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   },
@@ -27,7 +66,20 @@
     "ID": 3,
     "CustomerID": 2,
     "TotalPrice": 680,
-    "OrderList": null,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   },
@@ -35,7 +87,20 @@
     "ID": 4,
     "CustomerID": 1,
     "TotalPrice": 6800,
-    "OrderList": null,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   },
@@ -43,7 +108,20 @@
     "ID": 5,
     "CustomerID": 2,
     "TotalPrice": 50,
-    "OrderList": null,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   },
@@ -51,7 +129,20 @@
     "ID": 6,
     "CustomerID": 1,
     "TotalPrice": 100,
-    "OrderList": null,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   },
@@ -94,7 +185,7 @@
         "Amount": 1
       }
     ],
-    "Finished": false,
+    "Finished": true,
     "DateFinished": "0001-01-01T00:00:00"
   },
   {
@@ -143,7 +234,20 @@
     "ID": 11,
     "CustomerID": 1,
     "TotalPrice": 0,
-    "OrderList": [],
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   },
@@ -151,7 +255,20 @@
     "ID": 12,
     "CustomerID": 1,
     "TotalPrice": 0,
-    "OrderList": [],
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   },
@@ -159,7 +276,20 @@
     "ID": 13,
     "CustomerID": 1,
     "TotalPrice": 0,
-    "OrderList": [],
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 2,
+          "Name": "White Tea",
+          "Description": "Delicious white tea",
+          "Content": "White Tea",
+          "Type": "White tea",
+          "Price": 50,
+          "Size": 100
+        },
+        "Amount": 100
+      }
+    ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
   }
