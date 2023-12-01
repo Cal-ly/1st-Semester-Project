@@ -292,5 +292,13 @@
     ],
     "Finished": false,
     "DateFinished": "0001-01-01T00:00:00"
+  },
+  {
+    "ID": 14,
+    "CustomerID": 2,
+    "TotalPrice": 0,
+    "OrderList": [],
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   }
 ]
