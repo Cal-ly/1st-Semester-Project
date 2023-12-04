@@ -43,7 +43,7 @@
 			foreach (var c in Model.Event.EventAttendees)
 			{
 				<tr>
-					<th scope="row" class="d-none d-sm-table-cell">
+				<th scope="row" class="d-none d-sm-table-cell">
 					@c.ID
 				</th>
 				<td>
@@ -52,14 +52,14 @@
 				<td>
 					@c.Address
 				</td>
-					<td class="d-none d-sm-table-cell">
+				<td class="d-none d-sm-table-cell">
 					@c.Email
 				</td>
 				<td>
                     @c.PhoneNumber
 				</td>
 				<td class="d-none d-sm-table-cell">
-					<a class="btn btn-danger" type="button" ><i class="fa fa-trash"></i></a>
+					<a class="btn btn-primary btn-sm" type="button" title="Delete" asp-page-handler="DeleteAttendee" asp-route-id="@c.ID"><i class="fa-solid fa-user-xmark"></i></a>
 				</td>
 			</tr>
 			}
@@ -67,8 +67,25 @@
 	</tbody>
 </table>
 
+@* <p>
+	<a class="btn btn-primary" type="button" title="AddAttendee" asp-page-handler="AddAttendee" asp-route-id="@Model.Event.ID"></a>
+</p> *@
+
 <p>
-	Ikke kunde endnu?
-	Opret dig her og tilmeld dig spændende events!
+	<form method="post" class="form-inline">
+		<div class="input-group mb-3">
+			<input asp-for="CustomerID" class="form-control mr-1" placeholder="Indtast Kundenummer" />
+			<input type="submit" asp-page-handler="AddAttendee" value="Search" class="btn btn-primary" />
+		</div>
+	</form>
+</p>
+
+<p>
+    <a class="btn btn-primary" asp-page="Events/GetAllEvents"> Tilbage til alle events </a>
+</p>
+
+<p>
+	Ikke kunde endnu?<br />
+	Opret dig her og tilmeld dig spændende events!<br />
 	<a class="btn btn-primary" asp-page="Customer/CreateCustomer"> Bliv oprettet som kunde </a>
 </p>

@@ -70,17 +70,16 @@
                         @e.EventLocation
                     </td>
                     <td>
-                        @e.EventDateTime
-                        <td>
-                            @{
-                                DateTime endDateTime = e.EventDateTime.AddMinutes(e.EventDuration);
-                                string DisplayDateTimeString = $"{e.EventDateTime.ToString("yyyy-MM-dd HH:mm")} - {endDateTime.ToString("yyyy-MM-dd HH:mm")}";
-                            }
-                        </td>
+                        @{
+                            DateTime endDateTime = e.EventDateTime.AddMinutes(e.EventDuration);
+                            string DisplayDateTimeString = $"{e.EventDateTime.ToString("yyyy-MM-dd HH:mm")} - {endDateTime.ToString("yyyy-MM-dd HH:mm")}";
+                        }
+                        @DisplayDateTimeString
                     </td>
                     <td>
                         <a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@e.ID"><i class="fa fa-edit"></i></a>
                         <a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="DeleteEvent" asp-route-id="@e.ID"><i class="fa fa-trash"></i></a>
+                        <a class="btn btn-primary btn-sm" type="button" title="GetAllAttendees" asp-page="GetAllAttendees" asp-route-id="@e.ID"><i class="fa-solid fa-users"></i></a>
                     </td>
                 </tr>
             }
