@@ -38,14 +38,6 @@ namespace ProjectWebsite.Repositories
 			return null;
         }
 
-        public Product GetProductByID(int productID)
-        {
-            foreach (Product product in ProductList)
-                if (product.ID == productID)
-                    return product;
-            return null;
-        }
-
         public void CreateProduct(Product productID)
         {
             if (productID == null)
