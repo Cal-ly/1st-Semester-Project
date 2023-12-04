@@ -74,8 +74,10 @@
 						@o.DateFinished
 					</td>
 					<td>
-						<a class="btn btn-success" type="button" asp-page="CheckOrder" asp-route-id="@o.ID"><i class="fa-solid fa-check"></i></a>
-						<a class="btn btn-danger" type="button" asp-page="DeleteOrder" asp-route-id="@o.ID"><i class="fa fa-trash"></i></a>
+						<div class="btn-group" role="group" aria-label="Basic example">
+							<a class="btn btn-success" type="button" asp-page="CheckOrder" asp-route-id="@o.ID"><i class="fa-solid fa-check"></i></a>
+							<a class="btn btn-danger" type="button" asp-page="DeleteOrder" asp-route-id="@o.ID"><i class="fa fa-trash"></i></a>
+						</div>
 					</td>
 				</tr>
 			}

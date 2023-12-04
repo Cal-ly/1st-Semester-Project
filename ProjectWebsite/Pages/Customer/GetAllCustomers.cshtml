@@ -16,7 +16,7 @@
 		<form method="post" class="form-inline">
 			<div class="input-group">
 				<input asp-for="SearchCustomer" class="form-control mr-1" placeholder="Søg på et navn" />
-				<input type="submit" asp-page-handler="NameSearch" value="Search" class="btn btn-primary" />
+				<button type="submit" asp-page-handler="NameSearch" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
 			</div>
 		</form>
 	</div>
@@ -49,9 +49,6 @@
 			<th scope="col" class="d-none d-sm-table-cell">
 				
 			</th>
-			<th scope="col" class="d-none d-sm-table-cell">
-				
-			</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -61,31 +58,32 @@
 			{
 				<tr>
 					<th scope="row" class="d-none d-sm-table-cell">
-					@c.ID
-				</th>
-				<td>
-					@c.Name
-				</td>
-				<td>
-					@c.Address
-				</td>
+						@c.ID
+					</th>
+					<td>
+						@c.Name
+					</td>
+					<td>
+						@c.Address
+					</td>
 					<td class="d-none d-sm-table-cell">
-					@c.Email
-				</td>
-				<td>
-                    @c.PhoneNumber
+						@c.Email
+					</td>
+					<td>
+						@c.PhoneNumber
+					</td>
 					<td class="d-none d-sm-table-cell">
-					<a class="btn btn-primary" type="button" asp-page="UpdateCustomer" asp-route-id="@c.ID"><i class="fa fa-edit"></i></a>
-				</td>
-					<td class="d-none d-sm-table-cell">
-					<a class="btn btn-danger" type="button" asp-page="DeleteCustomer" asp-route-id="@c.ID"><i class="fa fa-trash"></i></a>
-				</td>
-			</tr>
+						<div class="btn-group" role="group" aria-label="Basic example">
+							<a class="btn btn-primary" type="button" asp-page="UpdateCustomer" asp-route-id="@c.ID"><i class="fa fa-edit"></i></a>
+							<a class="btn btn-danger" type="button" asp-page="DeleteCustomer" asp-route-id="@c.ID"><i class="fa fa-trash"></i></a>
+						</div>
+					</td>
+				</tr>
 			}
 		}
 	</tbody>
 </table>
 
 <p>
-	<a class="btn btn-primary" asp-page="CreateCustomer"> Create a new Customer </a>
+	<a class="btn btn-success" asp-page="CreateCustomer"><i class="fa-solid fa-plus"></i> Create a new Customer</a>
 </p>
