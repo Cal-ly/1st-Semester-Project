@@ -3,10 +3,10 @@
     "ID": 1,
     "Name": "Earl Grey",
     "Description": "Delicious black tea",
-    "Content": "Black tea", 
+    "Content": "Black tea",
     "Type": "Black tea",
-    "Price": 100
-
+    "Price": 100,
+    "Size": 100
   },
   {
     "ID": 2,
@@ -14,7 +14,8 @@
     "Description": "Delicious white tea",
     "Content": "White Tea",
     "Type": "White tea",
-    "Price": 50
+    "Price": 50,
+    "Size": 100
   },
   {
     "ID": 3,
@@ -22,7 +23,8 @@
     "Description": "Delicious Rooibos tea",
     "Content": "Rooibos tea",
     "Type": "Rooibos tea",
-    "Price": 60
+    "Price": 60,
+    "Size": 100
   },
   {
     "ID": 4,
@@ -30,6 +32,16 @@
     "Description": "Delicious green tea",
     "Content": "Green tea",
     "Type": "Green tea",
-    "Price": 70
+    "Price": 70,
+    "Size": 100
+  },
+  {
+    "ID": 5,
+    "Name": "Monica te",
+    "Description": "god te",
+    "Content": "Green Tea",
+    "Type": "Green Tea",
+    "Price": 90,
+    "Size": 100
   }
 ]
