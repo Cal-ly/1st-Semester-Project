@@ -24,5 +24,18 @@
     "EventCapacity": 12,
     "EventIsFull": false,
     "EventOrganizer": "TestTest"
+  },
+  {
+    "ID": 4,
+    "EventName": "Bla",
+    "EventLocation": "Bla",
+    "EventDateTime": "0001-02-10T00:00:00",
+    "EventDuration": 2,
+    "EventDescription": "2",
+    "EventCost": 2,
+    "EventAttendees": [],
+    "EventCapacity": 2,
+    "EventIsFull": false,
+    "EventOrganizer": "2"
   }
 ]
