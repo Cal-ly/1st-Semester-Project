@@ -5,8 +5,8 @@
 
 <div class="container">
 
-<h1 class="pb-5 pt-5 text-center">Vores Produkter</h1>
-<div class="row">
+    <h1 class="pb-5 pt-5 text-center">Vores Produkter</h1>
+    <div class="row">
         <div class="col-md-4 col-lg-3 col-xl-2 me-3">
             <div class="row alert alert-secondary">
             <form method="post" class="form-inline">
@@ -28,7 +28,7 @@
                         <span asp-validation-for="MaxPrice" class="text-danger"></span>
                     </div>
                     <div>
-                        <input type="submit" asp-page-handler="PriceFilter" value="Filter" class="btn btn-primary mt-2" />
+                            <button type="submit" asp-page-handler="PriceFilter" class="btn btn-primary mt-2"><i class="fa-solid fa-filter"></i> Filtrer</button>
                     </div>
                 </form>
             </div>
@@ -40,7 +40,7 @@
         </div>
 
 
-        <div class="col alert alert-danger ">
+        <div class="col">
             <div class="row  d-flex justify-content-center justify-content-md-start">
                 @foreach (var product in Model.Products)
                 {
@@ -54,7 +54,6 @@
                                 <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
                                 <a class="btn btn-danger" type="button" asp-page="DeleteProduct" asp-route-id="@product.ID"><i class="fa fa-trash"></i></a>
                             </div>
-                       
                         </div>
                     </div>
                 }
