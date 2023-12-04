@@ -18,9 +18,13 @@ namespace ProjectWebsite.Pages.Product
 
 		public IActionResult OnGet(int productID)
 		{
-			Product = ProductService.GetProductByID(productID);
+            Console.WriteLine(productID);
+            Product = ProductService.GetProductByID(productID);
 			if (Product == null)
-				return RedirectToPage("/Error"); //Define NotFound page
+			{
+                return RedirectToPage("/Error"); //Define NotFound page
+            }
+			
 			return Page();
 		}
 
