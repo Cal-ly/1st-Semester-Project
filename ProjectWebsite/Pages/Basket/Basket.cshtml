@@ -45,10 +45,13 @@
             <td>
                 @element.Product.Price
             </td>
+            <td>
+                <a class="btn btn-primary btn-sm" type="button" title="Slet podukt" asp-page="DeleteBasketProduct" asp-route-id="@element.ID"><i class="fa fa-trash"></i></a>
+            </td>
         </tr>
     }
 </table>
-@Model.Total
+<p>Total pris @Model.Total</p>
 <form method="post">
     <div class="form-group">
         <label asp-for="@Model.Email" class="control-label"></label>
