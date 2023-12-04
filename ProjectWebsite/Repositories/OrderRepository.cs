@@ -73,6 +73,17 @@ namespace ProjectWebsite.Repositories
             }
             return false;
         }
+        public bool DeleteFromBasket(int orderLineID)
+        {
+            OrderLine orderLineToBeDeleted = GetOrderLine(orderLineID);
+            if (orderLineToBeDeleted != null)
+            {
+                Order.basket.Remove(orderLineToBeDeleted);
+                return true;
+            }
+            return false;
+
+        }
 
 
         public bool DeleteOrder(int orderID)
@@ -87,5 +98,6 @@ namespace ProjectWebsite.Repositories
             return false;
 
         }
+     
     }
 }

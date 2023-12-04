@@ -18,39 +18,25 @@ namespace ProjectWebsite.Services
 			get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "event.json"); }
 		}
 
-		public void SaveJsonItems(List<Event> events)
-		{
-			string tempFileName = JsonFileName + ".tmp";
-			using (FileStream jsonFileWriter = File.Open(tempFileName, FileMode.OpenOrCreate))
-			{
-				Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
-				{
-					SkipValidation = false,
-					Indented = true
-				});
-				JsonSerializer.Serialize<Event[]>(jsonWriter, events.ToArray());
-			}
-			if (File.Exists(JsonFileName))
-			{
-				// Load existing events
-				var existingEvents = GetJsonItems();
-				// Merge existing events with new events
-				var mergedEvents = existingEvents.Union(events);
-				// Write merged events to file
-				File.WriteAllText(JsonFileName, JsonSerializer.Serialize(mergedEvents));
-			}
-			else
-			{
-				File.Move(tempFileName, JsonFileName);
-			}
-		}
+        public void SaveJsonItems(List<Event> items)
+        {
+            using (FileStream jsonFileWriter = File.Create(JsonFileName))
+            {
+                Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
+                {
+                    SkipValidation = false,
+                    Indented = true
+                });
+                JsonSerializer.Serialize<Event[]>(jsonWriter, items.ToArray());
+            }
+        }
 
-		public IEnumerable<Event> GetJsonItems()
-		{
-			using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
-			{
-				return JsonSerializer.Deserialize<Event[]>(jsonFileReader.ReadToEnd());
-			}
-		}
-	}
+        public IEnumerable<Event> GetJsonItems()
+        {
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
+            {
+                return JsonSerializer.Deserialize<Event[]>(jsonFileReader.ReadToEnd());
+            }
+        }
+    }
 }

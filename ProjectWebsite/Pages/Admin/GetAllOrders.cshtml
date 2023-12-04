@@ -25,7 +25,7 @@
 				Færdiggørelsesdato
 			</th>
 			<th>
-				 
+
 			</th>
 		</tr>
 	</thead>
@@ -34,7 +34,8 @@
 		{
 			foreach (var o in Model.OrderList)
 			{
-				<tr>
+				var rowStyle = (o.Finished) ? "table-success" : "";
+				<tr class="@rowStyle">
 					<td>
 						@o.ID
 					</td>
@@ -44,25 +45,22 @@
 					<td>
 						@foreach (var line in o.OrderList)
 						{
-							if (line != null)
-							{
-								<p>
-									@line.Product.Name
-									<span class="brsmall"></span>
-									@line.Product.Size g
-									<span class="brsmall"></span>
-									@line.Amount stk
-									<span class="brsmall"></span>
-									@line.Product.Price kr per stk
-								</p>
-							}
+							<p>
+								@line.Product.Name
+								<span class="brsmall"></span>
+								@line.Product.Size g
+								<span class="brsmall"></span>
+								@line.Amount stk
+								<span class="brsmall"></span>
+								@line.Product.Price kr per stk
+							</p>
 						}
 					</td>
 					<td>
 						@o.TotalPrice kr
 					</td>
 					<td>
-						@if (o.Finished)
+						@if(o.Finished)
 						{
 							<p>Færdiggjort</p>
 						}
