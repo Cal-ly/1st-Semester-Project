@@ -16,5 +16,50 @@
     "Type": "White tea",
     "Price": 50,
     "Size": 100
+  },
+  {
+    "ID": 3,
+    "Name": "Monicas Te",
+    "Description": "Mega nice te",
+    "Content": "Sort te",
+    "Type": "Sort te",
+    "Price": 80,
+    "Size": 100
+  },
+  {
+    "ID": 4,
+    "Name": "Carstens te",
+    "Description": "Mega nice te",
+    "Content": "Rooibos te",
+    "Type": "Rooibos te",
+    "Price": 90,
+    "Size": 100
+  },
+  {
+    "ID": 5,
+    "Name": "Frederikkes te",
+    "Description": "Mega nice te",
+    "Content": "Hvid te",
+    "Type": "Hvid te",
+    "Price": 90,
+    "Size": 100
+  },
+  {
+    "ID": 6,
+    "Name": "Laus\u0027 Te",
+    "Description": "Mega nice te",
+    "Content": "Sort Te",
+    "Type": "Sort te",
+    "Price": 90,
+    "Size": 100
+  },
+  {
+    "ID": 7,
+    "Name": "Mathias\u0027 Te",
+    "Description": "Mega nice te",
+    "Content": "Gr\u00F8n te",
+    "Type": "Gr\u00F8n te",
+    "Price": 80,
+    "Size": 100
   }
 ]
