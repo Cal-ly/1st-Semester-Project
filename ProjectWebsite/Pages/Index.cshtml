@@ -3,10 +3,14 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<div class="banner">
+@* <div class="banner">
     <div class="banner-text">Juleteen er på gaden, køb den <a href="Product/GetAllProducts" style="color:black;">her</a></div>
+</div> *@
 
-</div>
+<a class="btn btn-success text-center container-fluid pt-3" href="Product/GetAllProducts">
+    <h4>Juleteen er på gaden, køb den her</h4>
+</a>
+
 <span class="brmedium"></span>
 <div style="">
     <h1 style="text-align:center;">Blues Brews - dit eget teeventyr</h1>
@@ -19,86 +23,74 @@
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
         deserunt mollit anim id est laborum.
     </p>
+</div>
 
-</div>
 <div>
-    <img src="~/img/placeholder.jpg" class="center" alt="blues brews te" height=350px width=1200px object-fit=fill/>
+    <img src="~/img/placeholder.jpg" class="center img-thumbnail my-5" alt="blues brews te" height=350px width=1200px object-fit=fill />
 </div>
-<div class="container" style="outline:solid; position:relative;">
+
+<div class="container alert alert-secondary">
     <div class="row">
         <h2 style="text-align:center;">Populære produkter</h2>
-        <div class="col-sm-1 col-lg-4 mb-3">
-
-            <div class="card" display="inline-block" style="width: 18rem;">
-                <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-                <div class="card-body">
-                    <h5 class="card-title">product.Name</h5>
-                    <p class="card-text">product.Description</p>
-                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
-                </div>
+    </div>
+    <div class="row d-flex justify-content-around px-2 pb-5 px-md-5 pb-md-4 pt-2">
+        <div class="card col-9 col-md-6 col-lg-4">
+            <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
+            <div class="card-body">
+                <h5 class="card-title">product.Name</h5>
+                <p class="card-text">product.Description</p>
+                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
             </div>
         </div>
-        <div class="col-sm-1 col-lg-4 mb-3">
-            <div class="card" display="inline-block" style="width: 18rem;">
-                <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-                <div class="card-body">
-                    <h5 class="card-title">product.Name</h5>
-                    <p class="card-text">product.Description</p>
-                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
-                </div>
+        <div class="card col-9 col-md-6 col-lg-4 ">
+            <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
+            <div class="card-body">
+                <h5 class="card-title">product.Name</h5>
+                <p class="card-text">product.Description</p>
+                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
             </div>
         </div>
-        <div class="col-sm-1 col-lg-4 mb-3">
-            <div class="card" display="inline-block" style="width: 18rem;">
-                <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-                <div class="card-body">
-                    <h5 class="card-title">product.Name</h5>
-                    <p class="card-text">product.Description</p>
-                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
-                </div>
+        <div class="card col-9 col-md-6 col-lg-4">
+            <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
+            <div class="card-body">
+                <h5 class="card-title">product.Name</h5>
+                <p class="card-text">product.Description</p>
+                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
             </div>
         </div>
     </div>
 </div>
+
 <span class="brlarge"></span>
-<div class="container" style="outline:solid; position:relative;">
+
+<div class="container alert alert-secondary mb-5">
     <div class="row">
         <h2 style="text-align:center;">Nyheder og Events</h2>
-        <div class="col-sm-1 col-lg-4 mb-3">
-
-            <div class="card" display="inline-block" style="width: 18rem;">
-                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-                <div class="card-body">
-                    <h5 class="card-title">Events.Name</h5>
-                    <p class="card-text">Events.Description</p>
-                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
-                </div>
+    </div>
+    <div class="row d-flex justify-content-around px-2 pb-5 px-md-5 pb-md-4 pt-2">
+        <div class="card col-9 col-md-6 col-lg-4">
+            <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
+            <div class="card-body">
+                <h5 class="card-title">Events.Name</h5>
+                <p class="card-text">Events.Description</p>
+                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
             </div>
         </div>
-        <div class="col-sm-1 col-lg-4 mb-3">
-            <div class="card" display="inline-block" style="width: 18rem;">
-                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-                <div class="card-body">
-                    <h5 class="card-title">Events.Name</h5>
-                    <p class="card-text">Events.Description</p>
-                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
-                </div>
+        <div class="card col-9 col-md-6 col-lg-4 ">
+            <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
+            <div class="card-body">
+                <h5 class="card-title">Events.Name</h5>
+                <p class="card-text">Events.Description</p>
+                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
             </div>
         </div>
-        <div class="col-sm-1 col-lg-4 mb-3">
-            <div class="card" display="inline-block" style="width: 18rem;">
-                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-                <div class="card-body">
-                    <h5 class="card-title">Events.Name</h5>
-                    <p class="card-text">Events.Description</p>
-                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
-                </div>
+        <div class="card col-9 col-md-6 col-lg-4">
+            <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
+            <div class="card-body">
+                <h5 class="card-title">Events.Name</h5>
+                <p class="card-text">Events.Description</p>
+                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
             </div>
         </div>
     </div>
 </div>
-<span class="brlarge"></span>
-
-
-
-

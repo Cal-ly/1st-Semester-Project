@@ -12,6 +12,8 @@ namespace ProjectWebsite.Pages.Kurv
 
         [BindProperty]
         public string Email { get; set; }
+        [BindProperty]
+        public int NewAmount { get; set; }
 
         public List<OrderLine> Kurv { get; set; }
         public double Total { get; set; }

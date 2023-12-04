@@ -16,18 +16,19 @@ namespace ProjectWebsite.Pages.Basket
             OrderService = orderService;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int newAmount, int orderLineID)
         {
-            Console.WriteLine("hello");
-            
+            Console.WriteLine(orderLineID);
+            Console.WriteLine(newAmount);
+
             return RedirectToPage("Basket");
         }
 
-        public IActionResult OnGet(int newAmount, int orderLineID)
-        {
-            Console.WriteLine(newAmount);
-            OrderService.UpdateOrderAmount(newAmount, orderLineID);
-            return RedirectToPage("Basket");
-        }
+        //public IActionResult OnGet(int newAmount, int orderLineID)
+        //{
+        //    Console.WriteLine(newAmount);
+        //    OrderService.UpdateOrderAmount(newAmount, orderLineID);
+        //    return RedirectToPage("Basket");
+        //}
     }
 }

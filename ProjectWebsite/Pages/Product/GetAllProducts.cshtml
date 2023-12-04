@@ -5,42 +5,42 @@
 
 <div class="container">
 
-<h1 class="pb-5 pt-5 text-center">Vores Produkter</h1>
-<div class="row">
+    <h1 class="pb-5 pt-5 text-center">Vores Produkter</h1>
+    <div class="row">
         <div class="col-md-4 col-lg-3 col-xl-2 me-3">
-            <div class="row alert alert-secondary">
-            <form method="post" class="form-inline">
-                <input asp-for="SearchString" class="form-control mr-1 mb-2" placeholder="Søg på te-type" />
-                <input type="submit" asp-page-handler="NameSearch" value="Søg" class="btn btn-primary mb-3" />
-                <span asp-validation-for="@Model.SearchString" class="text-danger"></span>
-            </form>
-            <div class="card card-body">
-                <p class="card-subtitle text-muted">Filtrer på pris</p>
-                <form method="post">
-                    <div class="form-group">
-                        <label asp-for="MinPrice">Min pris</label>
-                        <input asp-for="MinPrice" type="text" class="form-control" placeholder="0 kr" />
-                        <span asp-validation-for="MinPrice" class="text-danger"></span>
-                    </div>
-                    <div class="form-group-inline">
-                        <label asp-for="MaxPrice">Max pris</label>
-                        <input asp-for="MaxPrice" type="text" class="form-control" placeholder="100 kr" />
-                        <span asp-validation-for="MaxPrice" class="text-danger"></span>
-                    </div>
-                    <div>
-                        <input type="submit" asp-page-handler="PriceFilter" value="Filter" class="btn btn-primary mt-2" />
-                    </div>
+            <div class="card card-body alert alert-secondary">
+                <form method="post" class="form-inline">
+                    <input asp-for="SearchString" class="form-control mr-1 mb-2" placeholder="Søg på te-type" />
+                    <input type="submit" asp-page-handler="NameSearch" value="Søg" class="btn btn-primary mb-3" />
+                    <span asp-validation-for="@Model.SearchString" class="text-danger"></span>
                 </form>
-            </div>
-            <div>
-                <a class="btn btn-primary mt-2" type="button" title="Nulstil filtre" asp-page="GetAllProducts">Nulstil filtre</a>
-            </div>
-                <a class="btn btn-primary mt-5" type="button" title="Opret nyt produkt" asp-page="CreateProduct">Opret nyt produkt</a>
+                <div class="card card-body">
+                    <p class="card-subtitle text-muted">Filtrer på pris</p>
+                    <form method="post">
+                        <div class="form-group">
+                            <label asp-for="MinPrice">Min pris</label>
+                            <input asp-for="MinPrice" type="text" class="form-control" placeholder="0 kr" />
+                            <span asp-validation-for="MinPrice" class="text-danger"></span>
+                        </div>
+                        <div class="form-group-inline">
+                            <label asp-for="MaxPrice">Max pris</label>
+                            <input asp-for="MaxPrice" type="text" class="form-control" placeholder="100 kr" />
+                            <span asp-validation-for="MaxPrice" class="text-danger"></span>
+                        </div>
+                        <div>
+                                <button type="submit" asp-page-handler="PriceFilter" class="btn btn-primary mt-2"><i class="fa-solid fa-filter"></i> Filtrer</button>
+                        </div>
+                    </form>
+                </div>
+                
+                    <a class="btn btn-primary mt-2" type="button" title="Nulstil filtre" asp-page="GetAllProducts">Nulstil filtre</a>
+                    <a class="btn btn-success mt-5" type="button" title="Opret nyt produkt" asp-page="CreateProduct"><i class="fa-solid fa-plus"></i> Opret nyt produkt</a>
+                
             </div>
         </div>
 
 
-        <div class="col alert alert-danger ">
+        <div class="col">
             <div class="row  d-flex justify-content-center justify-content-md-start">
                 @foreach (var product in Model.Products)
                 {
@@ -51,10 +51,11 @@
                             <p class="card-text">@product.Description</p>
                             <div class="d-flex justify-content-between">
                                 <p class="card-text">@product.Price kr</p>
-                                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
-                                <a class="btn btn-danger" type="button" asp-page="DeleteProduct" asp-route-id="@product.ID"><i class="fa fa-trash"></i></a>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
+                                    <a class="btn btn-danger" type="button" asp-page="DeleteProduct" asp-route-id="@product.ID"><i class="fa fa-trash"></i></a>
+                                </div>
                             </div>
-                       
                         </div>
                     </div>
                 }
