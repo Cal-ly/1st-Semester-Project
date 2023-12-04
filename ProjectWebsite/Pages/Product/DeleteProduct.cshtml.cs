@@ -1,26 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ProjectWebsite.Models;
 using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Product
 {
     public class DeleteProductModel : PageModel
     {
-		public ProductService ProductService;
-
 		[BindProperty]
 		public Models.Product Product { get; set; }
+        public ProductService ProductService { get; set; }
 
-		public DeleteProductModel(ProductService productService)
+        public DeleteProductModel(ProductService productService)
 		{
 			ProductService = productService;
 		}
 
 		public IActionResult OnGet(int productID)
 		{
-            Console.WriteLine(productID);
-            Product = ProductService.GetProductByID(productID);
-			if (Product == null)
+			Console.WriteLine(productID);
+			Product = ProductService.GetProduct(productID);
+			Console.WriteLine(Product);
+            if (Product == null)
 			{
                 return RedirectToPage("/Error"); //Define NotFound page
             }
