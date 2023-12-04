@@ -63,5 +63,24 @@ namespace ProjectWebsite.Repositories
             }
             return false;
         }
+
+        public void UpdateProduct(Product product)
+        {
+            foreach (Product p in ProductList)
+            {
+                if (p.ID == product.ID)
+                {
+                    p.Name = product.Name;
+                    p.Description = p.Description;
+                    p.Content = p.Content;
+                    p.Type = p.Type;
+                    p.Price = product.Price;
+                    p.Size = product.Size;
+
+                    JsonProductService.SaveJsonItems(ProductList);
+                }
+            }
+        }
+
     }
 }
