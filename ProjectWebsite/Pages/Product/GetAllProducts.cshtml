@@ -35,6 +35,7 @@
             <div>
                 <a class="btn btn-primary mt-2" type="button" title="Nulstil filtre" asp-page="GetAllProducts">Nulstil filtre</a>
             </div>
+                <a class="btn btn-primary mt-5" type="button" title="Opret nyt produkt" asp-page="CreateProduct">Opret nyt produkt</a>
             </div>
         </div>
 
@@ -51,6 +52,7 @@
                             <div class="d-flex justify-content-between">
                                 <p class="card-text">@product.Price kr</p>
                                 <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
+                                <a class="btn btn-danger" type="button" asp-page="DeleteProduct" asp-route-id="@product.ID"><i class="fa fa-trash"></i></a>
                             </div>
                        
                         </div>
