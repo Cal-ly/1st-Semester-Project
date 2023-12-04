@@ -207,8 +207,8 @@
         "ID": 0
       }
     ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
+    "Finished": true,
+    "DateFinished": "2023-12-01T19:01:49.0746731+01:00"
   },
   {
     "ID": 11,
