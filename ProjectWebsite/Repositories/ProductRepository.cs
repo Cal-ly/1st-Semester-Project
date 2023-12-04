@@ -57,6 +57,7 @@ namespace ProjectWebsite.Repositories
             {
                 //remove it, should run smoothly
                 ProductList.Remove(productToBeDeleted);
+                Console.WriteLine(ProductList);
                 JsonProductService.SaveJsonItems(ProductList);
                 return true;
             }

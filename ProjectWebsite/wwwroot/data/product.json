@@ -16,32 +16,5 @@
     "Type": "White tea",
     "Price": 50,
     "Size": 100
-  },
-  {
-    "ID": 3,
-    "Name": "Rooibos Tea",
-    "Description": "Delicious Rooibos tea",
-    "Content": "Rooibos tea",
-    "Type": "Rooibos tea",
-    "Price": 60,
-    "Size": 100
-  },
-  {
-    "ID": 4,
-    "Name": "Green Tea",
-    "Description": "Delicious green tea",
-    "Content": "Green tea",
-    "Type": "Green tea",
-    "Price": 70,
-    "Size": 100
-  }
-]  {
-    "ID": 5,
-    "Name": "Noget Te",
-    "Description": "Bladvand",
-    "Content": "Nedfaldsprodukter",
-    "Type": "Den klamme typoe",
-    "Price": 100000,
-    "Size": 100
   }
 ]
