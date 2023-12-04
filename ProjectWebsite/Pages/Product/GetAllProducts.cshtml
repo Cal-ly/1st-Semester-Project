@@ -3,105 +3,74 @@
 @{
 }
 
+<div class="container">
 
 <h1 class="pb-5 pt-5 text-center">Vores Produkter</h1>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-
+<div class="row">
+        <div class="col-md-4 col-lg-3 col-xl-2 me-3">
+            <div class="row alert alert-secondary">
             <form method="post" class="form-inline">
                 <input asp-for="SearchString" class="form-control mr-1 mb-2" placeholder="Søg på te-type" />
                 <input type="submit" asp-page-handler="NameSearch" value="Søg" class="btn btn-primary mb-3" />
                 <span asp-validation-for="@Model.SearchString" class="text-danger"></span>
             </form>
-
-
-            <div class="card">
-                <div class="card-body">
-                    <p class="card-subtitle mb-2 text-muted">Filtrer på pris</p>
-                    <form method="post">
-                        <div class="form-group">
-                            <label asp-for="MinPrice">Min pris</label>
-                            <input asp-for="MinPrice" type="text" class="form-control" placeholder="0 kr" />
-                            <span asp-validation-for="MinPrice" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="MaxPrice">Max pris</label>
-                            <input asp-for="MaxPrice" type="text" class="form-control" placeholder="100 kr" />
-                            <span asp-validation-for="MaxPrice" class="text-danger"></span>
-                        </div>
-                        <div>
-                            <input type="submit" asp-page-handler="PriceFilter" value="Filter" class="btn btn-primary mt-2" />
-                        </div>
-                    </form>
-                </div>
+            <div class="card card-body">
+                <p class="card-subtitle text-muted">Filtrer på pris</p>
+                <form method="post">
+                    <div class="form-group">
+                        <label asp-for="MinPrice">Min pris</label>
+                        <input asp-for="MinPrice" type="text" class="form-control" placeholder="0 kr" />
+                        <span asp-validation-for="MinPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group-inline">
+                        <label asp-for="MaxPrice">Max pris</label>
+                        <input asp-for="MaxPrice" type="text" class="form-control" placeholder="100 kr" />
+                        <span asp-validation-for="MaxPrice" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <input type="submit" asp-page-handler="PriceFilter" value="Filter" class="btn btn-primary mt-2" />
+                    </div>
+                </form>
             </div>
-            
             <div>
                 <a class="btn btn-primary mt-2" type="button" title="Nulstil filtre" asp-page="GetAllProducts">Nulstil filtre</a>
             </div>
-            
-        </div>
-        <div class="col-10">
-            <div class="container">
-                <div class="row">
-                    @foreach (var product in Model.Products)
-                    {
-                        <div class="col-sm-1 col-lg-4 mb-3">
-                            <div class="card" display="inline-block" style="width: 18rem;">
-                                <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title">@product.Name</h5>
-                                    <p class="card-text">@product.Description</p>
-                                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
-
-                <div>
-
-                    <h3 class="mt-5">Kort om typer</h3>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada vitae nisi vel scelerisque. Fusce sit amet erat sit amet magna lacinia posuere. Integer feugiat odio luctus lacus mattis pharetra. Phasellus posuere augue odio, ut iaculis arcu dignissim vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate a eros sit amet laoreet. Cras tristique elit elit. Maecenas ipsum urna, lacinia ut tortor mollis, molestie semper sapien. Nunc suscipit sem sed nunc viverra vestibulum. Morbi vel laoreet nisl, quis pharetra nisi. Fusce porttitor convallis tempus. Suspendisse vehicula sem odio, eu dictum massa egestas ac. Suspendisse ornare tortor a vulputate sodales.
-
-                        Ut eleifend pharetra massa in commodo. Nam maximus, augue in placerat gravida, lacus mi sagittis neque, eu gravida augue risus ac justo. Nullam vel facilisis magna. Donec a ante vehicula, tincidunt orci id, venenatis massa. Suspendisse sed purus sed sem vehicula tincidunt vel vel lorem. Nam ac lorem eu mi facilisis rutrum eget quis felis. Vestibulum nec pretium tellus. Mauris arcu nibh, imperdiet a odio quis, consequat sollicitudin dui. Proin porta scelerisque urna, tristique pretium enim mollis quis. Integer eu libero vitae justo efficitur vulputate et non erat. Quisque facilisis, tortor ut egestas placerat, lacus nunc egestas sapien, at imperdiet augue ligula ut elit.
-
-                        Etiam efficitur viverra erat eu vestibulum. In porta tempor massa, a placerat purus efficitur ut. Donec sit amet risus mattis, pulvinar augue vel, varius mauris. Phasellus magna orci, vulputate at nisl vel, tincidunt viverra est. Vestibulum in pulvinar nisi. Nam ultricies dolor vitae dictum sollicitudin. Suspendisse non nisi quis tortor elementum rutrum eu et eros. Vivamus et odio vel nunc hendrerit ultricies. Nam nec porta tellus.
-
-                        Curabitur ut nibh quis massa facilisis vulputate. Cras tincidunt lacus ut libero venenatis, sit amet viverra metus lobortis. Sed ultrices et ex at facilisis. Sed fermentum ligula pulvinar erat mollis, eu ornare sapien tempor. Nulla eget nisi arcu. Donec tempor magna quis porta porta. Sed vel blandit odio. Aliquam suscipit dolor tortor, sed porttitor mi sodales a. Donec venenatis finibus odio, vitae venenatis nisi aliquam ut. Etiam volutpat risus laoreet urna aliquam tempus. Maecenas maximus ultrices suscipit.
-
-                        Nunc ultricies nibh quis gravida mattis. Vestibulum massa arcu, tempor nec lobortis eu, tempus vel turpis. Phasellus non leo placerat, consequat dui quis, pharetra libero. Etiam lacus magna, feugiat sed dui a, tincidunt gravida magna. Praesent viverra tristique justo at fringilla. Nulla non interdum tortor, eu viverra arcu. Praesent malesuada nibh eros, at rutrum justo fermentum sit amet. Curabitur et laoreet lorem. Aliquam eget metus egestas velit vehicula accumsan. Proin commodo, odio vehicula dapibus dignissim, eros neque tincidunt lorem, ut malesuada quam eros in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam vitae ante vulputate, tempus neque nec, porttitor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec in ex consectetur, sodales odio sit amet, convallis urna. Morbi eu ipsum ligula.
-                    </p>
-
-                </div> 
-
-               
-
             </div>
         </div>
-       
+
+
+        <div class="col alert alert-danger ">
+            <div class="row  d-flex justify-content-center justify-content-md-start">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="card col-9 col-md-6 col-lg-4 col-xl-3" @* display="inline-block" mb-3*@>
+                        <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">@product.Description</p>
+                            <div class="d-flex justify-content-between">
+                                <p class="card-text">@product.Price kr</p>
+                                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
+                            </div>
+                       
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3 class="mt-5">Kort om typer</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada vitae nisi vel scelerisque. Fusce sit amet erat sit amet magna lacinia posuere. Integer feugiat odio luctus lacus mattis pharetra. Phasellus posuere augue odio, ut iaculis arcu dignissim vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate a eros sit amet laoreet. Cras tristique elit elit. Maecenas ipsum urna, lacinia ut tortor mollis, molestie semper sapien. Nunc suscipit sem sed nunc viverra vestibulum. Morbi vel laoreet nisl, quis pharetra nisi. Fusce porttitor convallis tempus. Suspendisse vehicula sem odio, eu dictum massa egestas ac. Suspendisse ornare tortor a vulputate sodales.
+
+            Ut eleifend pharetra massa in commodo. Nam maximus, augue in placerat gravida, lacus mi sagittis neque, eu gravida augue risus ac justo. Nullam vel facilisis magna. Donec a ante vehicula, tincidunt orci id, venenatis massa. Suspendisse sed purus sed sem vehicula tincidunt vel vel lorem. Nam ac lorem eu mi facilisis rutrum eget quis felis. Vestibulum nec pretium tellus. Mauris arcu nibh, imperdiet a odio quis, consequat sollicitudin dui. Proin porta scelerisque urna, tristique pretium enim mollis quis. Integer eu libero vitae justo efficitur vulputate et non erat. Quisque facilisis, tortor ut egestas placerat, lacus nunc egestas sapien, at imperdiet augue ligula ut elit.
+
+            Etiam efficitur viverra erat eu vestibulum. In porta tempor massa, a placerat purus efficitur ut. Donec sit amet risus mattis, pulvinar augue vel, varius mauris. Phasellus magna orci, vulputate at nisl vel, tincidunt viverra est. Vestibulum in pulvinar nisi. Nam ultricies dolor vitae dictum sollicitudin. Suspendisse non nisi quis tortor elementum rutrum eu et eros. Vivamus et odio vel nunc hendrerit ultricies. Nam nec porta tellus.
+
+            Curabitur ut nibh quis massa facilisis vulputate. Cras tincidunt lacus ut libero venenatis, sit amet viverra metus lobortis. Sed ultrices et ex at facilisis. Sed fermentum ligula pulvinar erat mollis, eu ornare sapien tempor. Nulla eget nisi arcu. Donec tempor magna quis porta porta. Sed vel blandit odio. Aliquam suscipit dolor tortor, sed porttitor mi sodales a. Donec venenatis finibus odio, vitae venenatis nisi aliquam ut. Etiam volutpat risus laoreet urna aliquam tempus. Maecenas maximus ultrices suscipit.
+
+            Nunc ultricies nibh quis gravida mattis. Vestibulum massa arcu, tempor nec lobortis eu, tempus vel turpis. Phasellus non leo placerat, consequat dui quis, pharetra libero. Etiam lacus magna, feugiat sed dui a, tincidunt gravida magna. Praesent viverra tristique justo at fringilla. Nulla non interdum tortor, eu viverra arcu. Praesent malesuada nibh eros, at rutrum justo fermentum sit amet. Curabitur et laoreet lorem. Aliquam eget metus egestas velit vehicula accumsan. Proin commodo, odio vehicula dapibus dignissim, eros neque tincidunt lorem, ut malesuada quam eros in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam vitae ante vulputate, tempus neque nec, porttitor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec in ex consectetur, sodales odio sit amet, convallis urna. Morbi eu ipsum ligula.
+        </p>
     </div>
 </div>
-
-
-    
-
-
-
-
-
-
-
-       
-
-
-
-
-
-
-
