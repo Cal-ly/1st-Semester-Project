@@ -5,6 +5,7 @@ namespace ProjectWebsite.Repositories
 {
     public class ProductRepository
     {
+        public static int NextID = 1;
         public List<Product> ProductList { get; set; }
         private JsonProductService JsonProductService { get; set; }
 
@@ -12,6 +13,14 @@ namespace ProjectWebsite.Repositories
         {
             JsonProductService = jsonProductService;
             ProductList = jsonProductService.GetJsonItems().ToList();
+        }
+
+        public int GetNextID()
+        {
+            int nextID = ProductList.Max(c => c.ID) + 1;
+            if (nextID <= NextID) { nextID = NextID + 1; }
+            NextID = nextID;
+            return nextID;
         }
 
         public Product GetProduct(int productID)
@@ -26,15 +35,14 @@ namespace ProjectWebsite.Repositories
             return null;
         }
 
-        public Product CreateProduct(string name, string description, string content, string type, double price)
+        public void CreateProduct(Product productID)
         {
-            //create new product object
-            Product newProduct = new() { Name = name, Description = description, Content = content, Type = type, Price = price };
-            //add reference to that product object to ProductList
-            ProductList.Add(newProduct);
+            if (productID == null)
+            {
+                throw new ArgumentNullException(nameof(productID));
+            }
+            ProductList.Add(productID);
             JsonProductService.SaveJsonItems(ProductList);
-            //return reference to newProduct
-            return newProduct;
         }
 
         public bool DeleteProduct(int productID)
