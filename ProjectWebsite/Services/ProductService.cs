@@ -14,6 +14,7 @@ namespace ProjectWebsite.Services
         #region Repository method calls
         public int GetNextID() { return ProductRepository.GetNextID(); }
         public Product GetProduct(int productID) { return ProductRepository.GetProduct(productID); }
+        public Product GetProductByID(int productID) { return ProductRepository.GetProductByID(productID); }
         public void CreateProduct(Product productID) { ProductRepository.CreateProduct(productID); }
         public bool DeleteProduct(int productID) { return ProductRepository.DeleteProduct(productID); }
         public List<Product> ProductList { get { return ProductRepository.ProductList; } }
