@@ -7,7 +7,22 @@
     "EventDuration": 6,
     "EventDescription": "Testtest",
     "EventCost": 60,
-    "EventAttendees": [],
+    "EventAttendees": [
+        {
+            "ID": 2,
+            "Name": "Bard",
+            "Address": "\u00C5rhus",
+            "Email": "TeaLover123",
+            "PhoneNumber": "83745348"
+        },
+        {
+            "ID": 3,
+            "Name": "Customer3",
+            "Address": "Roskilde",
+            "Email": "Tea",
+            "PhoneNumber": "93485787"
+        }
+    ],
     "EventCapacity": 12,
     "EventIsFull": false,
     "EventOrganizer": "BluesBrews"
@@ -20,7 +35,22 @@
     "EventDuration": 20,
     "EventDescription": "FDES",
     "EventCost": 12,
-    "EventAttendees": [],
+    "EventAttendees": [
+        {
+            "ID": 2,
+            "Name": "Bard",
+            "Address": "\u00C5rhus",
+            "Email": "TeaLover123",
+            "PhoneNumber": "83745348"
+        },
+        {
+            "ID": 3,
+            "Name": "Customer3",
+            "Address": "Roskilde",
+            "Email": "Tea",
+            "PhoneNumber": "93485787"
+        }
+    ],
     "EventCapacity": 12,
     "EventIsFull": false,
     "EventOrganizer": "TestTest"
@@ -33,9 +63,52 @@
     "EventDuration": 2,
     "EventDescription": "2",
     "EventCost": 2,
-    "EventAttendees": [],
+    "EventAttendees": [
+        {
+            "ID": 2,
+            "Name": "Bard",
+            "Address": "\u00C5rhus",
+            "Email": "TeaLover123",
+            "PhoneNumber": "83745348"
+        },
+        {
+            "ID": 3,
+            "Name": "Customer3",
+            "Address": "Roskilde",
+            "Email": "Tea",
+            "PhoneNumber": "93485787"
+        }
+    ],
     "EventCapacity": 2,
     "EventIsFull": false,
     "EventOrganizer": "2"
+  },
+  {
+    "ID": 5,
+    "EventName": "DeltagerEvent",
+    "EventLocation": "Testest",
+    "EventDateTime": "2023-12-04T15:20:00",
+    "EventDuration": 60,
+    "EventDescription": "Testtest",
+    "EventCost": 60,
+    "EventAttendees": [
+        {
+            "ID": 2,
+            "Name": "Bard",
+            "Address": "\u00C5rhus",
+            "Email": "TeaLover123",
+            "PhoneNumber": "83745348"
+        },
+        {
+            "ID": 3,
+            "Name": "Customer3",
+            "Address": "Roskilde",
+            "Email": "Tea",
+            "PhoneNumber": "93485787"
+        }
+    ],
+    "EventCapacity": 23,
+    "EventIsFull": false,
+    "EventOrganizer": "TestTest"
   }
 ]

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
+using ProjectWebsite.Models;
 
 namespace ProjectWebsite.Pages.Events
 {
@@ -19,7 +20,6 @@ namespace ProjectWebsite.Pages.Events
         {
             //if (!ModelState.IsValid) { return Page(); }
             Event.ID = eventService.GetNextID();
-            Event.EventAttendees = new List<Models.Customer>();
             eventService.CreateEvent(Event);
             return RedirectToPage("GetAllEvents");
         }

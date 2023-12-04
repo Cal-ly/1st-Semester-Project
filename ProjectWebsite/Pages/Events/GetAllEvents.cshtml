@@ -49,6 +49,9 @@
             <th>
                 Date
             </th>
+            <th>
+                Time
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -70,11 +73,13 @@
                         @e.EventLocation
                     </td>
                     <td>
+                        @e.EventDateTime.ToString("dd-MM-yy")
+                    </td>
+                    <td>
                         @{
                             DateTime endDateTime = e.EventDateTime.AddMinutes(e.EventDuration);
-                            string DisplayDateTimeString = $"{e.EventDateTime.ToString("yyyy-MM-dd HH:mm")} - {endDateTime.ToString("yyyy-MM-dd HH:mm")}";
+                            <p>@e.EventDateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")</p>
                         }
-                        @DisplayDateTimeString
                     </td>
                     <td>
                         <a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@e.ID"><i class="fa fa-edit"></i></a>
@@ -88,5 +93,5 @@
 </table>
 
 <p>
-    <a class="btn btn-primary" asp-page="CreateEvent"> Lav et ny event </a>
+    <a class="btn btn-primary" asp-page="CreateEvent"> Opret et ny event </a>
 </p>
