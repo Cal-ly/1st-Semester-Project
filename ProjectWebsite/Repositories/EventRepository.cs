@@ -10,7 +10,6 @@ namespace ProjectWebsite.Repositories
         public static int NextID = 1;
         public List<Event> EventList { get; set; }
         private JsonEventService JsonEventService { get; set; }
-        
         public EventRepository(JsonEventService jsonFileEventService)
         {
             JsonEventService = jsonFileEventService;
@@ -25,7 +24,6 @@ namespace ProjectWebsite.Repositories
             NextID = nextID;
             return nextID;
         }
-       
         public void CreateEvent(Event eventIn)
         {
             if (eventIn == null)
@@ -35,7 +33,6 @@ namespace ProjectWebsite.Repositories
             EventList.Add(eventIn);
             JsonEventService.SaveJsonItems(EventList);
         }
-        
         public Event UpdateEvent(Event incomingE)
         {
             foreach (Event outgoingE in EventList)
@@ -43,22 +40,23 @@ namespace ProjectWebsite.Repositories
                 if (outgoingE.ID == incomingE.ID)
                 {
                     outgoingE.EventName = incomingE.EventName;
-                    outgoingE.EventDescription = incomingE.EventDescription;
                     outgoingE.EventLocation = incomingE.EventLocation;
-                    outgoingE.EventDate = incomingE.EventDate;
-                    outgoingE.EventTime = incomingE.EventTime;
+                    outgoingE.EventDateTime = incomingE.EventDateTime;
                     outgoingE.EventDuration = incomingE.EventDuration;
+                    outgoingE.EventDescription = incomingE.EventDescription;
+                    outgoingE.EventCost = incomingE.EventCost;
+                    outgoingE.EventAttendees = incomingE.EventAttendees;
+                    outgoingE.EventCapacity = incomingE.EventCapacity;
                     outgoingE.EventOrganizer = incomingE.EventOrganizer;
-                    outgoingE.EventOrganizerEmail = incomingE.EventOrganizerEmail;
-                    outgoingE.EventOrganizerPhone = incomingE.EventOrganizerPhone;
-                    outgoingE.EventOrganizerWebsite = incomingE.EventOrganizerWebsite;
+                    //outgoingE.EventOrganizerEmail = incomingE.EventOrganizerEmail;
+                    //outgoingE.EventOrganizerPhone = incomingE.EventOrganizerPhone;
+                    //outgoingE.EventOrganizerWebsite = incomingE.EventOrganizerWebsite;
 
-                    JsonEventService.SaveJsonItems(EventList);
+		            JsonEventService.SaveJsonItems(EventList);
                 }
             }
             return incomingE; //TODO: Display updated event -splash screen?
         }
-        
         public bool DeleteEvent(int eventID)
         {
             Event eventToBeDeleted = GetEventByID(eventID);
@@ -70,7 +68,13 @@ namespace ProjectWebsite.Repositories
             }
             return false;
         }
-        
+        public List<Customer> GetEventAttendes(int eventID)
+        {
+			foreach (Event e in EventList)
+				if (e.ID == eventID)
+					return e.EventAttendees;
+			return null;
+		}
         public Event GetEventByID(int eventID)
         {
             foreach (Event e in EventList)
@@ -78,7 +82,6 @@ namespace ProjectWebsite.Repositories
                     return e;
             return null;
         }
-        
         public List<Event> GetEventsByName(string searchString)
         {
             List<Event> searchResult = new();
@@ -89,7 +92,6 @@ namespace ProjectWebsite.Repositories
             }
             return searchResult;
         }
-        
         public Event GetEventByLocation(string location)
         {
             foreach (Event e in EventList)
@@ -97,5 +99,15 @@ namespace ProjectWebsite.Repositories
                     return e;
             return null;
         }
+        public List<Event> GetEventsByDate(DateTime date)
+        {
+			List<Event> searchResult = new();
+			foreach (Event e in EventList)
+            {
+				if (e.EventDateTime.Date == date.Date)
+					searchResult.Add(e);
+			}
+			return searchResult;
+		}
     }
 }

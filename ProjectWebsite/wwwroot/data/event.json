@@ -1,1 +1,41 @@
-[{"ID":1,"EventName":"Nytest3","EventDescription":"Testtest","EventLocation":"Testest","EventDate":"2023-12-01T13:28:00","EventTime":"2023-12-01T13:28:00","EventDuration":60,"EventOrganizer":"TestTest","EventOrganizerEmail":"TestTest","EventOrganizerPhone":"TestTest","EventOrganizerWebsite":"TestTest"},{"ID":2,"EventName":"Nytest4","EventDescription":"Testtest","EventLocation":"Testest","EventDate":"2023-12-01T13:28:00","EventTime":"2023-12-01T13:28:00","EventDuration":60,"EventOrganizer":"TestTest","EventOrganizerEmail":"TestTest","EventOrganizerPhone":"TestTest","EventOrganizerWebsite":"TestTest"},{"ID":1,"EventName":"Nytest3","EventDescription":"Testtest","EventLocation":"Testest","EventDate":"2023-12-01T13:28:00","EventTime":"2023-12-01T13:28:00","EventDuration":60,"EventOrganizer":"TestTest","EventOrganizerEmail":"TestTest","EventOrganizerPhone":"TestTest","EventOrganizerWebsite":"TestTest"},{"ID":2,"EventName":"Nytest4","EventDescription":"Testtest","EventLocation":"Testest","EventDate":"2023-12-01T13:28:00","EventTime":"2023-12-01T13:28:00","EventDuration":60,"EventOrganizer":"TestTest","EventOrganizerEmail":"TestTest","EventOrganizerPhone":"TestTest","EventOrganizerWebsite":"TestTest"},{"ID":3,"EventName":"Nytest5","EventDescription":"wesr","EventLocation":"wer","EventDate":"2023-12-04T10:22:00","EventTime":"2023-12-04T10:22:00","EventDuration":60,"EventOrganizer":"TestTest","EventOrganizerEmail":"wer","EventOrganizerPhone":"wer","EventOrganizerWebsite":"wer"},{"ID":1,"EventName":"Nytest3","EventDescription":"Testtest","EventLocation":"Testest","EventDate":"2023-12-01T13:28:00","EventTime":"2023-12-01T13:28:00","EventDuration":60,"EventOrganizer":"TestTest","EventOrganizerEmail":"TestTest","EventOrganizerPhone":"TestTest","EventOrganizerWebsite":"TestTest"},{"ID":2,"EventName":"Nytest4","EventDescription":"Testtest","EventLocation":"Testest","EventDate":"2023-12-01T13:28:00","EventTime":"2023-12-01T13:28:00","EventDuration":60,"EventOrganizer":"TestTest","EventOrganizerEmail":"TestTest","EventOrganizerPhone":"TestTest","EventOrganizerWebsite":"TestTest"},{"ID":3,"EventName":"Nytest5","EventDescription":"wesr","EventLocation":"wer","EventDate":"2023-12-04T10:22:00","EventTime":"2023-12-04T10:22:00","EventDuration":66,"EventOrganizer":"TestTest","EventOrganizerEmail":"wer","EventOrganizerPhone":"wer","EventOrganizerWebsite":"wer"},{"ID":1,"EventName":"Nytest3","EventDescription":"Testtest","EventLocation":"Testest","EventDate":"2023-12-01T13:28:00","EventTime":"2023-12-01T13:28:00","EventDuration":60,"EventOrganizer":"TestTest","EventOrganizerEmail":"TestTest","EventOrganizerPhone":"TestTest","EventOrganizerWebsite":"TestTest"},{"ID":2,"EventName":"Nytest4","EventDescription":"Testtest","EventLocation":"Testest","EventDate":"2023-12-01T13:28:00","EventTime":"2023-12-01T13:28:00","EventDuration":60,"EventOrganizer":"TestTest","EventOrganizerEmail":"TestTest","EventOrganizerPhone":"TestTest","EventOrganizerWebsite":"TestTest"}]
+[
+  {
+    "ID": 1,
+    "EventName": "Test",
+    "EventLocation": "Testest",
+    "EventDateTime": "2023-12-04T12:11:00",
+    "EventDuration": 6,
+    "EventDescription": "Testtest",
+    "EventCost": 60,
+    "EventAttendees": [],
+    "EventCapacity": 12,
+    "EventIsFull": false,
+    "EventOrganizer": "BluesBrews"
+  },
+  {
+    "ID": 3,
+    "EventName": "BrygMig",
+    "EventLocation": "BB",
+    "EventDateTime": "2023-10-10T10:00:00",
+    "EventDuration": 20,
+    "EventDescription": "FDES",
+    "EventCost": 12,
+    "EventAttendees": [],
+    "EventCapacity": 12,
+    "EventIsFull": false,
+    "EventOrganizer": "TestTest"
+  },
+  {
+    "ID": 4,
+    "EventName": "Bla",
+    "EventLocation": "Bla",
+    "EventDateTime": "0001-02-10T00:00:00",
+    "EventDuration": 2,
+    "EventDescription": "2",
+    "EventCost": 2,
+    "EventAttendees": [],
+    "EventCapacity": 2,
+    "EventIsFull": false,
+    "EventOrganizer": "2"
+  }
+]

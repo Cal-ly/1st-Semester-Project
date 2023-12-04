@@ -33,12 +33,19 @@
     "Address": "Jarlvej 34",
     "Email": "Lalalla@gmail.com",
     "PhoneNumber": "40506070"
-  },
-  {
+  }
+]  {
     "ID": 7,
     "Name": "Nicklas\u0027",
     "Address": "jhjhkhjhjk",
     "Email": "ggg",
     "PhoneNumber": "44536453"
+  },
+  {
+    "ID": 8,
+    "Name": "Jarl Gr\u00E5",
+    "Address": "Jarlvej 34",
+    "Email": "Jarlen@jarlen.dk",
+    "PhoneNumber": "50607082"
   }
 ]

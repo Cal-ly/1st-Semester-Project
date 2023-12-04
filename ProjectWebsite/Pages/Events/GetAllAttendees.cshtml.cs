@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Reflection.Metadata;
 
 namespace ProjectWebsite.Pages.Events
 {
-    public class UpdateEventModel : PageModel
+    public class GetAllAttendeesModel : PageModel
     {
         public EventService eventService;
         [BindProperty] public Models.Event Event { get; set; }
+        [BindProperty] public Models.Customer Customer { get; set; }
 
-        public UpdateEventModel(EventService eventService)
+
+        public GetAllAttendeesModel(EventService eventService)
         {
             this.eventService = eventService;
         }
@@ -25,10 +25,11 @@ namespace ProjectWebsite.Pages.Events
         public IActionResult OnPost()
         {
             //if (!ModelState.IsValid) { return Page(); }
-			eventService.UpdateEvent(Event);
+
+            eventService.UpdateEvent(Event);
             return RedirectToPage("GetAllEvents");
         }
 
-		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
+        public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
     }
 }
