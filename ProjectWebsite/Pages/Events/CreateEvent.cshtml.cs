@@ -17,8 +17,9 @@ namespace ProjectWebsite.Pages.Events
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid) { return Page(); }
+            //if (!ModelState.IsValid) { return Page(); }
             Event.ID = eventService.GetNextID();
+            Event.EventAttendees = new List<Models.Customer>();
             eventService.CreateEvent(Event);
             return RedirectToPage("GetAllEvents");
         }

@@ -20,7 +20,7 @@ namespace ProjectWebsite.Services
 
         public void SaveJsonItems(List<Event> items)
         {
-            using (FileStream jsonFileWriter = File.Create(JsonFileName))
+            using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
             {
                 Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
                 {
