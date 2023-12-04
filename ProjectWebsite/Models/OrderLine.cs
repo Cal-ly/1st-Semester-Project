@@ -10,7 +10,7 @@
 
         public override string ToString()
         {
-            return $"{{{nameof(Product)}={Product}, {nameof(Amount)}={Amount.ToString()}}}";
+            return $"{{{nameof(Product)}={Product}, {nameof(Amount)}={Amount.ToString()}, {nameof(ID)}={ID.ToString()}}}";
         }
     }
 }

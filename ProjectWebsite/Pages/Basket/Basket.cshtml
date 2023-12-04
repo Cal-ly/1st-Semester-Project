@@ -29,18 +29,19 @@
         @element.SelectedPackage
         </td> *@
             <td>
+                <form method="post">
                 <input type="hidden" asp-for="@element.ID" />
                 <div class="form-group" style="max-width: 3rem">
                     <label asp-for="@element.Amount" class="control-label"></label>
-                    <input asp-for="@element.Amount" id="newAmount" class="form-control" />
+                    <input asp-for="@element.Amount" id="NewAmount" type="number" class="form-control" />
                     <span asp-validation-for="@element.Amount" class="text-danger"></span>
 
-                    <form method="post">
-                       @*  these links dont redirect to editAmount *@
-                        <a class="btn btn-primary btn-sm" type="button" title="Opdatere mængde" asp-page="EditAmount" asp-route-id="newAmount, @element.ID"><i class="fa-solid fa-arrows-rotate"></i></a>
-                        <a class="btn btn-primary btn-sm" type="button" title="Opdatere mængde" asp-area="" asp-page="/Basket/EditAmount"><i class="fa-solid fa-arrows-rotate"></i></a>
-                    </form>
-                </div>
+                    
+                    
+                         <a class="btn btn-primary btn-sm" type="button" title="Slet podukt" asp-page="EditAmount" asp-route-id = "NewAmount , @element.ID"><i class="fa fa-arrows-rotate"></i></a>
+                    </div>
+                </form>
+                
             </td>
             <td>
                 @element.Product.Price
@@ -49,7 +50,7 @@
                 <a class="btn btn-primary btn-sm" type="button" title="Slet podukt" asp-page="DeleteBasketProduct" asp-route-id="@element.ID"><i class="fa fa-trash"></i></a>
             </td>
         </tr>
-    }
+    } 
 </table>
 <p>Total pris @Model.Total</p>
 <form method="post">
