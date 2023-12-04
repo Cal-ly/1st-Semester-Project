@@ -8,7 +8,6 @@ namespace ProjectWebsite.Repositories
         public static int NextID = 1;
         public List<Product> ProductList { get; set; }
         private JsonProductService JsonProductService { get; set; }
-
         public ProductRepository(JsonProductService jsonProductService)
         {
             JsonProductService = jsonProductService;
@@ -27,12 +26,16 @@ namespace ProjectWebsite.Repositories
         {
             //go through entire ProductList
             foreach (Product product in ProductList)
-                //look for ID match (ID is unique)
-                if (product.ID == productID)
-                    //return reference to product object
-                    return product;
-            //return null if no match was found
-            return null;
+			{
+				//look for ID match (ID is unique)
+				if (product.ID == productID)
+				{
+					//return reference to product object
+					return product;
+				}
+			}
+			//return null if no match was found
+			return null;
         }
 
         public Product GetProductByID(int productID)

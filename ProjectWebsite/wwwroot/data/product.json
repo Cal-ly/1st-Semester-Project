@@ -37,11 +37,11 @@
   },
   {
     "ID": 5,
-    "Name": "Monica te",
-    "Description": "god te",
-    "Content": "Green Tea",
-    "Type": "Green Tea",
-    "Price": 90,
+    "Name": "Noget Te",
+    "Description": "Bladvand",
+    "Content": "Nedfaldsprodukter",
+    "Type": "Den klamme typoe",
+    "Price": 100000,
     "Size": 100
   }
 ]
