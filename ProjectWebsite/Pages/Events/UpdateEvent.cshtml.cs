@@ -8,16 +8,16 @@ namespace ProjectWebsite.Pages.Events
 {
     public class UpdateEventModel : PageModel
     {
-        public EventService service;
+        public EventService eventService;
         [BindProperty] public Models.Event Event { get; set; }
 
         public UpdateEventModel(EventService eventService)
         {
-            service = eventService;
+            this.eventService = eventService;
         }
         public IActionResult OnGet(int id)
         {
-            Event = service.GetEventByID(id);
+            Event = eventService.GetEventByID(id);
             if (Event == null)
                 return RedirectToPage("/Error"); //Define NotFound page
             return Page();
@@ -25,7 +25,7 @@ namespace ProjectWebsite.Pages.Events
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid) { return Page(); }
-			service.UpdateEvent(Event);
+			eventService.UpdateEvent(Event);
             return RedirectToPage("GetAllEvents");
         }
 

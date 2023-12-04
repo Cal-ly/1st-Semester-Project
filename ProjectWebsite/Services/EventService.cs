@@ -8,6 +8,7 @@ namespace ProjectWebsite.Services
     {
         public EventRepository EventRepository { get; set; }
         public List<Event> EventList { get { return EventRepository.EventList; } }
+        
         public EventService(EventRepository eventRepository)
         {
             EventRepository = eventRepository;
