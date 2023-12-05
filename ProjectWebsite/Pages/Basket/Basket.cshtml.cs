@@ -12,8 +12,6 @@ namespace ProjectWebsite.Pages.Kurv
 
         [BindProperty]
         public string Email { get; set; }
-        [BindProperty]
-        public int NewAmount { get; set; }
 
         public List<OrderLine> Kurv { get; set; }
         public double Total { get; set; }
@@ -31,19 +29,59 @@ namespace ProjectWebsite.Pages.Kurv
             return Page();
         }
 
-        public IActionResult OnPostConfirm()
+        public IActionResult OnPostVidere()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            OrderService.PlaceOrder(Email);
-            return RedirectToPage("/Customer/GetAllCustomers");
+            
+            
+            return RedirectToPage("/Basket/CheckCustomer");
         }
 
-        public IActionResult OnPostUpdateOrderAmount(int newAmount, int orderLineID)
+        public IActionResult OnPost()
         {
-            return RedirectToPage("EditAmount");
+            Console.WriteLine("testing 45");
+            
+            return Page();
+        }
+
+        public IActionResult OnPostPlus(int ID)
+        {
+            Kurv = Order.basket;
+            foreach (OrderLine orderLine in Kurv)
+            {
+                
+                if (ID == orderLine.ID)
+                {
+                    
+                    orderLine.Amount++;
+                    
+                }
+            }
+            Kurv = Order.basket;
+            TempTotal();
+            return Page();
+        }
+        public IActionResult OnPostMinus(int ID)
+        {
+            OrderLine temp =null;
+            Kurv = Order.basket;
+            foreach (OrderLine orderLine in Kurv)
+            {
+               
+                if (ID == orderLine.ID)
+                {
+                    orderLine.Amount--;
+                    temp = orderLine;
+                }
+            }
+            
+            if (temp.Amount == 0)
+            {
+                Kurv.Remove(temp);
+
+            }
+            Kurv = Order.basket;
+            TempTotal();
+            return Page();
         }
 
         public void TempTotal()
