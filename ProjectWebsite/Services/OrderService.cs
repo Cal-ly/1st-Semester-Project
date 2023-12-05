@@ -35,11 +35,13 @@ namespace ProjectWebsite.Services
             //gets the ID for the new Order object
             int maxID = OrderList.Max(c => c.ID) + 1; 
 
-            Order.basket = new(); //resets the basket
+            
 
             //creates new Order object with ID, TotalPrice, OrderList and CustomerID
             //and immediately sends its to AddOrder
             AddOrder(new() { ID = maxID, TotalPrice = CalculateTotal(Order.basket), OrderList = Order.basket, CustomerID = customerWhoMadeOrder.ID });
+            
+            Order.basket = new(); //resets the basket
             return true;
         }
 

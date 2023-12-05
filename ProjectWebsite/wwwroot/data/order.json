@@ -253,5 +253,49 @@
     ],
     "Finished": true,
     "DateFinished": "2023-12-01T13:03:49.2338976+01:00"
+  },
+  {
+    "ID": 13,
+    "CustomerID": 2,
+    "TotalPrice": 100,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 1,
+          "Name": "Earl Greyyyyyy",
+          "Description": "Delicious black tea",
+          "Content": "Black tea",
+          "Type": "Black tea",
+          "Price": 100,
+          "Size": 100
+        },
+        "Amount": 1,
+        "ID": 1
+      }
+    ],
+    "Finished": true,
+    "DateFinished": "2023-12-05T12:36:41.4032584+01:00"
+  },
+  {
+    "ID": 14,
+    "CustomerID": 9,
+    "TotalPrice": 100,
+    "OrderList": [
+      {
+        "Product": {
+          "ID": 1,
+          "Name": "Earl Greyyyyyy",
+          "Description": "Delicious black tea",
+          "Content": "Black tea",
+          "Type": "Black tea",
+          "Price": 100,
+          "Size": 100
+        },
+        "Amount": 1,
+        "ID": 1
+      }
+    ],
+    "Finished": false,
+    "DateFinished": "0001-01-01T00:00:00"
   }
 ]
