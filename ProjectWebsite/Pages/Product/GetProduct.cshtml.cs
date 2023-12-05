@@ -45,7 +45,7 @@ namespace ProjectWebsite.Pages.Product
                 Amount = amountIN,
                 Product = product,
                 ID = ID
-            };roduct
+            };
 
             foreach (OrderLine line in Order.basket)
             {
