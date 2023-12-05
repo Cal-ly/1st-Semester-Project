@@ -27,31 +27,46 @@ namespace ProjectWebsite.Pages.Events
 			}
 			return Page();
         }
-		public IActionResult OnPostDeleteAttendee(int id)
+		public IActionResult OnPostDeleteAttendee(int eventid, int customerid)
 		{
 			//if (!ModelState.IsValid) { return Page(); }
-			var customerToRemove = Event.EventAttendees.Find(c => c.ID == id);
-			if (customerToRemove != null)
+			Event = eventService.GetEventByID(eventid);
+			Customer = Event.EventAttendees.FirstOrDefault(c => c.ID == customerid);
+			if (Customer != null)
 			{
-                Event.EventAttendees.Remove(customerToRemove);
+				if (Event.EventAttendees.Remove(Customer))
+				{
+					eventService.UpdateEvent(Event);
+				}
+				else
+				{
+					Console.WriteLine("Customer not removed");
+				}
 			}
-			eventService.UpdateEvent(Event);
-            return Page();
+			return Page();
 		}
 
-        public IActionResult OnPostAddAttendee()
-        {
-            //if (!ModelState.IsValid) { return Page(); }
-            
-            Models.Customer customerToAttend = customerService.GetCustomerByID(CustomerID);
-            if(customerToAttend != null)
-            {
-                Event.EventAttendees.Add(customerToAttend);
-            }
-			eventService.UpdateEvent(Event);
-            return Page();
+		public IActionResult OnPostAddAttendee(int id)
+		{
+			//if (!ModelState.IsValid) { return Page(); }
+			Event = eventService.GetEventByID(id);
+			Customer = customerService.GetCustomerByID(CustomerID);
+			Models.Customer customerToAttend = new()
+			{
+				ID = Customer.ID,
+				Name = Customer.Name,
+				Address = Customer.Address,
+				Email = Customer.Email,
+				PhoneNumber = Customer.PhoneNumber
+			};
+			if (customerToAttend != null)
+			{
+				Event.EventAttendees.Add(customerToAttend);
+			}
+			Event = eventService.UpdateEvent(Event);
+			return Page();
 		}
 
-        public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
+		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
     }
 }
