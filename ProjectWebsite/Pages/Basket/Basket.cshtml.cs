@@ -10,8 +10,7 @@ namespace ProjectWebsite.Pages.Kurv
         [BindProperty]
         public int Amount { get; set; }
 
-        [BindProperty]
-        public string Email { get; set; }
+        
 
         public List<OrderLine> Kurv { get; set; }
         public double Total { get; set; }
@@ -38,12 +37,7 @@ namespace ProjectWebsite.Pages.Kurv
             return RedirectToPage("/Basket/CheckCustomer");
         }
 
-        public IActionResult OnPost()
-        {
-            Console.WriteLine("testing 45");
-            
-            return Page();
-        }
+      
 
         public IActionResult OnPostPlus(int ID)
         {
@@ -95,10 +89,6 @@ namespace ProjectWebsite.Pages.Kurv
             }
 		}
 
-        //public IActionResult OnPostCancel()
-        //{
-        //    Console.WriteLine("It works definitely");
-        //    return Page();
-        //}
+        
     }
 }
