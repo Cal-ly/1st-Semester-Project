@@ -44,11 +44,8 @@
                     <div class="input-group">
                         @* <label asp-for="@element.Amount" class="control-label"></label> *@
                         <input asp-for="@element.Amount" id="NewAmount" type="number" class="form-control" placeholder="Antal" />
+                        <a class="btn btn-primary" type="button" title="Slet podukt" asp-page="EditAmount" asp-route-id="NewAmount , @element.ID"><i class="fa fa-arrows-rotate"></i> Opdater</a>
                         <span asp-validation-for="@element.Amount" class="text-danger"></span>
-                        <div class="form-group-append">
-                        
-                            <a class="btn btn-primary" type="button" title="Slet podukt" asp-page="EditAmount" asp-route-id="NewAmount , @element.ID"><i class="fa fa-arrows-rotate"></i></a>
-                        </div>
                     </div>
                 </form>
                 
@@ -62,7 +59,7 @@
         </tr>
     } 
 </table>
-<p>Total pris @Model.Total</p>
+<p>Total pris - @Model.Total kr</p>
 <form method="post">
     <div class="form-group">
         <label asp-for="@Model.Email" class="control-label"></label>
