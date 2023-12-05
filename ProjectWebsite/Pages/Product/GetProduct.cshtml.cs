@@ -32,6 +32,7 @@ namespace ProjectWebsite.Pages.Product
 
         public IActionResult OnPost()
         {
+            
             Models.Product product = ProductService.GetProduct(Product.ID);
 
             OrderLine temp = new() { Amount = amountIN, Product = product, ID = Order.basket.Count + 1 };
@@ -45,6 +46,7 @@ namespace ProjectWebsite.Pages.Product
                 }
             }
             Order.basket.Add(temp);
+            Product = product;
             return Page();
         }
     }

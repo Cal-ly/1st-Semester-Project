@@ -45,7 +45,7 @@ namespace ProjectWebsite.Pages.Kurv
         {
             return RedirectToPage("EditAmount");
         }
-
+        
         public void TempTotal()
         {
             Total = 0;
