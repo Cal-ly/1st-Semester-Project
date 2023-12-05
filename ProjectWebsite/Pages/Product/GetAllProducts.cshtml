@@ -44,26 +44,7 @@
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
                 @foreach (var product in Model.Products)
                 {
-                    if(product.Type == "Te")
-                    {
-                        <div class="col card" @* display="inline-block" mb-3*@>
-                            <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-                            <div class="card-body">
-                                <h5 class="card-title">@product.Name</h5>
-                                <p class="card-text">@product.Description</p>
-                                <div class="d-flex justify-content-between">
-                                    <p class="card-text">@product.Price kr</p>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                }
-                @foreach (var product in Model.Products)
-                {
-                    if (product.Type == "Event")
+                    @if(product.ID < 9000)
                     {
                         <div class="col card" @* display="inline-block" mb-3*@>
                             <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
