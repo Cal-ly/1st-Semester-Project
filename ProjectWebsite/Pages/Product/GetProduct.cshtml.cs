@@ -44,6 +44,8 @@ namespace ProjectWebsite.Pages.Product
                 if (line.Product == product)
                 {
                     line.Amount = line.Amount + temp.Amount;
+                    besked = "Produkt tilføjet til kurven";
+                    Product = product;
                     return Page();
                 }
             }

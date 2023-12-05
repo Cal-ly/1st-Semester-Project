@@ -37,18 +37,25 @@
     "EventCost": 12,
     "EventAttendees": [
       {
-        "ID": 2,
-        "Name": "Bard",
-        "Address": "\u00C5rhus",
-        "Email": "TeaLover123",
-        "PhoneNumber": "83745348"
-      },
-      {
         "ID": 3,
         "Name": "Customer3",
         "Address": "Roskilde",
         "Email": "Tea",
         "PhoneNumber": "93485787"
+      },
+      {
+        "ID": 4,
+        "Name": "Jarl Bl\u00E5",
+        "Address": "Jarlvej 33",
+        "Email": "Karlen@jarlen.dk",
+        "PhoneNumber": "40506070"
+      },
+      {
+        "ID": 5,
+        "Name": "Jarl Gr\u00E5",
+        "Address": "Jarlvej 35",
+        "Email": "Karlen@jarlen.dk",
+        "PhoneNumber": "40506070"
       }
     ],
     "EventCapacity": 12,
