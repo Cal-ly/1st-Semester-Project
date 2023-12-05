@@ -1,7 +1,7 @@
 [
   {
     "ID": 1,
-    "Name": "Earl Greyyyyyy",
+    "Name": "Earl Grey",
     "Description": "Delicious black tea",
     "Content": "Black tea",
     "Type": "Black tea",
@@ -71,4 +71,5 @@
     "Price": 56,
     "Size": 23
   }
+] }
 ]
