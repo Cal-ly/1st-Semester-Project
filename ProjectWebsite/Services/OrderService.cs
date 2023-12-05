@@ -26,11 +26,11 @@ namespace ProjectWebsite.Services
         public bool DeleteFromBasket(int id) { return OrderRepository.DeleteFromBasket(id); }
         #endregion
 
-		public void PlaceOrder(string email)
+		public bool PlaceOrder(string email)
         {
             //Gets reference to customer (if customer with that email doesn't exist then abort the method
             Customer customerWhoMadeOrder = CustomerRepository.GetCustomerByEmail(email);
-            if (customerWhoMadeOrder == null) return;
+            if (customerWhoMadeOrder == null) return false;
 
             //gets the ID for the new Order object
             int maxID = OrderList.Max(c => c.ID) + 1; 
@@ -40,6 +40,7 @@ namespace ProjectWebsite.Services
             //creates new Order object with ID, TotalPrice, OrderList and CustomerID
             //and immediately sends its to AddOrder
             AddOrder(new() { ID = maxID, TotalPrice = CalculateTotal(Order.basket), OrderList = Order.basket, CustomerID = customerWhoMadeOrder.ID });
+            return true;
         }
 
         public double CalculateTotal(List<OrderLine> orderLines)

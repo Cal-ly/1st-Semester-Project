@@ -7,7 +7,7 @@
 
     <h1 class="pb-5 pt-5 text-center">Vores Produkter</h1>
     <div class="row">
-        <div class="col-md-4 col-lg-3 col-xl-2 me-3">
+        <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2 me-3">
             <div class="card card-body alert alert-secondary">
                 <form method="post" class="form-inline">
                     <input asp-for="SearchString" class="form-control mr-1 mb-2" placeholder="Søg på te-type" />
@@ -41,10 +41,10 @@
 
 
         <div class="col">
-            <div class="row  d-flex justify-content-center justify-content-md-start">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
                 @foreach (var product in Model.Products)
                 {
-                    <div class="card col-9 col-md-6 col-lg-4 col-xl-3" @* display="inline-block" mb-3*@>
+                    <div class="col card" @* display="inline-block" mb-3*@>
                         <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
                         <div class="card-body">
                             <h5 class="card-title">@product.Name</h5>

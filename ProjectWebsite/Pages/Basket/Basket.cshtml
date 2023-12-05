@@ -1,8 +1,12 @@
-﻿@page 
+﻿@page
 @model ProjectWebsite.Pages.Kurv.KurvModel
 @{
 }
-
+@if (Model.Kurv.Count==0)
+    {
+        <p>Kurven er tom</p>
+    }
+    else{
 <table class="table table-hover table-light">
     <colgroup>
         @* Not mobile friendly *@
@@ -11,6 +15,7 @@
         <col style="width : 20%">
         <col style="width : 20%">
     </colgroup>
+    
     <tr>
         <th>
             Produkt navn
@@ -18,9 +23,6 @@
         <th>
             Produkt størrelse
         </th>
-        @* <th>
-        Mængde
-        </th> *@
         <th>
             Pris per styk
         </th>
@@ -28,27 +30,23 @@
 
         </th>
     </tr>
-
-    @foreach (var element in Model.Kurv) 
+    
+    @foreach (var element in Model.Kurv)
     {
         <tr>
             <td>
                 @element.Product.Name
             </td>
-            @* <td>
-        @element.SelectedPackage
-        </td> *@
             <td>
-                <form method="post">
-                    <input type="hidden" asp-for="@element.ID" />
-                    <div class="input-group">
-                        @* <label asp-for="@element.Amount" class="control-label"></label> *@
-                        <input asp-for="@element.Amount" id="NewAmount" type="number" class="form-control" placeholder="Antal" />
-                        <a class="btn btn-primary" type="button" title="Slet podukt" asp-page="EditAmount" asp-route-id="NewAmount , @element.ID"><i class="fa fa-arrows-rotate"></i> Opdater</a>
-                        <span asp-validation-for="@element.Amount" class="text-danger"></span>
+                    @element.Amount
+                    <form method="post">
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" title="Minus en" asp-page-handler="Minus" asp-route-id="@element.ID"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-primary" type="submit" title="Plus en" asp-page-handler="Plus" asp-route-id="@element.ID"><i class="fa fa-plus"></i></button>
                     </div>
-                </form>
+                    </form>
                 
+
             </td>
             <td>
                 @element.Product.Price
@@ -57,18 +55,15 @@
                 <a class="btn btn-primary btn-sm" type="button" title="Slet podukt" asp-page="DeleteBasketProduct" asp-route-id="@element.ID"><i class="fa fa-trash"></i></a>
             </td>
         </tr>
-    } 
+    }
+    
 </table>
+
 <p>Total pris - @Model.Total kr</p>
 <form method="post">
-    <div class="form-group">
-        <label asp-for="@Model.Email" class="control-label"></label>
-        <input asp-for="@Model.Email" class="form-control" />
-        <span asp-validation-for="@Model.Email" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        @* asp-page-handler="Confirm" *@
-        <input type="submit" value="Godkend" class="btn btn-success" />
-        @* <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-primary" /> *@
-    </div>
-</form>
+                    <div class="form-group">
+                        
+                        <button class="btn btn-primary" type="submit" title="Videre" asp-page-handler="Videre">Videre</button>
+                    </div>
+                    </form>
+                    }

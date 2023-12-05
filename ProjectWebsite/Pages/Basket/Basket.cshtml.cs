@@ -10,13 +10,12 @@ namespace ProjectWebsite.Pages.Kurv
         [BindProperty]
         public int Amount { get; set; }
 
-        [BindProperty]
-        public string Email { get; set; }
-        [BindProperty]
-        public int NewAmount { get; set; }
+        
 
         public List<OrderLine> Kurv { get; set; }
         public double Total { get; set; }
+        
+
         private OrderService OrderService { get; set; }
 
         public KurvModel(OrderService orderService)
@@ -31,21 +30,56 @@ namespace ProjectWebsite.Pages.Kurv
             return Page();
         }
 
-        public IActionResult OnPostConfirm()
+        public IActionResult OnPostVidere()
         {
-            if (!ModelState.IsValid)
+            
+            
+            return RedirectToPage("/Basket/CheckCustomer");
+        }
+
+      
+
+        public IActionResult OnPostPlus(int ID)
+        {
+            Kurv = Order.basket;
+            foreach (OrderLine orderLine in Kurv)
             {
-                return Page();
+                
+                if (ID == orderLine.ID)
+                {
+                    
+                    orderLine.Amount++;
+                    
+                }
             }
-            OrderService.PlaceOrder(Email);
-            return RedirectToPage("/Customer/GetAllCustomers");
+            Kurv = Order.basket;
+            TempTotal();
+            return Page();
         }
-
-        public IActionResult OnPostUpdateOrderAmount(int newAmount, int orderLineID)
+        public IActionResult OnPostMinus(int ID)
         {
-            return RedirectToPage("EditAmount");
-        }
+            OrderLine temp =null;
+            Kurv = Order.basket;
+            foreach (OrderLine orderLine in Kurv)
+            {
+               
+                if (ID == orderLine.ID)
+                {
+                    orderLine.Amount--;
+                    temp = orderLine;
+                }
+            }
+            
+            if (temp.Amount == 0)
+            {
+                Kurv.Remove(temp);
 
+            }
+            Kurv = Order.basket;
+            TempTotal();
+            return Page();
+        }
+        
         public void TempTotal()
         {
             Total = 0;
@@ -55,10 +89,6 @@ namespace ProjectWebsite.Pages.Kurv
             }
 		}
 
-        //public IActionResult OnPostCancel()
-        //{
-        //    Console.WriteLine("It works definitely");
-        //    return Page();
-        //}
+        
     }
 }
