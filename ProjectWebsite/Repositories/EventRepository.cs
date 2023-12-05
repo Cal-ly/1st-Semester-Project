@@ -39,24 +39,36 @@ namespace ProjectWebsite.Repositories
             {
                 if (outgoingE.ID == incomingE.ID)
                 {
-                    outgoingE.EventName = incomingE.EventName;
-                    outgoingE.EventLocation = incomingE.EventLocation;
+					outgoingE.EventName = incomingE.EventName;
+					outgoingE.EventLocation = incomingE.EventLocation;
                     outgoingE.EventDateTime = incomingE.EventDateTime;
                     outgoingE.EventDuration = incomingE.EventDuration;
-                    outgoingE.EventDescription = incomingE.EventDescription;
+					outgoingE.EventDescription = incomingE.EventDescription;
                     outgoingE.EventCost = incomingE.EventCost;
-                    outgoingE.EventAttendees = incomingE.EventAttendees;
+					outgoingE.EventAttendees = incomingE.EventAttendees;
                     outgoingE.EventCapacity = incomingE.EventCapacity;
-                    outgoingE.EventOrganizer = incomingE.EventOrganizer;
-                    //outgoingE.EventOrganizerEmail = incomingE.EventOrganizerEmail;
-                    //outgoingE.EventOrganizerPhone = incomingE.EventOrganizerPhone;
-                    //outgoingE.EventOrganizerWebsite = incomingE.EventOrganizerWebsite;
+					outgoingE.EventOrganizer = incomingE.EventOrganizer;
+                    //outgoingE.EventOrganizerEmail = incomingE.EventOrganizerEmail ?? outgoingE.EventOrganizerEmail;
+                    //outgoingE.EventOrganizerPhone = incomingE.EventOrganizerPhone ?? outgoingE.EventOrganizerPhone;
+                    //outgoingE.EventOrganizerWebsite = incomingE.EventOrganizerWebsite ?? outgoingE.EventOrganizerWebsite;
 
 		            JsonEventService.SaveJsonItems(EventList);
                 }
             }
             return incomingE; //TODO: Display updated event -splash screen?
         }
+        public Event UpdateEventAttendees(Event incomingE)
+        {
+			foreach (Event outgoingE in EventList)
+            {
+				if (outgoingE.ID == incomingE.ID)
+                {
+					outgoingE.EventAttendees = incomingE.EventAttendees;
+					JsonEventService.SaveJsonItems(EventList);
+				}
+			}
+			return incomingE; //TODO: Display updated eventAttendee -splash screen?
+		}
         public bool DeleteEvent(int eventID)
         {
             Event eventToBeDeleted = GetEventByID(eventID);
@@ -68,7 +80,7 @@ namespace ProjectWebsite.Repositories
             }
             return false;
         }
-        public List<Customer> GetEventAttendes(int eventID)
+        public List<Customer> GetEventAttendees(int eventID)
         {
 			foreach (Event e in EventList)
 				if (e.ID == eventID)

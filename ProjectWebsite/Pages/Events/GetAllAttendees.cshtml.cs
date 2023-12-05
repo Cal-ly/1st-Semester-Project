@@ -10,7 +10,7 @@ namespace ProjectWebsite.Pages.Events
         public EventService eventService;
         public CustomerService customerService;
         [BindProperty] public Models.Event Event { get; set; }
-        [BindProperty] public Models.Customer Customer { get; set; }
+        //[BindProperty] public Models.Customer Customer { get; set; }
         [BindProperty] public int CustomerID { get; set; }
 
 		public GetAllAttendeesModel(EventService eventService, CustomerService customerService)
@@ -21,6 +21,7 @@ namespace ProjectWebsite.Pages.Events
         public IActionResult OnGet(int id)
         {
             Event = eventService.GetEventByID(id);
+			Event.EventAttendees = eventService.GetEventAttendees(id);
             if (Event == null)
             {
 			    return RedirectToPage("/Error"); //Define NotFound page
@@ -39,19 +40,27 @@ namespace ProjectWebsite.Pages.Events
             return Page();
 		}
 
-        public IActionResult OnPostAddAttendee()
-        {
-            //if (!ModelState.IsValid) { return Page(); }
-            
-            Models.Customer customerToAttend = customerService.GetCustomerByID(CustomerID);
-            if(customerToAttend != null)
-            {
-                Event.EventAttendees.Add(customerToAttend);
-            }
-			eventService.UpdateEvent(Event);
-            return Page();
+		public IActionResult OnPostAddAttendee(int id)
+		{
+			//if (!ModelState.IsValid) { return Page(); }
+			Event = eventService.GetEventByID(id);
+			var retrievedCustomer = customerService.GetCustomerByID(CustomerID);
+			Models.Customer customerToAttend = new()
+			{
+				ID = retrievedCustomer.ID,
+				Name = retrievedCustomer.Name,
+				Address = retrievedCustomer.Address,
+				Email = retrievedCustomer.Email,
+				PhoneNumber = retrievedCustomer.PhoneNumber
+			};
+			if (customerToAttend != null)
+			{
+				Event.EventAttendees.Add(customerToAttend);
+			}
+			Event = eventService.UpdateEvent(Event);
+			return Page();
 		}
 
-        public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
+		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
     }
 }
