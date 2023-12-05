@@ -5,6 +5,7 @@ namespace ProjectWebsite.Services
 {
     public class ProductService
     {
+        public List<Product> ProductList { get { return ProductRepository.ProductList; } }
         private ProductRepository ProductRepository { get; set; }
         public ProductService(ProductRepository productRepository)
         {
@@ -14,10 +15,9 @@ namespace ProjectWebsite.Services
         #region Repository method calls
         public int GetNextID() { return ProductRepository.GetNextID(); }
         public Product GetProduct(int productID) { return ProductRepository.GetProduct(productID); }
-        public Product GetProductByID(int productID) { return ProductRepository.GetProductByID(productID); }
         public void CreateProduct(Product productID) { ProductRepository.CreateProduct(productID); }
         public bool DeleteProduct(int productID) { return ProductRepository.DeleteProduct(productID); }
-        public List<Product> ProductList { get { return ProductRepository.ProductList; } }
+        public void UpdateProduct(Product productID) { ProductRepository.UpdateProduct(productID); }
         #endregion
 
         public IEnumerable<Product> PriceFilter(int maxPrice, int minPrice = 0)
