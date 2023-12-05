@@ -71,7 +71,7 @@
 					<form method="post">
                         <input type="hidden" name="EventID" value="@Model.Event.ID" />
                         <input type="hidden" name="CustomerID" value="@c.ID" />
-						<input type="submit" class="fa-solid fa-user-xmark" asp-page-handler="DeleteAttendee" />
+						<button type ="submit" class="btn btn-danger fa-solid fa-user-xmark" asp-page-handler="DeleteAttendee"></button>
 					</form>
 					@* <i class="fa-solid fa-user-xmark"></i> 
 					</a>*@
