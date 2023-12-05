@@ -8,15 +8,22 @@
 <h3>Event: @Model.Event.EventName</h3>
 <h4>Event Dato: @Model.Event.EventDateTime</h4>
 
-<p>
-	<form method="post" class="form-inline">
-		<div class="input-group mb-3">
-			<input asp-for="CustomerID" class="form-control mr-1" placeholder="Indtast Kundenummer" />
-			<input type="submit" asp-page-handler="AddAttendee" value="Tilføj" class="btn btn-primary" />
-		</div>
-	</form>
-</p>
+<form method="post" class="form-inline">
+	<div class="input-group mb-sm-4">
+		<input asp-for="CustomerID" class="form-control mr-1" placeholder="Indtast Kundenummer" />
+		<input type="submit" asp-page-handler="AddAttendee" asp-route-id="@Model.Event.ID" value="Tilføj" class="btn btn-primary" />
+	</div>
+</form>
 
+@* <p>
+	<div class="input-group mb-sm-4">
+		<input asp-for="SearchString" type="text" class="form-control" placeholder="Søg efter navn" />
+        <div class="input-group-append">
+            <input type="submit" asp-page-handler="SearchAttendees" value="Søg" class="btn btn-primary" />
+        </div>
+	</div>
+</p>
+ *@
 
 <table class="table table-hover table-light">
 	<colgroup> @* Not mobile friendly *@
@@ -79,11 +86,11 @@
 
 
 <p>
-    <a class="btn btn-primary" asp-page="Events/GetAllEvents"> Tilbage til alle events </a>
+    <a class="btn btn-primary" asp-page="GetAllEvents"> Tilbage til alle events </a>
 </p>
 
 <p>
 	Ikke kunde endnu?<br />
 	Opret dig her og tilmeld dig spændende events!<br />
-	<a class="btn btn-primary" asp-page="Customer/CreateCustomer"> Bliv oprettet som kunde </a>
+    <a class="btn btn-primary" asp-page="Customer/CreateCustomer"> Bliv oprettet som kunde </a>
 </p>
