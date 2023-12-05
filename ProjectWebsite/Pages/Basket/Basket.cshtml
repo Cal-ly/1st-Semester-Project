@@ -45,6 +45,9 @@
                     <label asp-for="@element.Amount" class="control-label"></label>
                     <input asp-for="@element.Amount" id="NewAmount" type="number" class="form-control" />
                     <span asp-validation-for="@element.Amount" class="text-danger"></span>
+
+                    
+                    
                          <a class="btn btn-primary btn-sm" type="button" title="Slet podukt" asp-page="EditAmount" asp-route-id = "NewAmount , @element.ID"><i class="fa fa-arrows-rotate"></i></a>
                     </div>
                 </form>
