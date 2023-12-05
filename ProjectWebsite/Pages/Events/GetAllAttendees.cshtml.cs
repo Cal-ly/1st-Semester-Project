@@ -1,34 +1,56 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
+using System.Reflection;
 
 namespace ProjectWebsite.Pages.Events
 {
     public class GetAllAttendeesModel : PageModel
     {
         public EventService eventService;
+        public CustomerService customerService;
         [BindProperty] public Models.Event Event { get; set; }
         [BindProperty] public Models.Customer Customer { get; set; }
+        [BindProperty] public int CustomerID { get; set; }
 
-
-        public GetAllAttendeesModel(EventService eventService)
+		public GetAllAttendeesModel(EventService eventService, CustomerService customerService)
         {
             this.eventService = eventService;
+            this.customerService = customerService;
         }
         public IActionResult OnGet(int id)
         {
             Event = eventService.GetEventByID(id);
             if (Event == null)
-                return RedirectToPage("/Error"); //Define NotFound page
-            return Page();
+            {
+			    return RedirectToPage("/Error"); //Define NotFound page
+			}
+			return Page();
         }
-        public IActionResult OnPost()
+		public IActionResult OnPostDeleteAttendee(int id)
+		{
+			//if (!ModelState.IsValid) { return Page(); }
+			var customerToRemove = Event.EventAttendees.Find(c => c.ID == id);
+			if (customerToRemove != null)
+			{
+                Event.EventAttendees.Remove(customerToRemove);
+			}
+			eventService.UpdateEvent(Event);
+            return Page();
+		}
+
+        public IActionResult OnPostAddAttendee()
         {
             //if (!ModelState.IsValid) { return Page(); }
-
-            eventService.UpdateEvent(Event);
-            return RedirectToPage("GetAllEvents");
-        }
+            
+            Models.Customer customerToAttend = customerService.GetCustomerByID(CustomerID);
+            if(customerToAttend != null)
+            {
+                Event.EventAttendees.Add(customerToAttend);
+            }
+			eventService.UpdateEvent(Event);
+            return Page();
+		}
 
         public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
     }

@@ -1,0 +1,52 @@
+﻿@page
+@model ProjectWebsite.Pages.Product.UpdateProductModel
+@{
+}
+
+<span class="brlarge"></span>
+<div class="row justify-content-center">
+    <div class="col-9 col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 p-4 alert alert-secondary">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Product.ID" class="control-label"></label>
+                <input asp-for="@Model.Product.ID" class="form-control" readonly />
+                <span asp-validation-for="@Model.Product.ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Product.Name" class="control-label"></label>
+                <input asp-for="@Model.Product.Name" class="form-control" placeholder="Enter name" />
+                <span asp-validation-for="@Model.Product.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Product.Description" class="control-label"></label>
+                <input asp-for="@Model.Product.Description" class="form-control" placeholder="Indtast adresse" />
+                <span asp-validation-for="@Model.Product.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Product.Content" class="control-label"></label>
+                <input asp-for="@Model.Product.Content" class="form-control" placeholder="Indtast indhold" />
+                <span asp-validation-for="@Model.Product.Content" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="@Model.Product.Type" class="control-label"></label>
+                <input asp-for="@Model.Product.Type" class="form-control" placeholder="Indtast te-type" />
+                <span asp-validation-for="@Model.Product.Type" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="@Model.Product.Price" class="control-label"></label>
+                <input asp-for="@Model.Product.Price" class="form-control" placeholder="Indtast pris" />
+                <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="@Model.Product.Size" class="control-label"></label>
+                <input asp-for="@Model.Product.Size" class="form-control" placeholder="Indtast størrelse" />
+                <span asp-validation-for="@Model.Product.Size" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group d-flex justify-content-between">
+                <input type="submit" value="Opdater" class="btn btn-success" />
+                <input type="submit" asp-page-handler="Cancel" value="Annuller" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>

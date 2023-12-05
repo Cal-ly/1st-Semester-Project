@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Models;
 using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Product
 {
-    public class DeleteProductModel : PageModel
+	public class DeleteProductModel : PageModel
     {
 		[BindProperty]
 		public Models.Product Product { get; set; }
@@ -16,16 +15,15 @@ namespace ProjectWebsite.Pages.Product
 			ProductService = productService;
 		}
 
-		public IActionResult OnGet(int productID)
+		public IActionResult OnGet(int id)
 		{
-			Console.WriteLine(productID);
-			Product = ProductService.GetProduct(productID);
-			Console.WriteLine(Product);
+			//Console.WriteLine(id);
+			Product = ProductService.GetProduct(id);
+			//Console.WriteLine(Product);
             if (Product == null)
 			{
                 return RedirectToPage("/Error"); //Define NotFound page
             }
-			
 			return Page();
 		}
 
@@ -40,4 +38,3 @@ namespace ProjectWebsite.Pages.Product
 		public IActionResult OnPostCancel() { return RedirectToPage("GetAllProducts"); }
 	}
 }
-

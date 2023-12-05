@@ -1,7 +1,7 @@
 [
   {
     "ID": 1,
-    "Name": "Earl Grey",
+    "Name": "Earl Greyyyyyy",
     "Description": "Delicious black tea",
     "Content": "Black tea",
     "Type": "Black tea",
@@ -19,29 +19,47 @@
   },
   {
     "ID": 3,
-    "Name": "Rooibos Tea",
-    "Description": "Delicious Rooibos tea",
-    "Content": "Rooibos tea",
-    "Type": "Rooibos tea",
-    "Price": 60,
+    "Name": "Monicas Te",
+    "Description": "Mega nice te",
+    "Content": "Sort te",
+    "Type": "Sort te",
+    "Price": 80,
     "Size": 100
   },
   {
     "ID": 4,
-    "Name": "Green Tea",
-    "Description": "Delicious green tea",
-    "Content": "Green tea",
-    "Type": "Green tea",
-    "Price": 70,
+    "Name": "Carstens te",
+    "Description": "Mega nice te",
+    "Content": "Rooibos te",
+    "Type": "Rooibos te",
+    "Price": 90,
     "Size": 100
   },
   {
     "ID": 5,
-    "Name": "Monica te",
-    "Description": "god te",
-    "Content": "Green Tea",
-    "Type": "Green Tea",
+    "Name": "Frederikkes te",
+    "Description": "Mega nice te",
+    "Content": "Hvid te",
+    "Type": "Hvid te",
     "Price": 90,
+    "Size": 100
+  },
+  {
+    "ID": 6,
+    "Name": "Laus\u0027 Te",
+    "Description": "Mega nice te",
+    "Content": "Sort Te",
+    "Type": "Sort te",
+    "Price": 90,
+    "Size": 100
+  },
+  {
+    "ID": 7,
+    "Name": "Mathias\u0027 Te",
+    "Description": "Mega nice te",
+    "Content": "Gr\u00F8n te",
+    "Type": "Gr\u00F8n te",
+    "Price": 80,
     "Size": 100
   }
 ]
