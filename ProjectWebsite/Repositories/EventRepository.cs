@@ -121,5 +121,31 @@ namespace ProjectWebsite.Repositories
 			}
 			return searchResult;
 		}
+
+        public Product ConvertEventToProduct(Event eventToConvert)
+        {
+            string startDateTimeString = eventToConvert.EventDateTime.ToString("dd-MM-yy") + " " + eventToConvert.EventDateTime.ToString("HH:mm");
+			DateTime endDateTime = eventToConvert.EventDateTime.AddMinutes(eventToConvert.EventDuration);
+            string endDateTimeString = endDateTime.ToString("dd-MM-yy") + " " + endDateTime.ToString("HH:mm");
+            //string tempDateTimeString = startDateTimeString + " - " + endDateTimeString;
+
+            Product productOut = new()
+            {
+                ID = eventToConvert.ID + 9000,
+                Name = eventToConvert.EventName,
+                Description = eventToConvert.EventDescription,
+                Content = $"Sted: {eventToConvert.EventLocation} Start: {startDateTimeString} - End: {endDateTimeString}",
+				Type = "Event",
+				Price = eventToConvert.EventCost,
+				Size = eventToConvert.EventCapacity
+			};
+			if (eventToConvert.EventIsFull)
+            {
+                string tempContent = productOut.Content;
+                productOut.Content = "ALLE BILLETTER UDSOLGT\n";
+                productOut.Content += tempContent;
+            }
+			return productOut;
+		}
     }
 }
