@@ -34,17 +34,25 @@ namespace ProjectWebsite.Pages.Product
 
         public IActionResult OnPost()
         {
-            
-            Models.Product product = ProductService.GetProduct(Product.ID);
 
-            OrderLine temp = new() { Amount = amountIN, Product = product, ID = Order.basket.Count + 1 };
+            Models.Product product = ProductService.GetProduct(Product.ID);
+            int ID;
+            if (Order.basket.Max(p => p.ID) == null)
+            { ID = 1; }
+            else { ID = Order.basket.Max(p => p.ID) + 1; }
+            OrderLine temp = new()
+            {
+                Amount = amountIN,
+                Product = product,
+                ID = ID
+            };roduct
 
             foreach (OrderLine line in Order.basket)
             {
                 if (line.Product == product)
                 {
-                    line.Amount = line.Amount + temp.Amount;
-                    besked = "Produkt tilføjet til kurven";
+                    line.Amount += temp.Amount;
+                    besked = "Antal opdateret";
                     Product = product;
                     return Page();
                 }
