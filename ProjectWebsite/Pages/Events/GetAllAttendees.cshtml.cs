@@ -10,7 +10,7 @@ namespace ProjectWebsite.Pages.Events
         public EventService eventService;
         public CustomerService customerService;
         [BindProperty] public Models.Event Event { get; set; }
-        //[BindProperty] public Models.Customer Customer { get; set; }
+        [BindProperty] public Models.Customer Customer { get; set; }
         [BindProperty] public int CustomerID { get; set; }
 
 		public GetAllAttendeesModel(EventService eventService, CustomerService customerService)
@@ -21,37 +21,43 @@ namespace ProjectWebsite.Pages.Events
         public IActionResult OnGet(int id)
         {
             Event = eventService.GetEventByID(id);
-			Event.EventAttendees = eventService.GetEventAttendees(id);
             if (Event == null)
             {
 			    return RedirectToPage("/Error"); //Define NotFound page
 			}
 			return Page();
         }
-		public IActionResult OnPostDeleteAttendee(int id)
+		public IActionResult OnPostDeleteAttendee(int eventid, int customerid)
 		{
 			//if (!ModelState.IsValid) { return Page(); }
-			var customerToRemove = Event.EventAttendees.Find(c => c.ID == id);
-			if (customerToRemove != null)
+			Event = eventService.GetEventByID(eventid);
+			Customer = Event.EventAttendees.FirstOrDefault(c => c.ID == customerid);
+			if (Customer != null)
 			{
-                Event.EventAttendees.Remove(customerToRemove);
+				if (Event.EventAttendees.Remove(Customer))
+				{
+					eventService.UpdateEvent(Event);
+				}
+				else
+				{
+					Console.WriteLine("Customer not removed");
+				}
 			}
-			eventService.UpdateEvent(Event);
-            return Page();
+			return Page();
 		}
 
 		public IActionResult OnPostAddAttendee(int id)
 		{
 			//if (!ModelState.IsValid) { return Page(); }
 			Event = eventService.GetEventByID(id);
-			var retrievedCustomer = customerService.GetCustomerByID(CustomerID);
+			Customer = customerService.GetCustomerByID(CustomerID);
 			Models.Customer customerToAttend = new()
 			{
-				ID = retrievedCustomer.ID,
-				Name = retrievedCustomer.Name,
-				Address = retrievedCustomer.Address,
-				Email = retrievedCustomer.Email,
-				PhoneNumber = retrievedCustomer.PhoneNumber
+				ID = Customer.ID,
+				Name = Customer.Name,
+				Address = Customer.Address,
+				Email = Customer.Email,
+				PhoneNumber = Customer.PhoneNumber
 			};
 			if (customerToAttend != null)
 			{

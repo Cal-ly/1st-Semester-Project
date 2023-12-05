@@ -15,6 +15,8 @@ namespace ProjectWebsite.Pages.Kurv
 
         public List<OrderLine> Kurv { get; set; }
         public double Total { get; set; }
+        
+
         private OrderService OrderService { get; set; }
 
         public KurvModel(OrderService orderService)
@@ -83,7 +85,7 @@ namespace ProjectWebsite.Pages.Kurv
             TempTotal();
             return Page();
         }
-
+        
         public void TempTotal()
         {
             Total = 0;

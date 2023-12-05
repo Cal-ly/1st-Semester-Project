@@ -95,3 +95,39 @@
 <p>
     <a class="btn btn-primary" asp-page="CreateEvent"> Opret et ny event </a>
 </p>
+
+<div class="container alert alert-secondary mb-5">
+    <div class="row">
+        <h2 style="text-align:center;">Nyheder og Events</h2>
+    </div>
+
+    <div class="row d-flex justify-content-between px-2 pb-5 px-md-5 pb-md-4 pt-2 row-cols-2">
+
+        @if (Model.EventList != null)
+        {
+            @foreach (var e in Model.EventList)
+            {
+                <div class="card col m-3">
+                    <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">@e.EventName</h5>
+                        <p class ="card-text">ID: @e.ID</p>
+                        <p class="card-text">@e.EventDescription</p>
+                        @e.EventLocation
+                        @*  <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a> *@
+                        @e.EventDateTime.ToString("dd-MM-yy")
+                        @{
+                            DateTime endDateTime = e.EventDateTime.AddMinutes(e.EventDuration);
+                            <p>@e.EventDateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")</p>
+                        }
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-primary btn-sm p-3" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@e.ID"> <i class="fa fa-edit"></i> </a>
+                            <a class="btn btn-danger btn-sm p-3" type="button" title="Delete" asp-page="DeleteEvent" asp-route-id="@e.ID"> <i class="fa fa-trash"></i> </a>
+                            <a class="btn btn-primary btn-sm p-3" type="button" title="GetAllAttendees" asp-page="GetAllAttendees" asp-route-id="@e.ID"> <i class="fa-solid fa-users"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

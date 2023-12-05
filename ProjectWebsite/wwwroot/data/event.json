@@ -8,20 +8,20 @@
     "EventDescription": "Testtest",
     "EventCost": 60,
     "EventAttendees": [
-        {
-            "ID": 2,
-            "Name": "Bard",
-            "Address": "\u00C5rhus",
-            "Email": "TeaLover123",
-            "PhoneNumber": "83745348"
-        },
-        {
-            "ID": 3,
-            "Name": "Customer3",
-            "Address": "Roskilde",
-            "Email": "Tea",
-            "PhoneNumber": "93485787"
-        }
+      {
+        "ID": 2,
+        "Name": "Bard",
+        "Address": "\u00C5rhus",
+        "Email": "TeaLover123",
+        "PhoneNumber": "83745348"
+      },
+      {
+        "ID": 3,
+        "Name": "Customer3",
+        "Address": "Roskilde",
+        "Email": "Tea",
+        "PhoneNumber": "93485787"
+      }
     ],
     "EventCapacity": 12,
     "EventIsFull": false,
@@ -36,20 +36,20 @@
     "EventDescription": "FDES",
     "EventCost": 12,
     "EventAttendees": [
-        {
-            "ID": 2,
-            "Name": "Bard",
-            "Address": "\u00C5rhus",
-            "Email": "TeaLover123",
-            "PhoneNumber": "83745348"
-        },
-        {
-            "ID": 3,
-            "Name": "Customer3",
-            "Address": "Roskilde",
-            "Email": "Tea",
-            "PhoneNumber": "93485787"
-        }
+      {
+        "ID": 2,
+        "Name": "Bard",
+        "Address": "\u00C5rhus",
+        "Email": "TeaLover123",
+        "PhoneNumber": "83745348"
+      },
+      {
+        "ID": 3,
+        "Name": "Customer3",
+        "Address": "Roskilde",
+        "Email": "Tea",
+        "PhoneNumber": "93485787"
+      }
     ],
     "EventCapacity": 12,
     "EventIsFull": false,
@@ -64,23 +64,23 @@
     "EventDescription": "2",
     "EventCost": 2,
     "EventAttendees": [
-        {
-            "ID": 2,
-            "Name": "Bard",
-            "Address": "\u00C5rhus",
-            "Email": "TeaLover123",
-            "PhoneNumber": "83745348"
-        },
-        {
-            "ID": 3,
-            "Name": "Customer3",
-            "Address": "Roskilde",
-            "Email": "Tea",
-            "PhoneNumber": "93485787"
-        }
+      {
+        "ID": 2,
+        "Name": "Bard",
+        "Address": "\u00C5rhus",
+        "Email": "TeaLover123",
+        "PhoneNumber": "83745348"
+      },
+      {
+        "ID": 3,
+        "Name": "Customer3",
+        "Address": "Roskilde",
+        "Email": "Tea",
+        "PhoneNumber": "93485787"
+      }
     ],
     "EventCapacity": 2,
-    "EventIsFull": false,
+    "EventIsFull": true,
     "EventOrganizer": "2"
   },
   {
@@ -92,20 +92,27 @@
     "EventDescription": "Testtest",
     "EventCost": 60,
     "EventAttendees": [
-        {
-            "ID": 2,
-            "Name": "Bard",
-            "Address": "\u00C5rhus",
-            "Email": "TeaLover123",
-            "PhoneNumber": "83745348"
-        },
-        {
-            "ID": 3,
-            "Name": "Customer3",
-            "Address": "Roskilde",
-            "Email": "Tea",
-            "PhoneNumber": "93485787"
-        }
+      {
+        "ID": 2,
+        "Name": "Bard",
+        "Address": "\u00C5rhus",
+        "Email": "TeaLover123",
+        "PhoneNumber": "83745348"
+      },
+      {
+        "ID": 3,
+        "Name": "Customer3",
+        "Address": "Roskilde",
+        "Email": "Tea",
+        "PhoneNumber": "93485787"
+      },
+      {
+        "ID": 6,
+        "Name": "Jarl gr\u00F8n",
+        "Address": "Jarlvej 34",
+        "Email": "Lalalla@gmail.com",
+        "PhoneNumber": "40506070"
+      }
     ],
     "EventCapacity": 23,
     "EventIsFull": false,
