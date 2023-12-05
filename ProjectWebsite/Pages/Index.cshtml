@@ -33,32 +33,42 @@
     <div class="row">
         <h2 style="text-align:center;">Populære produkter</h2>
     </div>
-    <div class="row px-2 pb-5 px-md-5 pb-md-4 pt-2 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
-        <div class="col card">
-            <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-            <div class="card-body">
-                <h5 class="card-title">product.Name</h5>
-                <p class="card-text">product.Description</p>
-                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+
+    <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+        <div class="pb-3 px-3">
+            <div class="col card p-3">
+                <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                <div>
+                    <h5 class="font-weight-bold">product.Name</h5>
+                    <p>product.Description</p>
+                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+                </div>
             </div>
         </div>
-        <div class="col card">
-            <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-            <div class="card-body">
-                <h5 class="card-title">product.Name</h5>
-                <p class="card-text">product.Description</p>
-                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+        <div class="pb-3 px-3">
+            <div class="col card p-3">
+                <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                <div>
+                    <h5 class="font-weight-bold">product.Name</h5>
+                    <p>product.Description</p>
+                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+                </div>
             </div>
         </div>
-        <div class="col card">
-            <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-            <div class="card-body">
-                <h5 class="card-title">product.Name</h5>
-                <p class="card-text">product.Description</p>
-                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+        <div class="pb-3 px-3">
+            <div class="col card p-3">
+                <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                <div>
+                    <h5 class="font-weight-bold">product.Name</h5>
+                    <p>product.Description</p>
+                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+                </div>
             </div>
         </div>
     </div>
+
+
+   
 </div>
 
 <span class="brlarge"></span>
@@ -67,29 +77,62 @@
     <div class="row">
         <h2 style="text-align:center;">Nyheder og Events</h2>
     </div>
-    <div class="row px-2 pb-5 px-md-5 pb-md-4 pt-2 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
-        <div class="col card">
-            <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-            <div class="card-body">
-                <h5 class="card-title">Events.Name</h5>
-                <p class="card-text">Events.Description</p>
-                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+    <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+        <div class="pb-3 px-3">
+            <div class="col card p-3">
+                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                <div>
+                    <h5 class="font-weight-bold">Events.Name</h5>
+                    <p class="text-muted">ID: id</p>
+
+                    @{
+                       
+                        <p>
+                            EventLocation <br />
+                            EventDateTime.ToString("dd-MM-yy")<br />
+                            EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
+                        </p>
+                    }
+                    <p>Events.Description</p>
+                </div>
             </div>
         </div>
-        <div class="col card">
-            <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-            <div class="card-body">
-                <h5 class="card-title">Events.Name</h5>
-                <p class="card-text">Events.Description</p>
-                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+        <div class="pb-3 px-3">
+            <div class="col card p-3">
+                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                <div>
+                    <h5 class="font-weight-bold">Events.Name</h5>
+                    <p class="text-muted">ID: id</p>
+
+                    @{
+
+                        <p>
+                            EventLocation <br />
+                            EventDateTime.ToString("dd-MM-yy")<br />
+                            EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
+                        </p>
+                    }
+                    <p>Events.Description</p>
+                </div>
             </div>
         </div>
-        <div class="col card">
-            <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
-            <div class="card-body">
-                <h5 class="card-title">Events.Name</h5>
-                <p class="card-text">Events.Description</p>
-                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+        <div class="pb-3 px-3">
+            <div class="col card p-3">
+                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                <div>
+                    <h5 class="font-weight-bold">Events.Name</h5>
+                    <p class="text-muted">ID: id</p>
+
+                    @{
+
+                        <p>
+                            EventLocation <br />
+                            EventDateTime.ToString("dd-MM-yy")<br />
+                            EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
+                        </p>
+                    }
+                    <p>Events.Description</p>
+                </div>
             </div>
         </div>
     </div>
