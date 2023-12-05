@@ -12,6 +12,7 @@ namespace ProjectWebsite.Pages.Events
         [BindProperty] public Models.Event Event { get; set; }
         [BindProperty] public Models.Customer Customer { get; set; }
         [BindProperty] public int CustomerID { get; set; }
+		[BindProperty] public Models.Product ProductEvent { get; set; }
 
 		public GetAllAttendeesModel(EventService eventService, CustomerService customerService)
         {
@@ -64,6 +65,7 @@ namespace ProjectWebsite.Pages.Events
 				Event.EventAttendees.Add(customerToAttend);
 			}
 			Event = eventService.UpdateEvent(Event);
+			ProductEvent = eventService.ConvertEventToProduct(Event);
 			return Page();
 		}
 
