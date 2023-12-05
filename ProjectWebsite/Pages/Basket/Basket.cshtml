@@ -21,14 +21,15 @@
             Produkt navn
         </th>
         <th>
-            Produkt størrelse
+            Antal
         </th>
         <th>
             Pris per styk
         </th>
         <th>
-
+            Samlet pris
         </th>
+        <th></th>
     </tr>
     
     @foreach (var element in Model.Kurv)
@@ -50,6 +51,9 @@
             </td>
             <td>
                 @element.Product.Price
+            </td>
+            <td>
+                @(element.Amount * element.Product.Price)
             </td>
             <td>
                 <a class="btn btn-primary btn-sm" type="button" title="Slet podukt" asp-page="DeleteBasketProduct" asp-route-id="@element.ID"><i class="fa fa-trash"></i></a>
