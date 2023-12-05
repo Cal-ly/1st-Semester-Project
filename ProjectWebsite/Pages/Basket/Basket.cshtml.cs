@@ -17,6 +17,8 @@ namespace ProjectWebsite.Pages.Kurv
 
         public List<OrderLine> Kurv { get; set; }
         public double Total { get; set; }
+        
+
         private OrderService OrderService { get; set; }
 
         public KurvModel(OrderService orderService)
