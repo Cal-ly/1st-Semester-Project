@@ -16,9 +16,9 @@ namespace ProjectWebsite.Pages.Basket
             OrderService = orderService;
         }
 
-        public IActionResult OnGet(int newAmount, int orderLineID)
+        public IActionResult OnGet(int newAmount, int id)
         {
-            Console.WriteLine(orderLineID);
+            Console.WriteLine(id);
             Console.WriteLine(newAmount);
 
             return RedirectToPage("Basket");
