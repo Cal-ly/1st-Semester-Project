@@ -36,15 +36,15 @@ namespace ProjectWebsite.Pages.Product
         {
 
             Models.Product product = ProductService.GetProduct(Product.ID);
-            int ID;
-            if (Order.basket.Max(p => p.ID) == null)
-            { ID = 1; }
-            else { ID = Order.basket.Max(p => p.ID) + 1; }
+            int newID;
+            if (Order.basket?.Count == null || Order.basket?.Count == 0)
+            { newID = 1; }
+            else { newID = Order.basket.Max(p => p.ID) + 1; }
             OrderLine temp = new()
             {
                 Amount = amountIN,
                 Product = product,
-                ID = ID
+                ID = newID
             };
 
             foreach (OrderLine line in Order.basket)
