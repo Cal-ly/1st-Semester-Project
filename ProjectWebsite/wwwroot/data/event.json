@@ -117,5 +117,18 @@
     "EventCapacity": 23,
     "EventIsFull": false,
     "EventOrganizer": "TestTest"
+  },
+  {
+    "ID": 6,
+    "EventName": "Nytest",
+    "EventLocation": "Testest",
+    "EventDateTime": "2023-12-05T12:43:00",
+    "EventDuration": 56,
+    "EventDescription": "wesr",
+    "EventCost": 56,
+    "EventAttendees": [],
+    "EventCapacity": 23,
+    "EventIsFull": false,
+    "EventOrganizer": "BluesBrews"
   }
 ]

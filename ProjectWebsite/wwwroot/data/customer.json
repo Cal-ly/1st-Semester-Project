@@ -54,5 +54,12 @@
     "Address": "ASDFGH",
     "Email": "TeaHater",
     "PhoneNumber": "12345678"
+  },
+  {
+    "ID": 10,
+    "Name": "Jarl Gr\u00E5",
+    "Address": "Gr\u00E5vej 22",
+    "Email": "Lalalla@gmail.com",
+    "PhoneNumber": "30405070"
   }
 ]

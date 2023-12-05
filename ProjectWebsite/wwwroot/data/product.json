@@ -61,5 +61,14 @@
     "Type": "Gr\u00F8n te",
     "Price": 80,
     "Size": 100
+  },
+  {
+    "ID": 9006,
+    "Name": "Nytest",
+    "Description": "wesr",
+    "Content": "Sted: Testest Start: 05-12-23 12.43 - End: 05-12-23 13.39",
+    "Type": "Event",
+    "Price": 56,
+    "Size": 23
   }
 ]
