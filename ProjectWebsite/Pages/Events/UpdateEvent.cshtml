@@ -3,6 +3,9 @@
 @{
 }
 
+<span class="brlarge"></span>
+<div class="row justify-content-center">
+    <div class="col-9 col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 p-4 alert alert-secondary">
 <form method="post">
     
     <input type="hidden" asp-for="@Model.Event.ID" />
@@ -74,10 +77,12 @@
     </div> *@
 
     <p>
-        <div class="form-group">
-            <input type="submit" value="Update" class="btn btn-success" />
-            <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-danger" />
-        </div>
+            <div class="form-group d-flex justify-content-between">
+                <input type="submit" value="Opdater" class="btn btn-success" />
+                <input type="submit" asp-page-handler="Cancel" value="Fortryd" class="btn btn-danger" />
+            </div>
     </p>
 
 </form>
+    </div>
+</div>

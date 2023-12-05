@@ -60,12 +60,8 @@ namespace ProjectWebsite.Pages.Events
 				Email = Customer.Email,
 				PhoneNumber = Customer.PhoneNumber
 			};
-			if (customerToAttend != null)
-			{
-				Event.EventAttendees.Add(customerToAttend);
-			}
+			Event.EventAttendees.Add(customerToAttend);
 			Event = eventService.UpdateEvent(Event);
-			ProductEvent = eventService.ConvertEventToProduct(Event);
 			return Page();
 		}
 

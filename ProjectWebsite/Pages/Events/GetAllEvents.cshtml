@@ -28,26 +28,33 @@
         {
             @foreach (var e in Model.EventList)
             {
-                <div class="col card">
-                    <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
-                    <div>
-                        <h5>@e.EventName</h5>
-                        <p>ID: @e.ID</p>
-                        <p>@e.EventDescription</p>
-                        @e.EventLocation
-                        @*  <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a> *@
-                        @e.EventDateTime.ToString("dd-MM-yy")
-                        @{
-                            DateTime endDateTime = e.EventDateTime.AddMinutes(e.EventDuration);
-                            <p>@e.EventDateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")</p>
-                        }
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-primary btn-sm p-3" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@e.ID"> <i class="fa fa-edit"></i> </a>
-                            <a class="btn btn-danger btn-sm p-3" type="button" title="Delete" asp-page="DeleteEvent" asp-route-id="@e.ID"> <i class="fa fa-trash"></i> </a>
-                            <a class="btn btn-primary btn-sm p-3" type="button" title="GetAllAttendees" asp-page="GetAllAttendees" asp-route-id="@e.ID"> <i class="fa-solid fa-users"></i> </a>
+                <div class="pb-3 px-3">
+                    <div class="col card p-3">
+                        <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                        <div>
+                            <h5 class="font-weight-bold">@e.EventName</h5>
+                            <p class="text-muted">ID: @e.ID</p>
+
+                            @{
+                                DateTime endDateTime = e.EventDateTime.AddMinutes(e.EventDuration);
+                                <p>
+                                    @e.EventLocation <br />
+                                    @e.EventDateTime.ToString("dd-MM-yy")<br />
+                                    @e.EventDateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
+                                </p>
+                            }
+                            <p>@e.EventDescription</p>
+
+                            <div class="btn-group container-fluid" role="group">
+                                <a class="btn btn-primary p-3" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@e.ID"> <i class="fa fa-edit"></i> </a>
+                                <a class="btn btn-primary p-3" type="button" title="GetAllAttendees" asp-page="GetAllAttendees" asp-route-id="@e.ID"> <i class="fa-solid fa-users"></i> </a>
+                                <a class="btn btn-danger p-3" type="button" title="Delete" asp-page="DeleteEvent" asp-route-id="@e.ID"> <i class="fa fa-trash"></i> </a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
+               
             }
         }
     </div>

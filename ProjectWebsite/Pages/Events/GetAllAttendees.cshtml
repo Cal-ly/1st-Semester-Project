@@ -67,14 +67,14 @@
                     @c.PhoneNumber
 				</td>
 				<td class="d-none d-sm-table-cell">
-					<a class="btn btn-primary btn-sm" type="button" title="Delete">
+					@* <a class="btn btn-primary btn-sm" type="button" title="Delete"> *@
 					<form method="post">
                         <input type="hidden" name="EventID" value="@Model.Event.ID" />
                         <input type="hidden" name="CustomerID" value="@c.ID" />
 						<input type="submit" class="fa-solid fa-user-xmark" asp-page-handler="DeleteAttendee" />
 					</form>
-					<i class="fa-solid fa-user-xmark"></i>
-					</a>
+					@* <i class="fa-solid fa-user-xmark"></i> 
+					</a>*@
 					@* <a class="btn btn-primary btn-sm" type="button" title="Delete" asp-page-handler="DeleteAttendee" asp-route-eventID="@Model.Event.ID" asp-route-customerid="@c.ID"><i class="fa-solid fa-user-xmark"></i></a> *@
 				</td>
 			</tr>

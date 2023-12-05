@@ -300,42 +300,20 @@
   },
   {
     "ID": 15,
-    "CustomerID": 14,
-    "TotalPrice": 100,
+    "CustomerID": 2,
+    "TotalPrice": 80,
     "OrderList": [
       {
         "Product": {
-          "ID": 1,
-          "Name": "Earl Greyyyyyy",
-          "Description": "Delicious black tea",
-          "Content": "Black tea",
-          "Type": "Black tea",
-          "Price": 100,
+          "ID": 7,
+          "Name": "Mathias\u0027 Te",
+          "Description": "Mega nice te",
+          "Content": "Gr\u00F8n te",
+          "Type": "Gr\u00F8n te",
+          "Price": 80,
           "Size": 100
         },
         "Amount": 1,
-        "ID": 1
-      }
-    ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
-  },
-  {
-    "ID": 16,
-    "CustomerID": 15,
-    "TotalPrice": 200,
-    "OrderList": [
-      {
-        "Product": {
-          "ID": 1,
-          "Name": "Earl Greyyyyyy",
-          "Description": "Delicious black tea",
-          "Content": "Black tea",
-          "Type": "Black tea",
-          "Price": 100,
-          "Size": 100
-        },
-        "Amount": 2,
         "ID": 1
       }
     ],

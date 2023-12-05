@@ -57,44 +57,9 @@
   },
   {
     "ID": 10,
-    "Name": "teaaaaa",
-    "Address": "tgsg",
-    "Email": "Teaaa",
-    "PhoneNumber": "234"
-  },
-  {
-    "ID": 11,
-    "Name": "teaaaaa",
-    "Address": "sfg",
-    "Email": "TEA",
-    "PhoneNumber": "234"
-  },
-  {
-    "ID": 12,
-    "Name": "TEA",
-    "Address": "sf",
-    "Email": "TEA",
-    "PhoneNumber": "2345"
-  },
-  {
-    "ID": 13,
-    "Name": "TEA",
-    "Address": "asf",
-    "Email": "TEA",
-    "PhoneNumber": "3456"
-  },
-  {
-    "ID": 14,
-    "Name": "TEA",
-    "Address": "sf",
-    "Email": "TEA1",
-    "PhoneNumber": "2345"
-  },
-  {
-    "ID": 15,
-    "Name": "TEA4",
-    "Address": "asgd",
-    "Email": "TEA4",
-    "PhoneNumber": "2345"
+    "Name": "Jarl Gr\u00E5",
+    "Address": "Gr\u00E5vej 22",
+    "Email": "Lalalla@gmail.com",
+    "PhoneNumber": "30405070"
   }
 ]
