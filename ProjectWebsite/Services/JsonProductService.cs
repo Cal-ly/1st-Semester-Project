@@ -17,7 +17,7 @@ namespace ProjectWebsite.Services
 
         public void SaveJsonItems(List<Product> products)
         {
-            using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.OpenOrCreate))
+            using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
 			{
                 Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
                 {
@@ -37,4 +37,3 @@ namespace ProjectWebsite.Services
         }
     }
 }
-

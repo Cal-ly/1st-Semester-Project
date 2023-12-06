@@ -1,12 +1,9 @@
 ﻿using ProjectWebsite.Models;
 using System.Text.Json;
-using System.IO;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace ProjectWebsite.Services
 {
-	public class JsonEventService
+    public class JsonEventService
 	{
 		public IWebHostEnvironment WebHostEnvironment { get; }
 		public JsonEventService(IWebHostEnvironment webHostEnvironment)
