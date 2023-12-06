@@ -19,7 +19,7 @@ namespace ProjectWebsite.Pages.Events
         {
             Event = eventService.GetEventByID(id);
             if (Event == null)
-                return RedirectToPage("/Error"); //Define NotFound page
+                return RedirectToPage("/NotFound");
             return Page();
         }
         public IActionResult OnPost()
