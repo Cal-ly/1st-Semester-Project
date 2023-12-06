@@ -22,9 +22,9 @@ namespace ProjectWebsite.Pages.Customer
 
 		public IActionResult OnPost()
 		{
-			if (!ModelState.IsValid) 
-			{ 
-				return Page(); 
+			if (!ModelState.IsValid)
+			{
+				return Page();
 			}
 			Customer.ID = CustomerService.GetNextID();
 			CustomerService.CreateCustomer(Customer);

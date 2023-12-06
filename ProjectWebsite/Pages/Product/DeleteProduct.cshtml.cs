@@ -22,7 +22,7 @@ namespace ProjectWebsite.Pages.Product
 			//Console.WriteLine(Product);
             if (Product == null)
 			{
-                return RedirectToPage("/Error"); //Define NotFound page
+                return RedirectToPage("/NotFound");
             }
 			return Page();
 		}
@@ -31,7 +31,7 @@ namespace ProjectWebsite.Pages.Product
 		{
 			//Metoden bliver kørt indeni if-statement 
 			if (!ProductService.DeleteProduct(Product.ID))
-				return RedirectToPage("/Error"); //Define NotFound page
+				return RedirectToPage("/Error");
 
 			return RedirectToPage("GetAllProducts");
 		}

@@ -32,12 +32,8 @@ namespace ProjectWebsite.Pages.Kurv
 
         public IActionResult OnPostVidere()
         {
-            
-            
             return RedirectToPage("/Basket/CheckCustomer");
         }
-
-      
 
         public IActionResult OnPostPlus(int ID)
         {
@@ -58,7 +54,7 @@ namespace ProjectWebsite.Pages.Kurv
         }
         public IActionResult OnPostMinus(int ID)
         {
-            OrderLine temp =null;
+            OrderLine temp = null;
             Kurv = Order.basket;
             foreach (OrderLine orderLine in Kurv)
             {
@@ -88,7 +84,5 @@ namespace ProjectWebsite.Pages.Kurv
                 Total += line.Amount * line.Product.Price;
             }
 		}
-
-        
     }
 }

@@ -19,4 +19,3 @@ namespace ProjectWebsite.Pages.Basket
         }
     }
 }
-

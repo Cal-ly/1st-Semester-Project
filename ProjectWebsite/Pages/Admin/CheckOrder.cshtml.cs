@@ -15,8 +15,9 @@ namespace ProjectWebsite.Pages.Admin
 
 		public IActionResult OnGet(int id)
 		{
-			OrderService.FinishOrder(id);			
-			return RedirectToPage("GetAllOrders"); 
+			OrderService.FinishOrder(id);
+            if (OrderService == null) { return RedirectToPage("/NotFound"); }
+            return RedirectToPage("GetAllOrders");
 		}
 	}
 }

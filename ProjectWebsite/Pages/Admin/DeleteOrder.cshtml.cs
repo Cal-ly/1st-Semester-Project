@@ -19,9 +19,8 @@ namespace ProjectWebsite.Pages.Admin
 		public IActionResult OnGet(int id)
 		{
 			Order = OrderService.GetOrder(id);
-			if (Order == null)
-				return RedirectToPage("/Error"); //Define NotFound page
-			return Page();
+			if (Order == null) { return RedirectToPage("/NotFound"); }
+            return Page();
 		}
 
 		public IActionResult OnPost()

@@ -23,10 +23,9 @@ namespace ProjectWebsite.Pages.Events
 
 		public IActionResult OnPost()
 		{
-			if (!eventService.DeleteEvent(Event.ID))
-				return RedirectToPage("/Error"); //Define NotFound page
+            if (!eventService.DeleteEvent(Event.ID)) { return RedirectToPage("/Error"); }
 
-			return RedirectToPage("GetAllEvents");
+            return RedirectToPage("GetAllEvents");
 		}
 		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
 	}

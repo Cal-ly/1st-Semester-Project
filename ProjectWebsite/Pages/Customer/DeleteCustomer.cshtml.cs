@@ -20,8 +20,7 @@ namespace ProjectWebsite.Pages.Customer
 		public IActionResult OnGet(int id)
 		{
 			Customer = CustomerService.GetCustomerByID(id);
-			if (Customer == null)
-				return RedirectToPage("/Error"); //Define NotFound page
+			if (Customer == null) { return RedirectToPage("/NotFound"); }
 			return Page();
 		}
 
