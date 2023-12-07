@@ -20,10 +20,14 @@ namespace ProjectWebsite.Repositories
         {
             //foreach løkke der går igennem OrderList 
             foreach (Order order in OrderList)
+            {
                 //hvis Order objektets ID matcher orderID parameteren...
                 if (order.ID == orderID)
+                {
                     //... returnere den en reference til Order objektet
                     return order;
+                }  
+            }
             //hvis intet match er fundet returneres null
             return null;
         }
@@ -32,25 +36,29 @@ namespace ProjectWebsite.Repositories
         {
             //foreach løkke der går igennem hver OrderLine objekt i basket hos Order klassen
             foreach (OrderLine orderLine in Order.basket)
+            {
                 //hvis objektets ID matcher orderLineID parameter...
                 if (orderLine.ID == orderLineID)
+                {
                     //...returnere den en reference til OrderLine objektet
                     return orderLine;
+                } 
+            }
             //hvis intet match er fundet returnere den null
             return null;
         }
 
         public List<Order> GetCustomerOrders(int customerID)
         {
-            List<Order> customerOrders = new();
-            foreach (Order order in OrderList) 
-            {  
-                if (order.CustomerID == customerID) 
-                { 
-                    customerOrders.Add(order);
-                }   
-            }
-            return customerOrders;
+            List<Order> customersOrders = new();
+            foreach (Order order in OrderList)
+            {
+                if (order.CustomerID == customerID)
+                {
+                    customersOrders.Add(order);
+                }
+            }     
+            return customersOrders;
         }
 
         // Vi laver en metode med returtypen void for at metoden ikke behøver at retunere noget. Vi tilføjer parameteren Order order

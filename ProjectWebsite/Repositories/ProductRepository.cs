@@ -17,7 +17,10 @@ namespace ProjectWebsite.Repositories
         public int GetNextID()
         {
             int nextID = ProductList.Max(c => c.ID) + 1;
-            if (nextID <= NextID) { nextID = NextID + 1; }
+            if (nextID <= NextID) 
+            { 
+                nextID = NextID + 1; 
+            }
             NextID = nextID;
             return nextID;
         }
