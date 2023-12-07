@@ -66,10 +66,14 @@ namespace ProjectWebsite.Repositories
 
         public void UpdateProduct(Product product)
         {
+            //Foreach loop der looper alle produkter (p) i ProductList igennem.
             foreach (Product p in ProductList)
             {
+                //If statement der tjekker om p er identisk med det produkt vi forsøger at opdatere. 
                 if (p.ID == product.ID)
                 {
+                    //Når den finder det produkt (p) i ProductList der er identisk med et produkt vi vil opdatere,
+                    //sætter den produktets oplysninger til de oplysninger vi har skrevet i UpdateProduct formen på UpdateProduct siden. 
                     p.Name = product.Name;
                     p.Description = p.Description;
                     p.Content = p.Content;
@@ -77,6 +81,8 @@ namespace ProjectWebsite.Repositories
                     p.Price = product.Price;
                     p.Size = product.Size;
 
+                    //Til sidst gemmer vi de opdaterede oplysninger i vores Json-fil,
+                    //ved hjælp af vores SaveJsonItems funktion i vores JsonProductService.
                     JsonProductService.SaveJsonItems(ProductList);
                 }
             }
