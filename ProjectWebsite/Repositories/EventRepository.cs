@@ -21,14 +21,14 @@ namespace ProjectWebsite.Repositories
 
         public int GetNextID()
         {
-            if (EventList.Count == 0) 
-            { 
-                return 1; 
+            if (EventList.Count == 0)
+            {
+                return 1;
             }
             int nextID = EventList.Max(c => c.ID) + 1;
-            if (nextID <= EventRepository.nextID) 
-            { 
-                nextID = EventRepository.nextID + 1; 
+            if (nextID <= EventRepository.nextID)
+            {
+                nextID = EventRepository.nextID + 1;
             }
             EventRepository.nextID = nextID;
             return nextID;
@@ -127,19 +127,6 @@ namespace ProjectWebsite.Repositories
             }
             return searchResult;
         }
-
-        public Event GetEventByLocation(string location)
-        {
-            foreach (Event e in EventList)
-            {
-                if (e.Location.ToLower().Contains(location.ToLower()))
-                {
-                    return e;
-                }
-            }
-            return null;
-        }
-
         public List<Event> GetEventsByDate(DateTime date)
         {
             List<Event> searchResult = new();
