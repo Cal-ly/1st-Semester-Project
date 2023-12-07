@@ -8,7 +8,6 @@ namespace ProjectWebsite.Repositories
         public static int NextID = 1;
         public List<Customer> CustomerList { get; set; }
         private JsonCustomerService JsonCustomerService { get; set; }
-
         public CustomerRepository(JsonCustomerService jsonFileCustomerService)
         {
             JsonCustomerService = jsonFileCustomerService;
