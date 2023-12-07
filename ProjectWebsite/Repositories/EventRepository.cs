@@ -8,7 +8,9 @@ namespace ProjectWebsite.Repositories
     public class EventRepository
     {
         public static int NextID = 1;
+
         public List<Event> EventList { get; set; }
+
         private JsonEventService JsonEventService { get; set; }
 
         public EventRepository(JsonEventService jsonFileEventService)
@@ -61,7 +63,7 @@ namespace ProjectWebsite.Repositories
                     JsonEventService.SaveJsonItems(EventList);
                 }
             }
-            return incomingE; //TODO: Display updated event -splash screen?
+            return incomingE;
         }
 
         public Event UpdateEventAttendees(Event incomingE)
@@ -74,7 +76,7 @@ namespace ProjectWebsite.Repositories
                     JsonEventService.SaveJsonItems(EventList);
                 }
             }
-            return incomingE; //TODO: Display updated eventAttendee -splash screen?
+            return incomingE;
         }
 
         public bool DeleteEvent(int eventID)
@@ -167,6 +169,7 @@ namespace ProjectWebsite.Repositories
                 Price = eventToConvert.EventCost,
                 Size = eventToConvert.EventCapacity
             };
+
             if (eventToConvert.EventIsFull)
             {
                 string tempContent = productOut.Content;
