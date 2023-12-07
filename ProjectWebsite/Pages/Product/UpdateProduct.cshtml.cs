@@ -16,12 +16,17 @@ namespace ProjectWebsite.Pages.Product
         {
             ProductService = productService;
         }
+
         public IActionResult OnGet(int id)
         {
             Product = ProductService.GetProduct(id);
-            if (Product == null) { return RedirectToPage("/NotFound"); }
+            if (Product == null) 
+            { 
+                return RedirectToPage("/NotFound"); 
+            }
             return Page();
         }
+
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -31,6 +36,10 @@ namespace ProjectWebsite.Pages.Product
             ProductService.UpdateProduct(Product);
             return RedirectToPage("GetAllProducts");
         }
-        public IActionResult OnPostCancel() { return RedirectToPage("GetAllProducts"); }
+
+        public IActionResult OnPostCancel() 
+        { 
+            return RedirectToPage("GetAllProducts"); 
+        }
     }
 }
