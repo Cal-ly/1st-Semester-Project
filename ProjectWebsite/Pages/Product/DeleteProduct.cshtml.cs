@@ -31,10 +31,14 @@ namespace ProjectWebsite.Pages.Product
 		{
 			//Metoden bliver kørt indeni if-statement
 			if (!ProductService.DeleteProduct(Product.ID))
-				return RedirectToPage("/Error");
-
+			{
+                return RedirectToPage("/Error");
+            }
 			return RedirectToPage("GetAllProducts");
 		}
-		public IActionResult OnPostCancel() { return RedirectToPage("GetAllProducts"); }
+		public IActionResult OnPostCancel() 
+		{ 
+			return RedirectToPage("GetAllProducts"); 
+		}
 	}
 }

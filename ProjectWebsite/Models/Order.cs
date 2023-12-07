@@ -4,7 +4,7 @@ namespace ProjectWebsite.Models
 {
     public class Order
     {
-        public static List<OrderLine> basket = new(); //The basket
+        public static List<OrderLine> basket = new(); 
 
         public int ID { get; set; }
         public int CustomerID { get; set; }

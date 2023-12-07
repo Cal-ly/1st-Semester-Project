@@ -27,9 +27,7 @@ namespace ProjectWebsite.Pages.Customer
 		public IActionResult OnPost()
 		{
 			//Inde i if-statement returnerer DeleteCustomer en bool, hvis den er false (kunde ikke fundet/slettet) bliver der redirected til NotFound siden.
-			if (!CustomerService.DeleteCustomer(Customer.ID))
-                return RedirectToPage("/NotFound");
-
+			if (!CustomerService.DeleteCustomer(Customer.ID)) { return RedirectToPage("/NotFound"); }
             return RedirectToPage("GetAllCustomers");
 		}
 		public IActionResult OnPostCancel() { return RedirectToPage("GetAllCustomers"); }

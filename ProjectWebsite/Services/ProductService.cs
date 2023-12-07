@@ -33,8 +33,12 @@ namespace ProjectWebsite.Services
         {
             List<Product> nameSearch = new();
             foreach (Product product in ProductList)
+            {
                 if (product.Type.ToLower().Contains(str.ToLower()))
+                {
                     nameSearch.Add(product);
+                }  
+            }
             return nameSearch;
         }
     }

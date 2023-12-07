@@ -6,6 +6,7 @@ namespace ProjectWebsite.Repositories
     public class OrderRepository
     {
         public List<Order> OrderList { get; set; }
+
         private JsonOrderService JsonOrderService { get; set; }
 
         public OrderRepository(JsonOrderService jsonOrderService)
@@ -20,10 +21,14 @@ namespace ProjectWebsite.Repositories
         {
             //foreach løkke der går igennem OrderList 
             foreach (Order order in OrderList)
+            {
                 //hvis Order objektets ID matcher orderID parameteren...
                 if (order.ID == orderID)
+                {
                     //... returnere den en reference til Order objektet
                     return order;
+                }  
+            }
             //hvis intet match er fundet returneres null
             return null;
         }
@@ -32,10 +37,14 @@ namespace ProjectWebsite.Repositories
         {
             //foreach løkke der går igennem hver OrderLine objekt i basket hos Order klassen
             foreach (OrderLine orderLine in Order.basket)
+            {
                 //hvis objektets ID matcher orderLineID parameter...
                 if (orderLine.ID == orderLineID)
+                {
                     //...returnere den en reference til OrderLine objektet
                     return orderLine;
+                } 
+            }
             //hvis intet match er fundet returnere den null
             return null;
         }
@@ -44,8 +53,12 @@ namespace ProjectWebsite.Repositories
         {
             List<Order> customersOrders = new();
             foreach (Order order in OrderList)
+            {
                 if (order.CustomerID == customerID)
+                {
                     customersOrders.Add(order);
+                }
+            }     
             return customersOrders;
         }
 

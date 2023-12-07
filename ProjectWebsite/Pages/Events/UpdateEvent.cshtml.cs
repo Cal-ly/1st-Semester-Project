@@ -26,7 +26,6 @@ namespace ProjectWebsite.Pages.Events
         }
         public IActionResult OnPost()
         {
-            //if (!ModelState.IsValid) { return Page(); }
 			eventService.UpdateEvent(Event);
             ProductEvent = eventService.ConvertEventToProduct(Event);
             productService.CreateProduct(ProductEvent);
