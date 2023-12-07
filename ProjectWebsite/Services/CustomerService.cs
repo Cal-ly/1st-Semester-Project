@@ -5,7 +5,7 @@ namespace ProjectWebsite.Services
 {
     public class CustomerService
     {
-        public CustomerRepository CustomerRepository { get; set; }
+        private CustomerRepository CustomerRepository { get; set; }
         public List<Customer> CustomerList { get { return CustomerRepository.CustomerList; } }
         public CustomerService(CustomerRepository customerRepository)
         {

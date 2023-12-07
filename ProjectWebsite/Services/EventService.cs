@@ -6,7 +6,7 @@ namespace ProjectWebsite.Services
 {
     public class EventService
     {
-        public EventRepository EventRepository { get; set; }
+        private EventRepository EventRepository { get; set; }
 
         public List<Event> EventList { get { return EventRepository.EventList; } }
 
