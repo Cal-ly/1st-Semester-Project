@@ -61,9 +61,13 @@ namespace ProjectWebsite.Pages.Kurv
         }
         public void TempTotal()
         {
+            //hiver fat i instans feltet Total, der er en double, og nulstiller
             Total = 0;
-            foreach(var line in Kurv)
+            //foreach løkke der går igennem hver OrderLine i Kurv instans feltet
+            //Kurv er en reference til Basket Listen i Order klassen
+            foreach(OrderLine line in Kurv)
             {
+                //Ordre linjes mængde bliver ganget med product prisen og lægges til Total
                 Total += line.Amount * line.Product.Price;
             }
 		}
