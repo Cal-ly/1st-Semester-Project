@@ -10,9 +10,10 @@ namespace ProjectWebsite.Pages.Product
     {
         [BindProperty]
         public Models.Product Product { get; set; }
+        
         private ProductService ProductService { get; set; }
 
-        public string besked { get; set; }
+        public string Message { get; set; }
 
         [BindProperty]
         public int amountIN { get; set; }
@@ -26,20 +27,26 @@ namespace ProjectWebsite.Pages.Product
         public IActionResult OnGet(int id)
         {
             Product = ProductService.GetProduct(id);
-            if (Product == null)
-                return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
-
+            if (Product == null) 
+            { 
+                return RedirectToPage("/NotFound");
+            }
             return Page();
         }
 
         public IActionResult OnPost()
         {
-
             Models.Product product = ProductService.GetProduct(Product.ID);
             int newID;
             if (Order.basket?.Count == null || Order.basket?.Count == 0)
-            { newID = 1; }
-            else { newID = Order.basket.Max(p => p.ID) + 1; }
+            { 
+                newID = 1; 
+            }
+            else 
+            { 
+                newID = Order.basket.Max(p => p.ID) + 1; 
+            }
+
             OrderLine temp = new()
             {
                 Amount = amountIN,
@@ -52,13 +59,13 @@ namespace ProjectWebsite.Pages.Product
                 if (line.Product == product)
                 {
                     line.Amount += temp.Amount;
-                    besked = "Antal opdateret";
+                    Message = "Antal opdateret";
                     Product = product;
                     return Page();
                 }
             }
             Order.basket.Add(temp);
-            besked = "Produkt tilføjet til kurven";
+            Message = "Produkt tilføjet til kurven";
             Product = product;
             return Page();
         }

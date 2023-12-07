@@ -8,6 +8,7 @@ namespace ProjectWebsite.Pages.Product
     {
 		[BindProperty]
 		public Models.Product Product { get; set; }
+
         public ProductService ProductService { get; set; }
 
         public DeleteProductModel(ProductService productService)
@@ -17,9 +18,7 @@ namespace ProjectWebsite.Pages.Product
 
 		public IActionResult OnGet(int id)
 		{
-			//Console.WriteLine(id);
 			Product = ProductService.GetProduct(id);
-			//Console.WriteLine(Product);
             if (Product == null)
 			{
                 return RedirectToPage("/NotFound");
@@ -29,13 +28,13 @@ namespace ProjectWebsite.Pages.Product
 
 		public IActionResult OnPost()
 		{
-			//Metoden bliver kørt indeni if-statement
 			if (!ProductService.DeleteProduct(Product.ID))
 			{
                 return RedirectToPage("/Error");
             }
 			return RedirectToPage("GetAllProducts");
 		}
+
 		public IActionResult OnPostCancel() 
 		{ 
 			return RedirectToPage("GetAllProducts"); 

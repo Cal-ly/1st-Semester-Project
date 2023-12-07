@@ -3,9 +3,6 @@
 @{
     ViewData["Title"] = "Home page";
 }
-@* <div class="banner">
-    <div class="banner-text">Juleteen er på gaden, køb den <a href="Product/GetAllProducts" style="color:black;">her</a></div>
-</div> *@
 
 <a class="btn btn-success text-center container-fluid pt-3" href="Product/GetAllProducts">
     <h4>Juleteen er på gaden, køb den her</h4>
@@ -66,9 +63,6 @@
             </div>
         </div>
     </div>
-
-
-   
 </div>
 
 <span class="brlarge"></span>
@@ -86,13 +80,32 @@
                     <p class="text-muted">ID: id</p>
 
                     @{
-                       
                         <p>
                             EventLocation <br />
                             EventDateTime.ToString("dd-MM-yy")<br />
                             EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
                         </p>
                     }
+
+                    <p>Events.Description</p>
+                </div>
+            </div>
+        </div>
+        <div class="pb-3 px-3">
+            <div class="col card p-3">
+                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                <div>
+                    <h5 class="font-weight-bold">Events.Name</h5>
+                    <p class="text-muted">ID: id</p>
+
+                    @{
+                        <p>
+                            EventLocation <br />
+                            EventDateTime.ToString("dd-MM-yy")<br />
+                            EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
+                        </p>
+                    }
+
                     <p>Events.Description</p>
                 </div>
             </div>
@@ -112,25 +125,7 @@
                             EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
                         </p>
                     }
-                    <p>Events.Description</p>
-                </div>
-            </div>
-        </div>
-        <div class="pb-3 px-3">
-            <div class="col card p-3">
-                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
-                <div>
-                    <h5 class="font-weight-bold">Events.Name</h5>
-                    <p class="text-muted">ID: id</p>
 
-                    @{
-
-                        <p>
-                            EventLocation <br />
-                            EventDateTime.ToString("dd-MM-yy")<br />
-                            EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
-                        </p>
-                    }
                     <p>Events.Description</p>
                 </div>
             </div>
