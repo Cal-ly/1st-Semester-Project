@@ -9,13 +9,6 @@
 else
 {
     <table class="table table-hover table-light">
-        <colgroup>
-            @* Not mobile friendly *@
-            <col style="width : 20%">
-            <col style="width : 40%">
-            <col style="width : 20%">
-            <col style="width : 20%">
-        </colgroup>
 
         <tr>
             <th>
@@ -40,9 +33,12 @@ else
                     @element.Product.Name
                 </td>
                 <td>
-                    @element.Amount
-                    <form method="post">
+
+                    <form method="post" class="form-inline">
+                        
                         <div class="form-group">
+                            @element.Amount
+                            <i class="px-3"></i>
                             <button class="btn btn-primary" type="submit" title="Minus en" asp-page-handler="Minus" asp-route-id="@element.ID"><i class="fa fa-minus"></i></button>
                             <button class="btn btn-primary" type="submit" title="Plus en" asp-page-handler="Plus" asp-route-id="@element.ID"><i class="fa fa-plus"></i></button>
                         </div>
