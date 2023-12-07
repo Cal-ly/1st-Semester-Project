@@ -2,7 +2,7 @@
 {
     public class OrderLine
     {
-        public Product Product { get; set; } //change this to an int?
+        public Product Product { get; set; } 
         public int Amount { get; set; }
         public int ID { get; set; }
 

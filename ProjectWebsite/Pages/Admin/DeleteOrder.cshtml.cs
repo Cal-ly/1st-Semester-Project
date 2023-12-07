@@ -19,7 +19,10 @@ namespace ProjectWebsite.Pages.Admin
 		public IActionResult OnGet(int id)
 		{
 			Order = OrderService.GetOrder(id);
-			if (Order == null) { return RedirectToPage("/NotFound"); }
+			if (Order == null) 
+			{ 
+				return RedirectToPage("/NotFound"); 
+			}
             return Page();
 		}
 
@@ -27,10 +30,16 @@ namespace ProjectWebsite.Pages.Admin
 		{
 			//metoden bliver kørt indeni if-statement
 			if (!OrderService.DeleteOrder(Order.ID))
-				return RedirectToPage("/Error"); //Define NotFound page
+			{
+				return RedirectToPage("/NotFound"); 
+			}
 
 			return RedirectToPage("GetAllOrders");
 		}
-		public IActionResult OnPostCancel() { return RedirectToPage("GetAllOrders"); }
+
+		public IActionResult OnPostCancel() 
+		{ 
+			return RedirectToPage("GetAllOrders"); 
+		}
 	}
 }
