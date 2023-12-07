@@ -6,6 +6,7 @@ namespace ProjectWebsite.Repositories
     public class OrderRepository
     {
         public List<Order> OrderList { get; set; }
+
         private JsonOrderService JsonOrderService { get; set; }
 
         public OrderRepository(JsonOrderService jsonOrderService)
