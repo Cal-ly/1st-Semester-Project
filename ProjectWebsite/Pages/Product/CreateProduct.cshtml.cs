@@ -27,7 +27,6 @@ namespace ProjectWebsite.Pages.Product
             {
                 return Page();
             }
-
             Product.ID = ProductService.GetNextID();
             ProductService.CreateProduct(Product);
             return RedirectToPage("GetAllProducts");
