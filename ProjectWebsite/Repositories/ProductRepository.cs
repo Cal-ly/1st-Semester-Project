@@ -24,6 +24,7 @@ namespace ProjectWebsite.Repositories
 
         public Product GetProduct(int productID)
         {
+            Console.WriteLine(productID);
             //go through entire ProductList
             foreach (Product product in ProductList)
 			{

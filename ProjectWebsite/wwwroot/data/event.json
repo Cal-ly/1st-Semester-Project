@@ -7,22 +7,7 @@
     "EventDuration": 6,
     "EventDescription": "Testtest",
     "EventCost": 60,
-    "EventAttendees": [
-      {
-        "ID": 2,
-        "Name": "Bard",
-        "Address": "\u00C5rhus",
-        "Email": "TeaLover123",
-        "PhoneNumber": "83745348"
-      },
-      {
-        "ID": 3,
-        "Name": "Customer3",
-        "Address": "Roskilde",
-        "Email": "Tea",
-        "PhoneNumber": "93485787"
-      }
-    ],
+    "EventAttendees": [],
     "EventCapacity": 12,
     "EventIsFull": false,
     "EventOrganizer": "BluesBrews"
@@ -137,5 +122,31 @@
     "EventCapacity": 23,
     "EventIsFull": false,
     "EventOrganizer": "BluesBrews"
+  },
+  {
+    "ID": 7,
+    "EventName": "iufhgidhf",
+    "EventLocation": "ifhugidfuhgi",
+    "EventDateTime": "2023-12-13T12:12:00",
+    "EventDuration": 12,
+    "EventDescription": "soijdfi",
+    "EventCost": 100,
+    "EventAttendees": [],
+    "EventCapacity": 120,
+    "EventIsFull": false,
+    "EventOrganizer": "soijoijojd"
+  },
+  {
+    "ID": 8,
+    "EventName": "soigjodfijgoj",
+    "EventLocation": "osjdgoidjfogijdofj",
+    "EventDateTime": "0001-01-01T00:00:00",
+    "EventDuration": 120,
+    "EventDescription": "sohffiduhgidfh",
+    "EventCost": 120,
+    "EventAttendees": [],
+    "EventCapacity": 120,
+    "EventIsFull": false,
+    "EventOrganizer": "dfgidhfigi"
   }
 ]
