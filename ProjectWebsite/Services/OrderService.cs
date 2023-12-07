@@ -42,9 +42,13 @@ namespace ProjectWebsite.Services
 
         public double CalculateTotal(List<OrderLine> orderLines)
         {
+            //laver lokal variable "total" og sætter den til 0
             double total = 0;
+            //foreach lække der går igennem hver ordre linje i orderLines parameteren
             foreach (OrderLine line in orderLines)
+                //gange mængde med prisen for hver linje og lægger det til total
                 total += line.Amount * line.Product.Price;
+            //returnere total EFTER foreach løkken
             return total;
         }
     }
