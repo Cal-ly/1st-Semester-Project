@@ -16,7 +16,10 @@ namespace ProjectWebsite.Pages.Product
             ProductService = productService;
         }
 
-        public IActionResult OnGet() { return Page(); }
+        public IActionResult OnGet() 
+        { 
+            return Page(); 
+        }
 
         public IActionResult OnPost()
         {
@@ -30,6 +33,9 @@ namespace ProjectWebsite.Pages.Product
             return RedirectToPage("GetAllProducts");
         }
 
-        public IActionResult OnPostCancel() { return RedirectToPage("GetAllProducts"); }
+        public IActionResult OnPostCancel() 
+        { 
+            return RedirectToPage("GetAllProducts"); 
+        }
     }
 }

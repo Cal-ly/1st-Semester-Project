@@ -7,37 +7,33 @@ namespace ProjectWebsite.Pages.Customer
     public class NewCustomerModel : PageModel
     {
 		public CustomerService CustomerService;
-
 		[BindProperty]
 		public Models.Customer Customer { get; set; }
 		private OrderService OrderService { get; set; }
-
 		public NewCustomerModel(CustomerService customerService, OrderService orderService)
 		{
 			CustomerService = customerService;
 			OrderService = orderService;
 		}
-
 		public IActionResult OnGet() { return Page(); }
-
-		public IActionResult OnPost()
-		{
-			if (!ModelState.IsValid)
-			{
-				return Page();
-			}
-			Customer.ID = CustomerService.GetNextID();
-			CustomerService.CreateCustomer(Customer);
-            Console.WriteLine(Customer.Email);
-			string temp = Customer.Email;
+        //Denne metode bliver kaldt, når der /Bakset/CheckCustomer metoden OnPostConfirm bliver kaldt.
+        public IActionResult OnPost()
+        {
+            //Hvis modellen ikke er valid, bliver siden vist igen.
+            if (!ModelState.IsValid) { return Page(); }
+            //Henter det næste ID fra CustomerService
+            Customer.ID = CustomerService.GetNextID();
+            //Opretter kunden i CustomerService
+            CustomerService.CreateCustomer(Customer);
+            //Hvis ordren bliver placeret, bliver der redirected til Success siden.
             if (OrderService.PlaceOrder(Customer.Email))
 			{
 				return RedirectToPage("/Basket/Success");
 			}
-			else
-			{ return RedirectToPage("/Error"); }
+            //Ellers bliver der redirected til Error siden.
+            else { return RedirectToPage("/Error"); }
 		}
-
-		public IActionResult OnPostCancel() { return RedirectToPage("/Basket/Basket"); }
+        //Redirecter tilbage til Basket siden.
+        public IActionResult OnPostCancel() { return RedirectToPage("/Basket/Basket"); }
 	}
 }
