@@ -17,17 +17,22 @@ namespace ProjectWebsite.Pages.Events
             this.eventService = eventService;
 			this.productService = productService;
 		}
-        public IActionResult OnGet() { return Page(); }
+        public IActionResult OnGet() 
+        { 
+            return Page(); 
+        }
 
         public IActionResult OnPost()
         {
-            //if (!ModelState.IsValid) { return Page(); }
             Event.ID = eventService.GetNextID();
             eventService.CreateEvent(Event);
 			ProductEvent = eventService.ConvertEventToProduct(Event);
             productService.CreateProduct(ProductEvent);
 			return RedirectToPage("GetAllEvents");
         }
-		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
+		public IActionResult OnPostCancel() 
+        { 
+            return RedirectToPage("GetAllEvents"); 
+        }
 	}
 }

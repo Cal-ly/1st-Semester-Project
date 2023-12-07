@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
-using System.Reflection;
 
 namespace ProjectWebsite.Pages.Events
 {
@@ -28,9 +27,9 @@ namespace ProjectWebsite.Pages.Events
             }
 			return Page();
         }
+
 		public IActionResult OnPostDeleteAttendee(int eventid, int customerid)
-		{
-			//if (!ModelState.IsValid) { return Page(); }
+		{ 
 			Event = eventService.GetEventByID(eventid);
 			Customer = Event.EventAttendees.FirstOrDefault(c => c.ID == customerid);
 			if (Customer != null)
@@ -49,7 +48,6 @@ namespace ProjectWebsite.Pages.Events
 
 		public IActionResult OnPostAddAttendee(int id)
 		{
-			//if (!ModelState.IsValid) { return Page(); }
 			Event = eventService.GetEventByID(id);
 			Customer = customerService.GetCustomerByID(CustomerID);
 			Models.Customer customerToAttend = new()
@@ -65,6 +63,9 @@ namespace ProjectWebsite.Pages.Events
 			return Page();
 		}
 
-		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
+		public IActionResult OnPostCancel() 
+		{ 
+			return RedirectToPage("GetAllEvents"); 
+		}
     }
 }

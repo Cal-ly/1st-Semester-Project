@@ -6,26 +6,34 @@ namespace ProjectWebsite.Pages.Events
 {
     public class DeleteEventModel : PageModel
     {
-        public EventService eventService;
+        public EventService EventService;
         [BindProperty] public Models.Event Event { get; set; }
 
         public DeleteEventModel(EventService eventService)
         {
-            this.eventService = eventService;
+            EventService = eventService;
         }
 		public IActionResult OnGet(int id)
 		{
-			Event = eventService.GetEventByID(id);
-			if (Event == null)
+			Event = EventService.GetEventByID(id);
+            if (Event == null)
+            {
                 return RedirectToPage("/NotFound");
+            }
             return Page();
 		}
 		public IActionResult OnPost()
 		{
-            if (!eventService.DeleteEvent(Event.ID)) { return RedirectToPage("/Error"); }
+            if (!EventService.DeleteEvent(Event.ID)) 
+            { 
+                return RedirectToPage("/Error"); 
+            }
 
             return RedirectToPage("GetAllEvents");
 		}
-		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
+		public IActionResult OnPostCancel() 
+        { 
+            return RedirectToPage("GetAllEvents"); 
+        }
 	}
 }
