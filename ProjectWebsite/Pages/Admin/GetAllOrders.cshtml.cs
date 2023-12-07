@@ -7,6 +7,7 @@ namespace ProjectWebsite.Pages.Admin
     public class GetAllOrdersModel : PageModel
     {
 		public OrderService OrderService;
+
 		[BindProperty]
 		public List<Models.Order> OrderList { get; set; }
 
@@ -17,7 +18,10 @@ namespace ProjectWebsite.Pages.Admin
 		public IActionResult OnGet()
 		{
 			OrderList = OrderService.OrderList;
-            if (OrderList == null) { return RedirectToPage("/NotFound"); }
+            if (OrderList == null) 
+			{ 
+				return RedirectToPage("/NotFound"); 
+			}
 			return Page();
         }
 	}

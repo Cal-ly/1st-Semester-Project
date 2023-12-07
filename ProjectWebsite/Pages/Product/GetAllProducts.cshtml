@@ -39,21 +39,27 @@
             </div>
         </div>
 
-
+        @* Den ene af to columns på siden, denne column indeholder alle vores produkter *@
         <div class="col">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+                @* Foreach loop der looper alle produkter i Products igennem *@
                 @foreach (var product in Model.Products)
                 {
+                    @* If statement der tjekker om produktets ID er mindre end 9000, da vi kun vil fremvise te-produkter og ikke event-produkter (Events har ID over 9000) *@
                     @if(product.ID < 9000)
                     {
-                        <div class="col card" @* display="inline-block" mb-3*@>
+                        @* Hvert produkt der opfylder if statementet bliver fremvist i et card *@
+                        <div class="col card">
+                            @* Dette fremviser et billede af teen, og a-tagget gør at man kan klikke på billedet og blive ført til GetProduct siden *@
                             <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
                             <div class="card-body">
+                               @* Den følgende kode henter produktets oplysninger ud og fremviser dem i cardet *@
                                 <h5 class="card-title">@product.Name</h5>
                                 <p class="card-text">@product.Description</p>
                                 <div class="d-flex justify-content-between">
                                     <p class="card-text">@product.Price kr</p>
                                     <div class="btn-group" role="group" aria-label="Basic example">
+                                        @* A-tagget er en knap der fører en til GetProduct siden på det enkelte produkt *@
                                         <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
                                     </div>
                                 </div>

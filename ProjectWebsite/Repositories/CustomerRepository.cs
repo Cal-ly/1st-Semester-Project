@@ -46,6 +46,8 @@ namespace ProjectWebsite.Repositories
                 if (customer.ID == customerID) { return customer; }
             }
             //Ellers returneres null.
+                }  
+            }
             return null;
         }
         //Denne metode opdaterer en kunde.
