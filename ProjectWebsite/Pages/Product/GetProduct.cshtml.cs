@@ -16,7 +16,7 @@ namespace ProjectWebsite.Pages.Product
         public string Message { get; set; }
 
         [BindProperty]
-        public int amountIN { get; set; }
+        public int AmountIN { get; set; }
 
 
         public GetProductModel(ProductService productService)
@@ -49,7 +49,7 @@ namespace ProjectWebsite.Pages.Product
 
             OrderLine temp = new()
             {
-                Amount = amountIN,
+                Amount = AmountIN,
                 Product = product,
                 ID = newID
             };

@@ -5,7 +5,7 @@ namespace ProjectWebsite.Repositories
 {
     public class CustomerRepository
     {
-        public static int NextID = 1;
+        private static int nextID = 1;
         public List<Customer> CustomerList { get; set; }
         private JsonCustomerService JsonCustomerService { get; set; }
         public CustomerRepository(JsonCustomerService jsonFileCustomerService)
@@ -17,11 +17,11 @@ namespace ProjectWebsite.Repositories
 		public int GetNextID()
         {
             //Finder det højeste ID i listen og lægger 1 til.
-            int nextID = CustomerList.Max(c => c.ID) + 1;
+            int nextid = CustomerList.Max(c => c.ID) + 1;
             //Hvis det næste ID er mindre end det nuværende næste ID, sættes det næste ID til at være det nuværende næste ID + 1.
-            if (nextID <= NextID) { nextID = NextID + 1; }
+            if (nextid <= nextID) { nextid = nextID + 1; }
             //Det nuværende næste ID sættes til at være det næste ID.
-            NextID = nextID;
+            nextid = nextID;
             //Det næste ID returneres.
             return nextID;
         }
@@ -89,7 +89,7 @@ namespace ProjectWebsite.Repositories
         public List<Customer> GetCustomersByName(string searchString)
         {
             //En liste af kunder oprettes.
-            List<Customer> searchResult = new List<Customer>();
+            List<Customer> searchResult = new();
             //Leder gennem listen af kunder.
             foreach (Customer c in CustomerList)
             {
