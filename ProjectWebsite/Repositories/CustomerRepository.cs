@@ -100,13 +100,13 @@ namespace ProjectWebsite.Repositories
             return searchResult;
         }
         //Denne metode søger efter en kunde ud fra en email.
-        public Customer GetCustomerByEmail(string Email)
+        public Customer GetCustomerByEmail(string email)
         {
             //Leder gennem listen af kunder.
             foreach (Customer c in CustomerList)
             {
                 //Hvis kundens email indeholder søgestrengen, returneres kunden.
-                if (c.Email.ToLower().Contains(Email.ToLower())) { return c; }
+                if (c.Email.ToLower().Contains(email.ToLower())) { return c; }
             }
             //Ellers returneres null.
             return null;
