@@ -71,13 +71,22 @@ footer{
     
 }
 
-.btn-primary {
-    color: #273248; /*pickled bluewood*/
-
-    color: #E68C3A; /*orange*/
+.btn {
     color: #F4F2EF; /*off white*/
-    color: #D8D1BD; /*grey*/
-    color: #213E60; /*blueish*/
+}
 
-    /*background-color: pink;*/
+.btn-primary {
+    background-color: #273248; /*pickled bluewood*/
+}
+
+body {
+    background-color: #F4F2EF; /*off white*/
+}
+
+.alert-secondary {
+    background-color: #D8D1BD; /*grey*/
+}
+
+tr>th {
+    color: #FFFFFF; /*grey*/
 }
