@@ -35,8 +35,8 @@ namespace ProjectWebsite.Services
 
             //creates new Order object with ID, TotalPrice, OrderList and CustomerID
             //and immediately sends its to AddOrder
-            AddOrder(new() { ID = maxID, TotalPrice = CalculateTotal(Order.basket), OrderList = Order.basket, CustomerID = customerWhoMadeOrder.ID });
-            Order.basket = new(); //resets the basket
+            AddOrder(new() { ID = maxID, TotalPrice = CalculateTotal(Order.Basket), OrderList = Order.Basket, CustomerID = customerWhoMadeOrder.ID });
+            Order.Basket = new(); //resets the basket
             return true;
         }
 

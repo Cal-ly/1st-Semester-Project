@@ -39,16 +39,16 @@ namespace ProjectWebsite.Pages.Events
         public IActionResult OnPostAddToBasket(int ID)
         {
             int newID;
-            if (Order.basket?.Count == null || Order.basket?.Count == 0)
+            if (Order.Basket?.Count == null || Order.Basket?.Count == 0)
             { 
                 newID = 1; 
             }
             else 
             { 
-                newID = Order.basket.Max(p => p.ID) + 1; 
+                newID = Order.Basket.Max(p => p.ID) + 1; 
             }
 
-            Order.basket.Add(new() { 
+            Order.Basket.Add(new() { 
                 Product = ProductService.GetProduct(ID+9000), 
                 Amount=1, 
                 ID = newID 

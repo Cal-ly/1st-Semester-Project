@@ -36,7 +36,7 @@ namespace ProjectWebsite.Repositories
         public OrderLine GetOrderLine(int orderLineID)
         {
             //foreach løkke der går igennem hver OrderLine objekt i basket hos Order klassen
-            foreach (OrderLine orderLine in Order.basket)
+            foreach (OrderLine orderLine in Order.Basket)
             {
                 //hvis objektets ID matcher orderLineID parameter...
                 if (orderLine.ID == orderLineID)
@@ -108,7 +108,7 @@ namespace ProjectWebsite.Repositories
             if (orderLineToBeDeleted != null)
             {
                 // Vi tager fat i Basket (som indeholder OrderLines) og sletter orderLineToBeDeleted
-                Order.basket.Remove(orderLineToBeDeleted);
+                Order.Basket.Remove(orderLineToBeDeleted);
                 // Når orderLineToBeDeleted er slettet returnere metoden true
                 return true;
             }

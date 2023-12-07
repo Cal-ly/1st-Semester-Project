@@ -31,10 +31,10 @@ namespace ProjectWebsite.Pages.Events
 		public IActionResult OnPostDeleteAttendee(int eventid, int customerid)
 		{ 
 			Event = eventService.GetEventByID(eventid);
-			Customer = Event.EventAttendees.FirstOrDefault(c => c.ID == customerid);
+			Customer = Event.Attendees.FirstOrDefault(c => c.ID == customerid);
 			if (Customer != null)
 			{
-				if (Event.EventAttendees.Remove(Customer))
+				if (Event.Attendees.Remove(Customer))
 				{
 					eventService.UpdateEvent(Event);
 				}
@@ -58,7 +58,7 @@ namespace ProjectWebsite.Pages.Events
 				Email = Customer.Email,
 				PhoneNumber = Customer.PhoneNumber
 			};
-			Event.EventAttendees.Add(customerToAttend);
+			Event.Attendees.Add(customerToAttend);
 			Event = eventService.UpdateEvent(Event);
 			return Page();
 		}

@@ -38,13 +38,13 @@ namespace ProjectWebsite.Pages.Product
         {
             Models.Product product = ProductService.GetProduct(Product.ID);
             int newID;
-            if (Order.basket?.Count == null || Order.basket?.Count == 0)
+            if (Order.Basket?.Count == null || Order.Basket?.Count == 0)
             { 
                 newID = 1; 
             }
             else 
             { 
-                newID = Order.basket.Max(p => p.ID) + 1; 
+                newID = Order.Basket.Max(p => p.ID) + 1; 
             }
 
             OrderLine temp = new()
@@ -54,7 +54,7 @@ namespace ProjectWebsite.Pages.Product
                 ID = newID
             };
 
-            foreach (OrderLine line in Order.basket)
+            foreach (OrderLine line in Order.Basket)
             {
                 if (line.Product == product)
                 {
@@ -64,7 +64,7 @@ namespace ProjectWebsite.Pages.Product
                     return Page();
                 }
             }
-            Order.basket.Add(temp);
+            Order.Basket.Add(temp);
             Message = "Produkt tilføjet til kurven";
             Product = product;
             return Page();

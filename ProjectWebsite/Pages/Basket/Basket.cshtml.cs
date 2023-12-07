@@ -14,7 +14,7 @@ namespace ProjectWebsite.Pages.Kurv
 
 		public IActionResult OnGet()
         {
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             TempTotal();
             return Page();
         }
@@ -26,7 +26,7 @@ namespace ProjectWebsite.Pages.Kurv
 
         public IActionResult OnPostPlus(int ID)
         {
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             foreach (OrderLine orderLine in Kurv)
             {
                 if (ID == orderLine.ID)
@@ -34,14 +34,14 @@ namespace ProjectWebsite.Pages.Kurv
                     orderLine.Amount++;
                 }
             }
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             TempTotal();
             return Page();
         }
         public IActionResult OnPostMinus(int ID)
         {
             OrderLine temp = null;
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             foreach (OrderLine orderLine in Kurv)
             {
                 if (ID == orderLine.ID)
@@ -55,7 +55,7 @@ namespace ProjectWebsite.Pages.Kurv
                 Kurv.Remove(temp);
 
             }
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             TempTotal();
             return Page();
         }
