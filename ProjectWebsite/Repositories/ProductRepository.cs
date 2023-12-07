@@ -5,7 +5,7 @@ namespace ProjectWebsite.Repositories
 {
     public class ProductRepository
     {
-        public static int NextID = 1;
+        private static int nextID = 1;
 
         public List<Product> ProductList { get; set; }
 
@@ -20,11 +20,11 @@ namespace ProjectWebsite.Repositories
         public int GetNextID()
         {
             int nextID = ProductList.Max(c => c.ID) + 1;
-            if (nextID <= NextID) 
+            if (nextID <= ProductRepository.nextID) 
             { 
-                nextID = NextID + 1; 
+                nextID = ProductRepository.nextID + 1; 
             }
-            NextID = nextID;
+            ProductRepository.nextID = nextID;
             return nextID;
         }
 

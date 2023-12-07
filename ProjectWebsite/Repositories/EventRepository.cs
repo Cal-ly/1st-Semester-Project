@@ -7,7 +7,7 @@ namespace ProjectWebsite.Repositories
 {
     public class EventRepository
     {
-        public static int NextID = 1;
+        private static int nextID = 1;
 
         public List<Event> EventList { get; set; }
 
@@ -26,11 +26,11 @@ namespace ProjectWebsite.Repositories
                 return 1; 
             }
             int nextID = EventList.Max(c => c.ID) + 1;
-            if (nextID <= NextID) 
+            if (nextID <= EventRepository.nextID) 
             { 
-                nextID = NextID + 1; 
+                nextID = EventRepository.nextID + 1; 
             }
-            NextID = nextID;
+            EventRepository.nextID = nextID;
             return nextID;
         }
 
