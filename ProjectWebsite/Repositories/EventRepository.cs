@@ -7,7 +7,7 @@ namespace ProjectWebsite.Repositories
 {
     public class EventRepository
     {
-        public static int NextID = 1;
+        private static int nextID = 1;
 
         public List<Event> EventList { get; set; }
 
@@ -21,16 +21,16 @@ namespace ProjectWebsite.Repositories
 
         public int GetNextID()
         {
-            if (EventList.Count == 0) 
-            { 
-                return 1; 
+            if (EventList.Count == 0)
+            {
+                return 1;
             }
             int nextID = EventList.Max(c => c.ID) + 1;
-            if (nextID <= NextID) 
-            { 
-                nextID = NextID + 1; 
+            if (nextID <= EventRepository.nextID)
+            {
+                nextID = EventRepository.nextID + 1;
             }
-            NextID = nextID;
+            EventRepository.nextID = nextID;
             return nextID;
         }
 
@@ -50,15 +50,15 @@ namespace ProjectWebsite.Repositories
             {
                 if (outgoingE.ID == incomingE.ID)
                 {
-                    outgoingE.EventName = incomingE.EventName;
-                    outgoingE.EventLocation = incomingE.EventLocation;
-                    outgoingE.EventDateTime = incomingE.EventDateTime;
-                    outgoingE.EventDuration = incomingE.EventDuration;
-                    outgoingE.EventDescription = incomingE.EventDescription;
-                    outgoingE.EventCost = incomingE.EventCost;
-                    outgoingE.EventAttendees = incomingE.EventAttendees;
-                    outgoingE.EventCapacity = incomingE.EventCapacity;
-                    outgoingE.EventOrganizer = incomingE.EventOrganizer;
+                    outgoingE.Name = incomingE.Name;
+                    outgoingE.Location = incomingE.Location;
+                    outgoingE.DateTime = incomingE.DateTime;
+                    outgoingE.Duration = incomingE.Duration;
+                    outgoingE.Description = incomingE.Description;
+                    outgoingE.Cost = incomingE.Cost;
+                    outgoingE.Attendees = incomingE.Attendees;
+                    outgoingE.Capacity = incomingE.Capacity;
+                    outgoingE.Organizer = incomingE.Organizer;
 
                     JsonEventService.SaveJsonItems(EventList);
                 }
@@ -72,7 +72,7 @@ namespace ProjectWebsite.Repositories
             {
                 if (outgoingE.ID == incomingE.ID)
                 {
-                    outgoingE.EventAttendees = incomingE.EventAttendees;
+                    outgoingE.Attendees = incomingE.Attendees;
                     JsonEventService.SaveJsonItems(EventList);
                 }
             }
@@ -97,7 +97,7 @@ namespace ProjectWebsite.Repositories
             {
                 if (e.ID == eventID)
                 {
-                    return e.EventAttendees;
+                    return e.Attendees;
                 }
             }
             return null;
@@ -120,32 +120,19 @@ namespace ProjectWebsite.Repositories
             List<Event> searchResult = new();
             foreach (Event e in EventList)
             {
-                if (e.EventName.ToLower().Contains(searchString.ToLower()))
+                if (e.Name.ToLower().Contains(searchString.ToLower()))
                 {
                     searchResult.Add(e);
                 }
             }
             return searchResult;
         }
-
-        public Event GetEventByLocation(string location)
-        {
-            foreach (Event e in EventList)
-            {
-                if (e.EventLocation.ToLower().Contains(location.ToLower()))
-                {
-                    return e;
-                }
-            }
-            return null;
-        }
-
         public List<Event> GetEventsByDate(DateTime date)
         {
             List<Event> searchResult = new();
             foreach (Event e in EventList)
             {
-                if (e.EventDateTime.Date == date.Date)
+                if (e.DateTime.Date == date.Date)
                 {
                     searchResult.Add(e);
                 }
@@ -155,22 +142,22 @@ namespace ProjectWebsite.Repositories
 
         public Product ConvertEventToProduct(Event eventToConvert)
         {
-            string startDateTimeString = eventToConvert.EventDateTime.ToString("dd-MM-yy") + " " + eventToConvert.EventDateTime.ToString("HH:mm");
-            DateTime endDateTime = eventToConvert.EventDateTime.AddMinutes(eventToConvert.EventDuration);
+            string startDateTimeString = eventToConvert.DateTime.ToString("dd-MM-yy") + " " + eventToConvert.DateTime.ToString("HH:mm");
+            DateTime endDateTime = eventToConvert.DateTime.AddMinutes(eventToConvert.Duration);
             string endDateTimeString = endDateTime.ToString("dd-MM-yy") + " " + endDateTime.ToString("HH:mm");
 
             Product productOut = new()
             {
                 ID = eventToConvert.ID + 9000,
-                Name = eventToConvert.EventName,
-                Description = eventToConvert.EventDescription,
-                Content = $"Sted: {eventToConvert.EventLocation} Start: {startDateTimeString} - End: {endDateTimeString}",
+                Name = eventToConvert.Name,
+                Description = eventToConvert.Description,
+                Content = $"Sted: {eventToConvert.Location} Start: {startDateTimeString} - End: {endDateTimeString}",
                 Type = "Event",
-                Price = eventToConvert.EventCost,
-                Size = eventToConvert.EventCapacity
+                Price = eventToConvert.Cost,
+                Size = eventToConvert.Capacity
             };
 
-            if (eventToConvert.EventIsFull)
+            if (eventToConvert.IsFull)
             {
                 string tempContent = productOut.Content;
                 productOut.Content = "ALLE BILLETTER UDSOLGT\n";

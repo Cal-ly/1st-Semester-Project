@@ -70,3 +70,14 @@ footer{
     margin-right: auto;
     
 }
+
+.btn-primary {
+    color: #273248; /*pickled bluewood*/
+
+    color: #E68C3A; /*orange*/
+    color: #F4F2EF; /*off white*/
+    color: #D8D1BD; /*grey*/
+    color: #213E60; /*blueish*/
+
+    /*background-color: pink;*/
+}

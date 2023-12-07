@@ -6,8 +6,8 @@
 
 
 <h1>Deltagere</h1>
-<h3>Event: @Model.Event.EventName</h3>
-<h4>Event Dato: @Model.Event.EventDateTime</h4>
+<h3>Event: @Model.Event.Name</h3>
+<h4>Event Dato: @Model.Event.DateTime</h4>
 
 <form method="post" class="form-inline">
     <div class="input-group mb-sm-4">
@@ -46,9 +46,9 @@
         </tr>
     </thead>
     <tbody>
-        @if (Model.Event.EventAttendees != null)
+        @if (Model.Event.Attendees != null)
         {
-            foreach (Models.Customer c in Model.Event.EventAttendees)
+            foreach (Models.Customer c in Model.Event.Attendees)
             {
                 <tr>
                     <th scope="row" class="d-none d-sm-table-cell">

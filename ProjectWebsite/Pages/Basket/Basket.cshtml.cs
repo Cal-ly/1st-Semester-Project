@@ -14,7 +14,7 @@ namespace ProjectWebsite.Pages.Kurv
 
 		public IActionResult OnGet()
         {
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             TempTotal();
             return Page();
         }
@@ -26,7 +26,7 @@ namespace ProjectWebsite.Pages.Kurv
 
         public IActionResult OnPostPlus(int ID)
         {
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             foreach (OrderLine orderLine in Kurv)
             {
                 if (ID == orderLine.ID)
@@ -34,14 +34,14 @@ namespace ProjectWebsite.Pages.Kurv
                     orderLine.Amount++;
                 }
             }
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             TempTotal();
             return Page();
         }
         public IActionResult OnPostMinus(int ID)
         {
             OrderLine temp = null;
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             foreach (OrderLine orderLine in Kurv)
             {
                 if (ID == orderLine.ID)
@@ -55,15 +55,19 @@ namespace ProjectWebsite.Pages.Kurv
                 Kurv.Remove(temp);
 
             }
-            Kurv = Order.basket;
+            Kurv = Order.Basket;
             TempTotal();
             return Page();
         }
         public void TempTotal()
         {
+            //hiver fat i instans feltet Total, der er en double, og nulstiller
             Total = 0;
-            foreach(var line in Kurv)
+            //foreach løkke der går igennem hver OrderLine i Kurv instans feltet
+            //Kurv er en reference til Basket Listen i Order klassen
+            foreach(OrderLine line in Kurv)
             {
+                //Ordre linjes mængde bliver ganget med product prisen og lægges til Total
                 Total += line.Amount * line.Product.Price;
             }
 		}

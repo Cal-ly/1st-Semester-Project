@@ -31,15 +31,16 @@
                     </div>
                     <p class="lead">@Model.Product.Description</p>
                     <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" asp-for="@Model.amountIN" type="num" value="1" style="max-width: 3rem" />
+                        <input class="form-control text-center me-3" id="inputQuantity" asp-for="@Model.AmountIN" type="num" value="1" style="max-width: 3rem" />
 
                         <button class="btn btn-success" type="submit">
                             <i class="fa-solid fa-cart-plus me-1"></i>
                             Tilføj til kurv
                         </button>
                     </div>
-                    <p class="text-success text-capitalize">@Model.besked</p>
-                    <div class="mt-5"Message                     <div class="btn-group" role="group" aria-label="Basic example">
+                    <p class="text-success text-capitalize">@Model.Message</p>
+                    <div class="mt-5">                    
+                        <div class="btn-group" role="group" aria-label="Basic example">
                             <a class="btn btn-primary" type="button" asp-page="UpdateProduct" asp-route-id="@Model.Product.ID"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-danger" type="button" asp-page="DeleteProduct" asp-route-id="@Model.Product.ID"><i class="fa fa-trash"></i></a>
                         </div>

@@ -21,7 +21,7 @@
     <div class="row">
         <h2 style="text-align:center;">Nyheder og Events</h2>
     </div>
-
+    @* ved forskellige skærm størrelser så ændres antallat af events der bliver vist per linje *@
     <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
 
         @if (Model.EventList != null)
@@ -32,18 +32,18 @@
                     <div class="col card p-3">
                         <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
                         <div>
-                            <h5 class="font-weight-bold">@e.EventName</h5>
+                            <h5 class="font-weight-bold">@e.Name</h5>
                             <p class="text-muted">ID: @e.ID</p>
 
                             @{
-                                DateTime endDateTime = e.EventDateTime.AddMinutes(e.EventDuration);
+                                DateTime endDateTime = e.DateTime.AddMinutes(e.Duration);
                                 <p>
-                                    @e.EventLocation <br />
-                                    @e.EventDateTime.ToString("dd-MM-yy")<br />
-                                    @e.EventDateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
+                                    @e.Location <br />
+                                    @e.DateTime.ToString("dd-MM-yy")<br />
+                                    @e.DateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
                                 </p>
                             }
-                            <p>@e.EventDescription</p>
+                            <p>@e.Description</p>
                             <form method="post">
                                 <button class="btn btn-success p-3 container-fluid" type="submit" asp-route-id="@e.ID" asp-page-handler="AddToBasket">Tilføj til kurv</button>
                             </form>
