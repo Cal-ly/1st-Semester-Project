@@ -23,12 +23,20 @@ namespace ProjectWebsite.Pages.Basket
                 if (customer.Email == email)
                 {
                     if (OrderService.PlaceOrder(email))
-                    { return RedirectToPage("/Basket/Success"); }
-                    else { return RedirectToPage("/Error"); }
+                    { 
+                        return RedirectToPage("/Basket/Success"); 
+                    }
+                    else 
+                    { 
+                        return RedirectToPage("/Error"); 
+                    }
                 }
             }
             return RedirectToPage("/Customer/NewCustomer");
         }
-        public IActionResult OnPostCancel() { return RedirectToPage("/Basket/Basket"); }
+        public IActionResult OnPostCancel() 
+        { 
+            return RedirectToPage("/Basket/Basket"); 
+        }
     }
 }
