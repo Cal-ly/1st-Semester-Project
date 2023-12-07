@@ -2,72 +2,73 @@
 @model ProjectWebsite.Pages.Kurv.KurvModel
 @{
 }
-@if (Model.Kurv.Count==0)
-    {
-        <p>Kurven er tom</p>
-    }
-    else{
-<table class="table table-hover table-light">
-    <colgroup>
-        @* Not mobile friendly *@
-        <col style="width : 20%">
-        <col style="width : 40%">
-        <col style="width : 20%">
-        <col style="width : 20%">
-    </colgroup>
-    
-    <tr>
-        <th>
-            Produkt navn
-        </th>
-        <th>
-            Antal
-        </th>
-        <th>
-            Pris per styk
-        </th>
-        <th>
-            Samlet pris
-        </th>
-        <th></th>
-    </tr>
-    
-    @foreach (var element in Model.Kurv)
-    {
+@if (Model.Kurv.Count == 0)
+{
+    <p>Kurven er tom</p>
+}
+else
+{
+    <table class="table table-hover table-light">
+        <colgroup>
+            @* Not mobile friendly *@
+            <col style="width : 20%">
+            <col style="width : 40%">
+            <col style="width : 20%">
+            <col style="width : 20%">
+        </colgroup>
+
         <tr>
-            <td>
-                @element.Product.Name
-            </td>
-            <td>
+            <th>
+                Produkt navn
+            </th>
+            <th>
+                Antal
+            </th>
+            <th>
+                Pris per styk
+            </th>
+            <th>
+                Samlet pris
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var element in Model.Kurv)
+        {
+            <tr>
+                <td>
+                    @element.Product.Name
+                </td>
+                <td>
                     @element.Amount
                     <form method="post">
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit" title="Minus en" asp-page-handler="Minus" asp-route-id="@element.ID"><i class="fa fa-minus"></i></button>
-                        <button class="btn btn-primary" type="submit" title="Plus en" asp-page-handler="Plus" asp-route-id="@element.ID"><i class="fa fa-plus"></i></button>
-                    </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit" title="Minus en" asp-page-handler="Minus" asp-route-id="@element.ID"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-primary" type="submit" title="Plus en" asp-page-handler="Plus" asp-route-id="@element.ID"><i class="fa fa-plus"></i></button>
+                        </div>
                     </form>
-                
 
-            </td>
-            <td>
-                @element.Product.Price
-            </td>
-            <td>
-                @(element.Amount * element.Product.Price)
-            </td>
-            <td>
-                <a class="btn btn-primary btn-sm" type="button" title="Slet podukt" asp-page="DeleteBasketProduct" asp-route-id="@element.ID"><i class="fa fa-trash"></i></a>
-            </td>
-        </tr>
-    }
-    
-</table>
 
-<p>Total pris - @Model.Total kr</p>
-<form method="post">
-                    <div class="form-group">
-                        
-                        <button class="btn btn-primary" type="submit" title="Videre" asp-page-handler="Videre">Videre</button>
-                    </div>
-                    </form>
-                    }
+                </td>
+                <td>
+                    @element.Product.Price
+                </td>
+                <td>
+                    @(element.Amount * element.Product.Price)
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" type="button" title="Slet podukt" asp-page="DeleteBasketProduct" asp-route-id="@element.ID"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <p>Total pris - @Model.Total kr</p>
+    <form method="post">
+        <div class="form-group">
+
+            <button class="btn btn-primary" type="submit" title="Videre" asp-page-handler="Videre">Videre</button>
+        </div>
+    </form>
+}
