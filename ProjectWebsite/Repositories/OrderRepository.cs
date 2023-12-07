@@ -13,7 +13,6 @@ namespace ProjectWebsite.Repositories
             JsonOrderService = jsonOrderService;
             OrderList = JsonOrderService.GetJsonItems().ToList();
         }
-
         public Order GetOrder(int orderID)
         {
             Console.WriteLine(orderID);
@@ -22,7 +21,6 @@ namespace ProjectWebsite.Repositories
                     return order;
             return null;
         }
-
         public OrderLine GetOrderLine(int orderLineID)
         {
             foreach (OrderLine orderLine in Order.basket)
@@ -34,7 +32,6 @@ namespace ProjectWebsite.Repositories
             }
             return null;
         }
-
         public List<Order> GetCustomerOrders(int customerID)
         {
             List<Order> customersOrders = new();
@@ -43,13 +40,11 @@ namespace ProjectWebsite.Repositories
                     customersOrders.Add(order);
             return customersOrders;
         }
-
         public void AddOrder(Order order)
         {
             OrderList.Add(order);
             JsonOrderService.SaveJsonItems(OrderList);
         }
-
         public bool FinishOrder(int orderID)
         {
             Order finishMe = GetOrder(orderID);
@@ -62,7 +57,6 @@ namespace ProjectWebsite.Repositories
             }
             return false;
         }
-
         public bool UpdateOrderAmount(int newAmount, int orderLineID)
         {
             OrderLine orderLine = GetOrderLine(orderLineID);
@@ -84,8 +78,6 @@ namespace ProjectWebsite.Repositories
             return false;
 
         }
-
-
         public bool DeleteOrder(int orderID)
         {
             Order orderToBeDeleted = GetOrder(orderID);
@@ -96,8 +88,6 @@ namespace ProjectWebsite.Repositories
                 return true;
             }
             return false;
-
         }
-     
     }
 }

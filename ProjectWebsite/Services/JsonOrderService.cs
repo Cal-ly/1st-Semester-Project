@@ -14,7 +14,6 @@ namespace ProjectWebsite.Services
         {
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "order.json"); }
         }
-
         public void SaveJsonItems(List<Order> orders)
         {
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
@@ -27,7 +26,6 @@ namespace ProjectWebsite.Services
                 JsonSerializer.Serialize<Order[]>(jsonWriter, orders.ToArray());
             }
         }
-
         public IEnumerable<Order> GetJsonItems()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileName))

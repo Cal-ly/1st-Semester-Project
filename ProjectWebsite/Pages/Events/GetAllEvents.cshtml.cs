@@ -25,6 +25,5 @@ namespace ProjectWebsite.Pages.Events
             EventList = eventService.GetEventsByName(SearchEvent).ToList();
             return Page();
         }
-		//public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
 	}
 }

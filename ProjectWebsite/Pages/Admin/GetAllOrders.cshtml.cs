@@ -14,7 +14,7 @@ namespace ProjectWebsite.Pages.Admin
 		{
 			OrderService = orderService;
 		}
-		public IActionResult OnGet() 
+		public IActionResult OnGet()
 		{
 			OrderList = OrderService.OrderList;
             if (OrderList == null) { return RedirectToPage("/NotFound"); }

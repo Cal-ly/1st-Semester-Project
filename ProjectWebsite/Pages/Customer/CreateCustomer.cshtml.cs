@@ -10,7 +10,6 @@ namespace ProjectWebsite.Pages.Customer
 
 		[BindProperty]
 		public Models.Customer Customer { get; set; }
-		
 		public CreateCustomerModel(CustomerService customerService)
 		{
 			CustomerService = customerService;

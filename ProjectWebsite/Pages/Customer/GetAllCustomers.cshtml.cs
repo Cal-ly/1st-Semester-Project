@@ -8,10 +8,9 @@ namespace ProjectWebsite.Pages.Customer
     {
 		public CustomerService CustomerService;
 
-		[BindProperty] 
+		[BindProperty]
 		public string SearchCustomer { get; set; }
-		
-		[BindProperty] 
+		[BindProperty]
 		public List<Models.Customer> CustomerList { get; set; } //Used for displaying all customers
 
 		public GetAllCustomersModel(CustomerService customerService)

@@ -29,7 +29,6 @@ namespace ProjectWebsite.Pages.Events
             productService.CreateProduct(ProductEvent);
 			return RedirectToPage("GetAllEvents");
         }
-
 		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
 	}
 }

@@ -9,9 +9,8 @@ namespace ProjectWebsite.Pages.Customer
 
 		public CustomerService CustomerService;
 
-		[BindProperty] 
+		[BindProperty]
 		public Models.Customer Customer { get; set; }
-		
 		public DeleteCustomerModel(CustomerService customerService)
 		{
 			CustomerService = customerService;
@@ -26,7 +25,7 @@ namespace ProjectWebsite.Pages.Customer
 
 		public IActionResult OnPost()
 		{
-			//metoden bliver kørt indeni if-statement 
+			//metoden bliver kørt indeni if-statement
 			if (!CustomerService.DeleteCustomer(Customer.ID))
 				return RedirectToPage("/Error"); //Define NotFound page
 
