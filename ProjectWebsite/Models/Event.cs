@@ -13,6 +13,12 @@
         public int EventCapacity { get; set; }
         public bool EventIsFull => EventAttendees == null || EventAttendees.Count >= EventCapacity; // Checks if the event is full based on the number of attendees and the event capacity
         public string EventOrganizer { get; set; }
-		public Event() {}
-	}
+		
+        public Event() {}
+
+        public override string ToString()
+        {
+            return $"{{{nameof(ID)}={ID.ToString()}, {nameof(EventName)}={EventName}, {nameof(EventLocation)}={EventLocation}, {nameof(EventDateTime)}={EventDateTime.ToString()}, {nameof(EventDuration)}={EventDuration.ToString()}, {nameof(EventDescription)}={EventDescription}, {nameof(EventCost)}={EventCost.ToString()}, {nameof(EventAttendees)}={EventAttendees}, {nameof(EventCapacity)}={EventCapacity.ToString()}, {nameof(EventIsFull)}={EventIsFull.ToString()}, {nameof(EventOrganizer)}={EventOrganizer}}}";
+        }
+    }
 }
