@@ -11,7 +11,6 @@ namespace ProjectWebsite.Pages.Events
 		public ProductService productService;
         [BindProperty] public Models.Event Event { get; set; }
         [BindProperty] public Models.Product ProductEvent { get; set; }
-		//[BindProperty] public Models.Product Product { get; set; }
 
 		public CreateEventModel(EventService eventService, ProductService productService)
         {
