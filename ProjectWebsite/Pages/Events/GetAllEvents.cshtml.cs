@@ -53,6 +53,7 @@ namespace ProjectWebsite.Pages.Events
                 Amount=1, 
                 ID = newID 
             });
+            EventList = EventService.EventList;
             return Page();
         }
 	}
