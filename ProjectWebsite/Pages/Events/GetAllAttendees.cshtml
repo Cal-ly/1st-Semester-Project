@@ -10,77 +10,75 @@
 <h4>Event Dato: @Model.Event.EventDateTime</h4>
 
 <form method="post" class="form-inline">
-	<div class="input-group mb-sm-4">
-		<input asp-for="CustomerID" class="form-control mr-1" placeholder="Indtast Kundenummer" />
-		<input type="submit" asp-page-handler="AddAttendee" asp-route-id="@Model.Event.ID" value="Tilføj" class="btn btn-primary" />
-	</div>
+    <div class="input-group mb-sm-4">
+        <input asp-for="CustomerID" class="form-control mr-1" placeholder="Indtast Kundenummer" />
+        <input type="submit" asp-page-handler="AddAttendee" asp-route-id="@Model.Event.ID" value="Tilføj" class="btn btn-primary" />
+    </div>
 </form>
 
 <table class="table table-hover table-light">
-	<colgroup> @* Not mobile friendly *@
-		<col style="width : 5%">
-		<col style="width : 77%">
-		<col style="width : 9%">
-		<col style="width : 9%">
-	</colgroup>
-	<thead>
-		<tr>
-			<th scope="col" class="d-none d-sm-table-cell">
-				ID
-			</th>
-			<th scope="col">
-				Name
-			</th>
-			<th scope="col">
-				Address
-			</th>
-			<th scope="col" class="d-none d-sm-table-cell">
-				E-mail
-			</th>
-			<th scope="col">
-				Telefonnummer
-			</th>
-			<th scope="col" class="d-none d-sm-table-cell">
-				
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		@if (Model.Event.EventAttendees != null)
-		{
-			foreach (Models.Customer c in Model.Event.EventAttendees)
-			{
-				<tr>
-				<th scope="row" class="d-none d-sm-table-cell">
-					@c.ID
-				</th>
-				<td>
-					@c.Name
-				</td>
-				<td>
-					@c.Address
-				</td>
-				<td class="d-none d-sm-table-cell">
-					@c.Email
-				</td>
-				<td>
-                    @c.PhoneNumber
-				</td>
-				<td class="d-none d-sm-table-cell">
-					@* <a class="btn btn-primary btn-sm" type="button" title="Delete"> *@
-					<form method="post">
-                        <input type="hidden" name="EventID" value="@Model.Event.ID" />
-                        <input type="hidden" name="CustomerID" value="@c.ID" />
-						<button type ="submit" class="btn btn-danger fa-solid fa-user-xmark" asp-page-handler="DeleteAttendee"></button>
-					</form>
-					@* <i class="fa-solid fa-user-xmark"></i> 
-					</a>*@
-					@* <a class="btn btn-primary btn-sm" type="button" title="Delete" asp-page-handler="DeleteAttendee" asp-route-eventID="@Model.Event.ID" asp-route-customerid="@c.ID"><i class="fa-solid fa-user-xmark"></i></a> *@
-				</td>
-			</tr>
-			}
-		}
-	</tbody>
+    <colgroup>
+        <col style="width : 5%">
+        <col style="width : 77%">
+        <col style="width : 9%">
+        <col style="width : 9%">
+    </colgroup>
+    <thead>
+        <tr>
+            <th scope="col" class="d-none d-sm-table-cell">
+                ID
+            </th>
+            <th scope="col">
+                Name
+            </th>
+            <th scope="col">
+                Address
+            </th>
+            <th scope="col" class="d-none d-sm-table-cell">
+                E-mail
+            </th>
+            <th scope="col">
+                Telefonnummer
+            </th>
+            <th scope="col" class="d-none d-sm-table-cell">
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Event.EventAttendees != null)
+        {
+            foreach (Models.Customer c in Model.Event.EventAttendees)
+            {
+                <tr>
+                    <th scope="row" class="d-none d-sm-table-cell">
+                        @c.ID
+                    </th>
+                    <td>
+                        @c.Name
+                    </td>
+                    <td>
+                        @c.Address
+                    </td>
+                    <td class="d-none d-sm-table-cell">
+                        @c.Email
+                    </td>
+                    <td>
+                        @c.PhoneNumber
+                    </td>
+                    <td class="d-none d-sm-table-cell">
+
+                        <form method="post">
+                            <input type="hidden" name="EventID" value="@Model.Event.ID" />
+                            <input type="hidden" name="CustomerID" value="@c.ID" />
+                            <button type="submit" class="btn btn-danger fa-solid fa-user-xmark" asp-page-handler="DeleteAttendee"></button>
+                        </form>
+
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
 </table>
 
 
@@ -89,7 +87,7 @@
 </p>
 
 <p>
-	Ikke kunde endnu?<br />
-	Opret dig her og tilmeld dig spændende events!<br />
+    Ikke kunde endnu?<br />
+    Opret dig her og tilmeld dig spændende events!<br />
     <a class="btn btn-primary" asp-page="/Customer/CreateCustomer"> Bliv oprettet som kunde </a>
 </p>

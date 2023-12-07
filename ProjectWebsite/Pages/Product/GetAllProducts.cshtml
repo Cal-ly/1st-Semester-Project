@@ -4,7 +4,6 @@
 }
 
 <div class="container">
-
     <h1 class="pb-5 pt-5 text-center">Vores Produkter</h1>
     <div class="row">
         <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2 me-3">
@@ -28,14 +27,12 @@
                             <span asp-validation-for="MaxPrice" class="text-danger"></span>
                         </div>
                         <div>
-                                <button type="submit" asp-page-handler="PriceFilter" class="btn btn-primary mt-2"><i class="fa-solid fa-filter"></i> Filtrer</button>
+                            <button type="submit" asp-page-handler="PriceFilter" class="btn btn-primary mt-2"><i class="fa-solid fa-filter"></i> Filtrer</button>
                         </div>
                     </form>
                 </div>
-                
-                    <a class="btn btn-primary mt-2" type="button" title="Nulstil filtre" asp-page="GetAllProducts">Nulstil filtre</a>
-                    <a class="btn btn-success mt-5" type="button" title="Opret nyt produkt" asp-page="CreateProduct"><i class="fa-solid fa-plus"></i> Opret nyt produkt</a>
-                
+                <a class="btn btn-primary mt-2" type="button" title="Nulstil filtre" asp-page="GetAllProducts">Nulstil filtre</a>
+                <a class="btn btn-success mt-5" type="button" title="Opret nyt produkt" asp-page="CreateProduct"><i class="fa-solid fa-plus"></i> Opret nyt produkt</a>
             </div>
         </div>
 
@@ -46,14 +43,14 @@
                 @foreach (var product in Model.Products)
                 {
                     @* If statement der tjekker om produktets ID er mindre end 9000, da vi kun vil fremvise te-produkter og ikke event-produkter (Events har ID over 9000) *@
-                    @if(product.ID < 9000)
+                    @if (product.ID < 9000)
                     {
                         @* Hvert produkt der opfylder if statementet bliver fremvist i et card *@
                         <div class="col card">
                             @* Dette fremviser et billede af teen, og a-tagget gør at man kan klikke på billedet og blive ført til GetProduct siden *@
                             <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
                             <div class="card-body">
-                               @* Den følgende kode henter produktets oplysninger ud og fremviser dem i cardet *@
+                                @* Den følgende kode henter produktets oplysninger ud og fremviser dem i cardet *@
                                 <h5 class="card-title">@product.Name</h5>
                                 <p class="card-text">@product.Description</p>
                                 <div class="d-flex justify-content-between">

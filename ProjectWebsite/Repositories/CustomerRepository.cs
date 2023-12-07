@@ -3,133 +3,112 @@ using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Repositories
 {
-    /// <summary>
-    /// Represents a repository for managing customer data.
-    /// </summary>
     public class CustomerRepository
     {
         public static int NextID = 1;
         public List<Customer> CustomerList { get; set; }
         private JsonCustomerService JsonCustomerService { get; set; }
-
         public CustomerRepository(JsonCustomerService jsonFileCustomerService)
         {
             JsonCustomerService = jsonFileCustomerService;
             CustomerList = JsonCustomerService.GetJsonItems().ToList();
         }
-
-        /// <summary>
-		/// Calculates the next available ID for a new customer object.
-		/// It retrieves the Max (largest) ID from the CustomerList and adds 1 to it.
-		/// </summary>
-		/// <returns>The next available ID for a new customer.</returns>
+        //Denne metode finder det næste ID, der skal bruges til at oprette en ny kunde.
 		public int GetNextID()
         {
+            //Finder det højeste ID i listen og lægger 1 til.
             int nextID = CustomerList.Max(c => c.ID) + 1;
-            if (nextID <= NextID) 
-            { 
-                nextID = NextID + 1; 
-            }
+            //Hvis det næste ID er mindre end det nuværende næste ID, sættes det næste ID til at være det nuværende næste ID + 1.
+            if (nextID <= NextID) { nextID = NextID + 1; }
+            //Det nuværende næste ID sættes til at være det næste ID.
             NextID = nextID;
+            //Det næste ID returneres.
             return nextID;
         }
-
-        /// <summary>
-        /// Creates a new customer.
-        /// </summary>
-        /// <param name="customerIn">The customer to create.</param>
+        //Denne metode opretter en ny kunde.
         public void CreateCustomer(Customer customerIn)
         {
-            if (customerIn == null)
-            {
-                throw new ArgumentNullException(nameof(customerIn));
-            }
+            //Hvis den indkommende kunde er null, kastes en ArgumentNullException.
+            if (customerIn == null) { throw new ArgumentNullException(nameof(customerIn)); }
+            //customerIn tilføjes til listen af kunder.
             CustomerList.Add(customerIn);
+            //Listen af kunder gemmes i JSON-filen.
             JsonCustomerService.SaveJsonItems(CustomerList);
         }
-
-        /// <summary>
-        /// Retrieves a customer by using ID.
-        /// </summary>
-        /// <param name="customerID">The ID of the customer to retrieve.</param>
-        /// <returns>The customer with the specified ID, or null if not found.</returns>
+        //Denne metode henter en kunde ud fra et ID.
         public Customer GetCustomerByID(int customerID)
         {
+            //Leder gennem listen af kunder.
             foreach (Customer customer in CustomerList)
             {
-                if (customer.ID == customerID)
-                {
-                    return customer;
-                }  
+                //Hvis kundens ID er det samme som det indkommende ID, returneres kunden.
+                if (customer.ID == customerID) { return customer; }
             }
+            //Ellers returneres null.
             return null;
         }
-
-        /// <summary>
-        /// Updates a customer by using ID.
-        /// </summary>
-        /// <param name="incomingC">The updated customer information.</param>
-        /// <returns>The updated customer object.</returns>
+        //Denne metode opdaterer en kunde.
         public Customer UpdateCustomer(Customer incomingC)
         {
+            //Leder gennem listen af kunder.
             foreach (Customer outgoingC in CustomerList)
             {
+                //Hvis den udgående kundes ID er det samme som den indkommende kundes ID, opdateres den udgående kunde.
                 if (outgoingC.ID == incomingC.ID)
                 {
                     outgoingC.Name = incomingC.Name;
                     outgoingC.Address = incomingC.Address;
                     outgoingC.Email = incomingC.Email;
                     outgoingC.PhoneNumber = incomingC.PhoneNumber;
+                    //Listen af kunder gemmes i JSON-filen.
                     JsonCustomerService.SaveJsonItems(CustomerList);
                 }
             }
-            return incomingC; //TODO: Display updated customer
+            //Den indkommende/opdaterede kunde returneres.
+            return incomingC;
         }
-
-        /// <summary>
-        /// Deletes a customer by their ID.
-        /// </summary>
-        /// <param name="customerID">The ID of the customer to delete.</param>
-        /// <returns>True if the customer was successfully deleted, false otherwise.</returns>
+        //Denne metode sletter en kunde.
         public bool DeleteCustomer(int customerID)
         {
+            //Den kunde, der skal slettes, findes.
             Customer customerToBeDeleted = GetCustomerByID(customerID);
+            //Hvis kunden findes, slettes den.
             if (customerToBeDeleted != null)
             {
+                //Kunden fjernes fra listen af kunder.
                 CustomerList.Remove(customerToBeDeleted);
+                //Listen af kunder gemmes i JSON-filen.
                 JsonCustomerService.SaveJsonItems(CustomerList);
+                //Der returneres true.
                 return true;
             }
+            //Ellers returneres false.
             return false;
         }
-
-        /// <summary>
-        /// Searches for customers by name.
-        /// </summary>
-        /// <param name="searchString">The name to search for.</param>
-        /// <returns>A list of customers matching the search criteria.</returns>
+        //Denne metode søger efter kunder ud fra et navn.
         public List<Customer> GetCustomersByName(string searchString)
         {
+            //En liste af kunder oprettes.
             List<Customer> searchResult = new List<Customer>();
+            //Leder gennem listen af kunder.
             foreach (Customer c in CustomerList)
             {
-                if (c.Name.ToLower().Contains(searchString.ToLower()))
-                {
-                    searchResult.Add(c);
-                }
+                //Hvis kundens navn indeholder søgestrengen, tilføjes kunden til listen af kunder.
+                if (c.Name.ToLower().Contains(searchString.ToLower())) { searchResult.Add(c); }
             }
+            //Listen af kunder returneres.
             return searchResult;
         }
-
+        //Denne metode søger efter en kunde ud fra en email.
         public Customer GetCustomerByEmail(string Email)
         {
+            //Leder gennem listen af kunder.
             foreach (Customer c in CustomerList)
             {
-                if (c.Email.ToLower().Contains(Email.ToLower()))
-                {
-                    return c;
-                }
+                //Hvis kundens email indeholder søgestrengen, returneres kunden.
+                if (c.Email.ToLower().Contains(Email.ToLower())) { return c; }
             }
+            //Ellers returneres null.
             return null;
         }
     }
