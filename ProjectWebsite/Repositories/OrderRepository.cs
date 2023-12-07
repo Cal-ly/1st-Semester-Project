@@ -10,28 +10,33 @@ namespace ProjectWebsite.Repositories
 
         public OrderRepository(JsonOrderService jsonOrderService)
         {
+            //får dependency injected JSonOrderService
             JsonOrderService = jsonOrderService;
+            //sætter OrderList til at pege på listen som JsonOrderService returnere
             OrderList = JsonOrderService.GetJsonItems().ToList();
         }
 
         public Order GetOrder(int orderID)
         {
-            Console.WriteLine(orderID);
+            //foreach løkke der går igennem OrderList 
             foreach (Order order in OrderList)
+                //hvis Order objektets ID matcher orderID parameteren...
                 if (order.ID == orderID)
+                    //... returnere den en reference til Order objektet
                     return order;
+            //hvis intet match er fundet returneres null
             return null;
         }
 
         public OrderLine GetOrderLine(int orderLineID)
         {
+            //foreach løkke der går igennem hver OrderLine objekt i basket hos Order klassen
             foreach (OrderLine orderLine in Order.basket)
-            {
+                //hvis objektets ID matcher orderLineID parameter...
                 if (orderLine.ID == orderLineID)
-                {
+                    //...returnere den en reference til OrderLine objektet
                     return orderLine;
-                }
-            }
+            //hvis intet match er fundet returnere den null
             return null;
         }
 
