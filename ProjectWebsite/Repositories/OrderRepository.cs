@@ -37,11 +37,15 @@ namespace ProjectWebsite.Repositories
 
         public List<Order> GetCustomerOrders(int customerID)
         {
-            List<Order> customersOrders = new();
-            foreach (Order order in OrderList)
-                if (order.CustomerID == customerID)
-                    customersOrders.Add(order);
-            return customersOrders;
+            List<Order> customerOrders = new();
+            foreach (Order order in OrderList) 
+            {  
+                if (order.CustomerID == customerID) 
+                { 
+                    customerOrders.Add(order);
+                }   
+            }
+            return customerOrders;
         }
 
         // Vi laver en metode med returtypen void for at metoden ikke behøver at retunere noget. Vi tilføjer parameteren Order order
