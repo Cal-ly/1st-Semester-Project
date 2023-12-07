@@ -46,8 +46,10 @@ namespace ProjectWebsite.Services
             double total = 0;
             //foreach lække der går igennem hver ordre linje i orderLines parameteren
             foreach (OrderLine line in orderLines)
+            {
                 //gange mængde med prisen for hver linje og lægger det til total
                 total += line.Amount * line.Product.Price;
+            }
             //returnere total EFTER foreach løkken
             return total;
         }

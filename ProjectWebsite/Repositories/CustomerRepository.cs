@@ -26,7 +26,10 @@ namespace ProjectWebsite.Repositories
 		public int GetNextID()
         {
             int nextID = CustomerList.Max(c => c.ID) + 1;
-            if (nextID <= NextID) { nextID = NextID + 1; }
+            if (nextID <= NextID) 
+            { 
+                nextID = NextID + 1; 
+            }
             NextID = nextID;
             return nextID;
         }
@@ -53,8 +56,12 @@ namespace ProjectWebsite.Repositories
         public Customer GetCustomerByID(int customerID)
         {
             foreach (Customer customer in CustomerList)
+            {
                 if (customer.ID == customerID)
+                {
                     return customer;
+                }  
+            }
             return null;
         }
 
@@ -107,7 +114,9 @@ namespace ProjectWebsite.Repositories
             foreach (Customer c in CustomerList)
             {
                 if (c.Name.ToLower().Contains(searchString.ToLower()))
+                {
                     searchResult.Add(c);
+                }
             }
             return searchResult;
         }
@@ -115,8 +124,12 @@ namespace ProjectWebsite.Repositories
         public Customer GetCustomerByEmail(string Email)
         {
             foreach (Customer c in CustomerList)
+            {
                 if (c.Email.ToLower().Contains(Email.ToLower()))
+                {
                     return c;
+                }
+            }
             return null;
         }
     }
