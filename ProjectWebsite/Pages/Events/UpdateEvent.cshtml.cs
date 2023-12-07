@@ -9,11 +9,13 @@ namespace ProjectWebsite.Pages.Events
     public class UpdateEventModel : PageModel
     {
         public EventService eventService;
+        public ProductService productService;
         [BindProperty] public Models.Event Event { get; set; }
-
-        public UpdateEventModel(EventService eventService)
+        [BindProperty] public Models.Product ProductEvent { get; set; }
+        public UpdateEventModel(EventService eventService, ProductService productService)
         {
             this.eventService = eventService;
+            this.productService = productService;
         }
         public IActionResult OnGet(int id)
         {
@@ -26,9 +28,10 @@ namespace ProjectWebsite.Pages.Events
         {
             //if (!ModelState.IsValid) { return Page(); }
 			eventService.UpdateEvent(Event);
+            ProductEvent = eventService.ConvertEventToProduct(Event);
+            productService.CreateProduct(ProductEvent);
             return RedirectToPage("GetAllEvents");
         }
-
 		public IActionResult OnPostCancel() { return RedirectToPage("GetAllEvents"); }
     }
 }

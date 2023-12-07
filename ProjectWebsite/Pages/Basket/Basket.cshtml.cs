@@ -9,12 +9,8 @@ namespace ProjectWebsite.Pages.Kurv
     {
         [BindProperty]
         public int Amount { get; set; }
-
-        
-
         public List<OrderLine> Kurv { get; set; }
         public double Total { get; set; }
-        
 
         private OrderService OrderService { get; set; }
 
@@ -40,12 +36,9 @@ namespace ProjectWebsite.Pages.Kurv
             Kurv = Order.basket;
             foreach (OrderLine orderLine in Kurv)
             {
-                
                 if (ID == orderLine.ID)
                 {
-                    
                     orderLine.Amount++;
-                    
                 }
             }
             Kurv = Order.basket;
@@ -58,14 +51,12 @@ namespace ProjectWebsite.Pages.Kurv
             Kurv = Order.basket;
             foreach (OrderLine orderLine in Kurv)
             {
-               
                 if (ID == orderLine.ID)
                 {
                     orderLine.Amount--;
                     temp = orderLine;
                 }
             }
-            
             if (temp.Amount == 0)
             {
                 Kurv.Remove(temp);
@@ -75,7 +66,6 @@ namespace ProjectWebsite.Pages.Kurv
             TempTotal();
             return Page();
         }
-        
         public void TempTotal()
         {
             Total = 0;

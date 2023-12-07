@@ -20,7 +20,6 @@ namespace ProjectWebsite.Pages.Events
                 return RedirectToPage("/NotFound");
             return Page();
 		}
-
 		public IActionResult OnPost()
 		{
             if (!eventService.DeleteEvent(Event.ID)) { return RedirectToPage("/Error"); }

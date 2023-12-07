@@ -31,6 +31,5 @@ namespace ProjectWebsite.Pages.Product
         }
 
         public IActionResult OnPostCancel() { return RedirectToPage("GetAllProducts"); }
-    
     }
 }

@@ -7,10 +7,8 @@ namespace ProjectWebsite.Pages.Customer
     public class UpdateCustomerModel : PageModel
 	{
 		public CustomerService CustomerService;
-		
-		[BindProperty] 
+		[BindProperty]
 		public Models.Customer Customer { get; set; }
-		
 		public UpdateCustomerModel(CustomerService customerService)
 		{
 			CustomerService = customerService;

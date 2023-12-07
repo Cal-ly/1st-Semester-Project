@@ -127,7 +127,6 @@ namespace ProjectWebsite.Repositories
             string startDateTimeString = eventToConvert.EventDateTime.ToString("dd-MM-yy") + " " + eventToConvert.EventDateTime.ToString("HH:mm");
 			DateTime endDateTime = eventToConvert.EventDateTime.AddMinutes(eventToConvert.EventDuration);
             string endDateTimeString = endDateTime.ToString("dd-MM-yy") + " " + endDateTime.ToString("HH:mm");
-            //string tempDateTimeString = startDateTimeString + " - " + endDateTimeString;
 
             Product productOut = new()
             {

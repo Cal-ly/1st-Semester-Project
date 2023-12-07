@@ -9,28 +9,28 @@ namespace ProjectWebsite.Pages.Customer
 
 		public CustomerService CustomerService;
 
-		[BindProperty] 
+		[BindProperty]
 		public Models.Customer Customer { get; set; }
-		
 		public DeleteCustomerModel(CustomerService customerService)
 		{
 			CustomerService = customerService;
 		}
-
+		//Denne metode bliver kaldt når der trykkes på "Delete" knappen på "GetAllCustomers" siden.
 		public IActionResult OnGet(int id)
 		{
 			Customer = CustomerService.GetCustomerByID(id);
-			if (Customer == null) { return RedirectToPage("/NotFound"); }
+            //Der bliver tjekket om kunden er null, hvis den er null bliver der redirected til NotFound siden.
+            if (Customer == null) { return RedirectToPage("/NotFound"); }
 			return Page();
 		}
-
+		//Denne metode bliver kaldt når der trykkes på "Delete" knappen
 		public IActionResult OnPost()
 		{
-			//metoden bliver kørt indeni if-statement 
+			//Inde i if-statement returnerer DeleteCustomer en bool, hvis den er false (kunde ikke fundet/slettet) bliver der redirected til NotFound siden.
 			if (!CustomerService.DeleteCustomer(Customer.ID))
-				return RedirectToPage("/Error"); //Define NotFound page
+                return RedirectToPage("/NotFound");
 
-			return RedirectToPage("GetAllCustomers");
+            return RedirectToPage("GetAllCustomers");
 		}
 		public IActionResult OnPostCancel() { return RedirectToPage("GetAllCustomers"); }
 	}

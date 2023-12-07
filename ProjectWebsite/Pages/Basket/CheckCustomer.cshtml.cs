@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Basket
-{ 
+{
     public class CheckCustomerModel : PageModel
     {
         [BindProperty]
@@ -15,9 +15,7 @@ namespace ProjectWebsite.Pages.Basket
             CustomerService = customerService;
             OrderService = orderService;
         }
-        public void OnGet()
-        {
-        }
+        public void OnGet(){}
         public IActionResult OnPostConfirm(string email)
         {
             foreach (var customer in CustomerService.CustomerList)
@@ -26,13 +24,11 @@ namespace ProjectWebsite.Pages.Basket
                 {
                     if (OrderService.PlaceOrder(email))
                     { return RedirectToPage("/Basket/Success"); }
-                    else { return RedirectToPage("/Error"); }          
+                    else { return RedirectToPage("/Error"); }
                 }
             }
-
             return RedirectToPage("/Customer/NewCustomer");
         }
         public IActionResult OnPostCancel() { return RedirectToPage("/Basket/Basket"); }
-
     }
 }

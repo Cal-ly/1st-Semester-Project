@@ -31,12 +31,11 @@ namespace ProjectWebsite.Pages.Customer
             Console.WriteLine(Customer.Email);
 			string temp = Customer.Email;
             if (OrderService.PlaceOrder(Customer.Email))
-			{ 
-				return RedirectToPage("/Basket/Success"); 
+			{
+				return RedirectToPage("/Basket/Success");
 			}
-			else 
+			else
 			{ return RedirectToPage("/Error"); }
-			
 		}
 
 		public IActionResult OnPostCancel() { return RedirectToPage("/Basket/Basket"); }

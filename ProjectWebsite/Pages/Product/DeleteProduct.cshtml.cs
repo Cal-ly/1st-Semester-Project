@@ -29,7 +29,7 @@ namespace ProjectWebsite.Pages.Product
 
 		public IActionResult OnPost()
 		{
-			//Metoden bliver kørt indeni if-statement 
+			//Metoden bliver kørt indeni if-statement
 			if (!ProductService.DeleteProduct(Product.ID))
 				return RedirectToPage("/Error");
 
