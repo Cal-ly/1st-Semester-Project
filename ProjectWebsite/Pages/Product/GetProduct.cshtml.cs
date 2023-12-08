@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
 using ProjectWebsite.Models;
 using ProjectWebsite.Repositories;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectWebsite.Pages.Product
 {

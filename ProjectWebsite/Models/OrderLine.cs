@@ -1,8 +1,10 @@
-﻿namespace ProjectWebsite.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ProjectWebsite.Models
 {
     public class OrderLine
     {
-        public Product Product { get; set; } 
+        public Product Product { get; set; }
         public int Amount { get; set; }
         public int ID { get; set; }
 
