@@ -17,10 +17,6 @@ namespace ProjectWebsite.Repositories
         {
             JsonEventService = jsonFileEventService;
             EventList = JsonEventService.GetJsonItems().ToList();
-            foreach (Event event_ in EventList)
-            {
-                Console.WriteLine(event_);
-            }
         }
 
         public int GetNextID()
