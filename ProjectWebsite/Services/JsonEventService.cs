@@ -34,13 +34,8 @@ namespace ProjectWebsite.Services
         public IEnumerable<Event> GetJsonItems()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
-            {
-                IEnumerable<Event> temp = JsonSerializer.Deserialize<Event[]>(jsonFileReader.ReadToEnd());
-                foreach (Event event_ in temp)
-                {
-                    Console.WriteLine(event_);
-                }
-                return temp;
+            { 
+                return JsonSerializer.Deserialize<Event[]>(jsonFileReader.ReadToEnd());
             }
         }
     }
