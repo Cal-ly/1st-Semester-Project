@@ -9,14 +9,14 @@ namespace ProjectWebsite.Pages.Product
 {
     public class GetProductModel : PageModel
     {
-        [BindProperty]
         public Models.Product Product { get; set; }
         
         private ProductService ProductService { get; set; }
 
         public string Message { get; set; }
-
+        
         [BindProperty]
+        [Range(1, int.MaxValue)]
         public int AmountIN { get; set; }
 
 
@@ -35,9 +35,14 @@ namespace ProjectWebsite.Pages.Product
             return Page();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(int ID)
         {
-            Models.Product product = ProductService.GetProduct(Product.ID);
+            Models.Product product = ProductService.GetProduct(ID);
+            if (!ModelState.IsValid)
+            {
+                Product = product;
+                return Page();
+            }
             int newID;
             if (Order.Basket?.Count == null || Order.Basket?.Count == 0)
             { 
