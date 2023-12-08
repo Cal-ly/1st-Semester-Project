@@ -1,12 +1,22 @@
-﻿namespace ProjectWebsite.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ProjectWebsite.Models
 {
     public class Customer
     {
-		public int ID { get; set; }
-		public string Name { get; set; }
-		public string Address { get; set; }
+        [Display(Name = "Kunde ID")]
+        public int ID { get; set; }
+
+        [Display(Name = "Navn")]
+        public string Name { get; set; }
+
+        [Display(Name = "Adresse")]
+        public string Address { get; set; }
+
 		public string Email { get; set; }
-		public string PhoneNumber { get; set; }
+
+        [Display(Name = "Telefonnummer")]
+        public string PhoneNumber { get; set; }
 
         public Customer()
         {
