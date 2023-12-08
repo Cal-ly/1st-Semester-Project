@@ -67,10 +67,11 @@
                         <p class="text-muted">ID: @Event.ID</p>
 
                         @{
+                            DateTime endDateTime = Event.DateTime.AddMinutes(Event.Duration);
                             <p>
-                                EventLocation <br />
-                                EventDateTime.ToString("dd-MM-yy")<br />
-                                EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
+                                @Event.Location <br />
+                                @Event.DateTime.ToString("dd-MM-yy")<br />
+                                @Event.DateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
                             </p>
                         }
 

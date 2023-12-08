@@ -14,11 +14,11 @@ namespace ProjectWebsite.Pages.Events
         [BindProperty]
         public string SearchEvent { get; set; }
         [BindProperty]
-        public List<Models.Event> EventList { get; set; }
+        public List<Event> EventList { get; set; }
 
         public GetAllEventsModel(EventService eventService, ProductService ProductService)
         {
-            this.EventService = eventService;
+            EventService = eventService;
             this.ProductService = ProductService;
         }
         public void OnGet() 

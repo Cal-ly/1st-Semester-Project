@@ -5,14 +5,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddTransient<JsonProductService>();
-builder.Services.AddTransient<JsonCustomerService>();
-builder.Services.AddTransient<JsonEventService>();
-builder.Services.AddTransient<JsonOrderService, JsonOrderService>();
+builder.Services.AddSingleton<JsonProductService, JsonProductService>();
+builder.Services.AddSingleton<JsonCustomerService, JsonCustomerService>();
+builder.Services.AddSingleton<JsonEventService, JsonEventService>();
+builder.Services.AddSingleton<JsonOrderService, JsonOrderService>();
+
 builder.Services.AddSingleton<OrderRepository, OrderRepository>();
 builder.Services.AddSingleton<CustomerRepository, CustomerRepository>();
 builder.Services.AddSingleton<ProductRepository, ProductRepository>();
 builder.Services.AddSingleton<EventRepository, EventRepository>();
+
 builder.Services.AddSingleton<ProductService, ProductService>();
 builder.Services.AddSingleton<OrderService, OrderService>();
 builder.Services.AddSingleton<CustomerService, CustomerService>();

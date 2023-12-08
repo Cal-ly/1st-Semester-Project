@@ -1,4 +1,5 @@
 ﻿using ProjectWebsite.Models;
+using System.Collections.Generic;
 using System.Text.Json;
 
 namespace ProjectWebsite.Services
@@ -34,7 +35,12 @@ namespace ProjectWebsite.Services
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<Event[]>(jsonFileReader.ReadToEnd());
+                IEnumerable<Event> temp = JsonSerializer.Deserialize<Event[]>(jsonFileReader.ReadToEnd());
+                foreach (Event event_ in temp)
+                {
+                    Console.WriteLine(event_);
+                }
+                return temp;
             }
         }
     }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Services;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectWebsite.Pages.Events
 {
@@ -8,10 +9,12 @@ namespace ProjectWebsite.Pages.Events
     {
         public EventService eventService;
         public CustomerService customerService;
-        [BindProperty] public Models.Event Event { get; set; }
-        [BindProperty] public Models.Customer Customer { get; set; }
-        [BindProperty] public int CustomerID { get; set; }
-		[BindProperty] public Models.Product ProductEvent { get; set; }
+         public Models.Event Event { get; set; }
+         public Models.Customer Customer { get; set; }
+        [BindProperty]
+        [Range(0, int.MaxValue)]
+        public int CustomerID { get; set; }
+		 public Models.Product ProductEvent { get; set; }
 
 		public GetAllAttendeesModel(EventService eventService, CustomerService customerService)
         {
@@ -48,7 +51,11 @@ namespace ProjectWebsite.Pages.Events
 
 		public IActionResult OnPostAddAttendee(int id)
 		{
-			Event = eventService.GetEventByID(id);
+            if (!ModelState.IsValid) {
+                Event = eventService.GetEventByID(id);
+                return Page(); 
+			}
+            Event = eventService.GetEventByID(id);
 			Customer = customerService.GetCustomerByID(CustomerID);
 			Models.Customer customerToAttend = new()
 			{

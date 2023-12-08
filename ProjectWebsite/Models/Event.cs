@@ -20,6 +20,14 @@ namespace ProjectWebsite.Models
         public int Capacity { get; set; }
         public bool IsFull => Attendees == null || Attendees.Count >= Capacity; // Checks if the event is full based on the number of attendees and the event capacity
         public string Organizer { get; set; }
-		public Event() {}
-	}
+
+        public Event()
+        {
+        }
+
+        public override string ToString()
+        {
+            return $"{{{nameof(ID)}={ID.ToString()}, {nameof(Name)}={Name}, {nameof(Location)}={Location}, {nameof(DateTime)}={DateTime.ToString()}, {nameof(Duration)}={Duration.ToString()}, {nameof(Description)}={Description}, {nameof(Cost)}={Cost.ToString()}, {nameof(Attendees)}={Attendees}, {nameof(Capacity)}={Capacity.ToString()}, {nameof(IsFull)}={IsFull.ToString()}, {nameof(Organizer)}={Organizer}}}";
+        }
+    }
 }

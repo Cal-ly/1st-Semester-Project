@@ -14,6 +14,7 @@
         <input asp-for="CustomerID" class="form-control mr-1" placeholder="Indtast Kundenummer" />
         <input type="submit" asp-page-handler="AddAttendee" asp-route-id="@Model.Event.ID" value="Tilføj" class="btn btn-primary" />
     </div>
+    <span asp-validation-for="CustomerID" class="text-danger"></span>
 </form>
 
 <table class="table table-hover table-light">

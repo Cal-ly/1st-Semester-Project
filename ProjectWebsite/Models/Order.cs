@@ -13,7 +13,9 @@ namespace ProjectWebsite.Models
         public bool Finished { get; set; }
         public DateTime DateFinished { get; set; }
 
-        public Order() { }
+        public Order()
+        {
+        }
 
         public override string ToString()
         {
