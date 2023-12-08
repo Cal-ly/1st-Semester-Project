@@ -5,25 +5,21 @@
 
 <h1>Kundeoversigt</h1>
 
-@* <div class="row">
-	<div class="col-4"></div>
-	<div class="col-4"></div>
-	<div class="col-4"></div>
-</div> *@
-
 <div class="row">
 	<div class="col-4 mb-4">
 		<form method="post" class="form-inline">
 			<div class="input-group">
 				<input asp-for="SearchCustomer" class="form-control mr-1" placeholder="Søg på et navn" />
-				<button type="submit" asp-page-handler="NameSearch" class="btn btn-primary"><i class="fa-solid fa-filter"></i> Search</button>
+				<button type="submit" asp-page-handler="NameSearch" class="btn btn-primary"><i class="fa-solid fa-filter"></i> Søg</button>
+				<i class="px-2"></i>
+				<a class="btn btn-primary mt-2" type="button" title="Nulstil filtre" asp-page="GetAllCustomers">Nulstil filtre</a>
 			</div>
 		</form>
 	</div>
 </div>
 
 <table class="table table-hover table-light">
-	<colgroup> @* Not mobile friendly *@
+	<colgroup>
 		<col style="width : 5%">
 		<col style="width : 77%">
 		<col style="width : 9%">
