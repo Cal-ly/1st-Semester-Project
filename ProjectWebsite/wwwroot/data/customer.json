@@ -61,5 +61,12 @@
     "Address": "Gr\u00E5vej 22",
     "Email": "Lalalla@gmail.com",
     "PhoneNumber": "30405070"
+  },
+  {
+    "ID": 11,
+    "Name": "Jarl gr\u00F8n",
+    "Address": "Jarlvej 34",
+    "Email": "gr\u00F8nmail@gr\u00F8nmail.dk",
+    "PhoneNumber": "50607080"
   }
 ]
