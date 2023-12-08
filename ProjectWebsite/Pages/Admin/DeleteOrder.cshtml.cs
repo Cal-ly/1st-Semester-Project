@@ -6,7 +6,7 @@ namespace ProjectWebsite.Pages.Admin
 {
 	public class DeleteOrderModel : PageModel
 	{
-		public OrderService OrderService;
+		private OrderService OrderService;
 
 		[BindProperty]
 		public Models.Order Order{ get; set; }
