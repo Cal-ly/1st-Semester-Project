@@ -48,11 +48,13 @@ namespace ProjectWebsite.Pages.Events
                 newID = Order.Basket.Max(p => p.ID) + 1; 
             }
 
-            Order.Basket.Add(new() { 
-                Product = ProductService.GetProduct(ID+9000), 
-                Amount=1, 
-                ID = newID 
-            });
+            Order.Basket.Add(new()
+            {
+                Product = ProductService.GetProduct(ID + 9000),
+                Amount = 1,
+                ID = newID
+                
+            }) ;
             EventList = EventService.EventList;
             return Page();
         }
