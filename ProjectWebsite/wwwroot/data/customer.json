@@ -63,17 +63,10 @@
     "PhoneNumber": "30405070"
   },
   {
-    "ID": 1,
-    "Name": "Ib",
-    "Address": "Vej 4943",
-    "Email": "TeaHater@gmail.com",
-    "PhoneNumber": "12345678"
-  },
-  {
-    "ID": 1,
-    "Name": "Ibbo",
-    "Address": "Vej 4943",
-    "Email": "TeaHater12@gmail.com",
-    "PhoneNumber": "12345678"
+    "ID": 11,
+    "Name": "Jarl gr\u00F8n",
+    "Address": "Jarlvej 34",
+    "Email": "gr\u00F8nmail@gr\u00F8nmail.dk",
+    "PhoneNumber": "50607080"
   }
 ]

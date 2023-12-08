@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectWebsite.Models
 {
     public class Event
     {
+        [ReadOnly(true)]
         [Display(Name = "Event ID", Prompt = "Indtast et event ID")]
         public int ID { get; set; }
 
@@ -30,7 +32,7 @@ namespace ProjectWebsite.Models
         [Display(Name = "Deltagere")]
         public List<Customer> Attendees { get; set; } = new();
 
-        [Display(Name = "Pris", Prompt = "Indtast en pris (mindst 0 kr.)")]
+        [Display(Name = "Maks. antal deltagere", Prompt = "Indtast eventets kapacitet")]
         [Range(1, int.MaxValue)]
         public int Capacity { get; set; }
 

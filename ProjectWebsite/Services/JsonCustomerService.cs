@@ -19,7 +19,7 @@ namespace ProjectWebsite.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "customer.json"); }
         }
         //Denne metode gemmer listen af kunder i JSON-filen.
-        public void SaveJsonItems(List<Customer> products)
+        public void SaveJsonItems(List<Customer> customers)
         {
             //Åbner JSON-filen.
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
@@ -33,7 +33,7 @@ namespace ProjectWebsite.Services
                     Indented = true
                 });
                 //Skriver listen af kunder til JSON-filen.
-                JsonSerializer.Serialize<Customer[]>(jsonWriter, products.ToArray());
+                JsonSerializer.Serialize<Customer[]>(jsonWriter, customers.ToArray());
             }
         }
         //Denne metode henter listen af kunder fra JSON-filen.

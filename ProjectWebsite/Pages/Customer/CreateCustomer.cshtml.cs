@@ -14,10 +14,10 @@ namespace ProjectWebsite.Pages.Customer
 			CustomerService = customerService;
 		}
 		public IActionResult OnGet() { return Page(); }
-        //Denne metode bliver kaldt når der trykkes på "Create" knappen
+        //Denne metode bliver kaldt når der trykkes på "Opret" knappen
         public IActionResult OnPost()
 		{
-			if (!ModelState.IsValid) { return Page(); }
+			//if (!ModelState.IsValid) { return Page(); }
 			Customer.ID = CustomerService.GetNextID();
             CustomerService.CreateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
