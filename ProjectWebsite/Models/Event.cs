@@ -30,7 +30,7 @@ namespace ProjectWebsite.Models
         [Display(Name = "Deltagere")]
         public List<Customer> Attendees { get; set; } = new();
 
-        [Display(Name = "Pris", Prompt = "Indtast en pris (mindst 0 kr.)")]
+        [Display(Name = "Maks. antal deltagere", Prompt = "Indtast eventets kapacitet")]
         [Range(1, int.MaxValue)]
         public int Capacity { get; set; }
 
