@@ -6,7 +6,9 @@
         public int Amount { get; set; }
         public int ID { get; set; }
 
-        public OrderLine() { }
+        public OrderLine()
+        {
+        }
 
         public override string ToString()
         {

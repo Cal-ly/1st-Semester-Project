@@ -21,36 +21,36 @@
     <div class="row">
         <h2 style="text-align:center;">Nyheder og Events</h2>
     </div>
-    @* ved forskellige skærm størrelser så ændres antallat af events der bliver vist per linje *@
+    @* ved forskellige skærm størrelser så ændres antallet af events der bliver vist per linje *@
     <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
 
         @if (Model.EventList != null)
         {
-            @foreach (var e in Model.EventList)
+            @foreach (@Models.Event Event in Model.EventList)
             {
                 <div class="pb-3 px-3">
                     <div class="col card p-3">
-                        <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                        <a asp-page="GetAllAttendees" asp-route-id="@Event.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
                         <div>
-                            <h5 class="font-weight-bold">@e.Name</h5>
-                            <p class="text-muted">ID: @e.ID</p>
+                            <h5 class="font-weight-bold">@Event.Name</h5>
+                            <p class="text-muted">ID: @Event.ID</p>
 
                             @{
-                                DateTime endDateTime = e.DateTime.AddMinutes(e.Duration);
+                                DateTime endDateTime = Event.DateTime.AddMinutes(Event.Duration);
                                 <p>
-                                    @e.Location <br />
-                                    @e.DateTime.ToString("dd-MM-yy")<br />
-                                    @e.DateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
+                                    @Event.Location <br />
+                                    @Event.DateTime.ToString("dd-MM-yy")<br />
+                                    @Event.DateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
                                 </p>
                             }
-                            <p>@e.Description</p>
+                            <p>@Event.Description</p>
                             <form method="post">
-                                <button class="btn btn-success p-3 container-fluid" type="submit" asp-route-id="@e.ID" asp-page-handler="AddToBasket">Tilføj til kurv</button>
+                                <button class="btn btn-success p-3 container-fluid" type="submit" asp-route-id="@Event.ID" asp-page-handler="AddToBasket">Tilføj til kurv</button>
                             </form>
                             <div class="btn-group container-fluid" role="group">
-                                <a class="btn btn-primary p-3" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@e.ID" > <i class="fa fa-edit"></i> </a>
-                                <a class="btn btn-primary p-3" type="button" title="GetAllAttendees" asp-page="GetAllAttendees" asp-route-id="@e.ID"> <i class="fa-solid fa-users"></i> </a>
-                                <a class="btn btn-danger p-3" type="button" title="Delete" asp-page="DeleteEvent" asp-route-id="@e.ID"> <i class="fa fa-trash"></i> </a>
+                                <a class="btn btn-primary p-3" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@Event.ID" > <i class="fa fa-edit"></i> </a>
+                                <a class="btn btn-primary p-3" type="button" title="GetAllAttendees" asp-page="GetAllAttendees" asp-route-id="@Event.ID"> <i class="fa-solid fa-users"></i> </a>
+                                <a class="btn btn-danger p-3" type="button" title="Delete" asp-page="DeleteEvent" asp-route-id="@Event.ID"> <i class="fa fa-trash"></i> </a>
 
                             </div>
                         </div>
