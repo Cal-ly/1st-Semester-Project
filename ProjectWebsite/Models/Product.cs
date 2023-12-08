@@ -19,9 +19,9 @@ namespace ProjectWebsite.Models
         [Display(Name = "Te-typen", Prompt = "Indtast te-type")]
         public string Type { get; set; }
 
-        [Display(Name = "Produkt pris")]
+        [Display(Name = "Produkt pris", Prompt = "Indtast en pris")]
         [Required(ErrorMessage = "Der skal angives en pris")]
-        [Range(1, 10000, ErrorMessage = "Pris skal være mellem og inklusiv 1- og 10000 kr.")]
+        [Range(1, 10000, ErrorMessage = "Pris skal være mellem og inklusiv 1 og 10000 kr.")]
         public double Price { get; set; }
         
         [Display(Name = "Produkt størrelse", Prompt = "Indtast størrelse (gram)")]
