@@ -151,5 +151,23 @@
     "Type": "Event",
     "Price": 120,
     "Size": 120
+  },
+  {
+    "ID": 9001,
+    "Name": "Test",
+    "Description": "Testtest",
+    "Content": "Sted: Testest Start: 04-12-23 12:11 - End: 04-12-23 12:17",
+    "Type": "Event",
+    "Price": 0,
+    "Size": 12
+  },
+  {
+    "ID": 9009,
+    "Name": "Tea Event",
+    "Description": "We drink tea",
+    "Content": "Sted: Roskilde Start: 10-12-23 10:50 - End: 10-12-23 12:50",
+    "Type": "Event",
+    "Price": 0,
+    "Size": 50
   }
 ]

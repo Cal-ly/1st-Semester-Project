@@ -6,7 +6,7 @@
     "DateTime": "2023-12-04T12:11:00",
     "Duration": 6,
     "Description": "Testtest",
-    "Cost": 60,
+    "Cost": 0,
     "Attendees": [],
     "Capacity": 12,
     "IsFull": false,
