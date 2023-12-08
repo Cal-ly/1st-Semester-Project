@@ -17,7 +17,7 @@ namespace ProjectWebsite.Pages.Customer
         //Denne metode bliver kaldt når der trykkes på "Opret" knappen
         public IActionResult OnPost()
 		{
-			//if (!ModelState.IsValid) { return Page(); }
+			if (!ModelState.IsValid) { return Page(); }
 			if (CustomerService.GetCustomerByEmail(Customer.Email) != null)
 			{
 				ModelState.AddModelError("Customer.Email", "Email already exists.");
