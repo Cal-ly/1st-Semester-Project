@@ -16,13 +16,16 @@ namespace ProjectWebsite.Pages.Events
         [BindProperty]
         public List<Event> EventList { get; set; }
 
+        public int addedIDToBasket { get; set; }
+
         public GetAllEventsModel(EventService eventService, ProductService ProductService)
         {
             EventService = eventService;
             this.ProductService = ProductService;
         }
         public void OnGet() 
-        { 
+        {
+            addedIDToBasket = 0;
             EventList = EventService.EventList; 
         }
 
@@ -32,6 +35,7 @@ namespace ProjectWebsite.Pages.Events
             { 
                 return Page(); 
             }
+            addedIDToBasket = 0;
             EventList = EventService.GetEventsByName(SearchEvent).ToList();
             return Page();
         }
@@ -55,6 +59,7 @@ namespace ProjectWebsite.Pages.Events
                 ID = newID
                 
             }) ;
+            addedIDToBasket = ID;
             EventList = EventService.EventList;
             return Page();
         }

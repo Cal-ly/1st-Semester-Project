@@ -47,6 +47,9 @@
                             <form method="post">
                                 <button class="btn btn-success p-3 container-fluid" type="submit" asp-route-id="@Event.ID" asp-page-handler="AddToBasket">Tilføj til kurv</button>
                             </form>
+                            @if(Event.ID == Model.addedIDToBasket) {
+                                <p class="text-success">Tilføjede dette event til kurven</p>
+                            }
                             <div class="btn-group container-fluid" role="group">
                                 <a class="btn btn-primary p-3" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@Event.ID" > <i class="fa fa-edit"></i> </a>
                                 <a class="btn btn-primary p-3" type="button" title="GetAllAttendees" asp-page="GetAllAttendees" asp-route-id="@Event.ID"> <i class="fa-solid fa-users"></i> </a>

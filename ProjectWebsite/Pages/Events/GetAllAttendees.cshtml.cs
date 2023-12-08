@@ -57,6 +57,11 @@ namespace ProjectWebsite.Pages.Events
 			}
             Event = eventService.GetEventByID(id);
 			Customer = customerService.GetCustomerByID(CustomerID);
+			if(Customer == null)
+			{
+                Event = eventService.GetEventByID(id);
+                return Page();
+            }
 			Models.Customer customerToAttend = new()
 			{
 				ID = Customer.ID,
