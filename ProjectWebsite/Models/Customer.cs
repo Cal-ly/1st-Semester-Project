@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectWebsite.Models
 {
     public class Customer
     {
+        [ReadOnly(true)]
         [Display(Name = "Kunde ID", Prompt="Indtast et kunde ID")]
         public int ID { get; set; }
 

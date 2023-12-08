@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectWebsite.Models
 {
     public class Event
     {
+        [ReadOnly(true)]
         [Display(Name = "Event ID", Prompt = "Indtast et event ID")]
         public int ID { get; set; }
 
