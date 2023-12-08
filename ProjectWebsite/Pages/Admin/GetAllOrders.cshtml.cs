@@ -6,7 +6,7 @@ namespace ProjectWebsite.Pages.Admin
 {
     public class GetAllOrdersModel : PageModel
     {
-		public OrderService OrderService;
+		private OrderService OrderService;
 
 		[BindProperty]
 		public List<Models.Order> OrderList { get; set; }
