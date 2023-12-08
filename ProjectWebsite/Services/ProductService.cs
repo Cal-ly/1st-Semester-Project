@@ -20,7 +20,7 @@ namespace ProjectWebsite.Services
         public void UpdateProduct(Product productID) { ProductRepository.UpdateProduct(productID); }
         #endregion
 
-        public IEnumerable<Product> PriceFilter(int maxPrice, int minPrice = 0)
+        public IEnumerable<Product> PriceFilter(int maxPrice, int minPrice)
         {
             List<Product> filterList = new();
             foreach (Product product in ProductList)

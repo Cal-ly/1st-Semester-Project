@@ -61,5 +61,12 @@
     "Address": "Gr\u00E5vej 22",
     "Email": "Lalalla@gmail.com",
     "PhoneNumber": "30405070"
+  },
+  {
+    "ID": 1,
+    "Name": "Hej",
+    "Address": "Hej",
+    "Email": "rgjfkdjgf@gmail.com",
+    "PhoneNumber": "33243234"
   }
 ]
