@@ -6,16 +6,17 @@ namespace ProjectWebsite.Pages.Basket
 {
     public class CheckCustomerModel : PageModel
     {
-        [BindProperty]
-        public string Email { get; set; }
         private CustomerService CustomerService { get; set; }
         private OrderService OrderService { get; set; }
+        [BindProperty]
+        public string Email { get; set; }
+        
         public CheckCustomerModel(CustomerService customerService, OrderService orderService)
         {
             CustomerService = customerService;
             OrderService = orderService;
         }
-        public void OnGet(){}
+        public IActionResult OnGet(){ return Page(); }
         public IActionResult OnPostConfirm(string email)
         {
             foreach (var customer in CustomerService.CustomerList)
