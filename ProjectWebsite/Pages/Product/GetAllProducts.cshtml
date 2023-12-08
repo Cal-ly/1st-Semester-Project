@@ -18,12 +18,13 @@
                     <form method="post">
                         <div class="form-group">
                             <label asp-for="MinPrice">Min pris</label>
-                            <input asp-for="MinPrice" type="text" class="form-control" placeholder="0 kr" />
-                            <span asp-validation-for="MinPrice"></span>
+                            <input asp-for="MinPrice" type="number" class="form-control" placeholder=0 />
+                            <span asp-validation-for="MinPrice" class="text-danger"></span>
                         </div>
                         <div class="form-group-inline">
                             <label asp-for="MaxPrice">Max pris</label>
-                            <input asp-for="MaxPrice" type="text" class="form-control" placeholder="1000 kr" />
+                            <input asp-for="MaxPrice" type="number" class="form-control" placeholder=100 />
+                            <span asp-validation-for="MaxPrice" class="text-danger"></span>
                         </div>
                         <div>
                             <button type="submit" asp-page-handler="PriceFilter" class="btn btn-primary mt-2"><i class="fa-solid fa-filter"></i> Filtrer</button>

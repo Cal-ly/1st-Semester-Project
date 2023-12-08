@@ -17,18 +17,27 @@ namespace ProjectWebsite.Models
         public DateTime DateTime { get; set; }
 
         [Display(Name = "Varighed (minutter)")]
+
+        [Range(1, int.MaxValue)]
         public int Duration { get; set; } // in mintues
 
         [Display(Name = "Beskrivelse")]
         public string Description { get; set; }
 
         [Display(Name = "Pris")]
+        //[Display(Name = "Event pris")]
+        //[Required(ErrorMessage = "Der skal angives en pris")]
+        //[Range(typeof(double), "1", "10000", ErrorMessage = "Pris skal være over 0")]
+        [Range(0, double.MaxValue)]
         public double Cost { get; set; }
 
         [Display(Name = "Deltagere")]
         public List<Customer> Attendees { get; set; } = new();
 
         [Display(Name = "Kapacitet")]
+        public List<Customer> Attendees { get; set; } = new();
+
+        [Range(1, int.MaxValue)]
         public int Capacity { get; set; }
 
         public bool IsFull => Attendees == null || Attendees.Count >= Capacity; // Checks if the event is full based on the number of attendees and the event capacity
