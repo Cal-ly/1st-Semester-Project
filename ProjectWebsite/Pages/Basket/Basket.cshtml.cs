@@ -19,7 +19,7 @@ namespace ProjectWebsite.Pages.Kurv
             return Page();
         }
 
-        public IActionResult OnPostVidere()
+        public IActionResult OnPostForward()
         {
             return RedirectToPage("/Basket/CheckCustomer");
         }
