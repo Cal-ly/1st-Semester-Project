@@ -75,6 +75,10 @@ namespace ProjectWebsite.Repositories
         public bool FinishOrder(int orderID)
         {
             Order finishMe = GetOrder(orderID);
+            if (finishMe.Finished == true)
+            {
+                return false;
+            }
             if (finishMe != null)
             {
                 finishMe.Finished = true;

@@ -26,16 +26,30 @@ namespace ProjectWebsite.Repositories
             return nextID;
         }
         //Denne metode opretter en ny kunde.
-        public void CreateCustomer(Customer customerIn)
+        public bool CreateCustomer(Customer customerIn)
         {
-            //Hvis den indkommende kunde er null, kastes en ArgumentNullException.
             if (customerIn == null) { throw new ArgumentNullException(nameof(customerIn)); }
-            //customerIn tilføjes til listen af kunder.
+            foreach (Customer customer in CustomerList)
+            {
+                if (customer.Email == customerIn.Email)
+                {
+                    return false;
+                }   
+            }
             CustomerList.Add(customerIn);
-            //Listen af kunder gemmes i JSON-filen.
+            
             JsonCustomerService.SaveJsonItems(CustomerList);
+            return true;
         }
-        //Denne metode henter en kunde ud fra et ID.
+
+    //          //Hvis den indkommende kunde er null, kastes en ArgumentNullException.
+    //        if (customerIn == null) { throw new ArgumentNullException(nameof(customerIn));}
+    //     //customerIn tilføjes til listen af kunder.
+    //     CustomerList.Add(customerIn);
+    //        //Listen af kunder gemmes i JSON-filen.
+    //        JsonCustomerService.SaveJsonItems(CustomerList);
+    //    //Denne metode henter en kunde ud fra et ID.
+
         public Customer GetCustomerByID(int customerID)
         {
             //Leder gennem listen af kunder.

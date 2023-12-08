@@ -274,7 +274,7 @@
       }
     ],
     "Finished": true,
-    "DateFinished": "2023-12-05T12:36:41.4032584+01:00"
+    "DateFinished": "2023-12-08T12:55:40.0856404+01:00"
   },
   {
     "ID": 14,
@@ -295,8 +295,8 @@
         "ID": 1
       }
     ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
+    "Finished": true,
+    "DateFinished": "2023-12-08T13:02:12.3894623+01:00"
   },
   {
     "ID": 15,
@@ -317,7 +317,7 @@
         "ID": 1
       }
     ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
+    "Finished": true,
+    "DateFinished": "2023-12-08T12:55:32.2460476+01:00"
   }
 ]
