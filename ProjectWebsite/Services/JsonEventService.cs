@@ -18,7 +18,7 @@ namespace ProjectWebsite.Services
 			get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "event.json"); }
 		}
 
-        public void SaveJsonItems(List<Event> items)
+        public void SaveJsonItems(List<Event> events)
         {
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
             {
@@ -27,7 +27,7 @@ namespace ProjectWebsite.Services
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<Event[]>(jsonWriter, items.ToArray());
+                JsonSerializer.Serialize<Event[]>(jsonWriter, events.ToArray());
             }
         }
 
