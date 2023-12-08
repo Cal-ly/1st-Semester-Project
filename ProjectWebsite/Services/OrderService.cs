@@ -5,9 +5,9 @@ namespace ProjectWebsite.Services
 {
     public class OrderService
     {
+        public List<Order> OrderList { get { return OrderRepository.OrderList; } }
         private OrderRepository OrderRepository { get; set; }
         private CustomerRepository CustomerRepository { get; set; }
-        public List<Order> OrderList { get { return OrderRepository.OrderList; } }
         public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository)
         {
             OrderRepository = orderRepository;

@@ -29,12 +29,12 @@ namespace ProjectWebsite.Services
             return filterList;
         }
 
-        public IEnumerable<Product> NameSearch(string str) //filter
+        public IEnumerable<Product> NameSearch(string inputString) //filter
         {
             List<Product> nameSearch = new();
             foreach (Product product in ProductList)
             {
-                if (product.Type.ToLower().Contains(str.ToLower()))
+                if (product.Type.ToLower().Contains(inputString.ToLower()))
                 {
                     nameSearch.Add(product);
                 }  
