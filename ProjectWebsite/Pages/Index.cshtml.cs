@@ -10,15 +10,11 @@ namespace ProjectWebsite.Pages
         public ProductService ProductService { get; set; }
         public EventService EventService { get; set; }
 
-        public IndexModel(ProductService productService, EventService eventService)
-        {
-            ProductService = productService;
-            EventService = eventService;
-        }
-
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, ProductService productService, EventService eventService)
         {
             _logger = logger;
+            ProductService = productService;
+            EventService = eventService;
         }
 
         public void OnGet()

@@ -32,15 +32,16 @@
     </div>
 
     <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-        @foreach(var product in Model.ProductService.ProductList)
+        @for(int i=1;i<5;i++)
         {
+            var product = Model.ProductService.ProductList.ElementAt(i);
             <div class="pb-3 px-3">
                 <div class="col card p-3">
-                    <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                    <a asp-page="/Product/GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
                     <div>
                         <h5 class="font-weight-bold">@product.Name</h5>
                         <p>@product.Description</p>
-                        <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
+                        <a class="btn btn-primary" type="button" title="Se mere" asp-page="/Product/GetProduct" asp-route-id="@product.ID">Se mere</a>
                     </div>
                 </div>
             </div>
@@ -55,11 +56,12 @@
         <h2 style="text-align:center;">Nyheder og Events</h2>
     </div>
     <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-        @foreach(var Event in Model.EventService.EventList)
+        @for (int i = 1; i < 5; i++)
         {
+            var Event = Model.EventService.EventList.ElementAt(i);
             <div class="pb-3 px-3">
                 <div class="col card p-3">
-                    <a asp-page="GetProduct" asp-route-id="@Event.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                    <a asp-page="/Events/GetAllAttendees" asp-route-id="@Event.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
                     <div>
                         <h5 class="font-weight-bold">@Event.Name</h5>
                         <p class="text-muted">ID: @Event.ID</p>
@@ -73,6 +75,7 @@
                         }
 
                         <p>@Event.Description</p>
+                        <a class="btn btn-primary" type="button" title="Se mere" asp-page="/Events/GetAllAttendees" asp-route-id="@Event.ID">Se mere</a>
                     </div>
                 </div>
             </div>
