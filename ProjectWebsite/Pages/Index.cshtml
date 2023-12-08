@@ -32,36 +32,19 @@
     </div>
 
     <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-        <div class="pb-3 px-3">
-            <div class="col card p-3">
-                <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
-                <div>
-                    <h5 class="font-weight-bold">product.Name</h5>
-                    <p>product.Description</p>
-                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
+        @foreach(var product in Model.ProductService.ProductList)
+        {
+            <div class="pb-3 px-3">
+                <div class="col card p-3">
+                    <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                    <div>
+                        <h5 class="font-weight-bold">@product.Name</h5>
+                        <p>@product.Description</p>
+                        <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="pb-3 px-3">
-            <div class="col card p-3">
-                <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
-                <div>
-                    <h5 class="font-weight-bold">product.Name</h5>
-                    <p>product.Description</p>
-                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
-                </div>
-            </div>
-        </div>
-        <div class="pb-3 px-3">
-            <div class="col card p-3">
-                <a asp-page="GetProduct" asp-route-id="product.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
-                <div>
-                    <h5 class="font-weight-bold">product.Name</h5>
-                    <p>product.Description</p>
-                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="product.ID">Se mere</a>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </div>
 
@@ -72,63 +55,27 @@
         <h2 style="text-align:center;">Nyheder og Events</h2>
     </div>
     <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-        <div class="pb-3 px-3">
-            <div class="col card p-3">
-                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
-                <div>
-                    <h5 class="font-weight-bold">Events.Name</h5>
-                    <p class="text-muted">ID: id</p>
+        @foreach(var Event in Model.EventService.EventList)
+        {
+            <div class="pb-3 px-3">
+                <div class="col card p-3">
+                    <a asp-page="GetProduct" asp-route-id="@Event.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
+                    <div>
+                        <h5 class="font-weight-bold">@Event.Name</h5>
+                        <p class="text-muted">ID: @Event.ID</p>
 
-                    @{
-                        <p>
-                            EventLocation <br />
-                            EventDateTime.ToString("dd-MM-yy")<br />
-                            EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
-                        </p>
-                    }
+                        @{
+                            <p>
+                                EventLocation <br />
+                                EventDateTime.ToString("dd-MM-yy")<br />
+                                EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
+                            </p>
+                        }
 
-                    <p>Events.Description</p>
+                        <p>@Event.Description</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="pb-3 px-3">
-            <div class="col card p-3">
-                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
-                <div>
-                    <h5 class="font-weight-bold">Events.Name</h5>
-                    <p class="text-muted">ID: id</p>
-
-                    @{
-                        <p>
-                            EventLocation <br />
-                            EventDateTime.ToString("dd-MM-yy")<br />
-                            EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
-                        </p>
-                    }
-
-                    <p>Events.Description</p>
-                </div>
-            </div>
-        </div>
-        <div class="pb-3 px-3">
-            <div class="col card p-3">
-                <a asp-page="GetProduct" asp-route-id="Events.ID"><img src="/img/placeholder.jpg" class="card-img-top " alt="Billede af te"></a>
-                <div>
-                    <h5 class="font-weight-bold">Events.Name</h5>
-                    <p class="text-muted">ID: id</p>
-
-                    @{
-
-                        <p>
-                            EventLocation <br />
-                            EventDateTime.ToString("dd-MM-yy")<br />
-                            EventDateTime.ToString("HH:mm") - endDateTime.ToString("HH:mm")
-                        </p>
-                    }
-
-                    <p>Events.Description</p>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </div>
