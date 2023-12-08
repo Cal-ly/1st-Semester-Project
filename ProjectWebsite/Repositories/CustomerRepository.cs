@@ -1,5 +1,7 @@
 ﻿using ProjectWebsite.Models;
 using ProjectWebsite.Services;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace ProjectWebsite.Repositories
 {
@@ -29,28 +31,15 @@ namespace ProjectWebsite.Repositories
         //Denne metode opretter en ny kunde.
         public bool CreateCustomer(Customer customerIn)
         {
+            //Hvis den indkommende kunde er null, kastes en ArgumentNullException.
             if (customerIn == null) { throw new ArgumentNullException(nameof(customerIn)); }
-            foreach (Customer customer in CustomerList)
-            {
-                if (customer.Email == customerIn.Email)
-                {
-                    return false;
-                }   
-            }
+            //Den indkommende kunde tilføjes til listen af kunder.
             CustomerList.Add(customerIn);
-            
-            JsonCustomerService.SaveJsonItems(CustomerList);
+			//Listen af kunder gemmes i JSON-filen.
+			JsonCustomerService.SaveJsonItems(CustomerList);
             return true;
         }
-
-    //          //Hvis den indkommende kunde er null, kastes en ArgumentNullException.
-    //        if (customerIn == null) { throw new ArgumentNullException(nameof(customerIn));}
-    //     //customerIn tilføjes til listen af kunder.
-    //     CustomerList.Add(customerIn);
-    //        //Listen af kunder gemmes i JSON-filen.
-    //        JsonCustomerService.SaveJsonItems(CustomerList);
-    //    //Denne metode henter en kunde ud fra et ID.
-
+        //Denne metode henter en kunde ud fra et ID.
         public Customer GetCustomerByID(int customerID)
         {
             //Leder gennem listen af kunder.
