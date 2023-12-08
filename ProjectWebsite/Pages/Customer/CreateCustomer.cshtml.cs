@@ -18,8 +18,13 @@ namespace ProjectWebsite.Pages.Customer
         public IActionResult OnPost()
 		{
 			//if (!ModelState.IsValid) { return Page(); }
+			if (CustomerService.GetCustomerByEmail(Customer.Email) != null)
+			{
+				ModelState.AddModelError("Customer.Email", "Email already exists.");
+				return Page();
+			}
 			Customer.ID = CustomerService.GetNextID();
-            CustomerService.CreateCustomer(Customer);
+			CustomerService.CreateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
 		}
         //Denne metode bliver kaldt når der trykkes på "Cancel" knappen
