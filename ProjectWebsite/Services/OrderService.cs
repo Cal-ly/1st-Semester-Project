@@ -40,12 +40,12 @@ namespace ProjectWebsite.Services
             return true;
         }
 
-        public double CalculateTotal(List<OrderLine> orderLines)
+        public double CalculateTotal(List<OrderLine> kurv)
         {
             //laver lokal variable "total" og sætter den til 0
             double total = 0;
             //foreach lække der går igennem hver ordre linje i orderLines parameteren
-            foreach (OrderLine line in orderLines)
+            foreach (OrderLine line in kurv)
             {
                 //gange mængde med prisen for hver linje og lægger det til total
                 total += line.Amount * line.Product.Price;
