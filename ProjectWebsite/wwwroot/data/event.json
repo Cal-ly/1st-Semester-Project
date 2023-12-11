@@ -125,5 +125,70 @@
     "Capacity": 20,
     "IsFull": false,
     "Organizer": "Blues brews"
+  },
+  {
+    "ID": 10,
+    "Name": null,
+    "Location": null,
+    "DateTime": "0001-01-01T00:00:00",
+    "Duration": 0,
+    "Description": null,
+    "Cost": 0,
+    "Attendees": [],
+    "Capacity": 0,
+    "IsFull": true,
+    "Organizer": null
+  },
+  {
+    "ID": 11,
+    "Name": null,
+    "Location": null,
+    "DateTime": "0001-01-01T00:00:00",
+    "Duration": 0,
+    "Description": null,
+    "Cost": 0,
+    "Attendees": [],
+    "Capacity": 0,
+    "IsFull": true,
+    "Organizer": null
+  },
+  {
+    "ID": 12,
+    "Name": null,
+    "Location": null,
+    "DateTime": "0001-01-01T00:00:00",
+    "Duration": 0,
+    "Description": null,
+    "Cost": 0,
+    "Attendees": [],
+    "Capacity": 0,
+    "IsFull": true,
+    "Organizer": null
+  },
+  {
+    "ID": 13,
+    "Name": null,
+    "Location": null,
+    "DateTime": "0001-01-01T00:00:00",
+    "Duration": 0,
+    "Description": null,
+    "Cost": 0,
+    "Attendees": [],
+    "Capacity": 0,
+    "IsFull": true,
+    "Organizer": null
+  },
+  {
+    "ID": 14,
+    "Name": "Tea Event",
+    "Location": "Roskilde",
+    "DateTime": "2023-12-12T11:00:00",
+    "Duration": 70,
+    "Description": "We drink tea",
+    "Cost": 10,
+    "Attendees": [],
+    "Capacity": 150,
+    "IsFull": false,
+    "Organizer": "Laus"
   }
 ]

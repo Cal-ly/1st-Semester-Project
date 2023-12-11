@@ -10,19 +10,23 @@ namespace ProjectWebsite.Models
         public int ID { get; set; }
 
         [Display(Name = "Produkt navn", Prompt = "Indtast et produkt navn")]
+        [Required(ErrorMessage ="Navn skal angives")]
         public string Name { get; set; }
 
         [Display(Name = "Beskrivelse", Prompt = "Indtast en beskrivelse")]
+        [Required(ErrorMessage ="Beskrivelse skal angives")]
         public string Description { get; set; }
 
         [Display(Name = "Indhold", Prompt = "Indtast hvad produktet indeholder")]
+        [Required(ErrorMessage ="Indhold skal angives")]
         public string Content { get; set; }
 
         [Display(Name = "Te-typen", Prompt = "Indtast te-type")]
+        [Required(ErrorMessage ="Te-type skal angives")]
         public string Type { get; set; }
 
         [Display(Name = "Produkt pris", Prompt = "Indtast en pris")]
-        [Required(ErrorMessage = "Der skal angives en pris")]
+        [Required(ErrorMessage = "Pris skal angives")]
         [Range(1, 10000, ErrorMessage = "Pris skal være mellem og inklusiv 1 og 10000 kr.")]
         public double Price { get; set; }
         
