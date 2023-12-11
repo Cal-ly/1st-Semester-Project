@@ -1,272 +1,155 @@
 [
-  {
-    "ID": 1,
-    "Name": "Earl Grey",
-    "Description": "Delicious black tea",
-    "Content": "Black tea",
-    "Type": "Black tea",
-    "Price": 110,
-    "Size": 100
-  },
-  {
-    "ID": 2,
-    "Name": "White Tea",
-    "Description": "Delicious white tea",
-    "Content": "White Tea",
-    "Type": "White tea",
-    "Price": 50,
-    "Size": 100
-  },
-  {
-    "ID": 3,
-    "Name": "Monicas Te",
-    "Description": "Mega nice te",
-    "Content": "Sort te",
-    "Type": "Sort te",
-    "Price": 80,
-    "Size": 100
-  },
-  {
-    "ID": 4,
-    "Name": "Carstens te",
-    "Description": "Mega nice te",
-    "Content": "Rooibos te",
-    "Type": "Rooibos te",
-    "Price": 90,
-    "Size": 100
-  },
-  {
-    "ID": 5,
-    "Name": "Frederikkes te",
-    "Description": "Mega nice te",
-    "Content": "Hvid te",
-    "Type": "Hvid te",
-    "Price": 90,
-    "Size": 100
-  },
-  {
-    "ID": 6,
-    "Name": "Laus\u0027 Te",
-    "Description": "Mega nice te",
-    "Content": "Sort Te",
-    "Type": "Sort te",
-    "Price": 90,
-    "Size": 100
-  },
-  {
-    "ID": 7,
-    "Name": "Mathias\u0027 Te",
-    "Description": "Mega nice te",
-    "Content": "Gr\u00F8n te",
-    "Type": "Gr\u00F8n te",
-    "Price": 80,
-    "Size": 100
-  },
-  {
-    "ID": 9006,
-    "Name": "Nytest",
-    "Description": "wesr",
-    "Content": "Sted: Testest Start: 05-12-23 12.43 - End: 05-12-23 13.39",
-    "Type": "Event",
-    "Price": 56,
-    "Size": 23
-  },
-  {
-    "ID": 9007,
-    "Name": "iufhgidhf",
-    "Description": "soijdfi",
-    "Content": "Sted: ifhugidfuhgi Start: 13-12-23 12:12 - End: 13-12-23 12:24",
-    "Type": "Event",
-    "Price": 100,
-    "Size": 120
-  },
-  {
-    "ID": 9008,
-    "Name": "soigjodfijgoj",
-    "Description": "sohffiduhgidfh",
-    "Content": "Sted: osjdgoidjfogijdofj Start: 01-01-01 00:00 - End: 01-01-01 02:00",
-    "Type": "Event",
-    "Price": 120,
-    "Size": 120
-  },
-  {
-    "ID": 9001,
-    "Name": "Test",
-    "Description": "Testtest",
-    "Content": "Sted: Testest Start: 04-12-23 12:11 - End: 04-12-23 12:17",
-    "Type": "Event",
-    "Price": 60,
-    "Size": 12
-  },
-  {
-    "ID": 9003,
-    "Name": "BrygMig",
-    "Description": "FDES",
-    "Content": "Sted: BB Start: 10-10-23 10:00 - End: 10-10-23 10:20",
-    "Type": "Event",
-    "Price": 12,
-    "Size": 12
-  },
-  {
-    "ID": 9004,
-    "Name": "Bla",
-    "Description": "2",
-    "Content": "Sted: Bla Start: 10-02-01 00:00 - End: 10-02-01 00:02",
-    "Type": "Event",
-    "Price": 2,
-    "Size": 2
-  },
-  {
-    "ID": 9005,
-    "Name": "DeltagerEvent",
-    "Description": "Testtest",
-    "Content": "Sted: Testest Start: 04-12-23 15:20 - End: 04-12-23 16:20",
-    "Type": "Event",
-    "Price": 60,
-    "Size": 23
-  },
-  {
-    "ID": 9006,
-    "Name": "Nytest",
-    "Description": "wesr",
-    "Content": "Sted: Testest Start: 05-12-23 12:43 - End: 05-12-23 13:39",
-    "Type": "Event",
-    "Price": 56,
-    "Size": 23
-  },
-  {
-    "ID": 9007,
-    "Name": "iufhgidhf",
-    "Description": "soijdfi",
-    "Content": "Sted: ifhugidfuhgi Start: 13-12-23 12:12 - End: 13-12-23 12:24",
-    "Type": "Event",
-    "Price": 100,
-    "Size": 120
-  },
-  {
-    "ID": 9008,
-    "Name": "soigjodfijgoj",
-    "Description": "sohffiduhgidfh",
-    "Content": "Sted: osjdgoidjfogijdofj Start: 01-01-01 00:00 - End: 01-01-01 02:00",
-    "Type": "Event",
-    "Price": 120,
-    "Size": 120
-  },
-  {
-    "ID": 9001,
-    "Name": "Test",
-    "Description": "Testtest",
-    "Content": "Sted: Testest Start: 04-12-23 12:11 - End: 04-12-23 12:17",
-    "Type": "Event",
-    "Price": 0,
-    "Size": 12
-  },
-  {
-    "ID": 9009,
-    "Name": "Tea Event",
-    "Description": "We drink tea",
-    "Content": "Sted: Roskilde Start: 10-12-23 10:50 - End: 10-12-23 12:50",
-    "Type": "Event",
-    "Price": 0,
-    "Size": 50
-  },
-  {
-    "ID": 9009,
-    "Name": "BrygMigEnKop",
-    "Description": "Her brygger vi te",
-    "Content": "Sted: Zealand Start: 11-12-23 09:25 - End: 11-12-23 10:25",
-    "Type": "Event",
-    "Price": 200,
-    "Size": 20
-  },
-  {
-    "ID": 9010,
-    "Name": "Blue\u0027s tea",
-    "Description": "Beroligende",
-    "Content": "Lavendel",
-    "Type": "Type",
-    "Price": 70,
-    "Size": 120
-  },
-  {
-    "ID": 9011,
-    "Name": "Blue\u0027s tea",
-    "Description": "Beroligende",
-    "Content": "Lavendel",
-    "Type": "Type",
-    "Price": 70,
-    "Size": 100
-  },
-  {
-    "ID": 9012,
-    "Name": "Blue\u0027s tea",
-    "Description": "Beroligende",
-    "Content": "Lavendel",
-    "Type": "Type",
-    "Price": 70,
-    "Size": 100
-  },
-  {
-    "ID": 9013,
-    "Name": "Blue\u0027s tea",
-    "Description": "Beroligende",
-    "Content": "Lavendel",
-    "Type": "Type",
-    "Price": 70,
-    "Size": 100
-  },
-  {
-    "ID": 9014,
-    "Name": "Blue\u0027s tea",
-    "Description": "Beroligende",
-    "Content": "Lavendel",
-    "Type": "Type",
-    "Price": 70,
-    "Size": 100
-  },
-  {
-    "ID": 9010,
-    "Name": null,
-    "Description": null,
-    "Content": "ALLE BILLETTER UDSOLGT\nSted:  Start: 01-01-01 00:00 - End: 01-01-01 00:00",
-    "Type": "Event",
-    "Price": 0,
-    "Size": 0
-  },
-  {
-    "ID": 9011,
-    "Name": null,
-    "Description": null,
-    "Content": "ALLE BILLETTER UDSOLGT\nSted:  Start: 01-01-01 00:00 - End: 01-01-01 00:00",
-    "Type": "Event",
-    "Price": 0,
-    "Size": 0
-  },
-  {
-    "ID": 9012,
-    "Name": null,
-    "Description": null,
-    "Content": "ALLE BILLETTER UDSOLGT\nSted:  Start: 01-01-01 00:00 - End: 01-01-01 00:00",
-    "Type": "Event",
-    "Price": 0,
-    "Size": 0
-  },
-  {
-    "ID": 9013,
-    "Name": null,
-    "Description": null,
-    "Content": "ALLE BILLETTER UDSOLGT\nSted:  Start: 01-01-01 00:00 - End: 01-01-01 00:00",
-    "Type": "Event",
-    "Price": 0,
-    "Size": 0
-  },
-  {
-    "ID": 9014,
-    "Name": "Tea Event",
-    "Description": "We drink tea",
-    "Content": "Sted: Roskilde Start: 12-12-23 11:00 - End: 12-12-23 12:10",
-    "Type": "Event",
-    "Price": 10,
-    "Size": 150
-  }
+    {
+        "ID": 1,
+        "Name": "Earl Grey",
+        "Description": "Delicious black tea",
+        "Content": "Black tea",
+        "Type": "Black tea",
+        "Price": 110,
+        "Size": 100
+    },
+    {
+        "ID": 2,
+        "Name": "White Tea",
+        "Description": "Delicious white tea",
+        "Content": "White Tea",
+        "Type": "White tea",
+        "Price": 50,
+        "Size": 100
+    },
+    {
+        "ID": 3,
+        "Name": "Monicas Te",
+        "Description": "Mega nice te",
+        "Content": "Sort te",
+        "Type": "Sort te",
+        "Price": 80,
+        "Size": 100
+    },
+    {
+        "ID": 4,
+        "Name": "Carstens te",
+        "Description": "Mega nice te",
+        "Content": "Rooibos te",
+        "Type": "Rooibos te",
+        "Price": 90,
+        "Size": 100
+    },
+    {
+        "ID": 5,
+        "Name": "Frederikkes te",
+        "Description": "Mega nice te",
+        "Content": "Hvid te",
+        "Type": "Hvid te",
+        "Price": 90,
+        "Size": 100
+    },
+    {
+        "ID": 6,
+        "Name": "Laus\u0027 Te",
+        "Description": "Mega nice te",
+        "Content": "Sort Te",
+        "Type": "Sort te",
+        "Price": 90,
+        "Size": 100
+    },
+    {
+        "ID": 7,
+        "Name": "Mathias\u0027 Te",
+        "Description": "Mega nice te",
+        "Content": "Gr\u00F8n te",
+        "Type": "Gr\u00F8n te",
+        "Price": 80,
+        "Size": 100
+    },
+    {
+        "ID": 8,
+        "Name": "Blue\u0027s tea",
+        "Description": "Beroligende",
+        "Content": "Lavendel",
+        "Type": "Te",
+        "Price": 70,
+        "Size": 120
+    },
+    {
+        "ID": 9001,
+        "Name": "Tea Event",
+        "Description": "We drink tea",
+        "Content": "Sted: TeaHouse Start: 23-07-20 14:00 - End: 23-07-20 15:30",
+        "Type": "Event",
+        "Price": 10,
+        "Size": 20
+    },
+    {
+        "ID": 9002,
+        "Name": "Tea Brewing Masterclass Event",
+        "Description": "Learn the art of tea brewing!",
+        "Content": "Sted: TeaWorkshop Start: 23-08-12 16:30 - End: 23-08-12 18:30",
+        "Type": "Event",
+        "Price": 15,
+        "Size": 25
+    },
+    {
+        "ID": 9003,
+        "Name": "Tea Tasting Party Event",
+        "Description": "Celebrate the joy of tea!",
+        "Content": "Sted: TeaLounge Start: 23-09-05 19:00 - End: 23-09-05 21:30",
+        "Type": "Event",
+        "Price": 8,
+        "Size": 30
+    },
+    {
+        "ID": 9004,
+        "Name": "Tea Brewing Challenge Event",
+        "Description": "Showcase your tea brewing skills!",
+        "Content": "Sted: TeaChampionship Start: 23-10-10 10:00 - End: 23-10-10 10:20",
+        "Type": "Event",
+        "Price": 12,
+        "Size": 12
+    },
+    {
+        "ID": 9005,
+        "Name": "Tea Connoisseur Event",
+        "Description": "Explore the art of tea connoisseurship!",
+        "Content": "Sted: TeaExhibition Start: 23-11-15 18:30 - End: 23-11-15 20:30",
+        "Type": "Event",
+        "Price": 15,
+        "Size": 50
+    },
+    {
+        "ID": 9006,
+        "Name": "Tea Tech Talks Event",
+        "Description": "Explore the latest in tea technology!",
+        "Content": "Sted: TeaTechHub Start: 23-12-05 14:00 - End: 23-12-05 15:30",
+        "Type": "Event",
+        "Price": 0,
+        "Size": 30
+    },
+    {
+        "ID": 9007,
+        "Name": "Tea Fitness Challenge Event",
+        "Description": "Stay fit with tea-inspired exercises!",
+        "Content": "Sted: TeaFitZone Start: 24-01-20 09:00 - End: 24-01-20 10:00",
+        "Type": "Event",
+        "Price": 10,
+        "Size": 20
+    },
+    {
+        "ID": 9008,
+        "Name": "Tea Cooking Masterclass Event",
+        "Description": "Master the art of cooking with tea!",
+        "Content": "Sted: TeaCulinaryInstitute Start: 24-02-08 17:30 - End: 24-02-08 19:30",
+        "Type": "Event",
+        "Price": 25,
+        "Size": 15
+    },
+    {
+        "ID": 9009,
+        "Name": "Tea Art Exhibition Event",
+        "Description": "Immerse in artistic wonders inspired by tea!",
+        "Content": "Sted: TeaGallerySpace Start: 24-03-15 13:00 - End: 24-03-15 16:00",
+        "Type": "Event",
+        "Price": 5,
+        "Size": 25
+    }
 ]

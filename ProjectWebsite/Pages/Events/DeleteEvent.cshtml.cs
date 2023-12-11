@@ -24,16 +24,16 @@ namespace ProjectWebsite.Pages.Events
 		}
 		public IActionResult OnPost()
 		{
-            if (!EventService.DeleteEvent(Event.ID)) 
-            { 
-                return RedirectToPage("/Error"); 
+            if (!EventService.DeleteEvent(Event.ID))
+            {
+                return RedirectToPage("/Error");
             }
 
             return RedirectToPage("GetAllEvents");
 		}
-		public IActionResult OnPostCancel() 
-        { 
-            return RedirectToPage("GetAllEvents"); 
+		public IActionResult OnPostCancel()
+        {
+            return RedirectToPage("GetAllEvents");
         }
 	}
 }
