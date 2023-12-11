@@ -6,8 +6,8 @@ namespace ProjectWebsite.Pages.Events
 {
     public class UpdateEventModel : PageModel
     {
-        public EventService EventService;
-        public ProductService ProductService;
+        private EventService EventService { get; set; }
+        private ProductService ProductService { get; set; }
         [BindProperty] public Models.Event Event { get; set; }
         [BindProperty] public Models.Product ProductEvent { get; set; }
         public UpdateEventModel(EventService eventService, ProductService productService)

@@ -6,10 +6,9 @@ namespace ProjectWebsite.Pages.Product
 {
 	public class DeleteProductModel : PageModel
     {
-		[BindProperty]
+        private ProductService ProductService { get; set; }
+        [BindProperty]
 		public Models.Product Product { get; set; }
-
-        public ProductService ProductService { get; set; }
 
         public DeleteProductModel(ProductService productService)
 		{

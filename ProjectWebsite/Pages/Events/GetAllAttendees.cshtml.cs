@@ -7,23 +7,23 @@ namespace ProjectWebsite.Pages.Events
 {
     public class GetAllAttendeesModel : PageModel
     {
-        public EventService eventService;
-        public CustomerService customerService;
-         public Models.Event Event { get; set; }
-         public Models.Customer Customer { get; set; }
+        private EventService EventService { get; set; }
+        private CustomerService CustomerService { get; set; }
+        public Models.Event Event { get; set; }
+        public Models.Customer Customer { get; set; }
         [BindProperty]
         [Range(0, int.MaxValue)]
         public int CustomerID { get; set; }
-		 public Models.Product ProductEvent { get; set; }
+		public Models.Product ProductEvent { get; set; }
 
 		public GetAllAttendeesModel(EventService eventService, CustomerService customerService)
         {
-            this.eventService = eventService;
-            this.customerService = customerService;
+            this.EventService = eventService;
+            this.CustomerService = customerService;
         }
         public IActionResult OnGet(int id)
         {
-            Event = eventService.GetEventByID(id);
+            Event = EventService.GetEventByID(id);
             if (Event == null)
             {
                 return RedirectToPage("/NotFound");
@@ -33,13 +33,13 @@ namespace ProjectWebsite.Pages.Events
 
 		public IActionResult OnPostDeleteAttendee(int eventid, int customerid)
 		{ 
-			Event = eventService.GetEventByID(eventid);
+			Event = EventService.GetEventByID(eventid);
 			Customer = Event.Attendees.FirstOrDefault(c => c.ID == customerid);
 			if (Customer != null)
 			{
 				if (Event.Attendees.Remove(Customer))
 				{
-					eventService.UpdateEvent(Event);
+					EventService.UpdateEvent(Event);
 				}
 				else
 				{
@@ -52,14 +52,14 @@ namespace ProjectWebsite.Pages.Events
 		public IActionResult OnPostAddAttendee(int id)
 		{
             if (!ModelState.IsValid) {
-                Event = eventService.GetEventByID(id);
+                Event = EventService.GetEventByID(id);
                 return Page(); 
 			}
-            Event = eventService.GetEventByID(id);
-			Customer = customerService.GetCustomerByID(CustomerID);
+            Event = EventService.GetEventByID(id);
+			Customer = CustomerService.GetCustomerByID(CustomerID);
 			if(Customer == null)
 			{
-                Event = eventService.GetEventByID(id);
+                Event = EventService.GetEventByID(id);
                 return Page();
             }
 			Models.Customer customerToAttend = new()
@@ -71,7 +71,7 @@ namespace ProjectWebsite.Pages.Events
 				PhoneNumber = Customer.PhoneNumber
 			};
 			Event.Attendees.Add(customerToAttend);
-			Event = eventService.UpdateEvent(Event);
+			Event = EventService.UpdateEvent(Event);
 			return Page();
 		}
 

@@ -40,13 +40,13 @@ namespace ProjectWebsite.Repositories
 			return null;
         }
 
-        public void CreateProduct(Product productID)
+        public void CreateProduct(Product product)
         {
-            if (productID == null)
+            if (product == null)
             {
-                throw new ArgumentNullException(nameof(productID));
+                throw new ArgumentNullException(nameof(product));
             }
-            ProductList.Add(productID);
+            ProductList.Add(product);
             JsonProductService.SaveJsonItems(ProductList);
         }
 

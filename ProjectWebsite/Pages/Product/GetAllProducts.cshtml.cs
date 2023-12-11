@@ -7,9 +7,8 @@ namespace ProjectWebsite.Pages.Product
 {
     public class GetAllProductsModel : PageModel
     {
-        public List<Models.Product> Products { get; private set; }
-
         private ProductService ProductService { get; set; }
+        public List<Models.Product> Products { get; private set; }
 
         [BindProperty]
         [Range(typeof(int), minimum: "0", maximum: "1000", ErrorMessage = "Prisen skal være mellem {1} og {2}")]

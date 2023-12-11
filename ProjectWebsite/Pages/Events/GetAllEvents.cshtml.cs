@@ -8,8 +8,8 @@ namespace ProjectWebsite.Pages.Events
 {
     public class GetAllEventsModel : PageModel
     {
-        public EventService EventService;
-        public ProductService ProductService;
+        private EventService EventService { get; set; }
+        private ProductService ProductService { get; set; }
 
         [BindProperty]
         public string SearchEvent { get; set; }

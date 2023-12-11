@@ -9,10 +9,8 @@ namespace ProjectWebsite.Pages.Product
 {
     public class GetProductModel : PageModel
     {
-        public Models.Product Product { get; set; }
-        
         private ProductService ProductService { get; set; }
-
+        public Models.Product Product { get; set; }
         public string Message { get; set; }
         
         [BindProperty]
