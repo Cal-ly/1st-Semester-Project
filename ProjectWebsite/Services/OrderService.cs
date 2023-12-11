@@ -13,7 +13,6 @@ namespace ProjectWebsite.Services
             OrderRepository = orderRepository;
             CustomerRepository = customerRepository;
         }
-
         #region Repository methods calls
         public void AddOrder(Order order) { OrderRepository.AddOrder(order); }
         public List<Order> GetCustomerOrders(int customerID) { return OrderRepository.GetCustomerOrders(customerID); }
@@ -23,7 +22,6 @@ namespace ProjectWebsite.Services
         public bool UpdateOrderAmount (int newAmount, int orderLineID) { return OrderRepository.UpdateOrderAmount(newAmount, orderLineID); }
         public bool DeleteFromBasket(int id) { return OrderRepository.DeleteFromBasket(id); }
         #endregion
-
 		public bool PlaceOrder(string email)
         {
             //Gets reference to customer (if customer with that email doesn't exist then abort the method
@@ -39,7 +37,6 @@ namespace ProjectWebsite.Services
             Order.Basket = new(); //resets the basket
             return true;
         }
-
         public double CalculateTotal(List<OrderLine> kurv)
         {
             //laver lokal variable "total" og sætter den til 0

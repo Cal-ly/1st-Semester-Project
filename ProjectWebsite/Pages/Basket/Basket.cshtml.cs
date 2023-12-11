@@ -11,7 +11,6 @@ namespace ProjectWebsite.Pages.Kurv
         [BindProperty]
         public int Amount { get; set; }
         public double Total { get; set; }
-        
         public KurvModel(OrderService orderService)
         {
             OrderService = orderService;

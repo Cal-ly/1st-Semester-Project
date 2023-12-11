@@ -7,17 +7,14 @@ namespace ProjectWebsite.Services
     public class JsonEventService
 	{
 		public IWebHostEnvironment WebHostEnvironment { get; }
-
 		public JsonEventService(IWebHostEnvironment webHostEnvironment)
 		{
 			WebHostEnvironment = webHostEnvironment;
 		}
-
 		private string JsonFileName
 		{
 			get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "event.json"); }
 		}
-
         public void SaveJsonItems(List<Event> events)
         {
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
@@ -30,11 +27,10 @@ namespace ProjectWebsite.Services
                 JsonSerializer.Serialize<Event[]>(jsonWriter, events.ToArray());
             }
         }
-
         public IEnumerable<Event> GetJsonItems()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
-            { 
+            {
                 return JsonSerializer.Deserialize<Event[]>(jsonFileReader.ReadToEnd());
             }
         }
