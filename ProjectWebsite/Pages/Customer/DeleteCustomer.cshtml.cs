@@ -7,7 +7,7 @@ namespace ProjectWebsite.Pages.Customer
     public class DeleteCustomerModel : PageModel
     {
 
-		public CustomerService CustomerService;
+		private CustomerService CustomerService { get; set; }
 
 		[BindProperty]
 		public Models.Customer Customer { get; set; }

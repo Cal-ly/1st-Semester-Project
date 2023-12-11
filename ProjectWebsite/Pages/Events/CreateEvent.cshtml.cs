@@ -7,15 +7,15 @@ namespace ProjectWebsite.Pages.Events
 {
     public class CreateEventModel : PageModel
     {
-        public EventService eventService;
-		public ProductService productService;
+        private EventService EventService { get; set; }
+		private ProductService ProductService { get; set; }
         [BindProperty] public Models.Event Event { get; set; }
         [BindProperty] public Models.Product ProductEvent { get; set; }
 
 		public CreateEventModel(EventService eventService, ProductService productService)
         {
-            this.eventService = eventService;
-			this.productService = productService;
+            this.EventService = eventService;
+			this.ProductService = productService;
 		}
         public IActionResult OnGet() 
         { 
@@ -24,10 +24,10 @@ namespace ProjectWebsite.Pages.Events
 
         public IActionResult OnPost()
         {
-            Event.ID = eventService.GetNextID();
-            eventService.CreateEvent(Event);
-			ProductEvent = eventService.ConvertEventToProduct(Event);
-            productService.CreateProduct(ProductEvent);
+            Event.ID = EventService.GetNextID();
+            EventService.CreateEvent(Event);
+			ProductEvent = EventService.ConvertEventToProduct(Event);
+            ProductService.CreateProduct(ProductEvent);
 			return RedirectToPage("GetAllEvents");
         }
 		public IActionResult OnPostCancel() 

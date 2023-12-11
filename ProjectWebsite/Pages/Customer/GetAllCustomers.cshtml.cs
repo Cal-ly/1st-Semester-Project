@@ -6,7 +6,7 @@ namespace ProjectWebsite.Pages.Customer
 {
     public class GetAllCustomersModel : PageModel
     {
-		public CustomerService CustomerService;
+		private CustomerService CustomerService { get; set; }
 
 		[BindProperty]
 		public string SearchCustomer { get; set; }
