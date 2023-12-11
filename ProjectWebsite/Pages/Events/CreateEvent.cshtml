@@ -48,7 +48,7 @@
 
             <div class="form-group">
                 <label asp-for="@Model.Event.Capacity" class="control-label"></label>
-                <input asp-for="@Model.Event.Capacity" class="form-control" />
+                <input asp-for="@Model.Event.Capacity" class="form-control" type="number" step="1" min="0"/>
                 <span asp-validation-for="@Model.Event.Capacity" class="text-danger"></span>
             </div>
 

@@ -6,7 +6,7 @@ namespace ProjectWebsite.Pages.Events
 {
     public class DeleteEventModel : PageModel
     {
-        public EventService EventService;
+        private EventService EventService;
         [BindProperty] public Models.Event Event { get; set; }
 
         public DeleteEventModel(EventService eventService)

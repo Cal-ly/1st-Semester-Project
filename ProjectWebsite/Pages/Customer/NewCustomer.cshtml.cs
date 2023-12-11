@@ -6,10 +6,11 @@ namespace ProjectWebsite.Pages.Customer
 {
     public class NewCustomerModel : PageModel
     {
-		public CustomerService CustomerService;
-		[BindProperty]
+		private CustomerService CustomerService { get; set; }
+        private OrderService OrderService { get; set; }
+        [BindProperty]
 		public Models.Customer Customer { get; set; }
-		private OrderService OrderService { get; set; }
+		
 		public NewCustomerModel(CustomerService customerService, OrderService orderService)
 		{
 			CustomerService = customerService;

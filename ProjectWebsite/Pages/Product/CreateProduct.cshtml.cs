@@ -6,7 +6,7 @@ namespace ProjectWebsite.Pages.Product
 {
     public class CreateProductModel : PageModel
     {
-        public ProductService ProductService;
+        private ProductService ProductService;
 
         [BindProperty]
         public Models.Product Product { get; set; }
