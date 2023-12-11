@@ -28,6 +28,7 @@ namespace ProjectWebsite.Pages.Kurv
         public IActionResult OnPostForward()
         {
             Kurv = Order.Basket;
+            Console.WriteLine(Kurv);
             return RedirectToPage("/Basket/CheckCustomer");
         }
 
