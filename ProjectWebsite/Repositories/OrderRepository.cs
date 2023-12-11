@@ -104,7 +104,8 @@ namespace ProjectWebsite.Repositories
         // Vi tilføjer parameteren int orderLineID fordi det er måden vi identificere en OrderLine i listen Basket
         public bool DeleteFromBasket(int orderLineID)
         {
-            // Vi opretter en lokal reference (orderLineToBeDeleted) til den OrderLine vi skal slette så vi kan få fat i den i metoden
+            // Vi opretter en lokal reference (orderLineToBeDeleted) til den OrderLine vi skal slette
+            // så vi kan få fat i den i metoden
             // Herefter bruger vi den eksisterende metode GetOrderLine som finder en OrderLine vha. OrderLine's ID 
             OrderLine orderLineToBeDeleted = GetOrderLine(orderLineID);
             // Vi laver en if statement hvor vi tjekker at orderLineToBeDeleted ikke er null.
