@@ -31,10 +31,10 @@
 	</thead>
 	<tbody>
 		@* et if-statement for at håndtere hvis ordrelisten er tom. hvis det er tilfældet bliver der skrevet "Kurven er tom" *@
-		@if (Model.OrderList != null)
+		@if (Model.OrderService.OrderList != null)
 		{
 			@* et foreach-loop der gennemløber alle Ordre i listen OrderList*@
-			foreach (var o in Model.OrderList)
+			foreach (var o in Model.OrderService.OrderList)
 			{	@* ændre farven på hele rækken hvis ordren er færdiggjort (Finished==true) *@
 				var rowStyle = (o.Finished) ? "table-success" : "";
 				@* Struktur til tabellen. Overskrifter mm. *@

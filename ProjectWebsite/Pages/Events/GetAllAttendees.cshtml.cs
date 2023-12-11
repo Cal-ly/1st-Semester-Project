@@ -32,7 +32,7 @@ namespace ProjectWebsite.Pages.Events
         }
 
 		public IActionResult OnPostDeleteAttendee(int eventid, int customerid)
-		{ 
+		{
 			Event = EventService.GetEventByID(eventid);
 			Customer = Event.Attendees.FirstOrDefault(c => c.ID == customerid);
 			if (Customer != null)
@@ -53,7 +53,7 @@ namespace ProjectWebsite.Pages.Events
 		{
             if (!ModelState.IsValid) {
                 Event = EventService.GetEventByID(id);
-                return Page(); 
+                return Page();
 			}
             Event = EventService.GetEventByID(id);
 			Customer = CustomerService.GetCustomerByID(CustomerID);
@@ -75,9 +75,9 @@ namespace ProjectWebsite.Pages.Events
 			return Page();
 		}
 
-		public IActionResult OnPostCancel() 
-		{ 
-			return RedirectToPage("GetAllEvents"); 
+		public IActionResult OnPostCancel()
+		{
+			return RedirectToPage("GetAllEvents");
 		}
     }
 }

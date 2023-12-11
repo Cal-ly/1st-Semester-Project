@@ -17,9 +17,9 @@ namespace ProjectWebsite.Pages.Events
             this.EventService = eventService;
 			this.ProductService = productService;
 		}
-        public IActionResult OnGet() 
-        { 
-            return Page(); 
+        public IActionResult OnGet()
+        {
+            return Page();
         }
 
         public IActionResult OnPost()
@@ -30,9 +30,9 @@ namespace ProjectWebsite.Pages.Events
             ProductService.CreateProduct(ProductEvent);
 			return RedirectToPage("GetAllEvents");
         }
-		public IActionResult OnPostCancel() 
-        { 
-            return RedirectToPage("GetAllEvents"); 
+		public IActionResult OnPostCancel()
+        {
+            return RedirectToPage("GetAllEvents");
         }
 	}
 }

@@ -11,7 +11,6 @@ namespace ProjectWebsite.Services
         {
             ProductRepository = productRepository;
         }
-
         #region Repository method calls
         public int GetNextID() { return ProductRepository.GetNextID(); }
         public Product GetProduct(int productID) { return ProductRepository.GetProduct(productID); }
@@ -19,7 +18,6 @@ namespace ProjectWebsite.Services
         public bool DeleteProduct(int productID) { return ProductRepository.DeleteProduct(productID); }
         public void UpdateProduct(Product productID) { ProductRepository.UpdateProduct(productID); }
         #endregion
-
         public IEnumerable<Product> PriceFilter(int maxPrice, int minPrice)
         {
             List<Product> filterList = new();
@@ -28,7 +26,6 @@ namespace ProjectWebsite.Services
                     filterList.Add(product);
             return filterList;
         }
-
         public IEnumerable<Product> NameSearch(string inputString) //filter
         {
             List<Product> nameSearch = new();
@@ -37,7 +34,7 @@ namespace ProjectWebsite.Services
                 if (product.Type.ToLower().Contains(inputString.ToLower()))
                 {
                     nameSearch.Add(product);
-                }  
+                }
             }
             return nameSearch;
         }

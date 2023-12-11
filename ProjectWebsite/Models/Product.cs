@@ -29,14 +29,12 @@ namespace ProjectWebsite.Models
         [Required(ErrorMessage = "Pris skal angives")]
         [Range(1, 10000, ErrorMessage = "Pris skal være mellem og inklusiv 1 og 10000 kr.")]
         public double Price { get; set; }
-        
         [Display(Name = "Produkt størrelse", Prompt = "Indtast størrelse (gram)")]
         public int Size { get; set; } = 100; //gram
 
         public Product()
         {
         }
-
         public override string ToString()
         {
             return $"{{{nameof(ID)}={ID.ToString()}, {nameof(Name)}={Name}, {nameof(Description)}={Description}, {nameof(Content)}={Content}, {nameof(Type)}={Type}, {nameof(Price)}={Price.ToString()}, {nameof(Size)}={Size.ToString()}}}";

@@ -19,7 +19,7 @@ namespace ProjectWebsite.Repositories
 
         public Order GetOrder(int orderID)
         {
-            //foreach løkke der går igennem OrderList 
+            //foreach løkke der går igennem OrderList
             foreach (Order order in OrderList)
             {
                 //hvis Order objektets ID matcher orderID parameteren...
@@ -27,7 +27,7 @@ namespace ProjectWebsite.Repositories
                 {
                     //... returnere den en reference til Order objektet
                     return order;
-                }  
+                }
             }
             //hvis intet match er fundet returneres null
             return null;
@@ -43,7 +43,7 @@ namespace ProjectWebsite.Repositories
                 {
                     //...returnere den en reference til OrderLine objektet
                     return orderLine;
-                } 
+                }
             }
             //hvis intet match er fundet returnere den null
             return null;
@@ -58,7 +58,7 @@ namespace ProjectWebsite.Repositories
                 {
                     customersOrders.Add(order);
                 }
-            }     
+            }
             return customersOrders;
         }
 

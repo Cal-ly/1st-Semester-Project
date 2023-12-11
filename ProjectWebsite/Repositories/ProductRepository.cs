@@ -10,7 +10,6 @@ namespace ProjectWebsite.Repositories
         public List<Product> ProductList { get; set; }
 
         private JsonProductService JsonProductService { get; set; }
-        
         public ProductRepository(JsonProductService jsonProductService)
         {
             JsonProductService = jsonProductService;
@@ -20,9 +19,9 @@ namespace ProjectWebsite.Repositories
         public int GetNextID()
         {
             int nextID = ProductList.Max(c => c.ID) + 1;
-            if (nextID <= ProductRepository.nextID) 
-            { 
-                nextID = ProductRepository.nextID + 1; 
+            if (nextID <= ProductRepository.nextID)
+            {
+                nextID = ProductRepository.nextID + 1;
             }
             ProductRepository.nextID = nextID;
             return nextID;
@@ -67,11 +66,11 @@ namespace ProjectWebsite.Repositories
             //Foreach loop der looper alle produkter (p) i ProductList igennem.
             foreach (Product p in ProductList)
             {
-                //If statement der tjekker om p er identisk med det produkt vi forsøger at opdatere. 
+                //If statement der tjekker om p er identisk med det produkt vi forsøger at opdatere.
                 if (p.ID == product.ID)
                 {
                     //Når den finder det produkt (p) i ProductList der er identisk med et produkt vi vil opdatere,
-                    //sætter den produktets oplysninger til de oplysninger vi har skrevet i UpdateProduct formen på UpdateProduct siden. 
+                    //sætter den produktets oplysninger til de oplysninger vi har skrevet i UpdateProduct formen på UpdateProduct siden.
                     p.Name = product.Name;
                     p.Description = p.Description;
                     p.Content = p.Content;

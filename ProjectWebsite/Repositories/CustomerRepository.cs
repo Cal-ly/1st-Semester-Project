@@ -1,7 +1,5 @@
 ﻿using ProjectWebsite.Models;
 using ProjectWebsite.Services;
-using System.Collections.Generic;
-using System.Reflection;
 
 namespace ProjectWebsite.Repositories
 {
@@ -16,15 +14,15 @@ namespace ProjectWebsite.Repositories
             CustomerList = JsonCustomerService.GetJsonItems().ToList();
         }
         //Denne metode finder det næste ID, der skal bruges til at oprette en ny kunde.
-		public int GetNextID()
+        public int GetNextID()
         {
             int nextid = 1;
             //Finder det højeste nummeriske ID i listen (nuværende "yngste" kunde) og lægger 1 til.
             nextid = CustomerList.Max(c => c.ID) + 1;
             //Hvis det næste ID er mindre end det nuværende næste ID, sættes det næste ID til at være det nuværende næste ID + 1.
             if (nextid <= nextID) { nextid = nextID + 1; }
-			//Det nuværende næste ID sættes til at være det næste ID.
-			nextID = nextid;
+            //Det nuværende næste ID sættes til at være det næste ID.
+            nextID = nextid;
             //Det næste ID returneres.
             return nextID;
         }
@@ -35,8 +33,8 @@ namespace ProjectWebsite.Repositories
             if (customerIn == null) { throw new ArgumentNullException(nameof(customerIn)); }
             //Den indkommende kunde tilføjes til listen af kunder.
             CustomerList.Add(customerIn);
-			//Listen af kunder gemmes i JSON-filen.
-			JsonCustomerService.SaveJsonItems(CustomerList);
+            //Listen af kunder gemmes i JSON-filen.
+            JsonCustomerService.SaveJsonItems(CustomerList);
             return true;
         }
         //Denne metode henter en kunde ud fra et ID.
