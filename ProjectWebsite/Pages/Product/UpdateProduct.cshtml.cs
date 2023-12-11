@@ -7,7 +7,7 @@ namespace ProjectWebsite.Pages.Product
 {
     public class UpdateProductModel : PageModel
     {
-        public ProductService ProductService;
+        private ProductService ProductService { get; set; }
 
         [BindProperty]
         public Models.Product Product { get; set; }
