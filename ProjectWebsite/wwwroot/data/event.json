@@ -1,11 +1,11 @@
 [
     {
         "ID": 1,
-        "Name": "TeaTasting",
+        "Name": "Tea Smagning",
         "Location": "TeaHouse",
         "DateTime": "2023-07-20T14:00:00",
         "Duration": 90,
-        "Description": "Explore the world of teas!",
+        "Description": "Udforsk verden af te!",
         "Cost": 10,
         "Attendees": [
             {
@@ -29,11 +29,11 @@
     },
     {
         "ID": 2,
-        "Name": "TeaBrewingMasterclass",
+        "Name": "Te Brygning Masterclass",
         "Location": "TeaWorkshop",
         "DateTime": "2023-08-12T16:30:00",
         "Duration": 120,
-        "Description": "Learn the art of tea brewing!",
+        "Description": "Lær kunsten at brygge te!",
         "Cost": 15,
         "Attendees": [
             {
@@ -53,15 +53,15 @@
         ],
         "Capacity": 25,
         "IsFull": false,
-        "Organizer": "TeaBrewingSociety"
+        "Organizer": "TeaBrewSociety"
     },
     {
         "ID": 3,
-        "Name": "TeaTastingParty",
+        "Name": "Te Smagnings Fest",
         "Location": "TeaLounge",
         "DateTime": "2023-09-05T19:00:00",
         "Duration": 150,
-        "Description": "Celebrate the joy of tea!",
+        "Description": "Fejr glæden ved te!",
         "Cost": 8,
         "Attendees": [
             {
@@ -85,11 +85,11 @@
     },
     {
         "ID": 4,
-        "Name": "TeaBrewingChallenge",
+        "Name": "DenStoreBryggedyst",
         "Location": "TeaChampionship",
         "DateTime": "2023-10-10T10:00:00",
         "Duration": 20,
-        "Description": "Showcase your tea brewing skills!",
+        "Description": "Vis dine tebrygningsevner!",
         "Cost": 12,
         "Attendees": [
             {
@@ -109,15 +109,15 @@
         ],
         "Capacity": 12,
         "IsFull": false,
-        "Organizer": "TeaBrewingChallengeOrg"
+        "Organizer": "TeaBryggeUdfordringOrg"
     },
     {
         "ID": 5,
-        "Name": "TeaConnoisseur",
+        "Name": "Tekender event",
         "Location": "TeaExhibition",
         "DateTime": "2023-11-15T18:30:00",
         "Duration": 120,
-        "Description": "Explore the art of tea connoisseurship!",
+        "Description": "Udforsk kunsten af tekenderi!",
         "Cost": 15,
         "Attendees": [
             {
@@ -137,7 +137,7 @@
         ],
         "Capacity": 50,
         "IsFull": false,
-        "Organizer": "TeaConnoisseurClub"
+        "Organizer": "Hipster douches"
     },
     {
         "ID": 6,
@@ -145,7 +145,7 @@
         "Location": "TeaTechHub",
         "DateTime": "2023-12-05T14:00:00",
         "Duration": 90,
-        "Description": "Explore the latest in tea technology!",
+        "Description": "Udforsk det nyeste inden for te teknologi!",
         "Cost": 0,
         "Attendees": [
             {
@@ -165,15 +165,15 @@
         ],
         "Capacity": 30,
         "IsFull": false,
-        "Organizer": "TeaTechGeeks"
+        "Organizer": "Rumbryg"
     },
     {
         "ID": 7,
-        "Name": "TeaFitnessChallenge",
+        "Name": "Te - En Fitnessudfordring",
         "Location": "TeaFitZone",
         "DateTime": "2024-01-20T09:00:00",
         "Duration": 60,
-        "Description": "Stay fit with tea-inspired exercises!",
+        "Description": "Hold dig i form med te-inspirerede øvelser!",
         "Cost": 10,
         "Attendees": [
             {
@@ -197,11 +197,11 @@
     },
     {
         "ID": 8,
-        "Name": "TeaCookingMasterclass",
+        "Name": "TeaBrewers Masterclass",
         "Location": "TeaCulinaryInstitute",
         "DateTime": "2024-02-08T17:30:00",
         "Duration": 120,
-        "Description": "Master the art of cooking with tea!",
+        "Description": "Mestr kunsten at lave mad med te!",
         "Cost": 25,
         "Attendees": [
             {
@@ -225,11 +225,11 @@
     },
     {
         "ID": 9,
-        "Name": "TeaArtExhibition",
+        "Name": "Te- og Kunstudstilling",
         "Location": "TeaGallerySpace",
         "DateTime": "2024-03-15T13:00:00",
         "Duration": 180,
-        "Description": "Immerse in artistic wonders inspired by tea!",
+        "Description": "Fordyb dig i kunstværker inspireret af te!",
         "Cost": 5,
         "Attendees": [
             {
@@ -249,6 +249,6 @@
         ],
         "Capacity": 25,
         "IsFull": false,
-        "Organizer": "TeaArtistryHub"
+        "Organizer": "Teabaggers"
     }
 ]
