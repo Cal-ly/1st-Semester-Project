@@ -169,5 +169,14 @@
     "Type": "Event",
     "Price": 0,
     "Size": 50
+  },
+  {
+    "ID": 9009,
+    "Name": "BrygMigEnKop",
+    "Description": "Her brygger vi te",
+    "Content": "Sted: Zealand Start: 11-12-23 09:25 - End: 11-12-23 10:25",
+    "Type": "Event",
+    "Price": 200,
+    "Size": 20
   }
 ]

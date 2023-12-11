@@ -112,5 +112,18 @@
     "Capacity": 120,
     "IsFull": false,
     "Organizer": "dfgidhfigi"
+  },
+  {
+    "ID": 9,
+    "Name": "BrygMigEnKop",
+    "Location": "Zealand",
+    "DateTime": "2023-12-11T09:25:00",
+    "Duration": 60,
+    "Description": "Her brygger vi te",
+    "Cost": 200,
+    "Attendees": [],
+    "Capacity": 20,
+    "IsFull": false,
+    "Organizer": "Blues brews"
   }
 ]
