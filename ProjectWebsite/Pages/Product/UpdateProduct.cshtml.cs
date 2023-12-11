@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ProjectWebsite.Models;
 using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Product
@@ -19,9 +20,9 @@ namespace ProjectWebsite.Pages.Product
         public IActionResult OnGet(int id)
         {
             Product = ProductService.GetProduct(id);
-            if (Product == null)
-            {
-                return RedirectToPage("/NotFound");
+            if (Product == null) 
+            { 
+                return RedirectToPage("/NotFound"); 
             }
             return Page();
         }
@@ -36,9 +37,9 @@ namespace ProjectWebsite.Pages.Product
             return RedirectToPage("GetAllProducts");
         }
 
-        public IActionResult OnPostCancel()
-        {
-            return RedirectToPage("GetAllProducts");
+        public IActionResult OnPostCancel() 
+        { 
+            return RedirectToPage("GetAllProducts"); 
         }
     }
 }

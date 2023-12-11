@@ -14,9 +14,9 @@ namespace ProjectWebsite.Pages.Events
         [BindProperty]
         [Range(0, int.MaxValue)]
         public int CustomerID { get; set; }
-        public Models.Product ProductEvent { get; set; }
+		public Models.Product ProductEvent { get; set; }
 
-        public GetAllAttendeesModel(EventService eventService, CustomerService customerService)
+		public GetAllAttendeesModel(EventService eventService, CustomerService customerService)
         {
             this.EventService = eventService;
             this.CustomerService = customerService;
@@ -28,57 +28,56 @@ namespace ProjectWebsite.Pages.Events
             {
                 return RedirectToPage("/NotFound");
             }
-            return Page();
+			return Page();
         }
 
-        public IActionResult OnPostDeleteAttendee(int eventid, int customerid)
-        {
-            Event = EventService.GetEventByID(eventid);
-            Customer = Event.Attendees.FirstOrDefault(c => c.ID == customerid);
-            if (Customer != null)
-            {
-                if (Event.Attendees.Remove(Customer))
-                {
-                    EventService.UpdateEvent(Event);
-                }
-                else
-                {
-                    Console.WriteLine("Customer not removed");
-                }
-            }
-            return Page();
-        }
+		public IActionResult OnPostDeleteAttendee(int eventid, int customerid)
+		{ 
+			Event = EventService.GetEventByID(eventid);
+			Customer = Event.Attendees.FirstOrDefault(c => c.ID == customerid);
+			if (Customer != null)
+			{
+				if (Event.Attendees.Remove(Customer))
+				{
+					EventService.UpdateEvent(Event);
+				}
+				else
+				{
+					Console.WriteLine("Customer not removed");
+				}
+			}
+			return Page();
+		}
 
-        public IActionResult OnPostAddAttendee(int id)
-        {
-            if (!ModelState.IsValid)
-            {
+		public IActionResult OnPostAddAttendee(int id)
+		{
+            if (!ModelState.IsValid) {
                 Event = EventService.GetEventByID(id);
-                return Page();
-            }
+                return Page(); 
+			}
             Event = EventService.GetEventByID(id);
-            Customer = CustomerService.GetCustomerByID(CustomerID);
-            if (Customer == null)
-            {
+			Customer = CustomerService.GetCustomerByID(CustomerID);
+			if(Customer == null)
+			{
                 Event = EventService.GetEventByID(id);
                 return Page();
             }
-            Models.Customer customerToAttend = new()
-            {
-                ID = Customer.ID,
-                Name = Customer.Name,
-                Address = Customer.Address,
-                Email = Customer.Email,
-                PhoneNumber = Customer.PhoneNumber
-            };
-            Event.Attendees.Add(customerToAttend);
-            Event = EventService.UpdateEvent(Event);
-            return Page();
-        }
+			Models.Customer customerToAttend = new()
+			{
+				ID = Customer.ID,
+				Name = Customer.Name,
+				Address = Customer.Address,
+				Email = Customer.Email,
+				PhoneNumber = Customer.PhoneNumber
+			};
+			Event.Attendees.Add(customerToAttend);
+			Event = EventService.UpdateEvent(Event);
+			return Page();
+		}
 
-        public IActionResult OnPostCancel()
-        {
-            return RedirectToPage("GetAllEvents");
-        }
+		public IActionResult OnPostCancel() 
+		{ 
+			return RedirectToPage("GetAllEvents"); 
+		}
     }
 }

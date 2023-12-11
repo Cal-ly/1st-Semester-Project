@@ -6,25 +6,25 @@ namespace ProjectWebsite.Pages.Customer
 {
     public class GetAllCustomersModel : PageModel
     {
-        private CustomerService CustomerService { get; set; }
+		private CustomerService CustomerService { get; set; }
 
-        [BindProperty]
-        public string SearchCustomer { get; set; }
-        [BindProperty]
-        public List<Models.Customer> CustomerList { get; set; } //Indeholder alle kunde-objekterne
+		[BindProperty]
+		public string SearchCustomer { get; set; }
+		[BindProperty]
+		public List<Models.Customer> CustomerList { get; set; } //Indeholder alle kunde-objekterne
 
-        public GetAllCustomersModel(CustomerService customerService)
-        {
-            CustomerService = customerService;
-        }
+		public GetAllCustomersModel(CustomerService customerService)
+		{
+			CustomerService = customerService;
+		}
 
-        public void OnGet() { CustomerList = CustomerService.CustomerList; }
-        //Denne metode bliver kaldt, når der trykkes på NameSearch knappen. Den søger efter kunder med det indtastede navn.
-        public IActionResult OnPostNameSearch()
-        {
-            if (!ModelState.IsValid) { return Page(); }
-            CustomerList = CustomerService.GetCustomersByName(SearchCustomer).ToList();
-            return Page();
-        }
-    }
+		public void OnGet()	{ CustomerList = CustomerService.CustomerList; }
+		//Denne metode bliver kaldt, når der trykkes på NameSearch knappen. Den søger efter kunder med det indtastede navn.
+		public IActionResult OnPostNameSearch()
+		{
+			if (!ModelState.IsValid) { return Page(); }
+			CustomerList = CustomerService.GetCustomersByName(SearchCustomer).ToList();
+			return Page();
+		}
+	}
 }

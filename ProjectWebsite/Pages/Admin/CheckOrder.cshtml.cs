@@ -6,17 +6,17 @@ namespace ProjectWebsite.Pages.Admin
 {
     public class CheckOrderModel : PageModel
     {
-        private OrderService OrderService { get; set; }
-        public CheckOrderModel(OrderService orderService)
-        {
-            OrderService = orderService;
-        }
+		private OrderService OrderService { get; set; }
+		public CheckOrderModel(OrderService orderService)
+		{
+			OrderService = orderService;
+		}
 
-        public IActionResult OnGet(int id)
-        {
-            OrderService.FinishOrder(id);
+		public IActionResult OnGet(int id)
+		{
+			OrderService.FinishOrder(id);
             if (OrderService == null) { return RedirectToPage("/NotFound"); }
             return RedirectToPage("GetAllOrders");
-        }
-    }
+		}
+	}
 }

@@ -13,27 +13,27 @@ namespace ProjectWebsite.Pages.Events
         {
             EventService = eventService;
         }
-        public IActionResult OnGet(int id)
-        {
-            Event = EventService.GetEventByID(id);
+		public IActionResult OnGet(int id)
+		{
+			Event = EventService.GetEventByID(id);
             if (Event == null)
             {
                 return RedirectToPage("/NotFound");
             }
             return Page();
-        }
-        public IActionResult OnPost()
-        {
-            if (!EventService.DeleteEvent(Event.ID))
-            {
-                return RedirectToPage("/Error");
+		}
+		public IActionResult OnPost()
+		{
+            if (!EventService.DeleteEvent(Event.ID)) 
+            { 
+                return RedirectToPage("/Error"); 
             }
 
             return RedirectToPage("GetAllEvents");
+		}
+		public IActionResult OnPostCancel() 
+        { 
+            return RedirectToPage("GetAllEvents"); 
         }
-        public IActionResult OnPostCancel()
-        {
-            return RedirectToPage("GetAllEvents");
-        }
-    }
+	}
 }

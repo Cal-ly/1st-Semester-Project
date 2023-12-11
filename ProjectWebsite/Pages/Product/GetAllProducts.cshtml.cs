@@ -17,7 +17,7 @@ namespace ProjectWebsite.Pages.Product
         [BindProperty]
         [Range(typeof(int), minimum: "0", maximum: "1000", ErrorMessage = "Prisen skal være mellem {1} og {2}")]
         public int MaxPrice { get; set; }
-
+        
         [BindProperty]
         [MaxLength(25)]
         public string? SearchString { get; set; }

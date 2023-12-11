@@ -1,8 +1,10 @@
-﻿namespace ProjectWebsite.Models
+﻿using System.Xml.Linq;
+
+namespace ProjectWebsite.Models
 {
     public class Order
     {
-        public static List<OrderLine> Basket = new();
+        public static List<OrderLine> Basket = new(); 
 
         public int ID { get; set; }
         public int CustomerID { get; set; }

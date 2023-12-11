@@ -6,17 +6,17 @@ namespace ProjectWebsite.Pages.Customer
 {
     public class NewCustomerModel : PageModel
     {
-        private CustomerService CustomerService { get; set; }
+		private CustomerService CustomerService { get; set; }
         private OrderService OrderService { get; set; }
         [BindProperty]
-        public Models.Customer Customer { get; set; }
-
-        public NewCustomerModel(CustomerService customerService, OrderService orderService)
-        {
-            CustomerService = customerService;
-            OrderService = orderService;
-        }
-        public IActionResult OnGet() { return Page(); }
+		public Models.Customer Customer { get; set; }
+		
+		public NewCustomerModel(CustomerService customerService, OrderService orderService)
+		{
+			CustomerService = customerService;
+			OrderService = orderService;
+		}
+		public IActionResult OnGet() { return Page(); }
         //Denne metode bliver kaldt, når der /Bakset/CheckCustomer metoden OnPostConfirm bliver kaldt.
         public IActionResult OnPost()
         {
@@ -28,13 +28,13 @@ namespace ProjectWebsite.Pages.Customer
             CustomerService.CreateCustomer(Customer);
             //Hvis ordren bliver placeret, bliver der redirected til Success siden.
             if (OrderService.PlaceOrder(Customer.Email))
-            {
-                return RedirectToPage("/Basket/Success");
-            }
+			{
+				return RedirectToPage("/Basket/Success");
+			}
             //Ellers bliver der redirected til Error siden.
             else { return RedirectToPage("/Error"); }
-        }
+		}
         //Redirecter tilbage til Basket siden.
         public IActionResult OnPostCancel() { return RedirectToPage("/Basket/Basket"); }
-    }
+	}
 }
