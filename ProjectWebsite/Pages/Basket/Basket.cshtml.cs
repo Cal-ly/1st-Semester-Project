@@ -10,7 +10,6 @@ namespace ProjectWebsite.Pages.Kurv
         private OrderService OrderService { get; set; }
         [BindProperty]
         public int Amount { get; set; }
-        public List<OrderLine> Kurv { get; set; }
         public double Total { get; set; }
         
         public KurvModel(OrderService orderService)
@@ -20,37 +19,31 @@ namespace ProjectWebsite.Pages.Kurv
 
         public IActionResult OnGet()
         {
-            Kurv = Order.Basket;
-            Total = OrderService.CalculateTotal(Kurv);
+            Total = OrderService.CalculateTotal(Order.Basket);
             return Page();
         }
 
         public IActionResult OnPostForward()
         {
-            Kurv = Order.Basket;
-            Console.WriteLine(Kurv);
             return RedirectToPage("/Basket/CheckCustomer");
         }
 
         public IActionResult OnPostPlus(int ID)
         {
-            Kurv = Order.Basket;
-            foreach (OrderLine orderLine in Kurv)
+            foreach (OrderLine orderLine in Order.Basket)
             {
                 if (ID == orderLine.ID)
                 {
                     orderLine.Amount++;
                 }
             }
-            Kurv = Order.Basket;
-            Total = OrderService.CalculateTotal(Kurv);
+            Total = OrderService.CalculateTotal(Order.Basket);
             return Page();
         }
         public IActionResult OnPostMinus(int ID)
         {
             OrderLine temp = null;
-            Kurv = Order.Basket;
-            foreach (OrderLine orderLine in Kurv)
+            foreach (OrderLine orderLine in Order.Basket)
             {
                 if (ID == orderLine.ID)
                 {
@@ -60,11 +53,10 @@ namespace ProjectWebsite.Pages.Kurv
             }
             if (temp.Amount == 0)
             {
-                Kurv.Remove(temp);
+                Order.Basket.Remove(temp);
 
             }
-            Kurv = Order.Basket;
-            Total = OrderService.CalculateTotal(Kurv);
+            Total = OrderService.CalculateTotal(Order.Basket);
             return Page();
         }
     }
