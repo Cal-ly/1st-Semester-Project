@@ -5,7 +5,7 @@ namespace ProjectWebsite.Repositories
 {
     public class CustomerRepository
     {
-        private static int nextID = 1;
+        private static int nextID;
         public List<Customer> CustomerList { get; set; }
         private JsonCustomerService JsonCustomerService { get; set; }
         public CustomerRepository(JsonCustomerService jsonFileCustomerService)
@@ -35,6 +35,7 @@ namespace ProjectWebsite.Repositories
             CustomerList.Add(customerIn);
             //Listen af kunder gemmes i JSON-filen.
             JsonCustomerService.SaveJsonItems(CustomerList);
+            //Der returneres en bool - true - til videre brug.
             return true;
         }
         //Denne metode henter en kunde ud fra et ID.

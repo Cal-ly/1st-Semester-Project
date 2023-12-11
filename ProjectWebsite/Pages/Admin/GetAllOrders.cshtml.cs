@@ -6,23 +6,23 @@ namespace ProjectWebsite.Pages.Admin
 {
     public class GetAllOrdersModel : PageModel
     {
-		private OrderService OrderService;
+        private OrderService OrderService;
 
-		[BindProperty]
-		public List<Models.Order> OrderList { get; set; }
+        [BindProperty]
+        public List<Models.Order> OrderList { get; set; }
 
-		public GetAllOrdersModel(OrderService orderService)
-		{
-			OrderService = orderService;
-		}
-		public IActionResult OnGet()
-		{
-			OrderList = OrderService.OrderList;
-            if (OrderList == null) 
-			{ 
-				return RedirectToPage("/NotFound"); 
-			}
-			return Page();
+        public GetAllOrdersModel(OrderService orderService)
+        {
+            OrderService = orderService;
         }
-	}
+        public IActionResult OnGet()
+        {
+            OrderList = OrderService.OrderList;
+            if (OrderList == null)
+            {
+                return RedirectToPage("/NotFound");
+            }
+            return Page();
+        }
+    }
 }

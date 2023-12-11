@@ -10,13 +10,13 @@ namespace ProjectWebsite.Pages.Basket
         private OrderService OrderService { get; set; }
         [BindProperty]
         public string Email { get; set; }
-        
+
         public CheckCustomerModel(CustomerService customerService, OrderService orderService)
         {
             CustomerService = customerService;
             OrderService = orderService;
         }
-        public IActionResult OnGet(){ return Page(); }
+        public IActionResult OnGet() { return Page(); }
         public IActionResult OnPostConfirm(string email)
         {
             foreach (var customer in CustomerService.CustomerList)
@@ -24,20 +24,20 @@ namespace ProjectWebsite.Pages.Basket
                 if (customer.Email == email)
                 {
                     if (OrderService.PlaceOrder(email))
-                    { 
-                        return RedirectToPage("/Basket/Success"); 
+                    {
+                        return RedirectToPage("/Basket/Success");
                     }
-                    else 
-                    { 
-                        return RedirectToPage("/Error"); 
+                    else
+                    {
+                        return RedirectToPage("/Error");
                     }
                 }
             }
             return RedirectToPage("/Customer/NewCustomer");
         }
-        public IActionResult OnPostCancel() 
-        { 
-            return RedirectToPage("/Basket/Basket"); 
+        public IActionResult OnPostCancel()
+        {
+            return RedirectToPage("/Basket/Basket");
         }
     }
 }

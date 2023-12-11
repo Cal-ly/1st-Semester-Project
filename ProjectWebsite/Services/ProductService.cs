@@ -37,7 +37,7 @@ namespace ProjectWebsite.Services
                 if (product.Type.ToLower().Contains(inputString.ToLower()))
                 {
                     nameSearch.Add(product);
-                }  
+                }
             }
             return nameSearch;
         }

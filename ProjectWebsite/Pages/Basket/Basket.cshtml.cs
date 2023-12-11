@@ -12,7 +12,7 @@ namespace ProjectWebsite.Pages.Kurv
         public int Amount { get; set; }
         public List<OrderLine> Kurv { get; set; }
         public double Total { get; set; }
-        
+
         public KurvModel(OrderService orderService)
         {
             OrderService = orderService;

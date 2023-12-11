@@ -10,7 +10,7 @@ namespace ProjectWebsite.Repositories
         public List<Product> ProductList { get; set; }
 
         private JsonProductService JsonProductService { get; set; }
-        
+
         public ProductRepository(JsonProductService jsonProductService)
         {
             JsonProductService = jsonProductService;
@@ -20,9 +20,9 @@ namespace ProjectWebsite.Repositories
         public int GetNextID()
         {
             int nextID = ProductList.Max(c => c.ID) + 1;
-            if (nextID <= ProductRepository.nextID) 
-            { 
-                nextID = ProductRepository.nextID + 1; 
+            if (nextID <= ProductRepository.nextID)
+            {
+                nextID = ProductRepository.nextID + 1;
             }
             ProductRepository.nextID = nextID;
             return nextID;
@@ -31,13 +31,13 @@ namespace ProjectWebsite.Repositories
         public Product GetProduct(int productID)
         {
             foreach (Product product in ProductList)
-			{
-				if (product.ID == productID)
-				{
-					return product;
-				}
-			}
-			return null;
+            {
+                if (product.ID == productID)
+                {
+                    return product;
+                }
+            }
+            return null;
         }
 
         public void CreateProduct(Product product)

@@ -27,7 +27,7 @@ namespace ProjectWebsite.Repositories
                 {
                     //... returnere den en reference til Order objektet
                     return order;
-                }  
+                }
             }
             //hvis intet match er fundet returneres null
             return null;
@@ -43,7 +43,7 @@ namespace ProjectWebsite.Repositories
                 {
                     //...returnere den en reference til OrderLine objektet
                     return orderLine;
-                } 
+                }
             }
             //hvis intet match er fundet returnere den null
             return null;
@@ -58,7 +58,7 @@ namespace ProjectWebsite.Repositories
                 {
                     customersOrders.Add(order);
                 }
-            }     
+            }
             return customersOrders;
         }
 
