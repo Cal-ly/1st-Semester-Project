@@ -31,6 +31,10 @@ body {
     display: block;
     margin-bottom: 1em;
 }
+.brxmedium {
+    display: block;
+    margin-bottom: 0.5em;
+}
 
 .brlarge {
     display: block;
