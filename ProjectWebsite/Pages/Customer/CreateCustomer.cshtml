@@ -31,7 +31,8 @@
 			<p></p>
 			<div class="form-group d-flex justify-content-between">
 				<button type="submit" class="btn btn-success"><i class="fa-solid fa-plus"></i>Opret kunde</button>
-				<button type="submit" asp-page-handler="Cancel" class="btn btn-danger">Fortryd</button>
+				<input type="reset" class="btn btn-warning" value="Ryd felter" />
+				<button type="button" class="btn btn-danger" onclick="window.location.href='@Url.Page("GetAllCustomers")'">Tilbage</button>
 			</div>
 		</form>
 	</div>
