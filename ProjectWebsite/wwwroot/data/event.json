@@ -1,7 +1,7 @@
 [
     {
         "ID": 1,
-        "Name": "Tea Smagning",
+        "Name": "Te Smagning",
         "Location": "TeaHouse",
         "DateTime": "2023-07-20T14:00:00",
         "Duration": 90,
@@ -141,7 +141,7 @@
     },
     {
         "ID": 6,
-        "Name": "TeaTechTalks",
+        "Name": "Tea Tech Talks Event",
         "Location": "TeaTechHub",
         "DateTime": "2023-12-05T14:00:00",
         "Duration": 90,
