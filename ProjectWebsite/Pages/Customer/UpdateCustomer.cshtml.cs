@@ -32,7 +32,5 @@ namespace ProjectWebsite.Pages.Customer
 			//Redirecter tilbage til "GetAllCustomers" siden.
 			return RedirectToPage("GetAllCustomers");
 		}
-		//Redirecter tilbage til "GetAllCustomers" siden, hvis der trykkes på "Cancel".
-        public IActionResult OnPostCancel() { return RedirectToPage("GetAllCustomers"); }
 	}
 }
