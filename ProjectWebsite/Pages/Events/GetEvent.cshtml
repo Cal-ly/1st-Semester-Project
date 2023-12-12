@@ -1,0 +1,28 @@
+﻿@page "{id:int}"
+@model ProjectWebsite.Pages.Events.GetEventModel
+@{
+}
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+            <div class="col-md-6">
+                <h1 class="display-6 fw-bolder">@Model.Event.Name</h1>
+
+                <p class="lead">@Model.Event.Description</p>
+           
+                    @{ DateTime endDateTime = Model.Event.DateTime.AddMinutes(Model.Event.Duration);
+                    <p>
+                        Pris: @Model.Event.Cost kr <span class="brmedium"></span>
+                        Sted: @Model.Event.Location <br />
+                        Dato: @Model.Event.DateTime.ToString("dd-MM-yy") <br />
+                        Tidspunkt: @Model.Event.DateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
+                    </p>
+                    }
+
+                <a class="btn btn-primary" type="button" title="GetAllAttendees" asp-page="GetAllAttendees" asp-route-id="@Model.Event.ID"> <i class="fa-solid fa-users"></i> Deltagere</a>
+            </div>
+        </div>
+    </div>
+</section>
