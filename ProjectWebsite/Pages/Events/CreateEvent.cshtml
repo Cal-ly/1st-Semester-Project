@@ -12,49 +12,49 @@
 
             <div class="form-group">
                 <label asp-for="@Model.Event.Name" class="control-label"></label>
-                <input asp-for="@Model.Event.Name" class="form-control" required/>
+                <input asp-for="@Model.Event.Name" class="form-control" required placeholder="Indtast navn"/>
                 <span asp-validation-for="@Model.Event.Name" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="@Model.Event.Location" class="control-label"></label>
-                <input asp-for="@Model.Event.Location" class="form-control" required/>
+                <input asp-for="@Model.Event.Location" class="form-control" required placeholder="Indtast placering"/>
                 <span asp-validation-for="@Model.Event.Location" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="@Model.Event.DateTime" class="control-label"></label>
-                <input asp-for="@Model.Event.DateTime" class="form-control" required/>
+                <input asp-for="@Model.Event.DateTime" class="form-control" required placeholder="Indtast dato og tid"/>
                 <span asp-validation-for="@Model.Event.DateTime" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="@Model.Event.Duration" class="control-label"></label>
-                <input asp-for="@Model.Event.Duration" class="form-control" required/>
+                <input asp-for="@Model.Event.Duration" class="form-control" required placeholder="Varighed i minutter"/>
                 <span asp-validation-for="@Model.Event.Duration" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="@Model.Event.Description" class="control-label"></label>
-                <input asp-for="@Model.Event.Description" class="form-control" required/>
+                <input asp-for="@Model.Event.Description" class="form-control" required placeholder="Indtast beskrivelse"/>
                 <span asp-validation-for="@Model.Event.Description" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="@Model.Event.Cost" class="control-label"></label>
-                <input asp-for="@Model.Event.Cost" class="form-control" required type="number" step="0.01" min="0" max="1000000" /> @* Can only take numbers with 2 decimals now *@
+                <input asp-for="@Model.Event.Cost" class="form-control" required type="number" step="0.01" min="0" max="1000000" placeholder="Pris pr deltager"/>
                 <span asp-validation-for="@Model.Event.Cost" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="@Model.Event.Capacity" class="control-label"></label>
-                <input asp-for="@Model.Event.Capacity" class="form-control" required type="number" step="1" min="0"/>
+                <input asp-for="@Model.Event.Capacity" class="form-control" required type="number" step="1" min="0" placeholder="Indtast max antal deltagere"/>
                 <span asp-validation-for="@Model.Event.Capacity" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="@Model.Event.Organizer" class="control-label"></label>
-                <input asp-for="@Model.Event.Organizer" class="form-control" required />
+                <input asp-for="@Model.Event.Organizer" class="form-control" required placeholder="Indtast arrangør"/>
                 <span asp-validation-for="@Model.Event.Organizer" class="text-danger"></span>
             </div>
 
@@ -62,7 +62,6 @@
                 <div class="form-group d-flex justify-content-between">
                     <button type="submit" class="btn btn-success"><i class="fa-solid fa-plus"></i>Opret</button>
                     <input type="reset" class="btn btn-warning" value="Ryd felter" />
-                    <button type="submit" asp-page-handler="Cancel" class="btn btn-danger">Fortryd</button>
                     <button type="button" class="btn btn-danger" onclick="window.location.href='@Url.Page("GetAllEvents")'">Tilbage</button>
                 </div>
             </p>
@@ -70,22 +69,3 @@
         </form>
     </div>
 </div>
-
-
-
-
-@* <button type="button" class="btn btn-danger" onclick="resetFields()">Ryd felter</button> *@
-
-
-@* <script>
-    function resetFields() {
-        document.getElementById("Event_Name").value = "";
-        document.getElementById("Event_Location").value = "";
-        document.getElementById("Event_DateTime").value = "";
-        document.getElementById("Event_Duration").value = "";
-        document.getElementById("Event_Description").value = "";
-        document.getElementById("Event_Cost").value = "";
-        document.getElementById("Event_Capacity").value = "";
-        document.getElementById("Event_Organizer").value = "";
-    }
-</script> *@

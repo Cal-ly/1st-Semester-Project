@@ -27,7 +27,5 @@ namespace ProjectWebsite.Pages.Customer
 			CustomerService.CreateCustomer(Customer);
 			return RedirectToPage("GetAllCustomers");
 		}
-        //Denne metode bliver kaldt når der trykkes på "Cancel" knappen
-        public IActionResult OnPostCancel() { return RedirectToPage("GetAllCustomers"); }
 	}
 }

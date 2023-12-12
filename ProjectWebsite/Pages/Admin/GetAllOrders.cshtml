@@ -1,93 +1,92 @@
 ﻿@page
 @model ProjectWebsite.Pages.Admin.GetAllOrdersModel
 @{
-	ViewData["Title"] = "Ordreliste";
+    ViewData["Title"] = "Ordreliste";
 }
 <table class="table table-hover table-light">
-	<thead>
-		<tr>
-			<th>
-				ID
-			</th>
-			<th>
-				KundeID
-			</th>
-			<th>
-				Varer
-			</th>
-			<th>
-				Totalpris
-			</th>
-			<th>
-				Status
-			</th>
-			<th>
-				Færdiggørelsesdato
-			</th>
-			<th>
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                KundeID
+            </th>
+            <th>
+                Varer
+            </th>
+            <th>
+                Totalpris
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Færdiggørelsesdato
+            </th>
+            <th>
 
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		@* et if-statement for at håndtere hvis ordrelisten er tom. hvis det er tilfældet bliver der skrevet "Kurven er tom" *@
-		@if (Model.OrderService.OrderList != null)
-		{
-			@* et foreach-loop der gennemløber alle Ordre i listen OrderList*@
-			foreach (var o in Model.OrderService.OrderList)
-			{	@* ændre farven på hele rækken hvis ordren er færdiggjort (Finished==true) *@
-				var rowStyle = (o.Finished) ? "table-success" : "";
-				@* Struktur til tabellen. Overskrifter mm. *@
-				<tr class="@rowStyle">
-					<td>
-						@o.ID
-					</td>
-					<td>
-						@o.CustomerID
-					</td>
-					<td>
-						@* Et foreach-loop der gennemløber alle produkter i OrderList, og derved fremviser alle produkter tilknyttet hver ordre *@
-						@foreach (var line in o.OrderList)
-						{
-							<p>
-								@line.Product.Name
-								@* et span med en "hjemmelavet" css klasse for at kunne indstille linjeskiftshøjden mere præcist *@
-								<span class="brsmall"></span>
-								@line.Product.Size g
-								<span class="brsmall"></span>
-								@line.Amount stk
-								<span class="brsmall"></span>
-								@line.Product.Price kr per stk
-							</p>
-						}
-					</td>
-					<td>
-						@o.TotalPrice kr
-					</td>
-					<td>
-						@* et if-statement for at kunne vise Færdiggjort/i gang i stedet for true/false *@
-						@if(o.Finished)
-						{
-							<p>Færdiggjort</p>
-						}
-						else
-						{
-							<p>I gang</p>
-						}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @* et if-statement for at håndtere hvis ordrelisten er tom. hvis det er tilfældet bliver der ikke lavet nogle tabelrækker *@
+        @if (Model.OrderService.OrderList != null)
+        {
+            @* et foreach-loop der gennemløber alle Ordre i listen OrderList*@
+            foreach (var o in Model.OrderService.OrderList)
+            {	@* ændre farven på hele rækken hvis ordren er færdiggjort (Finished==true) *@
+                var rowStyle = (o.Finished) ? "table-success" : "";
+                <tr class="@rowStyle">
+                    <td>
+                        @o.ID
+                    </td>
+                    <td>
+                        @o.CustomerID
+                    </td>
+                    <td>
+                        @* Et foreach-loop der gennemløber alle produkter i OrderList, og derved fremviser alle produkter tilknyttet hver ordre *@
+                        @foreach (var line in o.OrderList)
+                        {
+                            <p>
+                                @line.Product.Name
+                                @* et span med en "hjemmelavet" css klasse for at kunne indstille linjeskiftshøjden mere præcist *@
+                                <span class="brsmall"></span>
+                                @line.Product.Size g
+                                <span class="brsmall"></span>
+                                @line.Amount stk
+                                <span class="brsmall"></span>
+                                @line.Product.Price kr per stk
+                            </p>
+                        }
+                    </td>
+                    <td>
+                        @o.TotalPrice kr
+                    </td>
+                    <td>
+                        @* et if-statement for at kunne vise Færdiggjort/i gang i stedet for true/false *@
+                        @if (o.Finished)
+                        {
+                            <p>Færdiggjort</p>
+                        }
+                        else
+                        {
+                            <p>I gang</p>
+                        }
 
-					</td>
-					<td>
-						@o.DateFinished
-					</td>
-					<td>
-						@* Knapper der router ID med til hhv CheckOrder og DeleteOrder, det der vises er ikoner *@
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<a class="btn btn-success" type="button" asp-page="CheckOrder" asp-route-id="@o.ID"><i class="fa-solid fa-check"></i></a>
-							<a class="btn btn-danger" type="button" asp-page="DeleteOrder" asp-route-id="@o.ID"><i class="fa fa-trash"></i></a>
-						</div>
-					</td>
-				</tr>
-			}
-		}
-	</tbody>
+                    </td>
+                    <td>
+                        @o.DateFinished
+                    </td>
+                    <td>
+                        @* Knapper der router ID med til hhv CheckOrder og DeleteOrder, det der vises er ikoner *@
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a class="btn btn-success" type="button" asp-page="CheckOrder" asp-route-id="@o.ID"><i class="fa-solid fa-check"></i></a>
+                            <a class="btn btn-danger" type="button" asp-page="DeleteOrder" asp-route-id="@o.ID"><i class="fa fa-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
 </table>
