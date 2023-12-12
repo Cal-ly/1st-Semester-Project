@@ -5,7 +5,6 @@
     "TotalPrice": 0,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 2,
           "Name": "White Tea",
@@ -15,10 +14,10 @@
           "Price": 50,
           "Size": 100
         },
-        "Amount": 100
+        "Amount": 100,
+        "ID": 0
       },
       {
-        "ID": 0,
         "Product": {
           "ID": 1,
           "Name": "Earl Grey",
@@ -28,7 +27,8 @@
           "Price": 100,
           "Size": 100
         },
-        "Amount": 1
+        "Amount": 1,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -40,7 +40,6 @@
     "TotalPrice": 680,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 2,
           "Name": "White Tea",
@@ -50,7 +49,8 @@
           "Price": 50,
           "Size": 100
         },
-        "Amount": 100
+        "Amount": 100,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -62,7 +62,6 @@
     "TotalPrice": 6800,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 2,
           "Name": "White Tea",
@@ -72,7 +71,8 @@
           "Price": 50,
           "Size": 100
         },
-        "Amount": 100
+        "Amount": 100,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -84,7 +84,6 @@
     "TotalPrice": 50,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 2,
           "Name": "White Tea",
@@ -94,7 +93,8 @@
           "Price": 50,
           "Size": 100
         },
-        "Amount": 100
+        "Amount": 100,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -106,7 +106,6 @@
     "TotalPrice": 100,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 2,
           "Name": "White Tea",
@@ -116,7 +115,8 @@
           "Price": 50,
           "Size": 100
         },
-        "Amount": 100
+        "Amount": 100,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -128,7 +128,6 @@
     "TotalPrice": 5000,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 2,
           "Name": "White Tea",
@@ -138,7 +137,8 @@
           "Price": 50,
           "Size": 100
         },
-        "Amount": 100
+        "Amount": 100,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -150,7 +150,6 @@
     "TotalPrice": 100,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 1,
           "Name": "Earl Grey",
@@ -160,7 +159,8 @@
           "Price": 100,
           "Size": 100
         },
-        "Amount": 1
+        "Amount": 1,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -172,7 +172,6 @@
     "TotalPrice": 100100,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 1,
           "Name": "Earl Grey",
@@ -182,7 +181,8 @@
           "Price": 100,
           "Size": 100
         },
-        "Amount": 1001
+        "Amount": 1001,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -194,7 +194,6 @@
     "TotalPrice": 33300,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 2,
           "Name": "White Tea",
@@ -204,7 +203,8 @@
           "Price": 50,
           "Size": 100
         },
-        "Amount": 666
+        "Amount": 666,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -216,7 +216,6 @@
     "TotalPrice": 0,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 2,
           "Name": "White Tea",
@@ -226,7 +225,8 @@
           "Price": 50,
           "Size": 100
         },
-        "Amount": 100
+        "Amount": 100,
+        "ID": 0
       }
     ],
     "Finished": false,
@@ -238,7 +238,6 @@
     "TotalPrice": 0,
     "OrderList": [
       {
-        "ID": 0,
         "Product": {
           "ID": 2,
           "Name": "White Tea",
@@ -248,7 +247,8 @@
           "Price": 50,
           "Size": 100
         },
-        "Amount": 100
+        "Amount": 100,
+        "ID": 0
       }
     ],
     "Finished": true,
@@ -260,7 +260,6 @@
     "TotalPrice": 100,
     "OrderList": [
       {
-        "ID": 1,
         "Product": {
           "ID": 1,
           "Name": "Earl Greyyyyyy",
@@ -270,7 +269,8 @@
           "Price": 100,
           "Size": 100
         },
-        "Amount": 1
+        "Amount": 1,
+        "ID": 1
       }
     ],
     "Finished": true,
@@ -282,7 +282,6 @@
     "TotalPrice": 100,
     "OrderList": [
       {
-        "ID": 1,
         "Product": {
           "ID": 1,
           "Name": "Earl Greyyyyyy",
@@ -292,7 +291,8 @@
           "Price": 100,
           "Size": 100
         },
-        "Amount": 1
+        "Amount": 1,
+        "ID": 1
       }
     ],
     "Finished": true,
@@ -304,7 +304,6 @@
     "TotalPrice": 80,
     "OrderList": [
       {
-        "ID": 1,
         "Product": {
           "ID": 7,
           "Name": "Mathias\u0027 Te",
@@ -314,32 +313,11 @@
           "Price": 80,
           "Size": 100
         },
-        "Amount": 1
+        "Amount": 1,
+        "ID": 1
       }
     ],
     "Finished": true,
     "DateFinished": "2023-12-08T12:55:32.2460476+01:00"
-  },
-  {
-    "ID": 16,
-    "CustomerID": 16,
-    "TotalPrice": 110,
-    "OrderList": [
-      {
-        "ID": 1,
-        "Product": {
-          "ID": 1,
-          "Name": "Earl Grey",
-          "Description": "Delicious black tea",
-          "Content": "Black tea",
-          "Type": "Black tea",
-          "Price": 110,
-          "Size": 100
-        },
-        "Amount": 1
-      }
-    ],
-    "Finished": false,
-    "DateFinished": "0001-01-01T00:00:00"
   }
 ]

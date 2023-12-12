@@ -9,14 +9,14 @@
   {
     "ID": 2,
     "Name": "Birgitte Hansen",
-    "Address": "K\u00F8benhavnsgade",
+    "Address": "Københavnsgade",
     "Email": "birgitte.hansen@email.com",
     "PhoneNumber": "23456789"
   },
   {
     "ID": 3,
     "Name": "Christian Madsen",
-    "Address": "\u00C5rhusvej",
+    "Address": "Århusvej",
     "Email": "christian.madsen@email.com",
     "PhoneNumber": "34567890"
   },
@@ -65,14 +65,14 @@
   {
     "ID": 10,
     "Name": "Jannie Pedersen",
-    "Address": "\u00C5lborggade",
+    "Address": "Ålborggade",
     "Email": "jannie.pedersen@email.com",
     "PhoneNumber": "12345678"
   },
   {
     "ID": 11,
-    "Name": "Klaus M\u00F8ller",
-    "Address": "K\u00F8benhavngade",
+    "Name": "Klaus Møller",
+    "Address": "Københavngade",
     "Email": "klaus.moller@email.com",
     "PhoneNumber": "23456789"
   },
@@ -86,7 +86,7 @@
   {
     "ID": 13,
     "Name": "Morten Hansen",
-    "Address": "\u00C5rhusgade",
+    "Address": "Århusgade",
     "Email": "morten.hansen@email.com",
     "PhoneNumber": "45678901"
   },
@@ -103,12 +103,5 @@
     "Address": "Esbjergvej",
     "Email": "ole.andersen@email.com",
     "PhoneNumber": "67890123"
-  },
-  {
-    "ID": 16,
-    "Name": "Jarl Gr\u00E5",
-    "Address": "Jarlvej 34",
-    "Email": "Lalalla@gmail.com",
-    "PhoneNumber": "50607080"
   }
 ]

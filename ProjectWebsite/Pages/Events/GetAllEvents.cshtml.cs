@@ -15,6 +15,8 @@ namespace ProjectWebsite.Pages.Events
         public string SearchEvent { get; set; }
         [BindProperty]
         public List<Event> EventList { get; set; }
+        [BindProperty]
+        public Event Event { get; set; }
 
         public int AddedIDToBasket { get; set; }
 
@@ -43,13 +45,13 @@ namespace ProjectWebsite.Pages.Events
         public IActionResult OnPostAddToBasket(int ID)
         {
             int newID;
-            if (Order.Basket?.Count != null || Order.Basket?.Count != 0)
+            if (Order.Basket?.Count == null || Order.Basket?.Count == 0)
             {
-                newID = Order.Basket!.Max(p => p.ID) + 1;
+                newID = 1;
             }
             else
             {
-                newID = 1;
+                newID = Order.Basket!.Max(p => p.ID) + 1;
             }
 
             Order.Basket?.Add(new()
@@ -59,6 +61,7 @@ namespace ProjectWebsite.Pages.Events
                 ID = newID
             }) ;
             AddedIDToBasket = ID;
+            EventList = EventService.EventList;
             return Page();
         }
 	}
