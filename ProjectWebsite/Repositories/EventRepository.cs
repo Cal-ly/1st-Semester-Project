@@ -7,7 +7,7 @@ namespace ProjectWebsite.Repositories
 {
     public class EventRepository
     {
-        private static int nextID = 1;
+        private static int nextID = 9001;
 
         public List<Event> EventList { get; set; }
 
@@ -23,7 +23,7 @@ namespace ProjectWebsite.Repositories
         {
             if (EventList.Count == 0)
             {
-                return 1;
+                return 9001;
             }
             int nextID = EventList.Max(c => c.ID) + 1;
             if (nextID <= EventRepository.nextID)
@@ -148,7 +148,7 @@ namespace ProjectWebsite.Repositories
 
             Product productOut = new()
             {
-                ID = eventToConvert.ID + 9000,
+                ID = eventToConvert.ID,
                 Name = eventToConvert.Name,
                 Description = eventToConvert.Description,
                 Content = $"Sted: {eventToConvert.Location} Start: {startDateTimeString} - End: {endDateTimeString}",

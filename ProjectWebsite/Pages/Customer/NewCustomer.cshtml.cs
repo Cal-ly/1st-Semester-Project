@@ -10,7 +10,6 @@ namespace ProjectWebsite.Pages.Customer
         private OrderService OrderService { get; set; }
         [BindProperty]
 		public Models.Customer Customer { get; set; }
-		
 		public NewCustomerModel(CustomerService customerService, OrderService orderService)
 		{
 			CustomerService = customerService;
@@ -34,7 +33,5 @@ namespace ProjectWebsite.Pages.Customer
             //Ellers bliver der redirected til Error siden.
             else { return RedirectToPage("/Error"); }
 		}
-        //Redirecter tilbage til Basket siden.
-        public IActionResult OnPostCancel() { return RedirectToPage("/Basket/Basket"); }
 	}
 }

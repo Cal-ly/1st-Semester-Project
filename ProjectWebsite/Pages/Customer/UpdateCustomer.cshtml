@@ -5,7 +5,7 @@
 <span class="brlarge"></span>
 <div class="row justify-content-center">
     <div class="col-9 col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 p-4 alert alert-secondary">
-        <form method="post">    
+        <form method="post">
             <div class="form-group">
                 <label asp-for="@Model.Customer.ID" class="control-label"></label>
                 <input asp-for="@Model.Customer.ID" class="form-control" readonly />
@@ -13,28 +13,29 @@
             </div>
             <div class="form-group">
                 <label asp-for="@Model.Customer.Name" class="control-label"></label>
-                <input asp-for="@Model.Customer.Name" class="form-control" />
+                <input asp-for="@Model.Customer.Name" class="form-control" placeholder="Indtast navn" />
                 <span asp-validation-for="@Model.Customer.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="@Model.Customer.Address" class="control-label"></label>
-                <input asp-for="@Model.Customer.Address" class="form-control" />
+                <input asp-for="@Model.Customer.Address" class="form-control" placeholder="Indtast adresse" />
                 <span asp-validation-for="@Model.Customer.Address" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="@Model.Customer.Email" class="control-label"></label>
-                <input asp-for="@Model.Customer.Email" class="form-control" />
+                <input asp-for="@Model.Customer.Email" class="form-control" type="email" placeholder="Indtast email" />
                 <span asp-validation-for="@Model.Customer.Email" class="text-danger"></span>
             </div>
             <div>
                 <label asp-for="@Model.Customer.PhoneNumber" class="control-label"></label>
-                <input asp-for="@Model.Customer.PhoneNumber" class="form-control" />
+                <input asp-for="@Model.Customer.PhoneNumber" class="form-control" placeholder="Indtast telefonnummer" />
                 <span asp-validation-for="@Model.Customer.PhoneNumber" class="text-danger"></span>
             </div>
             <p></p>
             <div class="form-group d-flex justify-content-between">
                 <input type="submit" value="Opdater" class="btn btn-success" />
-                <input type="submit" asp-page-handler="Cancel" value="Fortryd" class="btn btn-danger" />
+                <input type="reset" class="btn btn-warning" value="Ryd felter" />
+                <button type="button" class="btn btn-danger" onclick="window.location.href='@Url.Page("GetAllCustomers")'">Tilbage</button>
             </div>
         </form>
     </div>
