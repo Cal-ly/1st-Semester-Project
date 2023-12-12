@@ -14,9 +14,9 @@
            
                     @{ DateTime endDateTime = Model.Event.DateTime.AddMinutes(Model.Event.Duration);
                     <p>
-                        Pris: @Model.Event.Cost kr <span class="brmedium"></span>
-                        Sted: @Model.Event.Location <br />
-                        Dato: @Model.Event.DateTime.ToString("dd-MM-yy") <br />
+                        Pris: @Model.Event.Cost kr <span class="brxmedium"></span>
+                        Sted: @Model.Event.Location <span class="brxmedium"></span>
+                        Dato: @Model.Event.DateTime.ToString("dd-MM-yy") <span class="brxmedium"></span>
                         Tidspunkt: @Model.Event.DateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
                     </p>
                     }
