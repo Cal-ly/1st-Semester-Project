@@ -16,16 +16,16 @@ namespace ProjectWebsite.Pages.Events
         [BindProperty]
         public List<Event> EventList { get; set; }
 
-        public int addedIDToBasket { get; set; }
+        public int AddedIDToBasket { get; set; }
 
-        public GetAllEventsModel(EventService eventService, ProductService ProductService)
+        public GetAllEventsModel(EventService eventService, ProductService productService)
         {
             EventService = eventService;
-            this.ProductService = ProductService;
+            ProductService = productService;
         }
         public void OnGet()
         {
-            addedIDToBasket = 0;
+            AddedIDToBasket = 0;
             EventList = EventService.EventList;
         }
 
@@ -35,7 +35,7 @@ namespace ProjectWebsite.Pages.Events
             {
                 return Page();
             }
-            addedIDToBasket = 0;
+            AddedIDToBasket = 0;
             EventList = EventService.GetEventsByName(SearchEvent).ToList();
             return Page();
         }
@@ -43,23 +43,22 @@ namespace ProjectWebsite.Pages.Events
         public IActionResult OnPostAddToBasket(int ID)
         {
             int newID;
-            if (Order.Basket?.Count == null || Order.Basket?.Count == 0)
+            if (Order.Basket?.Count != null || Order.Basket?.Count != 0)
             {
-                newID = 1;
+                newID = Order.Basket!.Max(p => p.ID) + 1;
             }
             else
             {
-                newID = Order.Basket.Max(p => p.ID) + 1;
+                newID = 1;
             }
 
-            Order.Basket.Add(new()
+            Order.Basket?.Add(new()
             {
-                Product = ProductService.GetProduct(ID + 9000),
+                Product = ProductService.GetProduct(ID),
                 Amount = 1,
                 ID = newID
             }) ;
-            addedIDToBasket = ID;
-            EventList = EventService.EventList;
+            AddedIDToBasket = ID;
             return Page();
         }
 	}

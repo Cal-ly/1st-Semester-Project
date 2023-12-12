@@ -8,10 +8,12 @@ namespace ProjectWebsite.Services
         public List<Order> OrderList { get { return OrderRepository.OrderList; } }
         private OrderRepository OrderRepository { get; set; }
         private CustomerRepository CustomerRepository { get; set; }
-        public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository)
+        private EventRepository EventRepository { get; set; }
+        public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository, EventRepository eventRepository)
         {
             OrderRepository = orderRepository;
             CustomerRepository = customerRepository;
+            EventRepository = eventRepository;
         }
         #region Repository methods calls
         public void AddOrder(Order order) { OrderRepository.AddOrder(order); }
@@ -34,6 +36,14 @@ namespace ProjectWebsite.Services
             //creates new Order object with ID, TotalPrice, OrderList and CustomerID
             //and immediately sends its to AddOrder
             AddOrder(new() { ID = maxID, TotalPrice = CalculateTotal(Order.Basket), OrderList = Order.Basket, CustomerID = customerWhoMadeOrder.ID });
+            foreach (var orderLine in Order.Basket)
+            {
+                if (orderLine.Product.Type == "Event")
+                {
+                    Event eventInOrderline = EventRepository.GetEventByID(orderLine.Product.ID);
+                    eventInOrderline?.Attendees.Add(customerWhoMadeOrder);
+                }
+            }
             Order.Basket = new(); //resets the basket
             return true;
         }

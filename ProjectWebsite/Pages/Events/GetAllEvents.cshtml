@@ -49,7 +49,7 @@
                             <form method="post">
                                 <button class="btn btn-success p-3 container-fluid" type="submit" asp-route-id="@Event.ID" asp-page-handler="AddToBasket">Tilføj til kurv</button>
                             </form>
-                            @if(Event.ID == Model.addedIDToBasket) {
+                            @if(Event.ID == Model.AddedIDToBasket) {
                                 <p class="text-success">Tilføjede dette event til kurven</p>
                             }
                             <div class="btn-group container-fluid" role="group">
