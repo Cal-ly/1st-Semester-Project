@@ -45,18 +45,23 @@
                                     @Event.DateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
                                 </p>
                             }
+
                             <p>@Event.Description</p>
+
                             <form method="post">
                                 <button class="btn btn-success p-3 container-fluid" type="submit" asp-route-id="@Event.ID" asp-page-handler="AddToBasket">Tilføj til kurv</button>
                             </form>
-                            @if(Event.ID == Model.AddedIDToBasket) {
-                                <p class="text-success">Tilføjede dette event til kurven</p>
+
+                            @if (Models.Order.Basket.Any(OrderLine => OrderLine.Product.ID == Event.ID))
+                            {
+                                <p class="text-success">Event tilføjet kurven</p>
                             }
+
                             <div class="btn-group container-fluid" role="group">
+                                <a class="btn btn-info p-3" type="button" title="Info" asp-page="GetEvent" asp-route-id="@Event.ID"> <i class="fa-solid fa-magnifying-glass"></i> </a>
+                                <a class="btn btn-info p-3" type="button" title="Deltagere" asp-page="GetAllAttendees" asp-route-id="@Event.ID"> <i class="fa-solid fa-users"></i> </a>
                                 <a class="btn btn-primary p-3" type="button" title="Update" asp-page="UpdateEvent" asp-route-id="@Event.ID" > <i class="fa fa-edit"></i> </a>
-                                <a class="btn btn-primary p-3" type="button" title="GetAllAttendees" asp-page="GetAllAttendees" asp-route-id="@Event.ID"> <i class="fa-solid fa-users"></i> </a>
                                 <a class="btn btn-danger p-3" type="button" title="Delete" asp-page="DeleteEvent" asp-route-id="@Event.ID"> <i class="fa fa-trash"></i> </a>
-                                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetEvent" asp-route-id="@Event.ID">Se mere</a>
                             </div>
                         </div>
                     </div>

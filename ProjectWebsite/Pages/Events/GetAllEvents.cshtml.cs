@@ -10,6 +10,7 @@ namespace ProjectWebsite.Pages.Events
     {
         private EventService EventService { get; set; }
         private ProductService ProductService { get; set; }
+        private OrderService OrderService { get; set; }
 
         [BindProperty]
         public string SearchEvent { get; set; }
@@ -20,10 +21,11 @@ namespace ProjectWebsite.Pages.Events
 
         public int AddedIDToBasket { get; set; }
 
-        public GetAllEventsModel(EventService eventService, ProductService productService)
+        public GetAllEventsModel(EventService eventService, ProductService productService, OrderService orderService)
         {
             EventService = eventService;
             ProductService = productService;
+            OrderService = orderService;
         }
         public void OnGet()
         {

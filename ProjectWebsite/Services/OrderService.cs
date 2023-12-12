@@ -41,7 +41,11 @@ namespace ProjectWebsite.Services
                 if (orderLine.Product.Type == "Event")
                 {
                     Event eventInOrderline = EventRepository.GetEventByID(orderLine.Product.ID);
-                    eventInOrderline?.Attendees.Add(customerWhoMadeOrder);
+                    if (eventInOrderline != null)
+                    {
+                        eventInOrderline.Attendees.Add(customerWhoMadeOrder);
+                        EventRepository.UpdateEventAttendees(eventInOrderline); //updates the event with the new attendee and saves it in the json file
+                    }
                 }
             }
             Order.Basket = new(); //resets the basket

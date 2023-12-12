@@ -1,254 +1,282 @@
 [
-    {
-        "ID": 9001,
-        "Name": "Te Smagning",
-        "Location": "TeaHouse",
-        "DateTime": "2023-07-20T14:00:00",
-        "Duration": 90,
-        "Description": "Udforsk verden af te!",
-        "Cost": 10,
-        "Attendees": [
-            {
-                "ID": 1,
-                "Name": "Anders Jensen",
-                "Address": "Vejlevej",
-                "Email": "anders.jensen@email.com",
-                "PhoneNumber": "12345678"
-            },
-            {
-                "ID": 2,
-                "Name": "Birgitte Hansen",
-                "Address": "Københavnsgade",
-                "Email": "birgitte.hansen@email.com",
-                "PhoneNumber": "23456789"
-            }
-        ],
-        "Capacity": 20,
-        "IsFull": false,
-        "Organizer": "TeaEnthusiasts"
-    },
-    {
-        "ID": 9002,
-        "Name": "Te Brygning Masterclass",
-        "Location": "TeaWorkshop",
-        "DateTime": "2023-08-12T16:30:00",
-        "Duration": 120,
-        "Description": "Lær kunsten at brygge te!",
-        "Cost": 15,
-        "Attendees": [
-            {
-                "ID": 3,
-                "Name": "Christian Madsen",
-                "Address": "Århusvej",
-                "Email": "christian.madsen@email.com",
-                "PhoneNumber": "34567890"
-            },
-            {
-                "ID": 4,
-                "Name": "Dorthe Pedersen",
-                "Address": "Odensegade",
-                "Email": "dorthe.pedersen@email.com",
-                "PhoneNumber": "45678901"
-            }
-        ],
-        "Capacity": 25,
-        "IsFull": false,
-        "Organizer": "TeaBrewSociety"
-    },
-    {
-        "ID": 9003,
-        "Name": "Te Smagnings Fest",
-        "Location": "TeaLounge",
-        "DateTime": "2023-09-05T19:00:00",
-        "Duration": 150,
-        "Description": "Fejr glæden ved te!",
-        "Cost": 8,
-        "Attendees": [
-            {
-                "ID": 5,
-                "Name": "Erik Nielsen",
-                "Address": "Aalborgvej",
-                "Email": "erik.nielsen@email.com",
-                "PhoneNumber": "56789012"
-            },
-            {
-                "ID": 6,
-                "Name": "Freja Andersen",
-                "Address": "Esbjerggade",
-                "Email": "freja.andersen@email.com",
-                "PhoneNumber": "67890123"
-            }
-        ],
-        "Capacity": 30,
-        "IsFull": false,
-        "Organizer": "TeaPartyClub"
-    },
-    {
-        "ID": 9004,
-        "Name": "DenStoreBryggedyst",
-        "Location": "TeaChampionship",
-        "DateTime": "2023-10-10T10:00:00",
-        "Duration": 20,
-        "Description": "Vis dine tebrygningsevner!",
-        "Cost": 12,
-        "Attendees": [
-            {
-                "ID": 7,
-                "Name": "Gustav Christensen",
-                "Address": "Randersvej",
-                "Email": "gustav.christensen@email.com",
-                "PhoneNumber": "78901234"
-            },
-            {
-                "ID": 8,
-                "Name": "Helle Rasmussen",
-                "Address": "Koldinggade",
-                "Email": "helle.rasmussen@email.com",
-                "PhoneNumber": "89012345"
-            }
-        ],
-        "Capacity": 12,
-        "IsFull": false,
-        "Organizer": "TeaBryggeUdfordringOrg"
-    },
-    {
-        "ID": 9005,
-        "Name": "Tekender event",
-        "Location": "TeaExhibition",
-        "DateTime": "2023-11-15T18:30:00",
-        "Duration": 120,
-        "Description": "Udforsk kunsten af tekenderi!",
-        "Cost": 15,
-        "Attendees": [
-            {
-                "ID": 9,
-                "Name": "Ivan Larsen",
-                "Address": "Vejlevej",
-                "Email": "ivan.larsen@email.com",
-                "PhoneNumber": "90123456"
-            },
-            {
-                "ID": 10,
-                "Name": "Jannie Pedersen",
-                "Address": "Ålborggade",
-                "Email": "jannie.pedersen@email.com",
-                "PhoneNumber": "12345678"
-            }
-        ],
-        "Capacity": 50,
-        "IsFull": false,
-        "Organizer": "Hipster douches"
-    },
-    {
-        "ID": 9006,
-        "Name": "Tea Tech Talks Event",
-        "Location": "TeaTechHub",
-        "DateTime": "2023-12-05T14:00:00",
-        "Duration": 90,
-        "Description": "Udforsk det nyeste inden for te teknologi!",
-        "Cost": 0,
-        "Attendees": [
-            {
-                "ID": 11,
-                "Name": "Klaus Møller",
-                "Address": "Københavngade",
-                "Email": "klaus.moller@email.com",
-                "PhoneNumber": "23456789"
-            },
-            {
-                "ID": 12,
-                "Name": "Lise Nielsen",
-                "Address": "Odensevej",
-                "Email": "lise.nielsen@email.com",
-                "PhoneNumber": "34567890"
-            }
-        ],
-        "Capacity": 30,
-        "IsFull": false,
-        "Organizer": "Rumbryg"
-    },
-    {
-        "ID": 9007,
-        "Name": "Te - En Fitnessudfordring",
-        "Location": "TeaFitZone",
-        "DateTime": "2024-01-20T09:00:00",
-        "Duration": 60,
-        "Description": "Hold dig i form med te-inspirerede øvelser!",
-        "Cost": 10,
-        "Attendees": [
-            {
-                "ID": 13,
-                "Name": "Morten Hansen",
-                "Address": "Århusgade",
-                "Email": "morten.hansen@email.com",
-                "PhoneNumber": "45678901"
-            },
-            {
-                "ID": 14,
-                "Name": "Nanna Rasmussen",
-                "Address": "Aalborgvej",
-                "Email": "nanna.rasmussen@email.com",
-                "PhoneNumber": "56789012"
-            }
-        ],
-        "Capacity": 20,
-        "IsFull": false,
-        "Organizer": "TeaFitnessClub"
-    },
-    {
-        "ID": 9008,
-        "Name": "TeaBrewers Masterclass",
-        "Location": "TeaCulinaryInstitute",
-        "DateTime": "2024-02-08T17:30:00",
-        "Duration": 120,
-        "Description": "Mestr kunsten at lave mad med te!",
-        "Cost": 25,
-        "Attendees": [
-            {
-                "ID": 15,
-                "Name": "Ole Andersen",
-                "Address": "Esbjergvej",
-                "Email": "ole.andersen@email.com",
-                "PhoneNumber": "67890123"
-            },
-            {
-                "ID": 1,
-                "Name": "Anders Jensen",
-                "Address": "Vejlevej",
-                "Email": "anders.jensen@email.com",
-                "PhoneNumber": "12345678"
-            }
-        ],
-        "Capacity": 15,
-        "IsFull": false,
-        "Organizer": "TeaCulinaryMasters"
-    },
-    {
-        "ID": 9009,
-        "Name": "Te- og Kunstudstilling",
-        "Location": "TeaGallerySpace",
-        "DateTime": "2024-03-15T13:00:00",
-        "Duration": 180,
-        "Description": "Fordyb dig i kunstværker inspireret af te!",
-        "Cost": 5,
-        "Attendees": [
-            {
-                "ID": 15,
-                "Name": "Ole Andersen",
-                "Address": "Esbjergvej",
-                "Email": "ole.andersen@email.com",
-                "PhoneNumber": "67890123"
-            },
-            {
-                "ID": 1,
-                "Name": "Anders Jensen",
-                "Address": "Vejlevej",
-                "Email": "anders.jensen@email.com",
-                "PhoneNumber": "12345678"
-            }
-        ],
-        "Capacity": 25,
-        "IsFull": false,
-        "Organizer": "Teabaggers"
-    }
+  {
+    "ID": 9001,
+    "Name": "Te Smagning",
+    "Location": "TeaHouse",
+    "DateTime": "2023-07-20T14:00:00",
+    "Duration": 90,
+    "Description": "Udforsk verden af te!",
+    "Cost": 10,
+    "Attendees": [
+      {
+        "ID": 1,
+        "Name": "Anders Jensen",
+        "Address": "Vejlevej",
+        "Email": "anders.jensen@email.com",
+        "PhoneNumber": "12345678"
+      },
+      {
+        "ID": 2,
+        "Name": "Birgitte Hansen",
+        "Address": "K\u00F8benhavnsgade",
+        "Email": "birgitte.hansen@email.com",
+        "PhoneNumber": "23456789"
+      },
+      {
+        "ID": 4,
+        "Name": "Dorthe Pedersen",
+        "Address": "Odensegade",
+        "Email": "dorthe.pedersen@email.com",
+        "PhoneNumber": "45678901"
+      },
+      {
+        "ID": 11,
+        "Name": "Klaus M\u00F8ller",
+        "Address": "K\u00F8benhavngade",
+        "Email": "klaus.moller@email.com",
+        "PhoneNumber": "23456789"
+      },
+      {
+        "ID": 11,
+        "Name": "Klaus M\u00F8ller",
+        "Address": "K\u00F8benhavngade",
+        "Email": "klaus.moller@email.com",
+        "PhoneNumber": "23456789"
+      }
+    ],
+    "Capacity": 20,
+    "IsFull": false,
+    "Organizer": "TeaEnthusiasts"
+  },
+  {
+    "ID": 9002,
+    "Name": "Te Brygning Masterclass",
+    "Location": "TeaWorkshop",
+    "DateTime": "2023-08-12T16:30:00",
+    "Duration": 120,
+    "Description": "L\u00E6r kunsten at brygge te!",
+    "Cost": 15,
+    "Attendees": [
+      {
+        "ID": 3,
+        "Name": "Christian Madsen",
+        "Address": "\u00C5rhusvej",
+        "Email": "christian.madsen@email.com",
+        "PhoneNumber": "34567890"
+      },
+      {
+        "ID": 4,
+        "Name": "Dorthe Pedersen",
+        "Address": "Odensegade",
+        "Email": "dorthe.pedersen@email.com",
+        "PhoneNumber": "45678901"
+      },
+      {
+        "ID": 11,
+        "Name": "Klaus M\u00F8ller",
+        "Address": "K\u00F8benhavngade",
+        "Email": "klaus.moller@email.com",
+        "PhoneNumber": "23456789"
+      }
+    ],
+    "Capacity": 25,
+    "IsFull": false,
+    "Organizer": "TeaBrewSociety"
+  },
+  {
+    "ID": 9003,
+    "Name": "Te Smagnings Fest",
+    "Location": "TeaLounge",
+    "DateTime": "2023-09-05T19:00:00",
+    "Duration": 150,
+    "Description": "Fejr gl\u00E6den ved te!",
+    "Cost": 8,
+    "Attendees": [
+      {
+        "ID": 5,
+        "Name": "Erik Nielsen",
+        "Address": "Aalborgvej",
+        "Email": "erik.nielsen@email.com",
+        "PhoneNumber": "56789012"
+      },
+      {
+        "ID": 6,
+        "Name": "Freja Andersen",
+        "Address": "Esbjerggade",
+        "Email": "freja.andersen@email.com",
+        "PhoneNumber": "67890123"
+      }
+    ],
+    "Capacity": 30,
+    "IsFull": false,
+    "Organizer": "TeaPartyClub"
+  },
+  {
+    "ID": 9004,
+    "Name": "DenStoreBryggedyst",
+    "Location": "TeaChampionship",
+    "DateTime": "2023-10-10T10:00:00",
+    "Duration": 20,
+    "Description": "Vis dine tebrygningsevner!",
+    "Cost": 12,
+    "Attendees": [
+      {
+        "ID": 7,
+        "Name": "Gustav Christensen",
+        "Address": "Randersvej",
+        "Email": "gustav.christensen@email.com",
+        "PhoneNumber": "78901234"
+      },
+      {
+        "ID": 8,
+        "Name": "Helle Rasmussen",
+        "Address": "Koldinggade",
+        "Email": "helle.rasmussen@email.com",
+        "PhoneNumber": "89012345"
+      }
+    ],
+    "Capacity": 12,
+    "IsFull": false,
+    "Organizer": "TeaBryggeUdfordringOrg"
+  },
+  {
+    "ID": 9005,
+    "Name": "Tekender event",
+    "Location": "TeaExhibition",
+    "DateTime": "2023-11-15T18:30:00",
+    "Duration": 120,
+    "Description": "Udforsk kunsten af tekenderi!",
+    "Cost": 15,
+    "Attendees": [
+      {
+        "ID": 9,
+        "Name": "Ivan Larsen",
+        "Address": "Vejlevej",
+        "Email": "ivan.larsen@email.com",
+        "PhoneNumber": "90123456"
+      },
+      {
+        "ID": 10,
+        "Name": "Jannie Pedersen",
+        "Address": "\u00C5lborggade",
+        "Email": "jannie.pedersen@email.com",
+        "PhoneNumber": "12345678"
+      }
+    ],
+    "Capacity": 50,
+    "IsFull": false,
+    "Organizer": "Hipster douches"
+  },
+  {
+    "ID": 9006,
+    "Name": "Tea Tech Talks Event",
+    "Location": "TeaTechHub",
+    "DateTime": "2023-12-05T14:00:00",
+    "Duration": 90,
+    "Description": "Udforsk det nyeste inden for te teknologi!",
+    "Cost": 0,
+    "Attendees": [
+      {
+        "ID": 11,
+        "Name": "Klaus M\u00F8ller",
+        "Address": "K\u00F8benhavngade",
+        "Email": "klaus.moller@email.com",
+        "PhoneNumber": "23456789"
+      },
+      {
+        "ID": 12,
+        "Name": "Lise Nielsen",
+        "Address": "Odensevej",
+        "Email": "lise.nielsen@email.com",
+        "PhoneNumber": "34567890"
+      }
+    ],
+    "Capacity": 30,
+    "IsFull": false,
+    "Organizer": "Rumbryg"
+  },
+  {
+    "ID": 9007,
+    "Name": "Te - En Fitnessudfordring",
+    "Location": "TeaFitZone",
+    "DateTime": "2024-01-20T09:00:00",
+    "Duration": 60,
+    "Description": "Hold dig i form med te-inspirerede \u00F8velser!",
+    "Cost": 10,
+    "Attendees": [
+      {
+        "ID": 13,
+        "Name": "Morten Hansen",
+        "Address": "\u00C5rhusgade",
+        "Email": "morten.hansen@email.com",
+        "PhoneNumber": "45678901"
+      },
+      {
+        "ID": 14,
+        "Name": "Nanna Rasmussen",
+        "Address": "Aalborgvej",
+        "Email": "nanna.rasmussen@email.com",
+        "PhoneNumber": "56789012"
+      }
+    ],
+    "Capacity": 20,
+    "IsFull": false,
+    "Organizer": "TeaFitnessClub"
+  },
+  {
+    "ID": 9008,
+    "Name": "TeaBrewers Masterclass",
+    "Location": "TeaCulinaryInstitute",
+    "DateTime": "2024-02-08T17:30:00",
+    "Duration": 120,
+    "Description": "Mestr kunsten at lave mad med te!",
+    "Cost": 25,
+    "Attendees": [
+      {
+        "ID": 15,
+        "Name": "Ole Andersen",
+        "Address": "Esbjergvej",
+        "Email": "ole.andersen@email.com",
+        "PhoneNumber": "67890123"
+      },
+      {
+        "ID": 1,
+        "Name": "Anders Jensen",
+        "Address": "Vejlevej",
+        "Email": "anders.jensen@email.com",
+        "PhoneNumber": "12345678"
+      }
+    ],
+    "Capacity": 15,
+    "IsFull": false,
+    "Organizer": "TeaCulinaryMasters"
+  },
+  {
+    "ID": 9009,
+    "Name": "Te- og Kunstudstilling",
+    "Location": "TeaGallerySpace",
+    "DateTime": "2024-03-15T13:00:00",
+    "Duration": 180,
+    "Description": "Fordyb dig i kunstv\u00E6rker inspireret af te!",
+    "Cost": 5,
+    "Attendees": [
+      {
+        "ID": 15,
+        "Name": "Ole Andersen",
+        "Address": "Esbjergvej",
+        "Email": "ole.andersen@email.com",
+        "PhoneNumber": "67890123"
+      },
+      {
+        "ID": 1,
+        "Name": "Anders Jensen",
+        "Address": "Vejlevej",
+        "Email": "anders.jensen@email.com",
+        "PhoneNumber": "12345678"
+      }
+    ],
+    "Capacity": 25,
+    "IsFull": false,
+    "Organizer": "Teabaggers"
+  }
 ]
