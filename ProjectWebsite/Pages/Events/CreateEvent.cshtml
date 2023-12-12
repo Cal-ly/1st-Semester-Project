@@ -62,9 +62,29 @@
                 <div class="form-group d-flex justify-content-between">
                     <button type="submit" class="btn btn-success"><i class="fa-solid fa-plus"></i>  Opret</button>
                     <button type="submit" asp-page-handler="Cancel" class="btn btn-danger"> Fortryd</button>
+                    <button type="button" class="btn btn-danger" onclick="window.location.href='@Url.Page("GetAllEvents")'">Tilbage</button>
                 </div>
             </p>
 
         </form>
     </div>
 </div>
+
+
+
+
+@* <button type="button" class="btn btn-danger" onclick="resetFields()">Ryd felter</button> *@
+
+
+@* <script>
+    function resetFields() {
+        document.getElementById("Event_Name").value = "";
+        document.getElementById("Event_Location").value = "";
+        document.getElementById("Event_DateTime").value = "";
+        document.getElementById("Event_Duration").value = "";
+        document.getElementById("Event_Description").value = "";
+        document.getElementById("Event_Cost").value = "";
+        document.getElementById("Event_Capacity").value = "";
+        document.getElementById("Event_Organizer").value = "";
+    }
+</script> *@
