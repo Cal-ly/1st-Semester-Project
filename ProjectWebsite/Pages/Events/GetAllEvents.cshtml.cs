@@ -33,15 +33,9 @@ namespace ProjectWebsite.Pages.Events
             EventList = EventService.EventList;
         }
 
-        public IActionResult OnPostEventSearch()
+        public void OnPostEventSearch()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            AddedIDToBasket = 0;
             EventList = EventService.GetEventsByName(SearchEvent).ToList();
-            return Page();
         }
 
         public IActionResult OnPostAddToBasket(int ID)
