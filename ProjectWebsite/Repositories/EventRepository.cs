@@ -117,14 +117,7 @@ namespace ProjectWebsite.Repositories
 
         public List<Event> GetEventsByName(string searchString)
         {
-            List<Event> searchResult = new();
-            foreach (Event e in EventList)
-            {
-                if (e.Name.ToLower().Contains(searchString.ToLower()))
-                {
-                    searchResult.Add(e);
-                }
-            }
+            List<Event> searchResult = EventList.Where(e => e.Name.ToLower().Contains(searchString.ToLower())).ToList();
             return searchResult;
         }
         public List<Event> GetEventsByDate(DateTime date)
