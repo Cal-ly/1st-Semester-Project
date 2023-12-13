@@ -1,155 +1,164 @@
 [
-    {
-        "ID": 1,
-        "Name": "Earl Grey",
-        "Description": "Delicious black tea",
-        "Content": "Black tea",
-        "Type": "Black tea",
-        "Price": 110,
-        "Size": 100
-    },
-    {
-        "ID": 2,
-        "Name": "White Tea",
-        "Description": "Delicious white tea",
-        "Content": "White Tea",
-        "Type": "White tea",
-        "Price": 50,
-        "Size": 100
-    },
-    {
-        "ID": 3,
-        "Name": "Monicas Te",
-        "Description": "Mega nice te",
-        "Content": "Sort te",
-        "Type": "Sort te",
-        "Price": 80,
-        "Size": 100
-    },
-    {
-        "ID": 4,
-        "Name": "Carstens te",
-        "Description": "Mega nice te",
-        "Content": "Rooibos te",
-        "Type": "Rooibos te",
-        "Price": 90,
-        "Size": 100
-    },
-    {
-        "ID": 5,
-        "Name": "Frederikkes te",
-        "Description": "Mega nice te",
-        "Content": "Hvid te",
-        "Type": "Hvid te",
-        "Price": 90,
-        "Size": 100
-    },
-    {
-        "ID": 6,
-        "Name": "Laus\u0027 Te",
-        "Description": "Mega nice te",
-        "Content": "Sort Te",
-        "Type": "Sort te",
-        "Price": 90,
-        "Size": 100
-    },
-    {
-        "ID": 7,
-        "Name": "Mathias\u0027 Te",
-        "Description": "Mega nice te",
-        "Content": "Gr\u00F8n te",
-        "Type": "Gr\u00F8n te",
-        "Price": 80,
-        "Size": 100
-    },
-    {
-        "ID": 8,
-        "Name": "Blue\u0027s tea",
-        "Description": "Beroligende",
-        "Content": "Lavendel",
-        "Type": "Te",
-        "Price": 70,
-        "Size": 120
-    },
-    {
-        "ID": 9001,
-        "Name": "Te Smagning",
-        "Description": "Udforsk verden af te!",
-        "Content": "Sted: TeaHouse Start: 23-07-20 14:00 - End: 23-07-20 15:30",
-        "Type": "Event",
-        "Price": 10,
-        "Size": 20
-    },
-    {
-        "ID": 9002,
-        "Name": "Te Brygning Masterclast",
-        "Description": "Lær kunsten at brygge te!",
-        "Content": "Sted: TeaWorkshop Start: 23-08-12 16:30 - End: 23-08-12 18:30",
-        "Type": "Event",
-        "Price": 15,
-        "Size": 25
-    },
-    {
-        "ID": 9003,
-        "Name": "Te Smagnings Fest",
-        "Description": "Fejr glæden ved te!",
-        "Content": "Sted: TeaLounge Start: 23-09-05 19:00 - End: 23-09-05 21:30",
-        "Type": "Event",
-        "Price": 8,
-        "Size": 30
-    },
-    {
-        "ID": 9004,
-        "Name": "DenStoreBryggedyst",
-        "Description": "SVis dine tebrygningsevner!!",
-        "Content": "Sted: TeaChampionship Start: 23-10-10 10:00 - End: 23-10-10 10:20",
-        "Type": "Event",
-        "Price": 12,
-        "Size": 12
-    },
-    {
-        "ID": 9005,
-        "Name": "Tekender event",
-        "Description": "Udforsk kunsten af tekenderi!",
-        "Content": "Sted: TeaExhibition Start: 23-11-15 18:30 - End: 23-11-15 20:30",
-        "Type": "Event",
-        "Price": 15,
-        "Size": 50
-    },
-    {
-        "ID": 9006,
-        "Name": "Tea Tech Talks Event",
-        "Description": "Udforsk det nyeste inden for te teknologi!",
-        "Content": "Sted: TeaTechHub Start: 23-12-05 14:00 - End: 23-12-05 15:30",
-        "Type": "Event",
-        "Price": 0,
-        "Size": 30
-    },
-    {
-        "ID": 9007,
-        "Name": "Te - En Fitnessudfordring",
-        "Description": "Hold dig i form med te-inspirerede øvelser!",
-        "Content": "Sted: TeaFitZone Start: 24-01-20 09:00 - End: 24-01-20 10:00",
-        "Type": "Event",
-        "Price": 10,
-        "Size": 20
-    },
-    {
-        "ID": 9008,
-        "Name": "TeaBrewers Masterclass",
-        "Description": "Mestr kunsten at lave mad med te!",
-        "Content": "Sted: TeaCulinaryInstitute Start: 24-02-08 17:30 - End: 24-02-08 19:30",
-        "Type": "Event",
-        "Price": 25,
-        "Size": 15
-    },
-    {
-        "ID": 9009,
-        "Name": "Te- og Kunstudstilling",
-        "Description": "Fordyb dig i kunstværker inspireret af te!",
-        "Content": "Sted: TeaGallerySpace Start: 24-03-15 13:00 - End: 24-03-15 16:00",
-        "Type": "Event",
-        "Price": 5,
-        "Size": 25
-    }
+  {
+    "ID": 1,
+    "Name": "Earl Grey",
+    "Description": "Delicious black tea",
+    "Content": "Black tea",
+    "Type": "Black tea",
+    "Price": 110,
+    "Size": 100
+  },
+  {
+    "ID": 2,
+    "Name": "White Tea",
+    "Description": "Delicious white tea",
+    "Content": "White Tea",
+    "Type": "White tea",
+    "Price": 50,
+    "Size": 100
+  },
+  {
+    "ID": 3,
+    "Name": "Monicas Te",
+    "Description": "Mega nice te",
+    "Content": "Sort te",
+    "Type": "Sort te",
+    "Price": 80,
+    "Size": 100
+  },
+  {
+    "ID": 4,
+    "Name": "Carstens te",
+    "Description": "Mega nice te",
+    "Content": "Rooibos te",
+    "Type": "Rooibos te",
+    "Price": 90,
+    "Size": 100
+  },
+  {
+    "ID": 5,
+    "Name": "Frederikkes te",
+    "Description": "Mega nice te",
+    "Content": "Hvid te",
+    "Type": "Hvid te",
+    "Price": 90,
+    "Size": 100
+  },
+  {
+    "ID": 6,
+    "Name": "Laus\u0027 Te",
+    "Description": "Mega nice te",
+    "Content": "Sort Te",
+    "Type": "Sort te",
+    "Price": 90,
+    "Size": 100
+  },
+  {
+    "ID": 7,
+    "Name": "Mathias\u0027 Te",
+    "Description": "Mega nice te",
+    "Content": "Gr\u00F8n te",
+    "Type": "Gr\u00F8n te",
+    "Price": 80,
+    "Size": 100
+  },
+  {
+    "ID": 8,
+    "Name": "Blue\u0027s tea",
+    "Description": "Beroligende",
+    "Content": "Lavendel",
+    "Type": "Te",
+    "Price": 70,
+    "Size": 120
+  },
+  {
+    "ID": 9001,
+    "Name": "Te Smagning",
+    "Description": "Udforsk verden af te!",
+    "Content": "Sted: TeaHouse Start: 23-07-20 14:00 - End: 23-07-20 15:30",
+    "Type": "Event",
+    "Price": 10,
+    "Size": 20
+  },
+  {
+    "ID": 9002,
+    "Name": "Te Brygning Masterclast",
+    "Description": "L\u00E6r kunsten at brygge te!",
+    "Content": "Sted: TeaWorkshop Start: 23-08-12 16:30 - End: 23-08-12 18:30",
+    "Type": "Event",
+    "Price": 15,
+    "Size": 25
+  },
+  {
+    "ID": 9003,
+    "Name": "Te Smagnings Fest",
+    "Description": "Fejr gl\u00E6den ved te!",
+    "Content": "Sted: TeaLounge Start: 23-09-05 19:00 - End: 23-09-05 21:30",
+    "Type": "Event",
+    "Price": 8,
+    "Size": 30
+  },
+  {
+    "ID": 9004,
+    "Name": "DenStoreBryggedyst",
+    "Description": "SVis dine tebrygningsevner!!",
+    "Content": "Sted: TeaChampionship Start: 23-10-10 10:00 - End: 23-10-10 10:20",
+    "Type": "Event",
+    "Price": 12,
+    "Size": 12
+  },
+  {
+    "ID": 9005,
+    "Name": "Tekender event",
+    "Description": "Udforsk kunsten af tekenderi!",
+    "Content": "Sted: TeaExhibition Start: 23-11-15 18:30 - End: 23-11-15 20:30",
+    "Type": "Event",
+    "Price": 15,
+    "Size": 50
+  },
+  {
+    "ID": 9006,
+    "Name": "Tea Tech Talks Event",
+    "Description": "Udforsk det nyeste inden for te teknologi!",
+    "Content": "Sted: TeaTechHub Start: 23-12-05 14:00 - End: 23-12-05 15:30",
+    "Type": "Event",
+    "Price": 0,
+    "Size": 30
+  },
+  {
+    "ID": 9007,
+    "Name": "Te - En Fitnessudfordring",
+    "Description": "Hold dig i form med te-inspirerede \u00F8velser!",
+    "Content": "Sted: TeaFitZone Start: 24-01-20 09:00 - End: 24-01-20 10:00",
+    "Type": "Event",
+    "Price": 10,
+    "Size": 20
+  },
+  {
+    "ID": 9008,
+    "Name": "TeaBrewers Masterclass",
+    "Description": "Mestr kunsten at lave mad med te!",
+    "Content": "Sted: TeaCulinaryInstitute Start: 24-02-08 17:30 - End: 24-02-08 19:30",
+    "Type": "Event",
+    "Price": 25,
+    "Size": 15
+  },
+  {
+    "ID": 9009,
+    "Name": "Te- og Kunstudstilling",
+    "Description": "Fordyb dig i kunstv\u00E6rker inspireret af te!",
+    "Content": "Sted: TeaGallerySpace Start: 24-03-15 13:00 - End: 24-03-15 16:00",
+    "Type": "Event",
+    "Price": 5,
+    "Size": 25
+  },
+  {
+    "ID": 9,
+    "Name": "FaktiskEnT\u00E6ndstik",
+    "Description": "Ja s\u00E5 er det jo faktisk en t\u00E6ndstik",
+    "Content": "Noget meget farligt",
+    "Type": "Vandrende Pind",
+    "Price": 5999,
+    "Size": 100
+  }
 ]

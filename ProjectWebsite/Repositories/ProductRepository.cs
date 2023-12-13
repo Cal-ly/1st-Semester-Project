@@ -18,7 +18,7 @@ namespace ProjectWebsite.Repositories
 
         public int GetNextID()
         {
-            int nextID = ProductList.Max(c => c.ID) + 1;
+            int nextID = ProductList.Where(p => p.Type != "Event").Max(c => c.ID) + 1;
             if (nextID <= ProductRepository.nextID)
             {
                 nextID = ProductRepository.nextID + 1;
