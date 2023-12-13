@@ -11,13 +11,15 @@
                 <h1 class="display-6 fw-bolder">@Model.Event.Name</h1>
 
                 <p class="lead">@Model.Event.Description</p>
+
                     @{ DateTime endDateTime = Model.Event.DateTime.AddMinutes(Model.Event.Duration);
-                    <p>
-                        Pris: @Model.Event.Cost kr <span class="brxmedium"></span>
-                        Sted: @Model.Event.Location <span class="brxmedium"></span>
-                        Dato: @Model.Event.DateTime.ToString("dd-MM-yy") <span class="brxmedium"></span>
-                        Tidspunkt: @Model.Event.DateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm")
-                    </p>
+                        <p>
+                            Pris: @Model.Event.Cost kr <span class="brxmedium"></span>
+                            Sted: @Model.Event.Location <span class="brxmedium"></span>
+                            Dato: @Model.Event.DateTime.ToString("dd-MM-yy") <span class="brxmedium"></span>
+                            Tidspunkt: @Model.Event.DateTime.ToString("HH:mm") - @endDateTime.ToString("HH:mm") <span class="brxmedium"></span>
+                            Arrangoer: @Model.Event.Organizer
+                        </p>
                     }
 
                 <div class="form-group d-flex justify-content-left">
