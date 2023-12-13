@@ -21,6 +21,8 @@ namespace ProjectWebsite.Services
         //Denne metode gemmer listen af kunder i JSON-filen.
         public void SaveJsonItems(List<Customer> customers)
         {
+            //Sorterer listen af kunder efter ID, så den er i den rigtige rækkefølge.
+            customers.Sort((x, y) => x.ID.CompareTo(y.ID));
             //Åbner JSON-filen.
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
             {

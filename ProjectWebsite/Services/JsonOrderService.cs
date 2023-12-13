@@ -16,6 +16,7 @@ namespace ProjectWebsite.Services
         }
         public void SaveJsonItems(List<Order> orders)
         {
+            orders.Sort((x, y) => x.ID.CompareTo(y.ID));
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
 			{
                 Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()

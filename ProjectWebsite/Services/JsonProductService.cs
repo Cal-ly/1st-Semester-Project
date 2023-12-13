@@ -16,8 +16,9 @@ namespace ProjectWebsite.Services
         }
         public void SaveJsonItems(List<Product> products)
         {
+            products.Sort((x, y) => x.ID.CompareTo(y.ID)); // Sorts the list by ID before saving it to the JSON file to ensure that the list is always in order
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
-			{
+            {
                 Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
                 {
                     SkipValidation = false,
