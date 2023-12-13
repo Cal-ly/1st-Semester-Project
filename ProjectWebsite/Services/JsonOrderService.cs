@@ -3,8 +3,8 @@ using System.Text.Json;
 
 namespace ProjectWebsite.Services
 {
-	public class JsonOrderService
-	{
+    public class JsonOrderService
+    {
         public IWebHostEnvironment WebHostEnvironment { get; }
         public JsonOrderService(IWebHostEnvironment webHostEnvironment)
         {
@@ -18,7 +18,7 @@ namespace ProjectWebsite.Services
         {
             orders.Sort((x, y) => x.ID.CompareTo(y.ID));
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))
-			{
+            {
                 Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
                 {
                     SkipValidation = false,

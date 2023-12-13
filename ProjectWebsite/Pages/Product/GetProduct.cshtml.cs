@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Services;
 using ProjectWebsite.Models;
-using ProjectWebsite.Repositories;
+using ProjectWebsite.Services;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjectWebsite.Pages.Product
@@ -12,7 +11,7 @@ namespace ProjectWebsite.Pages.Product
         private ProductService ProductService { get; set; }
         public Models.Product Product { get; set; }
         public string Message { get; set; }
-        
+
         [BindProperty]
         [Range(1, int.MaxValue)]
         public int AmountIN { get; set; }
@@ -26,8 +25,8 @@ namespace ProjectWebsite.Pages.Product
         public IActionResult OnGet(int id)
         {
             Product = ProductService.GetProduct(id);
-            if (Product == null) 
-            { 
+            if (Product == null)
+            {
                 return RedirectToPage("/NotFound");
             }
             return Page();
@@ -43,12 +42,12 @@ namespace ProjectWebsite.Pages.Product
             }
             int newID;
             if (Order.Basket?.Count == null || Order.Basket?.Count == 0)
-            { 
-                newID = 1; 
+            {
+                newID = 1;
             }
-            else 
-            { 
-                newID = Order.Basket.Max(p => p.ID) + 1; 
+            else
+            {
+                newID = Order.Basket.Max(p => p.ID) + 1;
             }
 
             OrderLine temp = new()

@@ -26,14 +26,14 @@ namespace ProjectWebsite.Pages.Events
         }
         public IActionResult OnPost()
         {
-			EventService.UpdateEvent(Event);
+            EventService.UpdateEvent(Event);
             ProductEvent = EventService.ConvertEventToProduct(Event);
             ProductService.CreateProduct(ProductEvent);
             return RedirectToPage("GetAllEvents");
         }
-		public IActionResult OnPostCancel() 
-        { 
-            return RedirectToPage("GetAllEvents"); 
+        public IActionResult OnPostCancel()
+        {
+            return RedirectToPage("GetAllEvents");
         }
     }
 }

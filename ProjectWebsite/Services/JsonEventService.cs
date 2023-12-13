@@ -1,20 +1,19 @@
 ﻿using ProjectWebsite.Models;
-using System.Collections.Generic;
 using System.Text.Json;
 
 namespace ProjectWebsite.Services
 {
     public class JsonEventService
-	{
-		public IWebHostEnvironment WebHostEnvironment { get; }
-		public JsonEventService(IWebHostEnvironment webHostEnvironment)
-		{
-			WebHostEnvironment = webHostEnvironment;
-		}
-		private string JsonFileName
-		{
-			get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "event.json"); }
-		}
+    {
+        public IWebHostEnvironment WebHostEnvironment { get; }
+        public JsonEventService(IWebHostEnvironment webHostEnvironment)
+        {
+            WebHostEnvironment = webHostEnvironment;
+        }
+        private string JsonFileName
+        {
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "event.json"); }
+        }
         public void SaveJsonItems(List<Event> events)
         {
             events.Sort((x, y) => x.ID.CompareTo(y.ID));

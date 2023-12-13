@@ -30,13 +30,13 @@ namespace ProjectWebsite.Repositories
         public Product GetProduct(int productID)
         {
             foreach (Product product in ProductList)
-			{
-				if (product.ID == productID)
-				{
-					return product;
-				}
-			}
-			return null;
+            {
+                if (product.ID == productID)
+                {
+                    return product;
+                }
+            }
+            return null;
         }
 
         public void CreateProduct(Product product)

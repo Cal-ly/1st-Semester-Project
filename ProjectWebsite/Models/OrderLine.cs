@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ProjectWebsite.Models
+﻿namespace ProjectWebsite.Models
 {
     public class OrderLine
     {

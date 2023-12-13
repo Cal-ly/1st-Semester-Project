@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace ProjectWebsite.Models
+﻿namespace ProjectWebsite.Models
 {
     public class Order
     {

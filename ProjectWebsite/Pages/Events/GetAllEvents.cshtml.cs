@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectWebsite.Models;
 using ProjectWebsite.Services;
-using System.Linq;
 
 namespace ProjectWebsite.Pages.Events
 {
@@ -53,5 +52,5 @@ namespace ProjectWebsite.Pages.Events
             EventList = EventService.EventList;
             return Page();
         }
-	}
+    }
 }

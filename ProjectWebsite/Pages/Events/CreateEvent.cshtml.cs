@@ -1,22 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Services;
 using ProjectWebsite.Models;
+using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Events
 {
     public class CreateEventModel : PageModel
     {
         private EventService EventService { get; set; }
-		private ProductService ProductService { get; set; }
+        private ProductService ProductService { get; set; }
         [BindProperty] public Models.Event Event { get; set; }
         [BindProperty] public Models.Product ProductEvent { get; set; }
 
-		public CreateEventModel(EventService eventService, ProductService productService)
+        public CreateEventModel(EventService eventService, ProductService productService)
         {
             this.EventService = eventService;
-			this.ProductService = productService;
-		}
+            this.ProductService = productService;
+        }
         public IActionResult OnGet()
         {
             return Page();
@@ -26,9 +26,9 @@ namespace ProjectWebsite.Pages.Events
         {
             Event.ID = EventService.GetNextID();
             EventService.CreateEvent(Event);
-			ProductEvent = EventService.ConvertEventToProduct(Event);
+            ProductEvent = EventService.ConvertEventToProduct(Event);
             ProductService.CreateProduct(ProductEvent);
-			return RedirectToPage("GetAllEvents");
+            return RedirectToPage("GetAllEvents");
         }
-	}
+    }
 }

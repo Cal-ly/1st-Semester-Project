@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectWebsite.Services;
 using ProjectWebsite.Models;
-using ProjectWebsite.Repositories;
+using ProjectWebsite.Services;
 
 namespace ProjectWebsite.Pages.Events
 {
