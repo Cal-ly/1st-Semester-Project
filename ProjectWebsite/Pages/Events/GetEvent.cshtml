@@ -26,7 +26,7 @@
                     <form method="post">
                         <button type="submit" title="AddEventToBasket" class="btn btn-success" asp-route-postid="@Model.Event.ID" asp-page-handler="AddEventToBasket"><i class="fa-solid fa-shopping-basket"></i> Tilføj til kurv</button>
                     </form>
-                    <button type="button" title="GetAllAttendees" class="btn btn-info" asp-page="GetAllAttendees" asp-route-id="@Model.Event.ID"><i class="fa-solid fa-users"></i> Deltagere</button>
+                    <a type="button" title="GetAllAttendees" class="btn btn-info" asp-page="GetAllAttendees" asp-route-id="@Model.Event.ID"><i class="fa-solid fa-users"></i> Deltagere</a>
                     <button type="button" title="Tilbage" class="btn btn-danger" onclick="window.location.href='@Url.Page("GetAllEvents")'"><i class="fa-solid fa-arrow-left"></i> Tilbage</button>
                 </div>
 
