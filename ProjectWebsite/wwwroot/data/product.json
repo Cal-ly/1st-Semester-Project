@@ -10,7 +10,7 @@
   },
   {
     "ID": 2,
-    "Name": "White Tea",
+    "Name": "Hvid tempel",
     "Description": "Delicious white tea",
     "Content": "White Tea",
     "Type": "White tea",
@@ -19,7 +19,7 @@
   },
   {
     "ID": 3,
-    "Name": "Monicas Te",
+    "Name": "Morgen",
     "Description": "Mega nice te",
     "Content": "Sort te",
     "Type": "Sort te",
@@ -28,7 +28,7 @@
   },
   {
     "ID": 4,
-    "Name": "Carstens te",
+    "Name": "Rooibos",
     "Description": "Mega nice te",
     "Content": "Rooibos te",
     "Type": "Rooibos te",
@@ -37,7 +37,7 @@
   },
   {
     "ID": 5,
-    "Name": "Frederikkes te",
+    "Name": "Hvid Darjeeling",
     "Description": "Mega nice te",
     "Content": "Hvid te",
     "Type": "Hvid te",
@@ -46,7 +46,7 @@
   },
   {
     "ID": 6,
-    "Name": "Laus\u0027 Te",
+    "Name": "Kejserte",
     "Description": "Mega nice te",
     "Content": "Sort Te",
     "Type": "Sort te",
@@ -55,7 +55,7 @@
   },
   {
     "ID": 7,
-    "Name": "Mathias\u0027 Te",
+    "Name": "Grøn gunpowder",
     "Description": "Mega nice te",
     "Content": "Gr\u00F8n te",
     "Type": "Gr\u00F8n te",
@@ -64,7 +64,7 @@
   },
   {
     "ID": 8,
-    "Name": "Blue\u0027s tea",
+    "Name": "Fairy oolong",
     "Description": "Beroligende",
     "Content": "Lavendel",
     "Type": "Te",

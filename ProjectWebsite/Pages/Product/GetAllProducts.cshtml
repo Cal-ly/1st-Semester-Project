@@ -48,7 +48,11 @@
                         @* Hvert produkt der opfylder if statementet bliver fremvist i et card *@
                         <div class="col card">
                             @* Dette fremviser et billede af teen, og a-tagget gør at man kan klikke på billedet og blive ført til GetProduct siden *@
-                            <a asp-page="GetProduct" asp-route-id="@product.ID"><img src="/img/placeholder.jpg" class="card-img-top" alt="Billede af te"></a>
+                            @{
+                                string fileLocation = $"/img/{product.ID}.jpg";
+                                if (product.ID > 8) fileLocation = "/img/placeholder.jpg";
+                                <a asp-page="GetProduct" asp-route-id="@product.ID"><img src=@fileLocation class="card-img-top" alt="Billede af te"></a>
+                            }
                             <div class="card-body">
                                 @* Den følgende kode henter produktets oplysninger ud og fremviser dem i cardet *@
                                 <h5 class="card-title">@product.Name</h5>
