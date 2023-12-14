@@ -23,9 +23,19 @@
                     }
 
                 <div class="form-group d-flex justify-content-left">
-                    <button type="button" title="GetAllAttendees" class="btn btn-primary" asp-page="GetAllAttendees" asp-route-id="@Model.Event.ID"><i class="fa-solid fa-users"></i> Deltagere</button>
+                    <form method="post">
+                        <button type="submit" title="AddEventToBasket" class="btn btn-success" asp-route-postid="@Model.Event.ID" asp-page-handler="AddEventToBasket"><i class="fa-solid fa-shopping-basket"></i> Tilføj til kurv</button>
+                    </form>
+                    <button type="button" title="GetAllAttendees" class="btn btn-info" asp-page="GetAllAttendees" asp-route-id="@Model.Event.ID"><i class="fa-solid fa-users"></i> Deltagere</button>
                     <button type="button" title="Tilbage" class="btn btn-danger" onclick="window.location.href='@Url.Page("GetAllEvents")'"><i class="fa-solid fa-arrow-left"></i> Tilbage</button>
                 </div>
+
+                @if (Models.Order.Basket.Any(OrderLine => OrderLine.Product.ID == Model.Event.ID))
+                {
+                    <span class="brxmedium"></span>
+                    <h3 class="text-success text-left">Event tilføjet kurven</h3>
+                }
+
             </div>
         </div>
     </div>
