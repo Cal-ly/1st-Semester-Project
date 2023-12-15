@@ -2,7 +2,7 @@
   {
     "ID": 1,
     "Name": "Earl Grey",
-    "Description": "Delicious black tea",
+    "Description": "Blue's Brews Earl Grey er lavet på en blød sort kinesisk Keemun, som giver en fin gylden farve i koppen. Den sorte te er dejlig afstemt af bergamotte, som tilføjer en forfriskende aroma til teen.",
     "Content": "Black tea",
     "Type": "Black tea",
     "Price": 110,
@@ -10,8 +10,8 @@
   },
   {
     "ID": 2,
-    "Name": "Hvid tempel",
-    "Description": "Delicious white tea",
+    "Name": "Hvid Tempel",
+    "Description": "Denne te er en fyldig og sødlig te med friske noter af ananas og appelsin, der har en blød og rund eftersmag. Denne te kan drikkes hele dagen. Nyd Blue's Brews White Temple Tea både som varm eller som kold skøn isthe i sommerperioden.",
     "Content": "White Tea",
     "Type": "White tea",
     "Price": 50,
@@ -19,8 +19,8 @@
   },
   {
     "ID": 3,
-    "Name": "Morgen",
-    "Description": "Mega nice te",
+    "Name": "Morgente",
+    "Description": "Blue's Brews Thehandels ældste og mest solgte blanding. Dejlig kraftig og fyldig English Breakfast Tea bestående af Assam og Ceylon.",
     "Content": "Sort te",
     "Type": "Sort te",
     "Price": 80,
@@ -28,8 +28,8 @@
   },
   {
     "ID": 4,
-    "Name": "Rooibos",
-    "Description": "Mega nice te",
+    "Name": "Rooibos Vanilje",
+    "Description": "Klassisk rød Rooibos med en dejlig cremet smag af vanilje. Rooibos indeholder ikke koffein eller garvesyre.",
     "Content": "Rooibos te",
     "Type": "Rooibos te",
     "Price": 90,
@@ -38,7 +38,7 @@
   {
     "ID": 5,
     "Name": "Hvid Darjeeling",
-    "Description": "Mega nice te",
+    "Description": "Denne te er forholdsvis sjælden, da der ikke produceres særlig meget hvid te i Darjeeling området.",
     "Content": "Hvid te",
     "Type": "Hvid te",
     "Price": 90,
@@ -47,7 +47,7 @@
   {
     "ID": 6,
     "Name": "Kejserte",
-    "Description": "Mega nice te",
+    "Description": "Denne kinesiske luksuste er en ekseptionel topskudste fra Anhui provinsen i Kina. Kejser te har en silkeblød smag, en smuk gylden farve og en enestående bouquet. Denne te indeholder næsten ingen garvesyre.",
     "Content": "Sort Te",
     "Type": "Sort te",
     "Price": 90,
@@ -55,8 +55,8 @@
   },
   {
     "ID": 7,
-    "Name": "Grøn gunpowder",
-    "Description": "Mega nice te",
+    "Name": "Grøn Gunpowder",
+    "Description": "Gunpowder var en af de første teer, som blev eksporteret til Europa. Den sammenrullede form er med til at holde på smagen, og det gjorde den ideel til transport over store afstande. Denne te består fortrinsvis af unge, grønne blade, som folder sig ud, når teen trækker.",
     "Content": "Gr\u00F8n te",
     "Type": "Gr\u00F8n te",
     "Price": 80,
@@ -64,8 +64,8 @@
   },
   {
     "ID": 8,
-    "Name": "Fairy oolong",
-    "Description": "Beroligende",
+    "Name": "Fairy Oolong",
+    "Description": "Efter 5 års studier og forsøg lykkedes det endelig at lave et helt lige blad til denne udsøgte Wu Yi-agtige Oolong. Til denne produktion anvendes kun Gold Guanyin teplanter (Guanyin betyder Goddess of Mercy) som vokser i 800 meters højde i Weishan Tea Garden. Der er tale om en meget lille produktion på mellem 800 – 1000 kg. pr. år. Denne te har en blød og unik smag.",
     "Content": "Lavendel",
     "Type": "Te",
     "Price": 70,

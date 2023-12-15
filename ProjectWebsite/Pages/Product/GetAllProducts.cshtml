@@ -58,22 +58,22 @@
                                 @* Den følgende kode henter produktets oplysninger ud og fremviser dem i cardet *@
                                 <h5 class="card-title">@product.Name</h5>
                                 <p class="card-text">@product.Description</p>
+                                <p class="card-text">@product.Price kr</p>
                                 <div class="d-flex justify-content-between">
-                                    <p class="card-text">@product.Price kr</p>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-
-                                    </div>
-                                    </div>
-                                <form method="post">
-                                    <button class="btn btn-success" type="submit" asp-page-handler="AddToBasket" asp-route-id="@product.ID"><i class="fa-solid fa-basket-shopping"></i> Tilføj til kurv</button>
-                                </form>
-                                <span class="brxmedium"></span>
+                                    
+                                    <form method="post">
+                                        <button class="btn btn-success" type="submit" asp-page-handler="AddToBasket" asp-route-id="@product.ID"><i class="fa-solid fa-basket-shopping"></i> Tilføj til kurv</button>
+                                    </form>
+                                    <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
+                                </div>
+                                
+                                
                                 @if (Models.Order.Basket.Any(OrderLine => OrderLine.Product.ID == product.ID))
                                 {
-                                    <p class="text-success text-center">Produkt tilføjet kurven</p>
+                                    <p class="text-success">Produkt tilføjet kurven</p>
                                 }
                                 @* A-tagget er en knap der fører en til GetProduct siden på det enkelte produkt *@
-                                <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
+                                
                             </div>
                         </div>
                     }
