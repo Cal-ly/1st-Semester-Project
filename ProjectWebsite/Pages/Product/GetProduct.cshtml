@@ -11,7 +11,7 @@
                 @{
                     string fileLocation = $"/img/{@Model.Product.ID}.jpg";
                     if (@Model.Product.ID > 8) fileLocation = "https://dummyimage.com/600x700/dee2e6/6c757d.jpg";
-                    <img class="card-img-top mb-5 mb-md-0" src=@fileLocation alt="Billede af te">
+                    <img class="img-thumbnail card-img-top mb-5 mb-md-0" src=@fileLocation alt="Billede af te">
                 }
             </div>
             <div class="col-md-6">
