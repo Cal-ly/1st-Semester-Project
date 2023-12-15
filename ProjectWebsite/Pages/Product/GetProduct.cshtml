@@ -1,6 +1,7 @@
 ﻿@page "{id:int}"
 @model ProjectWebsite.Pages.Product.GetProductModel
 @{
+    ViewData["Title"] = @Model.Product.Name;
 }
 
 <section class="py-5">

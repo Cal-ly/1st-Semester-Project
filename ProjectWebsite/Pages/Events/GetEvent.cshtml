@@ -1,6 +1,7 @@
 ﻿@page "{id:int}"
 @model ProjectWebsite.Pages.Events.GetEventModel
 @{
+    ViewData["Title"] = @Model.Event.Name;
 }
 
 <section class="py-5">
