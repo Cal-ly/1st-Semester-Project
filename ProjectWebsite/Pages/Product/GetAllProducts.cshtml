@@ -74,6 +74,21 @@
                                 }
                                 @* A-tagget er en knap der fører en til GetProduct siden på det enkelte produkt *@
                                 
+                                @{
+                                    string description = product.Description;
+                                    if(description.Length > 50)
+                                    {
+                                        description = description.Substring(0, 47) + "...";
+                                    }
+                                    <p class="card-text">@description</p>
+                                }
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text">@product.Price kr</p>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        @* A-tagget er en knap der fører en til GetProduct siden på det enkelte produkt *@
+                                        <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     }
