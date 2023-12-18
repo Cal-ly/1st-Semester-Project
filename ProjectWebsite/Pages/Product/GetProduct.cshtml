@@ -3,12 +3,9 @@
 @{
     ViewData["Title"] = @Model.Product.Name;
 }
-<div class="row d-flex">
-    <button type="button" title="Tilbage" class="btn btn-danger" onclick="window.location.href='@Url.Page("GetAllProducts")'"><i class="fa-solid fa-arrow-left"></i> Tilbage</button>
-</div>
-
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
+        <button type="button" title="Tilbage" class="btn btn-danger" onclick="window.location.href='@Url.Page("GetAllProducts")'"><i class="fa-solid fa-arrow-left"></i> Tilbage</button>
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6">
                 @{
