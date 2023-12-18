@@ -33,7 +33,9 @@
                     </form>
                 </div>
                 <a class="btn btn-primary mt-2" type="button" title="Nulstil filtre" asp-page="GetAllProducts">Nulstil filtre</a>
+                @* 1. SE HER, HER ER KNAPPEN VIDERE TIL CreateProduct *@
                 <a class="btn btn-success mt-5" type="button" title="Opret nyt produkt" asp-page="CreateProduct"><i class="fa-solid fa-plus"></i> Opret nyt produkt</a>
+                @* 1. SE HER, HER ER KNAPPEN VIDERE TIL CreateProduct *@
             </div>
         </div>
 
@@ -67,7 +69,6 @@
                                 }
                                 <p class="card-text">@product.Price kr</p>
                                 <div class="d-flex justify-content-between">
-                                    
                                     <form method="post">
                                         <button class="btn btn-success" type="submit" asp-page-handler="AddToBasket" asp-route-id="@product.ID"><i class="fa-solid fa-basket-shopping"></i> Tilføj til kurv</button>
                                     </form>

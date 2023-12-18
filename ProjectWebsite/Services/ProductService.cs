@@ -12,9 +12,9 @@ namespace ProjectWebsite.Services
             ProductRepository = productRepository;
         }
         #region Repository method calls
-        public int GetNextID() { return ProductRepository.GetNextID(); }
+        public int GetNextID() { return ProductRepository.GetNextID(); } //1.VIDERE TIL PRODUCT REPOSITORY //2.TILBAGE TIL CREATE PRODUCT
+        public void CreateProduct(Product product) { ProductRepository.CreateProduct(product); } //3. VIDERE TIL PRODUCT REPOSITORY //4.TILBAGE TIL CREATE PRODUCT
         public Product GetProduct(int productID) { return ProductRepository.GetProduct(productID); }
-        public void CreateProduct(Product product) { ProductRepository.CreateProduct(product); }
         public bool DeleteProduct(int productID) { return ProductRepository.DeleteProduct(productID); }
         public void UpdateProduct(Product productID) { ProductRepository.UpdateProduct(productID); }
         #endregion

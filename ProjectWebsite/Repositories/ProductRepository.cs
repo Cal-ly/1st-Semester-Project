@@ -16,7 +16,7 @@ namespace ProjectWebsite.Repositories
             ProductList = jsonProductService.GetJsonItems().ToList();
         }
 
-        public int GetNextID()
+        public int GetNextID() //1. CARSTEN OVERTAGER
         {
             int nextID = ProductList.Where(p => p.Type != "Event").Max(c => c.ID) + 1;
             if (nextID <= ProductRepository.nextID)
@@ -24,7 +24,16 @@ namespace ProjectWebsite.Repositories
                 nextID = ProductRepository.nextID + 1;
             }
             ProductRepository.nextID = nextID;
-            return nextID;
+            return nextID; //2. TILBAGE TIL PRODUCT SERVICE
+        }
+        public void CreateProduct(Product product) //3. FORTÆL OM METODEN
+        {
+            if (product == null)
+            {
+                throw new ArgumentNullException(nameof(product));
+            }
+            ProductList.Add(product);
+            JsonProductService.SaveJsonItems(ProductList); //4. VIDERE TIL JSON PRODUCT SERVICE //5. TILBAGE TIL PRODUCT REPOSITORY
         }
 
         public Product GetProduct(int productID)
@@ -39,15 +48,6 @@ namespace ProjectWebsite.Repositories
             return null;
         }
 
-        public void CreateProduct(Product product)
-        {
-            if (product == null)
-            {
-                throw new ArgumentNullException(nameof(product));
-            }
-            ProductList.Add(product);
-            JsonProductService.SaveJsonItems(ProductList);
-        }
 
         public bool DeleteProduct(int productID)
         {
