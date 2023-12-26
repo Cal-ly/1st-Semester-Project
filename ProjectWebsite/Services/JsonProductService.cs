@@ -14,7 +14,7 @@ namespace ProjectWebsite.Services
         {
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "product.json"); }
         }
-        public void SaveJsonItems(List<Product> products)
+        public void SaveJsonItems(List<Product> products) //GEMMER TINGENE I JSON FILEN OG TILBAGE TIL PRODUCT REPOSITORY
         {
             products.Sort((x, y) => x.ID.CompareTo(y.ID)); // Sorts the list by ID before saving it to the JSON file to ensure that the list is always in order
             using (FileStream jsonFileWriter = File.Open(JsonFileName, FileMode.Create))

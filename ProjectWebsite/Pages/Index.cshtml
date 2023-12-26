@@ -44,7 +44,14 @@
                     }
                     <div>
                         <h5 class="font-weight-bold">@product.Name</h5>
-                        <p>@product.Description</p>
+                        @{
+                            string description = product.Description;
+                            if (description.Length > 60)
+                            {
+                                description = description.Substring(0, 57) + "...";
+                            }
+                            <p>@description</p>
+                        }
                         <a class="btn btn-primary" type="button" title="Se mere" asp-page="/Product/GetProduct" asp-route-id="@product.ID">Se mere</a>
                     </div>
                 </div>

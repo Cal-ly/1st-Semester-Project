@@ -27,9 +27,9 @@ namespace ProjectWebsite.Pages.Product
             {
                 return Page();
             }
-            Product.ID = ProductService.GetNextID();
-            ProductService.CreateProduct(Product);
-            return RedirectToPage("GetAllProducts");
+            Product.ID = ProductService.GetNextID(); //1.VIDERE TIL PRODUCT SERVICE
+            ProductService.CreateProduct(Product); //2.VIDERE TIL PRODUCT SERVICE
+            return RedirectToPage("GetAllProducts"); //3. TILBAGE TIL GET ALL PRODUCTS
         }
 
         public IActionResult OnPostCancel()
