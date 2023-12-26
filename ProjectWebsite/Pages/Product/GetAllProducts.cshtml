@@ -71,13 +71,13 @@
                                     <form method="post">
                                         <button class="btn btn-success" type="submit" asp-page-handler="AddToBasket" asp-route-id="@product.ID"><i class="fa-solid fa-basket-shopping"></i> Tilføj til kurv</button>
                                     </form>
+                                    @* A-tagget er en knap der fører en til GetProduct siden på det enkelte produkt *@
                                     <a class="btn btn-primary" type="button" title="Se mere" asp-page="GetProduct" asp-route-id="@product.ID">Se mere</a>
                                 </div>
                                 @if (Models.Order.Basket.Any(OrderLine => OrderLine.Product.ID == product.ID))
                                 {
                                     <p class="text-success">Produkt tilføjet kurven</p>
                                 }
-                                @* A-tagget er en knap der fører en til GetProduct siden på det enkelte produkt *@
                             </div>
                         </div>
                     }
